@@ -75,6 +75,10 @@ The [appendix NN control](../docs/NN_CONTROL.md) is now declared and implemented
 
 All 423 local checks pass: 345 ordinary, 53 optional NN and 25 optional real-R. New checks include independently calculated derivatives/Adam updates, actual best-checkpoint restoration, exact retraining, substitute-model rejection, all-member aggregation and score suppression for reduced/incomplete runs. The original FA-ARRF failure and all earlier results are preserved. No macro NN forecasts or new performance scores exist at this declaration; no Jev/LLM forecast evaluation has run.
 
+Following declaration commit 42fe535, the [full NN comparison completed](MRF_NN.md): 180 networks, 18 ten-member ensembles and all 48 dates. Ratios 0.793326/0.842565/0.801268 include a seed-202 miss against 0.80. The separate outer-seed mean 0.806908 is excluded from the criterion; no seed or setting changed. Every member stopped by the declared patience rule, restored its best checkpoint and passed independent NumPy arithmetic. The [full audit](mrf-nn-audit.json) repeats the primary audit, reconstructs all aggregates and **retrains every network identically**, including every parameter and complete training history. Independent base-R scores agree within 1.2e-16 in ratio units.
+
+[All member forecasts](mrf-nn-member-predictions.csv), [480 aggregate rows](mrf-nn-predictions.csv), [metrics](mrf-nn-metrics.csv), [result record](mrf-nn-result.json) and score-suppressed [pilot audit](mrf-nn-pilot-audit.json) retain the complete outcome. All eight named E1 methods now have completed implementations/runs; the [scorecard](MRF_BENCHMARK_SCORECARD.md) separates that milestone from successful reproduction. The primary FA-ARRF joint criterion/nonlinear gain, source-fidelity unknowns and TVP optimizer quality remain unresolved. No Jev/LLM forecast evaluation or hosted forecasting call has run.
+
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
 
 ## Original scaffold results

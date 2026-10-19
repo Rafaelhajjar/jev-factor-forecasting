@@ -41,6 +41,8 @@ The original retrospective sample is a replication/development benchmark. Its ou
 
 E0–E2 are implementation/diagnostic gates, not claims of Jev superiority. Pilot prompts on development cases only, freeze them before E3, and do not discard unfavorable E4 tasks. Broader testing does not depend on finding a favorable E3 score, although hosted execution depends on a declared budget.
 
+As of October 19, all named E1 methods have completed implementations and runs; see the [full scorecard](../reports/MRF_BENCHMARK_SCORECARD.md). This does not close E1 reproduction: original FA-ARRF, RF-MAF, TV-FAAR and NN include source-cell misses, TVP optimizer quality is unresolved, and the original table caller remains unavailable. Keep all three seeds, failed criteria and source limitations. The NN's exact 180-training replay proves artifact reproducibility, not historical source equivalence.
+
 ## 3. Scientific motivation
 
 The statistical model may estimate useful relationships while still making state-dependent errors about their current magnitude. Jev could bring a transferable prior for interpreting compact economic evidence, especially when several weak signs need to be considered together. A soft combination of candidate adjustments could be more stable than choosing one action with certainty.

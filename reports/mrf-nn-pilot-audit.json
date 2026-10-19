@@ -1,0 +1,46 @@
+{
+  "status": "partial_NN_integrity_only",
+  "ensemble_fits_verified": 1,
+  "members_verified": 1,
+  "pending_jobs": [],
+  "member_checks": [
+    {
+      "group": 0,
+      "outer_seed": 101,
+      "seed": 2752421827,
+      "member": 0,
+      "fit_rows": 141,
+      "validation_rows": 25,
+      "best_epoch": 1,
+      "best_validation_MSE": 0.002209294820204377,
+      "epochs_trained": 2,
+      "stop_reason": "epoch_cap",
+      "weights_sha256": "85bc099b88e473355d31d1b2ff38176d3e4163eec3a2cc69e8c22dd77a8deade",
+      "metadata_sha256": "b16edfc6174bf45272950053d004e2df6fa5295799f7d305e9cf2ac501d9b277",
+      "maximum_absolute_differences": {
+        "forecast": 2.2351741790771484e-08,
+        "best_validation_MSE": 2.1817206504945452e-10,
+        "best_training_MSE": 7.974614978784045e-11
+      }
+    }
+  ],
+  "targets_per_model": 8,
+  "partial_scores_suppressed": true,
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "all_seed_ensembles_within_ratio_tolerance": null,
+  "FA_ARRF_replication_established": false,
+  "exact_author_NN_pipeline_verified": false,
+  "primary_result_replaced": false,
+  "primary_artifact_audit_repeated": true,
+  "manifest_sha256": "29523cacd02cb47c67ec522a0e0c1fde1bee38b4147812963cdc760a63119826",
+  "runner_sha256": "85b3b07c72aec5914b79769925996f231593ef4c1b02edcb7f2d811f48ced951",
+  "deterministic_member_refits": [
+    {
+      "group": 0,
+      "outer_seed": 101,
+      "member": 0,
+      "all_parameters_and_training_history_identical": true
+    }
+  ]
+}
