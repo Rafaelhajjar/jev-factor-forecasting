@@ -1,0 +1,39 @@
+{
+  "study": "quarterly_unemployment_RF_MAF_and_AR_plus_RF_controls",
+  "declaration_date": "2026-10-19",
+  "models": ["RF_MAF", "AR_plus_RF"],
+  "trees": 100,
+  "seeds": [101, 202, 303],
+  "forest": {
+    "block_size": 8,
+    "rate": 0.75,
+    "feature_fraction": 0.3333333333333333,
+    "min_parent": 10,
+    "min_leaf": 1
+  },
+  "required_sklearn_version": "1.9.1",
+  "state_rule": "unchanged_original_all248_primary_1041_state_columns",
+  "scaling": "training_only_sample_SD_target_after_AR2_filter",
+  "target_zero_SD_rule": "unit_scale_if_SD_leq_1e-12",
+  "sampling_rule": "native_random_group_quantile_law_numpy_not_R_seed_equivalence",
+  "reported_ratios": {"RF_MAF": 0.85, "AR_plus_RF": 0.84},
+  "absolute_ratio_diagnostic_tolerance": 0.03,
+  "all_individual_seeds_of_both_controls_required_for_control_gate": true,
+  "ensembles_excluded_from_seed_gate": true,
+  "AR2_filter_reported_separately_not_a_source_Table4_cell": true,
+  "selected_using_new_control_test_losses": false,
+  "original_primary_and_all_sensitivities_preserved": true,
+  "known_prior_results": {
+    "primary_FA_AR_ratio": 0.8125773404372048,
+    "primary_FA_ARRF_ratios": [0.7973245508700247, 0.8041844982134492, 0.8063462535432181],
+    "ARRF_ratios": [0.8925989473802962, 0.8944262654772002, 0.9018775525458128],
+    "R_sign_FA_ARRF_ratios": [0.7865032919815147, 0.783245866416533, 0.7996359803847118],
+    "conditional_PCA125_FA_AR_ratio": 0.7871356081718882,
+    "conditional_PCA125_FA_ARRF_ratios": [0.748814904629894, 0.7441009643577524, 0.7470691461268039],
+    "FRED125_FA_AR_ratio": 0.8017225889959442,
+    "FRED125_FA_ARRF_ratios": [0.746267707865026, 0.766320265804137, 0.7573908867212688]
+  },
+  "original_author_plain_RF_backend_or_exact_per_table_settings_recovered": false,
+  "control_match_cannot_establish_FA_ARRF_replication": true,
+  "interpretation": "Post-primary source-motivated conventional controls, not blind confirmation or selection of a replacement factor construction"
+}

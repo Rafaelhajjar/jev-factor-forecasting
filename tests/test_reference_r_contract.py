@@ -14,6 +14,7 @@ from jev_factor.fred_recipe import FredRecipeRepresentation
 from jev_factor.fred_recipe_audit import r_recipe_check
 from jev_factor.invocation_audit import audit_invocation
 from jev_factor.pca_basis_audit import compare_rotations, r_rotations
+from jev_factor.plain_controls import fit_inputs, r_ar2
 from jev_factor.plain_forest import block_subsample
 from jev_factor.replication import LINEAR_X, linear_prediction
 from jev_factor.replication_audit import _r_linear
@@ -251,3 +252,20 @@ def test_native_engine_rejects_an_empty_linear_equation_not_plain_rf_maf(tmp_pat
     )
     assert result.returncode == 0, result.stderr
     assert "at least one X" in result.stdout
+
+
+def test_plain_control_ar2_filter_matches_independent_r_and_ignores_future_targets(tmp_path):
+    matrix = _matrix()
+    path = tmp_path / "filter.csv"
+    matrix.to_csv(path, index=False, float_format="%.17g")
+    _, _, base, metadata = fit_inputs(matrix, 70, "AR_plus_RF")
+    beta, prediction, residual, version = r_ar2(path, 70, shutil.which("Rscript"))
+    np.testing.assert_allclose(beta, metadata["base_coefficients"], atol=1e-10, rtol=0)
+    np.testing.assert_allclose(prediction, base, atol=1e-10, rtol=0)
+    np.testing.assert_allclose(residual, matrix.target.iloc[:70] - base[:70], atol=1e-10, rtol=0)
+    assert version.startswith("R version")
+    matrix.loc[70:, "target"] = 1e12
+    matrix.to_csv(path, index=False, float_format="%.17g")
+    altered = r_ar2(path, 70, shutil.which("Rscript"))
+    for first, second in zip((beta, prediction, residual), altered[:3], strict=True):
+        np.testing.assert_array_equal(first, second)
