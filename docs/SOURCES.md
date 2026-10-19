@@ -18,6 +18,8 @@ Reviewed October 18–19, 2026, after reading the final article and its publishe
 
 The archive's [README](https://journaldata.zbw.eu/dataset/c48432e1-5a25-49f1-95b1-6c681f21e252/resource/57da9dba-6157-4e56-838a-f57358854ca7/download/readme.gc.txt) and the downloaded ZIP were inspected directly. File identities, checksums and parsing findings are recorded in [MRF_REPLICATION.md](MRF_REPLICATION.md). These are verified inputs. The [first full reconstruction](../reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md) has passed artifact checks but misses the published forest ratio; exact replication remains open.
 
+A later [independent-reconstruction source check](INDEPENDENT_RECONSTRUCTION_CHECK.md) inspects a public macroforecast driver/results snapshot without executing it. Its reported h=1 cells, different vintage/settings and timing convention do not resolve our source-cell gap or recover the author caller. This is evidence about that software's own inspected artifacts, not an authority for the 2024 paper's missing settings.
+
 The final PDFs were supplied through the user's downloads. The appendix SHA-256 is `665fac2b6a21b8f2b28442dfe60aec30aee542c3dac2876b322f4e249718fb1b`. PDFs, page renders and extracted full text are not committed. Table ratios in the documentation are attributed source facts, not locally reproduced scores.
 
 ## Jev interface and comparison

@@ -1,0 +1,57 @@
+{
+  "status": "external_static_source_and_reported_scalar_audit_not_forecast_reproduction",
+  "repository": "https://github.com/NanyeonK/macroforecast",
+  "inspected_commit": "3c193e24a10ac1fa92fc65f92fe493e654e1508a",
+  "files_sha256": {
+    "scripts/replication/mrf_2024_pipeline/run_table4.py": "3c7ef5d18c9a0cd777ac32f8296ef3c6284037b4a3b845aed290c627291387f5",
+    "scripts/replication/mrf_2024_pipeline/README.md": "9c67ddf2d57a32b9d89da72d77aefe88ab14f2967f44ad05d619c4716fa324ea",
+    "scripts/replication/mrf_2024_pipeline/results/g2_UR.json": "b945bbb7e7514eda3d5d3d2e066d258d639d4d2cfe300d50465dfc79a66e284b",
+    "docs/replication/mrf_2024_replication.md": "51e8a96f22e9b417ab175d20a8d74a56c2b2afb760fbaa7f4a8477ebc04ddb9c"
+  },
+  "data_vintage_literal": [
+    "2020-01"
+  ],
+  "declared_mrf_constants": {
+    "B": 50,
+    "block_size": 12,
+    "random_state": 42,
+    "parallelise": true,
+    "n_cores": 12
+  },
+  "models_list_count": 14,
+  "external_required_feature_cache_literal": "/tmp/g2_F.parquet",
+  "exact_cached_feature_inputs_recovered_and_verified": false,
+  "driver_target_assignment_line": 94,
+  "driver_target_assignment_expression": "y.shift(-h)",
+  "driver_target_lag_assignment_line": 41,
+  "h1_complete_quarter_grid_illustration_not_recovered_scored_dates": {
+    "driver_feature_row": "2003Q1",
+    "driver_y_lag1_observation": "2002Q4",
+    "driver_shifted_label": "2003Q2",
+    "locked_primary_first_target": "2003Q1",
+    "locked_primary_first_origin": "2002Q4"
+  },
+  "reported_scalar_comparisons_not_independently_rescored": [
+    {
+      "model": "FA-AR",
+      "horizon": 1,
+      "checked_in_reported_ratio": 0.924,
+      "reference_ratio_in_driver": 0.83,
+      "absolute_difference": 0.09400000000000008,
+      "within_our_existing_point03_tolerance": false
+    },
+    {
+      "model": "FA-ARRF",
+      "horizon": 1,
+      "checked_in_reported_ratio": 0.872,
+      "reference_ratio_in_driver": 0.72,
+      "absolute_difference": 0.15200000000000002,
+      "within_our_existing_point03_tolerance": false
+    }
+  ],
+  "external_driver_executed": false,
+  "external_models_imported_or_fitted": false,
+  "reported_scores_reproduced_from_raw_predictions": false,
+  "original_author_caller_recovered": false,
+  "our_baseline_or_live_native_helper_run_changed": false
+}

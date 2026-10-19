@@ -1,0 +1,428 @@
+{
+  "status": "partial_native_helper_integrity_only",
+  "full_48_quarter_artifacts_verified": false,
+  "matches_declared_config": true,
+  "numerical_agreement_FA_AR_and_all_individual_seeds": null,
+  "seed_mean_ensemble_excluded_from_numerical_agreement_rule": true,
+  "exact_author_pipeline_verified": false,
+  "author_pipeline_boundary": "Original preprocessing and per-table runner not obtained; matching scores alone do not resolve this.",
+  "evaluation_targets_checked": 48,
+  "jobs_expected": 18,
+  "jobs_verified": 4,
+  "pending_jobs": [
+    {
+      "fit_end": "2004Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 303
+    }
+  ],
+  "data": {
+    "archive_sha256": "5b31cd2ad184ffc8d1710433fbc34a5ac110f8b4bfa69f3c1400fdd828a9de8c",
+    "member_sha256": "69226fbe297c09fdbf011c7c09e9c3abf04db1b1dfbba203b51291b825a00335",
+    "member": "The macroeconomy as a random forest (replication data)/FREDQD_2019-03.csv",
+    "header_repairs": {
+      "245": "S&P 500",
+      "246": "S&P: indust",
+      "247": "S&P div yield",
+      "248": "S&P PE ratio"
+    },
+    "series_count": 248,
+    "SW_membership_semantics": "historical_Stock_Watson_factor_subset_not_MRF_eligibility",
+    "target_transform": "delta_log_UNRATE",
+    "panel_UNRATE_tcode": 2,
+    "evaluation": "fixed_vintage_retrospective_not_historical_release_vintages"
+  },
+  "config": {
+    "study": "quarterly_unemployment_MRF_reconstruction",
+    "status": "declared_reconstruction_pending_exact_author_runner",
+    "target": "delta_log_UNRATE",
+    "horizon": 1,
+    "panel_start": "1959Q3",
+    "regression_start": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "refit_every_quarters": 8,
+    "factor_panel": "all",
+    "pca_rank": 5,
+    "outlier_iqr": 10,
+    "em_rank": 5,
+    "standardization": "native_all_supplied_rows",
+    "prior": "OLS",
+    "trees": 100,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "block": 8,
+    "RWR": 0.75,
+    "ridge_lambda": 0.1,
+    "MLF": 1,
+    "mtry": 0.3333333333333333,
+    "minsize": 10,
+    "trend_push": 1,
+    "reported_AR4_ratio": 1.0,
+    "reported_FA_AR_ratio": 0.83,
+    "reported_FA_ARRF_ratio": 0.72,
+    "predeclared_absolute_ratio_tolerance": 0.03,
+    "tolerance_is_project_reconstruction_criterion_not_author_standard": true,
+    "assumptions_not_verified_paper_settings": [
+      "all_248_series_for_PCA_rather_than_SW_subset",
+      "fixed_rank_5_EM_and_training_only_preprocessing",
+      "100_trees_and_seeds_101_202_303",
+      "OLS_prior_variance_100_for_intercept_and_1_for_slopes",
+      "RWR_lambda_MLF_trend_push_are_package_defaults_not_verified_table_invocation",
+      "PCA_orientation_sklearn_largest_loading_positive",
+      "native_all_supplied_rows_is_transductive_within_block_not_verified_table_invocation"
+    ]
+  },
+  "external_engine": {
+    "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+    "sha256": "e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631",
+    "url": "https://raw.githubusercontent.com/philgoucou/macrorf/bdb2ed435affb741aafdf78bab12c470ec6d55d0/R/MRF_v210403.R",
+    "license": "GPL-3 external dependency; not redistributed as MIT"
+  },
+  "integration_source_sha256": {
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a"
+  },
+  "linear_checker_sha256": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+  "verifier_sha256": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+  "linear_R_QR_vs_Python_SVD": [
+    {
+      "fit_end": "2002Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 1.0061396160665481e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2004Q4",
+      "maximum_absolute_difference": {
+        "AR4": 5.0133508455729725e-16,
+        "FA_AR": 2.0122792321330962e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2006Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 4.996003610813204e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2008Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.4988010832439613e-15,
+        "FA_AR": 4.163336342344337e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2010Q4",
+      "maximum_absolute_difference": {
+        "AR4": 0.0,
+        "FA_AR": 1.9949319973733282e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2012Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 1.9949319973733282e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "recomputed_state_input_checks": [
+    {
+      "fit_end": "2002Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2004Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2006Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2008Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2010Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2012Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    }
+  ],
+  "maximum_forecast_coefficient_reconstruction_error": 6.774095173689432e-16,
+  "completed_output_checksums": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101,
+      "sha256": "b65f0f2c499c751975ac9da58955aa321074def9a9e1580cd3a446e60c571164"
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 202,
+      "sha256": "ce6e5432425927c7590f0330e3d26ccff29dbc3b6e7e965cd87507a1217e8875"
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 303,
+      "sha256": "aeba7a7e2581465b4934e2586d8e048c7d767bf91f990a0fd53ce747741bc0ac"
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 101,
+      "sha256": "e9e9cc2ade2afe3e6e43e8acf703c83bca3aa921d5f1091f65470e21bbce4fa7"
+    }
+  ],
+  "runtime_records": [
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "634.914",
+      "standardization": "native_all_supplied_rows",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "650.78",
+      "standardization": "native_all_supplied_rows",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "638.894",
+      "standardization": "native_all_supplied_rows",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "700.704",
+      "standardization": "native_all_supplied_rows",
+      "prior": "OLS"
+    }
+  ],
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "partial_forest_scores_suppressed": true,
+  "tolerance_is_project_diagnostic_not_statistical_test": true,
+  "full_native_helper_declaration_verified": false,
+  "native_manifest_sha256": "df44467a0f0fc2b8226ede3bda939f9d12604eba3ac24fdbf0ae3e9256dbfa3c",
+  "paired_input_checks": [
+    {
+      "group": 0,
+      "seed": 101,
+      "matrix_sha256": "02c644adef7b834e77bdc200a5c5fa728f38b5f8a989048cd7b02eec1f166dec",
+      "source_settings_sha256": "8ab589e0f10b6ddd2dfa4603a6a9c36fae244616637ac645003b70fec8cf9113",
+      "native_settings_sha256": "23cdc7be6825b2ab62859ed8dfe5511c2a56aa8e8ee6da5f305fd2b6263805f5"
+    },
+    {
+      "group": 0,
+      "seed": 202,
+      "matrix_sha256": "02c644adef7b834e77bdc200a5c5fa728f38b5f8a989048cd7b02eec1f166dec",
+      "source_settings_sha256": "2663e244469db0a40b3d1e738a001d3e1ba8755f22bee60f26381d0561b1f445",
+      "native_settings_sha256": "e312ac99c952e6a27058046d2fb99c5403d174df04d8c94b59b321cb0768526f"
+    },
+    {
+      "group": 0,
+      "seed": 303,
+      "matrix_sha256": "02c644adef7b834e77bdc200a5c5fa728f38b5f8a989048cd7b02eec1f166dec",
+      "source_settings_sha256": "512067cdd9884084556a1b57ad40d51c8f80f25153abf7d395bde63106befc2c",
+      "native_settings_sha256": "5b870e29a567f581ddb1838f0b45a19a6c34fd886ab56a5553904d6b5e33f026"
+    },
+    {
+      "group": 1,
+      "seed": 101,
+      "matrix_sha256": "6ce77267b314a94828acaedd831b1d6550b6e15124116674e5e8ceed3d189662",
+      "source_settings_sha256": "12473fd47c86daaefe64b0adf0d470dad2618b36a30082f4b6e4d1dafbac13fc",
+      "native_settings_sha256": "89bb61d931504f06dd8a72ca76ae7b5c8b42c283190c53180df63ada3e78ecc7"
+    },
+    {
+      "group": 1,
+      "seed": 202,
+      "matrix_sha256": "6ce77267b314a94828acaedd831b1d6550b6e15124116674e5e8ceed3d189662",
+      "source_settings_sha256": "462e962017e489eb196708d477e493864ff5c1b327ffe282394b891153379f21",
+      "native_settings_sha256": "f5082896b282bb35884d1324555684decb7f74e8c8f4f2c4c74adcf52ef21b82"
+    },
+    {
+      "group": 1,
+      "seed": 303,
+      "matrix_sha256": "6ce77267b314a94828acaedd831b1d6550b6e15124116674e5e8ceed3d189662",
+      "source_settings_sha256": "8bae9f53675ffe9e0b848b235091182ba4167c30e6c0896784a7affb325654e0",
+      "native_settings_sha256": "47c20f225677c5be13ff966cffd361301513a597bf2f285aee0f054690e4b146"
+    },
+    {
+      "group": 2,
+      "seed": 101,
+      "matrix_sha256": "4245ee95f7bee71a2382d4540116e7c55bbfa4729640c3ec9d3425beb79a75ce",
+      "source_settings_sha256": "c8d2f4caf594eebaa153ab828ea79ee1e26b7ec726ec1f34860adf882f59872b",
+      "native_settings_sha256": "8b34715d609e7cbcd23d38888387f2956ff79d0f2b1e68d8e9d4cc11635bad73"
+    },
+    {
+      "group": 2,
+      "seed": 202,
+      "matrix_sha256": "4245ee95f7bee71a2382d4540116e7c55bbfa4729640c3ec9d3425beb79a75ce",
+      "source_settings_sha256": "374263d85ee71b567e7c85840a16d8dc3cf0460a1e8a098eda56ca140728dc85",
+      "native_settings_sha256": "2c873cc8294eb53fe2d5622a3d9732be1309db54b0ba5b53ac9c36b75d608faf"
+    },
+    {
+      "group": 2,
+      "seed": 303,
+      "matrix_sha256": "4245ee95f7bee71a2382d4540116e7c55bbfa4729640c3ec9d3425beb79a75ce",
+      "source_settings_sha256": "220002b622329d90d423e72744eac479d818755102e50ddd5a935cc04555ba43",
+      "native_settings_sha256": "443b15eb5dde3e58eae0c88f8f90cb7bea8401b4010e30461b6397f6a477376d"
+    },
+    {
+      "group": 3,
+      "seed": 101,
+      "matrix_sha256": "c432b81e0b6b1f78f013c564b9874a6c987393907846114a3b3db86b9f9f0853",
+      "source_settings_sha256": "dc3845596ab6c8a51418b1526f4f8825bce623818d30523c5422eac9c4a17b49",
+      "native_settings_sha256": "1c19c01a8ba5df9b2f5dc1ec4877eeee8fb80699c831c171cacb3d1dd8cb2e6e"
+    },
+    {
+      "group": 3,
+      "seed": 202,
+      "matrix_sha256": "c432b81e0b6b1f78f013c564b9874a6c987393907846114a3b3db86b9f9f0853",
+      "source_settings_sha256": "3c0d35d5f70264a375100002003ba608c0ee966c40c4f5cdf35e8e230dc6cc98",
+      "native_settings_sha256": "eb18bd1a975839bfa689bf664ebe4172986183fc08aa3fc2cdff687174d36d8e"
+    },
+    {
+      "group": 3,
+      "seed": 303,
+      "matrix_sha256": "c432b81e0b6b1f78f013c564b9874a6c987393907846114a3b3db86b9f9f0853",
+      "source_settings_sha256": "52600979908cbb745f998255856931a7a737837d989eaf927372116e4bb3a83c",
+      "native_settings_sha256": "44fddb5d5ddfcbdc74f1702c5871558a83af71087fe3e5b1f71c4fb2775d142e"
+    },
+    {
+      "group": 4,
+      "seed": 101,
+      "matrix_sha256": "267d0ee2c3b5e371399e2e7003e9a43f1974cc4279e7d2d6066cdb538cdb5877",
+      "source_settings_sha256": "038fe81f76f4d620d5ceff0ca587a0de89e967d14c34449970153cd2a148c872",
+      "native_settings_sha256": "aac26811008bbb50dd1272fa4f88e7c1b233f049f199aecabbdbba29c728e7ca"
+    },
+    {
+      "group": 4,
+      "seed": 202,
+      "matrix_sha256": "267d0ee2c3b5e371399e2e7003e9a43f1974cc4279e7d2d6066cdb538cdb5877",
+      "source_settings_sha256": "a61360c1d8c16a93a6ed674a80e1f69f9af5740c06927511805bf9b8620eeaff",
+      "native_settings_sha256": "4a7209054774bc764f18017cdc48f29d98e0b9c360c213eb6a5b3803dda9aa72"
+    },
+    {
+      "group": 4,
+      "seed": 303,
+      "matrix_sha256": "267d0ee2c3b5e371399e2e7003e9a43f1974cc4279e7d2d6066cdb538cdb5877",
+      "source_settings_sha256": "cfd6d147d8899234a46082f6e88509dae6ec226c727982e6eb2c47261b62de45",
+      "native_settings_sha256": "7aa43293786fe8fa4360cf887fa38123ba62e2d9e72caccb5d877758e6361b62"
+    },
+    {
+      "group": 5,
+      "seed": 101,
+      "matrix_sha256": "bff0fe2190aa8fac21db225aea48543ce5ceaf01a8d1914010dcb47d978b03cb",
+      "source_settings_sha256": "b9cfc93b62af0dea5792d38ef6e85e4d94a42be1d59d170226b7175de100918a",
+      "native_settings_sha256": "499e1aedb4b90d5bbbe2a5683e51d4c96ef2a0f1b0dfb5e5bb8d3065528d7829"
+    },
+    {
+      "group": 5,
+      "seed": 202,
+      "matrix_sha256": "bff0fe2190aa8fac21db225aea48543ce5ceaf01a8d1914010dcb47d978b03cb",
+      "source_settings_sha256": "c89441bd7acdba5b545de6a442ffe55fdf06eb8048cd2252772b165e81a97c97",
+      "native_settings_sha256": "5579a348b139d1913fea11e671033e04516d9fe6b1a1f16a3d52e2f791630cbf"
+    },
+    {
+      "group": 5,
+      "seed": 303,
+      "matrix_sha256": "bff0fe2190aa8fac21db225aea48543ce5ceaf01a8d1914010dcb47d978b03cb",
+      "source_settings_sha256": "6a8136a929c9228f8e64eb040af93f1949a8d60b2d3f63123e59a59f559df4b9",
+      "native_settings_sha256": "9bd12efc643acf3428403cff0275f20ad5f654bfacd01bc106a20b98259b26de"
+    }
+  ],
+  "source_primary_artifact_audit_repeated": true,
+  "primary_manifest_sha256": "dd5a75fee20208b37c297781a63c47f7b6ba676a39dabd1802d90f9fcee519a7",
+  "paired_diagnostic_code_sha256": "d1ab7395cb12353acf6958a10d60ccd828af623e03d086a4cca1975929ce1223",
+  "primary_result_replaced": false,
+  "causal_forecast_comparison": false,
+  "future_block_covariates_enter_native_moments": true,
+  "native_prior_conversion_not_repaired": true,
+  "recorded_R_and_pracma_versions_match_primary": true,
+  "original_author_caller_recovered": false,
+  "matching_FA_AR_RMSE_reductions": []
+}
