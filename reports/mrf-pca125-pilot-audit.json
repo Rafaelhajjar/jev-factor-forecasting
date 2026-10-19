@@ -1,0 +1,57 @@
+{
+  "status": "partial_PCA125_integrity_only",
+  "source_primary_and_eligibility_audits_repeated": true,
+  "sensitivity_source_sha256": "6632e8003c211a3f7b723053f011278e04b5b40f5a7f1658df77c0fff1240c3b",
+  "dependencies_sha256": {
+    "pca_eligibility.py": "3abc44ca3f6de089e8dd55a0b3033c2cc31eeb1ca05363326ba9a539228df5d5",
+    "pca_basis_audit.py": "9c0a906e501b62076055fd1934dd3392a208dfdf722dd5a2783dd089eafa574c",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "arrf_audit.py": "86aaab5fbc7efda5af3df8af14da8e69ec46a5e92555d17c1cfdb6e0f8e6e821",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "reference_pca.R": "4d0b2ba3a6d01625a588353f5fd2a2d8ca3264a703c54fda1498dafdbde10c82",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a"
+  },
+  "manifest_sha256": "0037b1cec32b4ba569763282987cc018b3cd4ef05b98a3b3e7e5415b1b6c2881",
+  "eligibility_report_sha256": "87d60a38380f6db620d8b1f9715d5e65265126719e2aec1e2f530238a0c0c8e1",
+  "jobs_verified": 1,
+  "pending_jobs": [],
+  "output_checks": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101,
+      "sha256": "2121d2dbe78c05ee11023fa5e6a6880a2805c2f80256c509d7a08442ab881b5f",
+      "runtime": {
+        "R_version": "R version 4.6.1 (2026-06-24)",
+        "pracma_version": "2.4.6",
+        "elapsed_seconds": "7.718",
+        "standardization": "train_only",
+        "prior": "OLS"
+      }
+    }
+  ],
+  "linear_checks": [
+    {
+      "fit_end": "2002Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.020562075079397e-17,
+        "AR4_R_QR": 5.594483210025203e-17,
+        "FA_AR_PCA125_R_QR": 1.8908485888147197e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "maximum_coefficient_reconstruction_error": 2.42861286636753e-16,
+  "partial_forest_scores_suppressed": true,
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "paired_eligibility_effects": [],
+  "forest_gains_over_own_fixed_factor_comparator": [],
+  "subset_FA_AR_and_all_individual_forest_seeds_within_tolerance": null,
+  "exact_author_pipeline_verified": false,
+  "original_author_PCA_eligibility_recovered": false,
+  "primary_result_replaced": false,
+  "eligibility_selected_using_forecast_loss": false
+}

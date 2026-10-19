@@ -14,7 +14,7 @@ The [completed sign sensitivity](reports/MRF_R_BASIS_SENSITIVITY.md) changes onl
 
 A [training-only eligibility audit](reports/MRF_PCA_ELIGIBILITY_AUDIT.md) now separates the historical 125-series PCA subset from the full 248-series forest state. All six refits preserve every non-factor entry exactly and pass independent R checks. No new forecast loss was calculated, and the author’s actual eligibility rule remains unknown. A later performance sensitivity needs a separate declaration.
 
-The [PCA125 forecast sensitivity](docs/PCA125_SENSITIVITY.md) is now separately declared and implemented. It changes only cross-sectional factor eligibility, keeps the full indicator/MAF state and refits its own fixed FA-AR comparator. Its bounded pilot and full forecast comparison are not yet completed; no PCA125 performance score is claimed.
+The [PCA125 forecast sensitivity](docs/PCA125_SENSITIVITY.md) is separately declared and implemented. It changes only cross-sectional factor eligibility, keeps the full indicator/MAF state and refits its own fixed FA-AR comparator. Its actual-R pilot and [independent audit](reports/mrf-pca125-pilot-audit.json) pass, with coefficient discrepancy at most 2.5e-16 and linear-check differences at most 1.9e-16. The full 18-job comparison is pending; no PCA125 performance score is claimed.
 
 ## The idea we are building on
 

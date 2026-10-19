@@ -2,6 +2,8 @@
 
 Declared October 19, 2026, after seeing the original FA-ARRF, ARRF and R-sign results, but before this variant's forecast outcomes. The [configuration](../configs/mrf_pca125_sensitivity.json) records those known results and the already-completed training diagnostics. This is a post-primary investigation, not a blind confirmatory test.
 
+The declaration and runner were published in `5db5735` before the pilot and full outcomes. The actual-R two-tree/eight-date pilot now passes its [independent audit](../reports/mrf-pca125-pilot-audit.json), with coefficient discrepancy at most 2.5e-16 and linear-check differences at most 1.9e-16. No pilot scores are published. All 176 local tests pass, including seven real-R contracts. The full performance comparison is not yet complete.
+
 ## Hypothesis
 
 Our original factors use all 248 series. The archived metadata also identify a historical 125-series factor subset. The [training-only audit](../reports/MRF_PCA_ELIGIBILITY_AUDIT.md) shows that the subset changes the factor representation, while the first two factors remain strongly related to their original counterparts. A nonlinear coefficient forest can respond to these differences. We do not assume it will improve.
