@@ -4,7 +4,7 @@ Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its
 
 This project now extends **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. The first task is replication. The main experiment then adds Jev to the replicated model and tests whether it improves forecasts beyond the forest itself.
 
-**Status:** the research plan has been refactored. The executable code still runs the original experimental scaffold. MRF replication and the new Jev extension are not implemented or evaluated yet. Existing results are preserved as preliminary work, not evidence for the new study.
+**Status:** the final 2024 article and its 32-page appendix have been read, and the plan now uses their settings, comparison cells and mechanism tests. The executable code still runs the original experimental scaffold. MRF replication and the new Jev extension are not implemented or evaluated yet. Existing results are preserved as preliminary work, not evidence for the new study.
 
 ## The idea we are building on
 
@@ -17,7 +17,7 @@ beta(t)  = forest(S(t))
 
 `X(t)` contains the terms whose contributions we want to interpret. `S(t)` contains the information used to determine their coefficients. These are different roles: a variable can help identify a regime without being an explicit term in the small forecasting equation.
 
-Our starting point is the paper's factor-augmented model. The working-paper specification uses target-history terms and two common factors associated with real activity and leading indicators. Exact published-version details must be reconciled before replication is declared complete. [Working paper](https://arxiv.org/pdf/2006.12724), [implementation documentation](https://mrf-web.readthedocs.io/en/latest/).
+Our starting point is the final paper's factor-augmented model: an intercept, two target-history terms, and two PCA factors associated with real activity and leading indicators. All five coefficients can vary. The forest sees a richer state, including five PCA factors with their lags, individual indicators and moving-average factors. [Final-source findings](docs/APPENDIX_FINDINGS.md), [implementation documentation](https://mrf-web.readthedocs.io/en/latest/).
 
 ## The main extension: MRF + Jev
 
@@ -43,7 +43,7 @@ candidate(a,b) = MRF intercept and AR contribution
 Jev forecast = sum_(a,b) p(a,b | current evidence) * candidate(a,b)
 ```
 
-This is an extension of the forest's forecast. It can strengthen as well as suppress a factor, addressing a limitation of our earlier shrinkage-only idea. A joint menu accounts for both adjustments in one decision rather than assuming independent answers form a coherent joint choice.
+This is an extension of the forest's forecast. It can strengthen as well as suppress a factor, addressing a limitation of our earlier shrinkage-only idea. A joint menu elicits both adjustments in one decision. For a linear point forecast, only the marginal mean multipliers matter; a later many-factor version can use per-factor/grouped questions without claiming to recover a joint posterior.
 
 The unmodified forest is inside the menu at `(1,1)`. A uniform distribution over the symmetric grid also recovers its forecast. The initial policy preserves the forest's coefficient signs and cannot restore an effect whose estimated coefficient is zero. Signed or additive adjustments are a later, separately evaluated extension.
 
@@ -63,7 +63,9 @@ The decisive comparison is **MRF + Jev versus original MRF**. Beating a fixed re
 
 We located and inspected the journal's [replication-data archive](https://doi.org/10.15456/jae.2023321.0115060814). It contains `FREDQD_2019-03.csv` and `FREDMD_2018-01.csv` in levels. The archive contains data, not a complete reproduction script. Its files and hashes are recorded in the [replication checklist](docs/MRF_REPLICATION.md).
 
-The planned first target is **quarterly unemployment, one quarter ahead**, with the target definition and timing taken from the version-checked paper setup. This choice is fixed now; it is not selected using our future Jev results. GDP and other targets/horizons follow only after the first pipeline is reproduced and frozen.
+The first target remains **quarterly unemployment, one quarter ahead**, using the paper's first difference of log unemployment. The published evaluation covers 2003Q1–2014Q4. Appendix Table 4 reports a factor-augmented MRF/AR(4) RMSE ratio of **0.72**; that is a replication target, not our result. The exact remaining processing/defaults are tracked in the [checklist](docs/MRF_REPLICATION.md).
+
+The appendix strengthens the plan in four ways: six data-rich synthetic mechanisms (including constant coefficients with changing volatility), explicit block-subsampling settings, neural and interaction comparators, and defined monthly average-growth targets. We also add a constant bounded-multiplier control so ordinary recalibration cannot masquerade as dynamic Jev judgment. Prespecified secondary tasks are GDP two quarters ahead, unemployment six quarters ahead, and monthly CPI averaged over the next 12 months. These deliberately include tasks where conventional alternatives are strong.
 
 A fixed archived vintage permits retrospective replication. It does not establish that every observation was available at the historical forecast date. Historical-vintage evaluation and a prospective test remain separate stages.
 
@@ -71,13 +73,14 @@ A fixed archived vintage permits retrospective replication. It does not establis
 
 | Stage | Work | Completion requirement |
 | --- | --- | --- |
-| 1 | Reconcile paper versions, archive and author code | Lock exact data, transformations, factor construction, target and evaluation schedule |
-| 2 | Reproduce linear and MRF forecasts | Explain numerical differences before adding Jev |
-| 3 | Implement the common 25-candidate task | Validate timing, uniform recovery, shared evidence and prequential gate training |
-| 4 | Compare original MRF, learned gate, Jev and LLM | Freeze prompts and settings before the complete retrospective comparison |
-| 5 | Extend targets and collect stronger validation | Report robustness, availability and training-contamination limits |
+| E0 | Finish the source/code audit | Final PDFs read; resolve remaining processing/defaults and source inconsistencies |
+| E1 | Reproduce quarterly unemployment h=1 | Compare to the named Table 4 cells before adding Jev |
+| E2 | Controlled synthetic mechanisms | Distinguish changing relevance from changing noise, nuisance signals and unpredictable changes |
+| E3 | Common 25-candidate selector comparison | Freeze evidence and prompts; compare MRF, constant/rule/learned policies, Jev and LLM |
+| E4 | Prespecified secondary tasks and ablations | Report all tasks, semantic/order sensitivity and refit effects |
+| E5 | More factors and stronger validation | Separate 2/4/8-factor scaling, forest replacement, vintage and prospective evidence |
 
-The [research protocol](docs/RESEARCH_PROTOCOL.md) specifies the interventions, controls, evaluation and implementation tasks. A [machine-readable planning manifest](research/mrf_extension_plan.json) records the design; it is not an executable experiment configuration.
+The [research protocol](docs/RESEARCH_PROTOCOL.md) specifies the interventions, controls, evaluation and implementation tasks. The [appendix evidence note](docs/APPENDIX_FINDINGS.md) records exact source locations, ratios, settings and unresolved inconsistencies. A [machine-readable planning manifest](research/mrf_extension_plan.json) records the design; it is not an executable experiment configuration. Source PDFs are not redistributed in this repository.
 
 ## What runs today
 

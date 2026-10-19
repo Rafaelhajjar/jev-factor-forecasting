@@ -4,7 +4,9 @@
 
 On October 18, 2026, the user selected Goulet Coulombe's *The Macroeconomy as a Random Forest* as the research foundation. The [current protocol](../docs/RESEARCH_PROTOCOL.md) now starts with replication, followed by a joint 25-action adjustment of two MRF factor contributions. Jev can weaken or strengthen those contributions; the forest's other terms remain the reference.
 
-The journal's archive was downloaded and inspected; filenames, hashes and parsing findings are in the [replication checklist](../docs/MRF_REPLICATION.md). Published-version reconciliation, quarterly data loading, MRF reproduction, new policy implementation and hosted evaluation are pending. This is a plan refactor, not a completed MRF implementation.
+The final 21-page article and 32-page publisher appendix have now been read. The [appendix evidence note](../docs/APPENDIX_FINDINGS.md) records the first Table 4 comparison cells, untuned forest/block settings, six data-rich simulation mechanisms, neural comparators, monthly average-growth targets and source inconsistencies. The primary target remains log-differenced quarterly unemployment h=1; the source FA-ARRF/AR(4) ratio of 0.72 is not our result. Constant recalibration and prespecified strong-comparator secondary tasks have been added to the plan.
+
+The journal's archive was downloaded and inspected; filenames, hashes and parsing findings are in the [replication checklist](../docs/MRF_REPLICATION.md). Remaining source/code discrepancies, effective settings, quarterly data loading, numerical MRF reproduction, new policy implementation and hosted evaluation are still pending. This update changes documentation and the non-executable planning manifest only.
 
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
 

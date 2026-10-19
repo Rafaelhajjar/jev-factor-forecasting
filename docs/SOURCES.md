@@ -1,18 +1,21 @@
 # Sources for the MRF + Jev extension
 
-Reviewed October 18, 2026. The [active protocol](RESEARCH_PROTOCOL.md) separates the source paper's method from our proposed extension. The [legacy source notes](LEGACY_SOURCES.md) preserve the initial scaffold's references.
+Reviewed October 18, 2026, after reading the final article and its publisher-supplied appendix. The [active protocol](RESEARCH_PROTOCOL.md) separates the source paper's method from our proposed extension. The [appendix evidence note](APPENDIX_FINDINGS.md) records exact source locations and remaining discrepancies. The [legacy source notes](LEGACY_SOURCES.md) preserve the initial scaffold's references.
 
 ## Research foundation
 
 | Primary source | Use in this project | Evidence boundary |
 | --- | --- | --- |
-| [Goulet Coulombe (2024), JAE](https://doi.org/10.1002/jae.3030) | Main research foundation: forest-driven changing coefficients | Its results do not establish a Jev advantage |
-| [Accessible working paper](https://arxiv.org/pdf/2006.12724) | Provisional model, factor and timing details for the replication audit | It is an earlier draft; reconcile the published version before claiming reproduction |
+| [Goulet Coulombe (2024), JAE](https://doi.org/10.1002/jae.3030) | Final 21-page article read; Section 3 and Tables 1–2 establish main target, factor and timing design | Its results do not establish a Jev advantage; code-level preprocessing still needs verification |
+| [Published supporting appendix](https://onlinelibrary.wiley.com/doi/suppl/10.1002/jae.3030/supinfo/jae3030-sup-0001-Appendix.pdf) | All 32 PDF pages read; A.2 mechanism tests, A.4/A.6 settings, A.7 monthly targets and Tables 4–5 checked | Some exact defaults remain unstated; text/table discrepancies are recorded rather than silently resolved |
+| [Earlier working paper](https://arxiv.org/pdf/2006.12724) | Historical context only | No longer the authority for the current specification |
 | [Journal data archive](https://doi.org/10.15456/jae.2023321.0115060814) | Exact deposited data and provenance | Archive contains data, not the entire experiment pipeline or historical release vintages |
 | [Author's R package](https://github.com/philgoucou/macrorf) | Candidate reference MRF implementation | Exact paper settings and result reproduction remain to be checked |
 | [Python implementation documentation](https://mrf-web.readthedocs.io/en/latest/) | Portability comparison and implementation guidance | Do not assume identical predictions to the R reference |
 
 The archive's [README](https://journaldata.zbw.eu/dataset/c48432e1-5a25-49f1-95b1-6c681f21e252/resource/57da9dba-6157-4e56-838a-f57358854ca7/download/readme.gc.txt) and the downloaded ZIP were inspected directly. File identities, checksums and parsing findings are recorded in [MRF_REPLICATION.md](MRF_REPLICATION.md). These are verified inputs; model replication remains pending.
+
+The final PDFs were supplied through the user's downloads. The appendix SHA-256 is `665fac2b6a21b8f2b28442dfe60aec30aee542c3dac2876b322f4e249718fb1b`. PDFs, page renders and extracted full text are not committed. Table ratios in the documentation are attributed source facts, not locally reproduced scores.
 
 ## Jev interface and comparison
 

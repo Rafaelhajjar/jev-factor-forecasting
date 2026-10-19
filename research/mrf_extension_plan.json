@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-18",
   "implementation_status": "planned_not_implemented",
@@ -8,8 +8,27 @@
     "author": "Philippe Goulet Coulombe",
     "publication_year": 2024,
     "doi": "10.1002/jae.3030",
+    "published_article_read": true,
+    "published_appendix_read": true,
+    "published_specification_documented": true,
     "published_version_reconciled": false,
     "replication_completed": false,
+    "appendix": {
+      "url": "https://onlinelibrary.wiley.com/doi/suppl/10.1002/jae.3030/supinfo/jae3030-sup-0001-Appendix.pdf",
+      "pdf_pages": 32,
+      "printed_pages": "40-71",
+      "sha256": "665fac2b6a21b8f2b28442dfe60aec30aee542c3dac2876b322f4e249718fb1b",
+      "pdf_committed": false,
+      "evidence_note": "docs/APPENDIX_FINDINGS.md"
+    },
+    "remaining_source_code_discrepancies": [
+      "extra_HOUST_target_row_and_definition",
+      "monthly_AR12_prose_vs_AR4_table_denominator",
+      "monthly_panel_count_and_eligible_series",
+      "A2_prose_600_OOS_vs_Figure15_caption_750_OOS",
+      "exact_effective_forest_and_neural_settings",
+      "TV_FAAR_table_estimation_schedule"
+    ],
     "accessible_earlier_manuscript": "https://arxiv.org/pdf/2006.12724"
   },
   "data": {
@@ -41,13 +60,79 @@
   "first_experiment": {
     "target": "quarterly_unemployment",
     "horizon_quarters": 1,
-    "target_transform": "pending_published_version_reconciliation",
+    "target_transform": "first_difference_of_natural_log_unemployment",
+    "target_transform_source": "published_article_section_3_page_408",
     "model": "factor_augmented_MRF",
     "number_of_factors": 2,
-    "sample_start": null,
-    "evaluation_start": null,
-    "evaluation_end": null,
-    "sample_status": "pending_reference_version_lock"
+    "sample_start": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "evaluation_dates_refer_to": "target_dates_origin_indexing_requires_code_audit",
+    "estimation_window": "expanding",
+    "main_reestimation_interval_years": 2,
+    "forecast_method": "direct",
+    "sample_status": "published_design_documented_exact_pipeline_not_reproduced",
+    "reported_source_ratios_not_project_results": {
+      "source": "appendix_Table_4_PDF_page_31_printed_page_70",
+      "denominator": "AR4_RMSE",
+      "FA_AR": 0.83,
+      "RF": 1.0,
+      "RF_MAF": 0.85,
+      "AR_plus_RF": 0.84,
+      "FA_ARRF": 0.72,
+      "ARRF": 0.90,
+      "TV_FAAR": 1.19,
+      "NN": 0.80
+    }
+  },
+  "published_forest_settings": {
+    "main_RF_hyperparameters_tuned": false,
+    "subsampling_rate": 0.75,
+    "block_length_quarters": 8,
+    "block_length_months": 24,
+    "minimum_parent_size_quarterly": 10,
+    "minimum_parent_size_monthly": 15,
+    "ridge_prior_mean": "OLS_coefficients",
+    "effective_mtry": null,
+    "RWR": null,
+    "ridge_lambda": null,
+    "MLF": null,
+    "trend_push": null,
+    "number_of_trees": null,
+    "nulls_mean": "effective_per_result_setting_requires_pinned_code_audit_not_zero"
+  },
+  "selector_development_proposal": {
+    "prequential_training_target_dates": ["1985Q1", "1997Q4"],
+    "chronological_validation_target_dates": ["1998Q1", "2002Q4"],
+    "test_target_dates": ["2003Q1", "2014Q4"],
+    "purge_unmatured_labels_at_boundaries": true,
+    "prompt_and_configuration_frozen": false,
+    "source_status": "our_extension_not_a_claim_about_all_paper_models"
+  },
+  "controlled_synthetic_extension": {
+    "source": "appendix_A2_and_Table_3",
+    "observed_equation_regressors": 2,
+    "latent_state_drivers": 2,
+    "noisy_state_series_per_driver": 50,
+    "one_state_driver_irrelevant": true,
+    "mechanisms": [
+      "switching_intercept_and_coefficients",
+      "random_walk_coefficients",
+      "latent_driver_plus_slow_time_change",
+      "switching_plus_slow_time_change",
+      "switching_plus_structural_break",
+      "constant_coefficients_with_stochastic_volatility"
+    ],
+    "additional_project_stress_tests": ["zero_coefficient", "sign_reversal"],
+    "project_path_length": 1000,
+    "project_initial_fit_length": 400,
+    "project_development_length": 200,
+    "project_test_length": 400,
+    "planned_numerical_control_seeds": 50,
+    "hosted_subset_frozen": false,
+    "hosted_call_budget": null,
+    "exact_source_generator_reproduced": false,
+    "split_is_project_design_not_source_replication": true
   },
   "primary_extension": {
     "name": "MRF_plus_Jev",
@@ -67,18 +152,39 @@
   },
   "required_controls": [
     "paper_AR_and_linear_factor_benchmarks",
+    "paper_RF_MAF_ARRF_AR_plus_RF_TV_FAAR_and_NN",
     "replicated_factor_augmented_MRF",
     "MRF_plus_uniform_identity",
+    "MRF_plus_constant_bounded_multipliers_allowing_mixtures",
     "MRF_plus_rule",
     "MRF_plus_learned_multinomial_gate",
     "MRF_plus_loss_trained_gate",
     "MRF_plus_LLM"
   ],
+  "synthetic_architecture_controls": [
+    "OLS", "rolling_OLS", "RF", "MRF", "PCA_interaction_OLS", "Lasso_interactions", "NN", "macro_NN"
+  ],
+  "prespecified_secondary_tasks": [
+    {"target": "quarterly_GDP", "horizon": 2, "unit": "quarters", "strong_comparator": "NN"},
+    {"target": "quarterly_unemployment", "horizon": 6, "unit": "quarters", "strong_comparator": "TV_FAAR"},
+    {
+      "target": "monthly_CPI_inflation",
+      "horizon": 12,
+      "unit": "months",
+      "aggregation": "average_transformed_outcomes_over_next_h_months_not_point_at_t_plus_h",
+      "required_controls": ["ARRF", "Tiny_ARRF", "RF_MAF", "AO_style_moving_averages"],
+      "reported_ratio_denominator_resolved": false
+    }
+  ],
+  "experiment_order": ["E0_source_code_audit", "E1_reproduction", "E2_controlled_mechanisms", "E3_primary_selectors", "E4_secondary_and_ablations", "E5_scaling_and_stronger_validation"],
   "evaluation": {
     "primary_metric": "RMSE_against_unchanged_MRF",
     "secondary_metrics": ["MAE", "multiclass_Brier", "log_loss", "latency", "billed_cost", "failure_rate"],
     "decision_label": "joint_candidate_with_lowest_realized_squared_error",
     "uncertainty_method": "paired_moving_block_bootstrap_to_be_frozen_on_development_data",
+    "forest_training_block_length_is_not_forecast_loss_bootstrap_choice": true,
+    "suggested_meaningful_relative_RMSE_improvement": 0.05,
+    "inferential_procedure_frozen": false,
     "historical_pretraining_contamination_unresolved": true,
     "prospective_validation_completed": false
   }
