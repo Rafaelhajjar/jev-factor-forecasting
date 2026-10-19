@@ -28,6 +28,15 @@ def main() -> None:
     replication.add_argument("--max-refits", type=int)
     replication.add_argument("--prepare-only", action="store_true")
     replication.add_argument("--resume", action="store_true")
+    audit = sub.add_parser(
+        "audit-mrf", help="Verify saved quarterly artifacts and independent R OLS"
+    )
+    audit.add_argument("--run", type=Path, required=True)
+    audit.add_argument("--archive", type=Path, default=Path("data/raw/mrf-replication.zip"))
+    audit.add_argument("--config", type=Path, default=Path("configs/mrf_unemployment.json"))
+    audit.add_argument("--output", type=Path, required=True)
+    audit.add_argument("--rscript", default="Rscript")
+    audit.add_argument("--allow-partial", action="store_true")
     experiment = sub.add_parser("run", help="Run a bounded walk-forward experiment")
     experiment.add_argument("--config", type=Path, required=True)
     experiment.add_argument("--output", type=Path, required=True)
@@ -43,6 +52,20 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "download-fred":
         result = download_fred(args.output)
+    elif args.command == "audit-mrf":
+        from jev_factor.replication_audit import audit_run
+
+        if args.output.exists():
+            raise FileExistsError("Audit output already exists; choose a fresh path")
+        result = audit_run(
+            args.run,
+            args.archive,
+            json.loads(args.config.read_text()),
+            rscript=args.rscript,
+            allow_partial=args.allow_partial,
+        )
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(result, indent=2) + "\n")
     elif args.command == "replicate-mrf":
         from jev_factor.replication import run_reconstruction
 

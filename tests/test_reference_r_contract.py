@@ -10,7 +10,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from jev_factor.replication import LINEAR_X
+from jev_factor.replication import LINEAR_X, linear_prediction
+from jev_factor.replication_audit import _r_linear
 
 ENGINE = os.environ.get("JEV_MRF_REFERENCE_ENGINE")
 R_LIBRARY = os.environ.get("JEV_MRF_R_LIBRARY")
@@ -102,3 +103,20 @@ def test_native_all_rows_scaling_exposes_transductive_dependence(tmp_path):
     changed.loc[71:, LINEAR_X] *= 1e6
     altered = _run(tmp_path, "future_x", changed, "native_all_supplied_rows")
     assert abs(original.prediction.iloc[0] - altered.prediction.iloc[0]) > 1e-8
+
+
+def test_independent_base_r_qr_agrees_with_python_least_squares(tmp_path):
+    matrix = _matrix()
+    matrix["y_lag3"] = matrix["state1"]
+    matrix["y_lag4"] = matrix["state2"]
+    matrix["F1_lag2"] = matrix["state3"]
+    matrix["F2_lag2"] = matrix["state4"]
+    path = tmp_path / "matrix.csv"
+    matrix.to_csv(path, index=False, float_format="%.17g")
+    qr, runtime = _r_linear(path, 70, shutil.which("Rscript"), tmp_path)
+    ar = [f"y_lag{k}" for k in range(1, 5)]
+    fa = ar + [f"F{j}_lag{k}" for j in [1, 2] for k in [1, 2]]
+    assert "R version" in runtime
+    for model, columns in [("AR4", ar), ("FA_AR", fa)]:
+        expected = linear_prediction(matrix.iloc[:70], matrix.iloc[70:], columns)
+        np.testing.assert_allclose(qr[model], expected, rtol=0, atol=1e-10)

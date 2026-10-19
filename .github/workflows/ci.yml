@@ -33,3 +33,7 @@ jobs:
           JEV_MRF_REFERENCE_ENGINE: data/raw/MRF_v210403.R
           JEV_MRF_R_LIBRARY: runs/r-library
         run: uv run pytest -q tests/test_reference_r_contract.py
+      - name: Bounded quarterly integration smoke, not the 48-quarter benchmark
+        run: uv run jev-factor replicate-mrf --output runs/ci-quarterly --trees 2 --seeds 101 --max-refits 1
+      - name: Check quarterly smoke artifacts and explicitly retain partial status
+        run: uv run jev-factor audit-mrf --run runs/ci-quarterly --output runs/ci-quarterly-audit.json --allow-partial

@@ -93,3 +93,11 @@ Every run saves data and source hashes, configuration, masked inputs, training r
 The extra HOUST target row, monthly AR(12)/AR(4) denominator, A.2's 600/750 OOS discrepancy, exact neural settings and TV-FAAR table schedule cannot be inferred from a generic MRF engine. They remain open in the [appendix register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolve). HOUST itself exists in the data with transformation code 5; that does not establish the intended table target or timing.
 
 Do not tune the unemployment test period to hit 0.72. If reconstruction differs, preserve it and investigate the gap transparently. Exact replication needs the missing benchmark/generator scripts or authoritative clarification. Jev evaluation remains behind this gate.
+
+## 7. Whole-run verification
+
+The separate `audit-mrf` command checks the data/engine/source hashes, every declared refit/seed/date, raw-level log-difference targets and all eight target lags, the held-out-target mask, freshly rebuilt state matrices, saved coefficients and aggregated scores. State reconstruction uses our same declared preparation implementation; it verifies saved inputs, not an independently recovered author pipeline. Base-R QR regression independently checks the Python SVD linear forecasts. The verifier and R checker are themselves hashed in its report.
+
+The checker rejects incomplete runs unless explicitly asked for a progress audit. Such an audit withholds forest scores and a numerical pass. The full diagnostic requires fixed FA-AR and every individual declared forest seed to fall within the previously declared 0.03 absolute-ratio tolerance; the seed-mean ensemble is excluded from that pass rule. This rule was recorded before full forest results were inspected. Exact source fidelity is always a separate unresolved item, even if every score matches.
+
+October 19 checks: all 48 linear forecasts agree between R and Python within 1.5e-15. All six 1,041-column state matrices match recomputation within 3.6e-15, and their EM fits converge. At the first progress audit, four of eighteen forest jobs were complete and their maximum coefficient-reconstruction discrepancy was 5.6e-16. These are numerical integrity checks, not full forest performance results.

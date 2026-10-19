@@ -100,11 +100,17 @@ uv run jev-factor replicate-mrf --output runs/mrf-unemployment --workers 4
 
 # Resume the exact same run after interruption; changed inputs are rejected.
 uv run jev-factor replicate-mrf --output runs/mrf-unemployment --workers 4 --resume
+
+# Verify full artifacts, raw-data timing, state reconstruction and independent R OLS.
+uv run jev-factor audit-mrf --run runs/mrf-unemployment \
+  --output reports/mrf-unemployment-audit.json
 ```
 
 The R engine is computationally expensive. `--prepare-only` writes inputs and linear benchmarks without fitting forests. Outputs include configuration/source hashes, forecasts, coefficients, per-seed metrics and R runtime information. Keep all seeds; a seed-mean forecast is separately labeled and is not the paper's reported forest.
 
-The test suite has 46 ordinary tests plus 3 optional tests using the actual R engine. All 49 passed locally, including changed-input and checkpoint guards. To enable the R contracts:
+`audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
+
+The suite has 57 ordinary tests plus 4 optional real-R tests (three engine contracts and an independent linear check). All 61 passed locally, including changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
@@ -112,7 +118,7 @@ JEV_MRF_R_LIBRARY=runs/r-library \
 uv run pytest -q
 ```
 
-CI includes a separate actual-R contract job; it does not run the expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
+CI includes real-R contracts and a bounded two-tree/eight-quarter integration smoke with artifact verification, not the full expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
 
 Model credentials are needed when the new integration reaches its API pilot; they are not needed for this reconstruction. No hosted forecasting calls have been made.
 

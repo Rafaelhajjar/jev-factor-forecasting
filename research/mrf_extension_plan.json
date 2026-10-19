@@ -81,6 +81,8 @@
     "reconstruction_seeds": [101, 202, 303],
     "reconstruction_trees_per_seed": 100,
     "absolute_ratio_tolerance_declared_before_full_forest_results": 0.03,
+    "numerical_agreement_requires_FA_AR_and_every_individual_declared_seed": true,
+    "seed_mean_ensemble_excluded_from_numerical_agreement_pass_rule": true,
     "tolerance_is_project_diagnostic_not_author_standard": true,
     "completed_project_linear_result": {
       "n": 48,
