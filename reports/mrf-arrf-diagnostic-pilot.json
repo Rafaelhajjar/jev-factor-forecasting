@@ -1,0 +1,25 @@
+{
+  "status": "bounded_pilot_not_source_comparison",
+  "jobs_verified": 1,
+  "targets_per_model": 8,
+  "maximum_coefficient_reconstruction_error": 1.3704315460216776e-16,
+  "output_checks": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101,
+      "sha256": "88da26977b1658735e263ea884f725425ad88ed820ebb9276820367887a9d039",
+      "runtime": {
+        "R_version": "R version 4.6.1 (2026-06-24)",
+        "pracma_version": "2.4.6",
+        "elapsed_seconds": "9.449",
+        "standardization": "train_only",
+        "prior": "OLS"
+      }
+    }
+  ],
+  "partial_forest_scores_suppressed": true,
+  "metrics": [],
+  "published_ARRF_comparisons": [],
+  "exact_author_pipeline_verified": false,
+  "FA_ARRF_replication_established_by_this_diagnostic": false
+}

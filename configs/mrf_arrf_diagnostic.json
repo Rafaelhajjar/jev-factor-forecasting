@@ -1,0 +1,19 @@
+{
+  "study": "quarterly_unemployment_ARRF_diagnostic",
+  "declaration_date": "2026-10-19",
+  "purpose": "Localize the failed FA-ARRF reconstruction using a named paper comparator, not optimize test-period settings",
+  "model": "ARRF",
+  "linear_terms": ["y_lag1", "y_lag2"],
+  "trees": 100,
+  "seeds": [101, 202, 303],
+  "reported_ratio": 0.9,
+  "reported_ratio_source": "published_appendix_Table_4_unemployment_h1",
+  "absolute_ratio_diagnostic_tolerance": 0.03,
+  "original_FA_ARRF_failure_already_known": true,
+  "reuse_exact_primary_state_matrices": true,
+  "change_primary_results_or_tolerance": false,
+  "all_other_effective_settings_inherited_from_primary": true,
+  "OLS_prior_variance_rule_inherited": "100_for_intercept_1_per_remaining_slope",
+  "no_test_period_choice_selection": true,
+  "ARRF_match_does_not_satisfy_FA_ARRF_replication_goal": true
+}

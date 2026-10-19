@@ -21,13 +21,13 @@ pytestmark = pytest.mark.skipif(
 )
 
 
-def _run(tmp_path, name, matrix, mode):
+def _run(tmp_path, name, matrix, mode, xnames=LINEAR_X):
     directory = tmp_path / name
     directory.mkdir()
     matrix.to_csv(directory / "input.csv", index=False, float_format="%.17g")
     settings = {
         "ntrain": 70,
-        "xnames": ",".join(LINEAR_X),
+        "xnames": ",".join(xnames),
         "seed": 19,
         "trees": 2,
         "block": 8,
@@ -74,15 +74,16 @@ def _matrix():
     return matrix
 
 
-def test_reference_future_targets_are_masked_and_coefficients_reconstruct(tmp_path):
+@pytest.mark.parametrize("xnames", [LINEAR_X, ["y_lag1", "y_lag2"]], ids=["FA_ARRF", "ARRF"])
+def test_reference_future_targets_are_masked_and_coefficients_reconstruct(tmp_path, xnames):
     matrix = _matrix()
-    original = _run(tmp_path, "original", matrix, "train_only")
+    original = _run(tmp_path, "original", matrix, "train_only", xnames)
     changed = matrix.copy()
     changed.loc[70:, "target"] = 1e12
-    altered = _run(tmp_path, "future_y", changed, "train_only")
+    altered = _run(tmp_path, "future_y", changed, "train_only", xnames)
     np.testing.assert_allclose(original, altered, atol=1e-10, rtol=0)
     reconstruct = original.intercept.to_numpy() + np.sum(
-        original[LINEAR_X].to_numpy() * matrix.loc[70:, LINEAR_X].to_numpy(), axis=1
+        original[xnames].to_numpy() * matrix.loc[70:, xnames].to_numpy(), axis=1
     )
     np.testing.assert_allclose(reconstruct, original.prediction, atol=1e-10)
 

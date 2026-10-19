@@ -6,6 +6,8 @@ This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Rando
 
 **Status:** the full 48-quarter, three-seed reconstruction has completed and passed artifact-integrity checks. Forest/AR(4) RMSE ratios are **0.797, 0.804 and 0.806**, versus the paper's 0.72; fixed FA-AR is 0.813 versus 0.83. The prespecified numerical-agreement criterion fails, so this is a qualified independent reconstruction, not an exact replication. We retain the result and continue implementation without waiting for missing original scripts. No Jev or LLM forecast evaluation has run. [Completed results and next steps](reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
+Next replication diagnostic: the paper's ARRF comparator on exactly the same frozen state matrices, removing factor terms only from the explicit equation. Its declaration and actual-R pilot are recorded [here](docs/ARRF_DIAGNOSTIC.md). An ARRF match cannot substitute for the missing FA-ARRF gain.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -118,7 +120,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 78 ordinary tests plus 4 optional real-R tests (three engine contracts and an independent linear check). All 82 passed locally, including action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 90 ordinary tests plus 5 optional real-R tests (four engine cases and an independent linear check). All 95 passed locally, including ARRF provenance/schema guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \

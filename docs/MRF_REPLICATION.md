@@ -73,3 +73,5 @@ The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolv
 - [ ] Build genuinely prequential development cases for the new policy, then freeze its prompt and candidate construction.
 
 The protocol's dates, lag structure and target are supported by the final article. The full result now establishes a working independent baseline, not recovery of the original pipeline. Independent extension tooling may proceed under that label, while exact replication and strong-comparator work remain explicit open milestones. An eight-quarter, two-tree smoke test still checks execution only, not the published score.
+
+The [next replication diagnostic](ARRF_DIAGNOSTIC.md) implements the paper's ARRF equation on the exact existing state matrices. Its full source comparison is still pending; the actual-R execution pilot passes. This adds a named benchmark to investigate the discrepancy without changing the failed primary result or selecting settings on its test loss.

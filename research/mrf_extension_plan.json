@@ -1,8 +1,8 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "full_quarterly_reconstruction_audited_numerical_agreement_failed_25_action_algebra_implemented",
+  "implementation_status": "FA_ARRF_reconstruction_missed_source_ratio_ARRF_diagnostic_implemented_and_pilot_verified",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -120,6 +120,19 @@
       "TV_FAAR": 1.19,
       "NN": 0.80
     }
+  },
+  "next_replication_diagnostic": {
+    "model": "ARRF",
+    "declaration": "configs/mrf_arrf_diagnostic.json",
+    "protocol": "docs/ARRF_DIAGNOSTIC.md",
+    "reuse_exact_primary_state_matrices": true,
+    "linear_terms": ["y_lag1", "y_lag2"],
+    "reported_source_ratio_not_project_result": 0.9,
+    "trees_per_fit": 100,
+    "seeds": [101, 202, 303],
+    "bounded_actual_R_pilot_verified": true,
+    "full_source_comparison_completed": false,
+    "ARRF_match_cannot_establish_FA_ARRF_replication": true
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,
