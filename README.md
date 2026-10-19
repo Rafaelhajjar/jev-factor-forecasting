@@ -33,6 +33,8 @@ A [no-tree native-normalization probe](docs/NATIVE_NORMALIZATION_BOUNDARY.md) no
 
 A separate [native-helper forecast diagnostic](docs/NATIVE_ALLROWS_DIAGNOSTIC.md) is now declared and implemented **before its macro outcomes**. It changes only that helper selection behind the same target-masking/outer-scaling adapter; every prepared matrix byte, representation, linear forecast and other setting must remain paired with the original. It retains all 18 cases, seeds and source-cell criteria, without repairing the native prior formula. Later block covariates make it explicitly non-causal, not a new primary or proof of the missing original caller. No macro pilot or full forecast for this diagnostic has run at declaration.
 
+Following that declaration, the [native-helper pilot and full preparation passed](reports/MRF_NATIVE_HELPER_PROGRESS.md), and the full 18-case/100-tree run was launched. The initial audit verifies all six input matrices and all 18 pairings, with no completed full forests or accuracy conclusions at that snapshot. It is an integrity progress record, not a live status page; the original primary and all prior results remain unchanged.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
