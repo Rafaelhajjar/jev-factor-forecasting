@@ -28,6 +28,12 @@ jobs:
       - run: Rscript scripts/setup_mrf_r.R runs/r-library
       - name: Fetch checksum-pinned external GPL engine
         run: uv run python -c "from pathlib import Path; from jev_factor.replication import ensure_engine; print(ensure_engine(Path('data/raw/MRF_v210403.R')))"
+      - name: Fetch journal archive with bounded network retries and checksum validation
+        run: |
+          curl --fail --location --retry 4 --retry-all-errors --retry-delay 3 --max-time 90 \
+            --output data/raw/mrf-replication.zip \
+            "https://journaldata.zbw.eu/dataset/c48432e1-5a25-49f1-95b1-6c681f21e252/resource/9c8c1313-bb06-4bd1-83ac-be22b0cc12ed/download/the-macroeconomy-as-a-random-forest-replication-data.zip"
+          uv run python -c "from pathlib import Path; from jev_factor.quarterly import download_archive; print(download_archive(Path('data/raw/mrf-replication.zip')))"
       - name: Exercise actual R engine, not a mock
         env:
           JEV_MRF_REFERENCE_ENGINE: data/raw/MRF_v210403.R
