@@ -1,0 +1,41 @@
+{
+  "dataset": "fred_md",
+  "path": "data/raw/fred_md_2026-09.csv",
+  "seeds": [
+    7
+  ],
+  "target": "INDPRO",
+  "start_date": "1960-01-01",
+  "end_date": "2024-12-01",
+  "test_start_date": "2010-01-01",
+  "step": 3,
+  "horizon": 1,
+  "data_lag": 1,
+  "window": 240,
+  "recent_window": 60,
+  "representation": "pca",
+  "n_factors": 4,
+  "ridge_alpha": 10.0,
+  "methods": [
+    "zero",
+    "persistence",
+    "ar",
+    "ridge",
+    "factor_static",
+    "factor_rolling",
+    "factor_rls",
+    "factor_kalman",
+    "tree",
+    "gate_rule",
+    "gate_learned"
+  ],
+  "reverse_options": false,
+  "anonymize": false,
+  "api": {
+    "jev_model": "jev-1.13.0",
+    "llm_model": null,
+    "llm_provider": null
+  },
+  "max_origins": null,
+  "max_api_calls": 0
+}

@@ -144,3 +144,5 @@ We want evidence that a decision model adds predictive value **beyond existing a
 If the statistical gate matches Jev, we should prefer the simpler method for that setting. If Jev only helps with meaningful contextual inputs, that narrows the application. If it fails when relationships reverse, that exposes the limits of the shrinkage formulation. All are valid conclusions.
 
 See [research protocol](docs/RESEARCH_PROTOCOL.md), [source notes](docs/SOURCES.md), and [initial run status](reports/STATUS.md). Code: MIT. Jev is TypeSafe's product; this project is independent and is not endorsed by TypeSafe or the Federal Reserve.
+
+The initial conventional runs are complete: adaptive coefficients help on the synthetic case, while zero growth is best in the first FRED-MD configuration. The latter is an unresolved dataset/specification issue, not evidence supporting the Jev hypothesis. Full scores and limitations are in the status report.

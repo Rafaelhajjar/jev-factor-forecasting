@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-19T01:50:38.179885+00:00",
+  "git_revision": "b0f0078705f08be24cb08d1fcc85e0c33947c116",
+  "python": "3.11.15",
+  "prompt_version": "factor-gate-v1",
+  "datasets": [
+    {
+      "dataset": "fred_md",
+      "target": "INDPRO",
+      "target_transform": 5,
+      "sha256": "d6e239038afbdbf4667c2a63c13c942817bc196fedab4355cd7e0d353ecdd65d",
+      "vintage": "2026-09",
+      "evaluation": "revised-data retrospective"
+    }
+  ],
+  "api_calls": 0,
+  "complete": true,
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "httpx": "0.28.1"
+  }
+}
