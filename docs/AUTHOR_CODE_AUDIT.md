@@ -14,6 +14,8 @@ e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631
 
 The author's [MacroRF-1 documentation fork](https://github.com/philgoucou/MacroRF-1/tree/8157619249bbdda3d0e4c8ea694d7c9168f5949f) provides monthly PAYEMS tutorials. Their data, full-sample factor construction and lag choices differ from the quarterly experiment. They are examples, not the missing paper runner. The Ryan Lucas Python port is a cross-check, not an independent source of the original table settings. The journal archive supplies data and a README, not code.
 
+The author's [Code & Data page](https://philippegouletcoulombe.com/code), checked October 19, 2026, points to these packages and invites email requests for raw code. That is a possible route to the missing pipeline, not evidence that we have obtained it or that the original scripts are publicly downloadable. No contact has been made on the user's behalf.
+
 The R engine declares GPL-3. It is fetched separately, verified by checksum and called as an external dependency. We do not copy it into our MIT source tree or relicense it.
 
 ## 2. Defaults are not the paper's complete specification
