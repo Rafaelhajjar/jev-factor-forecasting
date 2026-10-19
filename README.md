@@ -12,6 +12,8 @@ A [training-only PCA audit](docs/PCA_BASIS_AUDIT.md) also identifies actual R/Py
 
 The [completed sign sensitivity](reports/MRF_R_BASIS_SENSITIVITY.md) changes only those recorded signs, preserving all information and the original results. Its three ratios are **0.787, 0.783 and 0.800**: a modest improvement, but every seed still misses 0.72 by more than the declared tolerance. All 18 jobs pass the independent audit; linear forecasts remain unchanged within 1.5e-15. This is not a search for favorable signs or recovery of the author's historical basis. [Declaration](docs/R_BASIS_SENSITIVITY.md).
 
+A [training-only eligibility audit](reports/MRF_PCA_ELIGIBILITY_AUDIT.md) now separates the historical 125-series PCA subset from the full 248-series forest state. All six refits preserve every non-factor entry exactly and pass independent R checks. No new forecast loss was calculated, and the author’s actual eligibility rule remains unknown. A later performance sensitivity needs a separate declaration.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -124,7 +126,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 119 ordinary tests plus 7 optional real-R checks, including independent linear/PCA calculations and the engine's sign sensitivity. All 126 passed locally, including orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 139 ordinary tests plus 7 optional real-R checks, including independent linear/PCA calculations and the engine's sign sensitivity. All 146 passed locally, including PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
