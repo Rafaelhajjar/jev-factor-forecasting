@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
   "implementation_status": "FA_ARRF_reconstruction_missed_source_ratio_ARRF_diagnostic_implemented_and_pilot_verified",
@@ -133,6 +133,20 @@
     "bounded_actual_R_pilot_verified": true,
     "full_source_comparison_completed": false,
     "ARRF_match_cannot_establish_FA_ARRF_replication": true
+  },
+  "PCA_orientation_diagnostic": {
+    "report": "reports/mrf-pca-basis-audit.json",
+    "interpretation": "docs/PCA_BASIS_AUDIT.md",
+    "refits_checked": 6,
+    "cross_sectional_components_checked": 30,
+    "MAF_components_checked": 2976,
+    "all_components_agree_up_to_signs": true,
+    "cross_sectional_opposite_R_signs_on_current_build": 22,
+    "MAF_opposite_R_signs_on_current_build": 1468,
+    "pinned_engine_sign_sensitivity_verified": true,
+    "primary_basis_changed": false,
+    "original_author_basis_recovered": false,
+    "forecast_gap_attributed_to_orientation": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,

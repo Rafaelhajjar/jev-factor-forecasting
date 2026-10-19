@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from jev_factor.pca_basis_audit import compare_rotations, r_rotations
 from jev_factor.replication import LINEAR_X, linear_prediction
 from jev_factor.replication_audit import _r_linear
 
@@ -121,3 +122,38 @@ def test_independent_base_r_qr_agrees_with_python_least_squares(tmp_path):
     for model, columns in [("AR4", ar), ("FA_AR", fa)]:
         expected = linear_prediction(matrix.iloc[:70], matrix.iloc[70:], columns)
         np.testing.assert_allclose(qr[model], expected, rtol=0, atol=1e-10)
+
+
+def test_current_pinned_engine_is_not_factor_sign_invariant(tmp_path):
+    # A diagnostic of the pinned implementation, not a desirable property.
+    # The equation and state factor are flipped consistently; OLS prior refits.
+    matrix = _matrix()
+    original = _run(tmp_path, "original", matrix, "train_only")
+    changed = matrix.copy()
+    changed["F1_lag1"] *= -1
+    reversed_basis = _run(tmp_path, "reversed_basis", changed, "train_only")
+    assert np.max(np.abs(original.prediction - reversed_basis.prediction)) > 1e-5
+
+
+def test_base_r_pca_and_maf_agree_up_to_signs_and_native_penalty_is_asymmetric(tmp_path):
+    from sklearn.decomposition import PCA
+
+    rng = np.random.default_rng(73)
+    values = pd.DataFrame(rng.normal(size=(80, 6)), columns=["A", "B", "C", "D", "E", "S&P 500"])
+    rotation, maf, weights, version = r_rotations(
+        values, 3, Path(ENGINE), shutil.which("Rscript"), tmp_path
+    )
+    comparison = compare_rotations(
+        PCA(n_components=3, svd_solver="full").fit(values).components_, rotation
+    )
+    assert comparison["same_up_to_component_signs"]
+    assert len(maf) == 12
+    x = values.A.to_numpy()
+    lagged = np.column_stack([x[8 - k : len(x) - k] for k in range(1, 9)])
+    comparison = compare_rotations(
+        PCA(n_components=2, svd_solver="full").fit(lagged).components_,
+        maf.loc[maf.series_index.eq(0)].iloc[:, 2:].to_numpy(),
+    )
+    assert comparison["same_up_to_component_signs"]
+    assert np.max(np.abs(weights - weights[::-1])) > 0.1
+    assert version.startswith("R version")

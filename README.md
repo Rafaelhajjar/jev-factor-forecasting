@@ -8,6 +8,8 @@ This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Rando
 
 Next replication diagnostic: the paper's ARRF comparator on exactly the same frozen state matrices, removing factor terms only from the explicit equation. Its declaration and actual-R pilot are recorded [here](docs/ARRF_DIAGNOSTIC.md). An ARRF match cannot substitute for the missing FA-ARRF gain.
 
+A [training-only PCA audit](docs/PCA_BASIS_AUDIT.md) also identifies actual R/Python sign differences while confirming matching components up to signs. The pinned forest is sign-sensitive, but this finding does not identify the cause of the score gap or justify changing the benchmark after seeing its results.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -120,7 +122,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 90 ordinary tests plus 5 optional real-R tests (four engine cases and an independent linear check). All 95 passed locally, including ARRF provenance/schema guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 96 ordinary tests plus 7 optional real-R checks, including independent linear/PCA calculations and the engine's sign sensitivity. All 103 passed locally, including ARRF provenance/schema guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
