@@ -12,6 +12,8 @@ The [preparation audit](mrf-fred125-preparation-audit.json) verifies all six com
 
 The separate [actual-R pilot audit](mrf-fred125-pilot-audit.json) verifies two trees, seed 101, the 2002Q4 refit and eight forecast dates. Saved coefficients reproduce forecasts within 3.1e-16. It uses R 4.6.1 and pracma 2.4.6 with the pinned external author engine. This tests integration, not macro forecasting accuracy; pilot scores are deliberately withheld.
 
+A subsequent [native-initialization audit](mrf-fred125-native-initialization-audit.json) checks the actual adapter and author-engine boundary for all six FRED125 matrices: four linear slope terms, 1,041 state columns, 347 split candidates, 100 declared trees and effective parent-size guard 12. Standardized OLS-prior differences are at most 1.4e-15. These isolated probes stop before tree fitting and leave live forests and on-disk source unchanged. The audit binds the prepared manifest, not a later completed manifest; it is not a forecast-performance result.
+
 All 245 local tests pass, including 12 real-R contracts. The declaration commit's [GitHub checks also passed](https://github.com/Rafaelhajjar/jev-factor-forecasting/actions/runs/39231403760). The new synthetic contracts exercise exact non-factor preservation, timing, convergence/cap rejection, recipe/provenance guards, preparation-only behavior and the joint criterion. Synthetic contract scores are never research evidence. CI tests and the bounded smoke are not substitutes for the expensive full macro comparison.
 
 ## What is running and what remains

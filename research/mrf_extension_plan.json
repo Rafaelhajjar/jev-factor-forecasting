@@ -301,6 +301,8 @@
     "pilot_audit": "reports/mrf-fred125-pilot-audit.json",
     "all_six_matrices_and_linear_forecasts_verified": true,
     "preparation_audit_snapshot": "reports/mrf-fred125-preparation-audit.json",
+    "native_initialization_audit_snapshot": "reports/mrf-fred125-native-initialization-audit.json",
+    "all_six_actual_native_initializations_verified": true,
     "progress_record": "reports/MRF_FRED125_PROGRESS.md",
     "full_comparison_launched": true,
     "full_forecast_comparison_completed": false,
