@@ -65,6 +65,8 @@ The deposited CSV has 248 populated series, but split S&P header text creates si
 S&P 500; S&P: indust; S&P div yield; S&P PE ratio
 ```
 
+There is also a sample-start discrepancy: main Section 3 describes the panel as observed from 1960Q1, whereas the deposited quarterly file has 240 rows from 1959Q1 through 2018Q4. Our reconstruction uses the deposited history, begins the transformed panel at 1959Q3 and obtains the first complete eight-lag regression row at 1961Q3. This agrees with the stated estimation start, but the exact original trimming must still be confirmed from its runner.
+
 The official [FRED-QD paper and appendix](https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/publications/review/pdfs/2021/01/14/fred-qd-a-quarterly-database-for-macroeconomic-research.pdf) identify the metadata flag as membership in the historical Stock-Watson factor subset, not a universal rule forbidding other series from MRF factors. The archive has 125 included and 123 excluded flags. This resolves the flag's meaning, **not** whether the MRF paper used that subset for PCA. We use all 248, declare that choice and retain the flags for a separately named sensitivity check.
 
 UNRATE's panel transformation code is 2, a level difference. The MRF article explicitly logs unemployment before differencing. Our target is therefore delta log UNRATE while its indicator-panel entry retains the deposited code. Conflating these two roles would change the target or the state.
@@ -81,6 +83,8 @@ The official routine can choose the completion rank by an information criterion 
 ## 5. Frozen first run and comparison rule
 
 Executable settings: [configs/mrf_unemployment.json](../configs/mrf_unemployment.json). Training target dates begin 1961Q3; evaluation target dates are 2003Q1-2014Q4, with six training refits through 2002Q4, 2004Q4, ..., 2012Q4. Each fit serves the following eight one-step forecasts; new lagged observations enter the state without re-estimating the map.
+
+Our explicit row convention is: the 2003Q1 forecast uses target lags and indicator observations through 2002Q4, with coefficients fitted using outcomes through 2002Q4; the 2003Q2 forecast incorporates 2003Q1 observations but keeps that coefficient map. The package's one-step tutorials likewise pair a current outcome with lag-one predictors, but they do not establish the original quarterly runner's exact first-row alignment. Training-row factor loadings are estimated using the full fitting sample available at that refit; those rows are not historical prequential forecasts and cannot be reused as such for Jev training.
 
 AR(4), fixed FA-AR and FA-ARRF share evaluation dates and outcomes. The fixed FA-AR has four target lags and two lags of each of the first two factors; the FA-ARRF equation has two target lags and one lag of each factor. All five FA-ARRF coefficients, including the intercept, vary.
 

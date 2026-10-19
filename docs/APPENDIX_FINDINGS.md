@@ -98,6 +98,7 @@ This is an overlapping-horizon task. Training outcomes become usable only after 
 
 | Issue | Evidence | Required action |
 | --- | --- | --- |
+| Raw quarterly panel start | Main Section 3 says 1960Q1; the deposited file has 240 observations from 1959Q1 through 2018Q4 | Preserve the deposited history; record our 1959Q3 transformed start / 1961Q3 first complete lag row, and verify original trimming/alignment against the missing runner |
 | Target count | Main Section 3 names five quarterly targets; Table 4 also contains HOUST, giving six target groups | Keep five named targets as the core matrix and record HOUST as an additional audit row; verify its transformation before adding it |
 | Monthly denominator | A.7 describes AR(12), while Table 5's note says AR(4) and a separate AR4 column is not identically 1 | Identify the actual denominator in the reference pipeline; store source ratios without silently renormalizing |
 | Monthly series count | A.7 describes 134 indicators; the deposited file's effective eligible panel still needs reconciliation | Audit archive columns, transformations, missingness and factor eligibility |
