@@ -4,17 +4,19 @@ Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its
 
 This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. We start by reconstructing its benchmark. The main experiment then adds Jev to the reference forest and tests whether it improves forecasts beyond the forest itself; any unresolved replication boundary stays explicit.
 
-**Status:** the full 48-quarter, three-seed reconstruction has completed and passed artifact-integrity checks. Forest/AR(4) RMSE ratios are **0.797, 0.804 and 0.806**, versus the paper's 0.72; fixed FA-AR is 0.813 versus 0.83. The prespecified numerical-agreement criterion fails, so this is a qualified independent reconstruction, not an exact replication. We retain the result and continue implementation without waiting for missing original scripts. No Jev or LLM forecast evaluation has run. [Completed results and next steps](reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
+**Status:** the joint unemployment replication criterion still fails. The completed PCA125 sensitivity now puts every forest seed within our declared tolerance around 0.72, but its matching fixed FA-AR is 0.787 versus 0.83 and fails. We retain every run and the original primary result. No Jev or LLM forecast evaluation has run. [Latest completed result](reports/MRF_PCA125_SENSITIVITY.md), [source audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
-The full ARRF diagnostic has also completed: **0.893, 0.894 and 0.902** versus the paper's 0.90, with all three seeds within the declared tolerance and all artifacts verified. It reuses exactly the same frozen state matrices, removing factor terms only from the explicit equation. [Results](reports/MRF_ARRF_DIAGNOSTIC.md), [declaration](docs/ARRF_DIAGNOSTIC.md). This match cannot substitute for the missing FA-ARRF gain.
+All three constructions cover 48 quarters and pass complete artifact audits. The diagnostic requires the fixed FA-AR and **every** individual forest seed to be within 0.03 of 0.83 and 0.72, respectively. This is our diagnostic, not an author standard or statistical test.
 
-A [training-only PCA audit](docs/PCA_BASIS_AUDIT.md) also identifies actual R/Python sign differences while confirming matching components up to signs. The pinned forest is sign-sensitive, but this finding does not identify the cause of the score gap or justify changing the benchmark after seeing its results.
+| Construction | Fixed FA-AR / AR(4) | FA-ARRF / AR(4), all three seeds | Joint criterion |
+| --- | ---: | ---: | --- |
+| [Original all-248 PCA](reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md) | 0.812577 | 0.797325–0.806346 | Fails: forests |
+| [Recorded R signs only](reports/MRF_R_BASIS_SENSITIVITY.md) | 0.812577 | 0.783246–0.799636 | Fails: forests |
+| [PCA125, full indicator/MAF state retained](reports/MRF_PCA125_SENSITIVITY.md) | 0.787136 | 0.744101–0.748815 | Fails: fixed FA-AR |
 
-The [completed sign sensitivity](reports/MRF_R_BASIS_SENSITIVITY.md) changes only those recorded signs, preserving all information and the original results. Its three ratios are **0.787, 0.783 and 0.800**: a modest improvement, but every seed still misses 0.72 by more than the declared tolerance. All 18 jobs pass the independent audit; linear forecasts remain unchanged within 1.5e-15. This is not a search for favorable signs or recovery of the author's historical basis. [Declaration](docs/R_BASIS_SENSITIVITY.md).
+Do not combine the original linear score with the PCA125 forest to claim a pass: they use different factor constructions. The PCA125 forest improves on its own fixed-factor comparator by 4.87%–5.47%, still short of the roughly 13.3% implied by the source ratios. These post-primary sensitivities do not recover the missing original pipeline or replace the primary result.
 
-A [training-only eligibility audit](reports/MRF_PCA_ELIGIBILITY_AUDIT.md) now separates the historical 125-series PCA subset from the full 248-series forest state. All six refits preserve every non-factor entry exactly and pass independent R checks. No new forecast loss was calculated, and the author’s actual eligibility rule remains unknown. A later performance sensitivity needs a separate declaration.
-
-The [PCA125 forecast sensitivity](docs/PCA125_SENSITIVITY.md) is separately declared and implemented. It changes only cross-sectional factor eligibility, keeps the full indicator/MAF state and refits its own fixed FA-AR comparator. Its actual-R pilot and [independent audit](reports/mrf-pca125-pilot-audit.json) pass, with coefficient discrepancy at most 2.5e-16 and linear-check differences at most 1.9e-16. The full 18-job comparison is pending; no PCA125 performance score is claimed.
+The separate [ARRF diagnostic](reports/MRF_ARRF_DIAGNOSTIC.md) scores 0.892599/0.894426/0.901878 against 0.90, all within tolerance. That comparator match cannot establish the factor-augmented result. The [basis audit](docs/PCA_BASIS_AUDIT.md), [eligibility audit](reports/MRF_PCA_ELIGIBILITY_AUDIT.md) and [PCA125 declaration](docs/PCA125_SENSITIVITY.md) distinguish training evidence, fixed controls and forecast outcomes.
 
 ## The idea we are building on
 
@@ -31,7 +33,7 @@ Our starting point is the final paper's factor-augmented model: an intercept, tw
 
 ## The main extension: MRF + Jev
 
-We keep the replicated forest, its estimated factors, and its forecast as the reference. Jev receives a compact account of the current state, the two estimated factor contributions, their recent predictive evidence, and candidate adjustments calculated by code.
+We keep a frozen reconstructed forest, its estimated factors, and its forecast as the reference. The first run remains the primary independent baseline; these public sensitivity losses do not silently select a replacement. Jev receives a compact account of the current state, the two estimated factor contributions, their recent predictive evidence, and candidate adjustments calculated by code.
 
 For each factor, the initial adjustment menu is:
 
@@ -61,7 +63,7 @@ Jev selects among precomputed alternatives. It does not estimate PCA factors, ca
 
 ## What we want to learn
 
-1. Does the replicated MRF improve on the paper's linear benchmark in our implementation?
+1. Does the reconstructed MRF improve on the paper's linear benchmark in our implementation?
 2. Does adding Jev improve on that same MRF?
 3. Does Jev beat a small learned gate choosing from the same 25 alternatives?
 4. Does economic meaning help, beyond anonymous numerical summaries?

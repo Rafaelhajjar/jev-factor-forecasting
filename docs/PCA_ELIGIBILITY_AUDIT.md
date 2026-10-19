@@ -4,6 +4,8 @@ Declared October 19, 2026, after the primary, ARRF and R-sign results. This stag
 
 **Completed:** all six refits pass input-preservation and independent base-R PCA checks. The first two subset factors have absolute training correlations of 0.987–0.990 and 0.921–0.955 with their corresponding original factors. No new forecast loss was calculated. See the [completed representation result](../reports/MRF_PCA_ELIGIBILITY_AUDIT.md) and [machine-readable audit](../reports/mrf-pca-eligibility-audit-v2.json).
 
+The subsequently and separately declared [full forecast sensitivity is now complete](../reports/MRF_PCA125_SENSITIVITY.md). It meets the forest-cell tolerance but fails the corresponding linear cell, so the joint replication remains incomplete. That result does not alter this training-only audit's scope.
+
 ## Question
 
 The archived FRED-QD metadata mark 125 series as members of the historical Stock-Watson factor subset. Our original reconstruction estimates cross-sectional factors from all 248. Does restricting only that PCA input materially change the factors, while preserving every individual-indicator and MAF state entry?

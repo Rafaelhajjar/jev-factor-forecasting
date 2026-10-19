@@ -2,7 +2,7 @@
 
 Declared October 19, 2026, after seeing the original FA-ARRF, ARRF and R-sign results, but before this variant's forecast outcomes. The [configuration](../configs/mrf_pca125_sensitivity.json) records those known results and the already-completed training diagnostics. This is a post-primary investigation, not a blind confirmatory test.
 
-The declaration and runner were published in `5db5735` before the pilot and full outcomes. The actual-R two-tree/eight-date pilot now passes its [independent audit](../reports/mrf-pca125-pilot-audit.json), with coefficient discrepancy at most 2.5e-16 and linear-check differences at most 1.9e-16. No pilot scores are published. All 176 local tests pass, including seven real-R contracts. The full performance comparison is not yet complete.
+The declaration and runner were published in `5db5735` before the pilot and full outcomes. The actual-R two-tree/eight-date pilot passes its [independent audit](../reports/mrf-pca125-pilot-audit.json), with no pilot scores published. The full comparison is now [completed and audited](../reports/MRF_PCA125_SENSITIVITY.md): all 18 jobs pass integrity checks; forest ratios 0.748815/0.744101/0.747069 meet the forest-cell tolerance, but fixed FA-AR 0.787136 fails against 0.83. The joint criterion remains false. The declaration below is retained unchanged in substance.
 
 ## Hypothesis
 

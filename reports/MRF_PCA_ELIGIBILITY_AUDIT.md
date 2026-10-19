@@ -2,6 +2,8 @@
 
 Completed October 19, 2026. The new builder separates the input used for cross-sectional PCA from the forest's full indicator/MAF information set. All six refits pass preservation checks. **No new forest was fitted and no new forecast loss was calculated.**
 
+Subsequent work: the separately declared [full forecast sensitivity has now completed](MRF_PCA125_SENSITIVITY.md). Its forest cells meet tolerance, its linear cell fails and the joint replication remains incomplete. This document stays the training-only representation record.
+
 ## Training-only result
 
 | Refit endpoint | Absolute correlation, original/subset F1 | Absolute correlation, original/subset F2 | Smallest five-factor subspace cosine |
