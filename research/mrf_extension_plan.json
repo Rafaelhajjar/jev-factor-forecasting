@@ -1,5 +1,5 @@
 {
-  "schema_version": 26,
+  "schema_version": 27,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
   "implementation_status": "all_named_E1_methods_implemented_and_run_NN_all_seed_diagnostic_failed_FAARRF_still_unreproduced",
@@ -123,6 +123,16 @@
     "evaluation_start": "2003Q1",
     "evaluation_end": "2014Q4",
     "evaluation_dates_refer_to": "target_dates_with_origin_one_quarter_before_target_in_reconstruction",
+    "evaluation_target_date_primary_source_anchor": {
+      "source": "final_2024_article_section_3_RMSE_formula_and_Table_2",
+      "printed_pages": [408, 409],
+      "PDF_pages": [8, 9],
+      "PDF_sha256": "a1ea26466f55425bafc1f76eed2c28d0cb77d9203b2b4eebf105b972fbaaa1ee",
+      "OOS_sum_index_is_actual_target_t_forecast_origin_is_t_minus_h": true,
+      "supports_locked_target_date_interpretation": true,
+      "original_executable_caller_alignment_recovered": false,
+      "no_date_or_forecast_change_made": true
+    },
     "estimation_window": "expanding",
     "main_reestimation_interval_years": 2,
     "forecast_method": "direct",

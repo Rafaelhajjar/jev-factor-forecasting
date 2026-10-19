@@ -89,6 +89,8 @@ A bounded [public-reconstruction source check](../docs/INDEPENDENT_RECONSTRUCTIO
 
 The later [interim native-helper audit](mrf-native-helper-interim-audit.json) verifies four completed 100-tree cases, with maximum coefficient-reconstruction discrepancy below 6.8e-16 and R/pracma versions matching the primary. Fourteen cases remain pending in that snapshot, and no accuracy or numerical-pass field is published. All six matrices and all 18 pairings still verify. The [interim note](MRF_NATIVE_HELPER_INTERIM.md) records direct observation of four workers on subsequent cases; it does not replace the immutable initial snapshot or declare a reproduction result.
 
+The final article's full printed pages 408–409 were then rechecked visually for the remaining timing question. Its Section 3 RMSE formula indexes OOS by actual target date t, comparing against the forecast made at t-h; Table 2's h=1 lag structure supports our locked target-date convention. The [source note](../docs/INDEPENDENT_RECONSTRUCTION_CHECK.md#timing-boundary) distinguishes that paper evidence from the independent driver's conditional illustration. No date, code, setting or forecast was changed, and the missing executable caller and numerical gap remain unresolved.
+
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
 
 ## Original scaffold results
