@@ -1,0 +1,545 @@
+{
+  "status": "completed_plain_controls_not_exact_author_replication",
+  "jobs_verified": 36,
+  "targets_per_model": 48,
+  "output_checks": [
+    {
+      "fit_end": "2002Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "baa20fb797d68b3e96689c4365f8a85d326dc7e2f7ecf0fe83cc3d7a417ff971",
+      "prediction_sha256": "023450a4c6a566632e1bca2ba45d37981b49cb3256cc2b0ab3bb0e1c06a7a9d6",
+      "maximum_node_mean_error_standardized_units": 1.3322676295501878e-15,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "a248464069eb1bda13109d4c30b793d8aa658b51f5d82221f07c494a3472bb4e",
+      "prediction_sha256": "262d1a61afd221e27ec75fb7f4dd49025253e12ee987796207090a0e3598fcae",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "acc52c55803c76f3a0c5e9f34a5851cfaf6d9df22503a51171ce2d8e557ada03",
+      "prediction_sha256": "7c0451c486bb2e49fbde8c2de3879aef9943f9576a62c2b30aec71164443a743",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 8.673617379884035e-19,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "752c8321d45d06cd1859999379353e1a8f8382d2f8dfb1ca2875cf31da84f7a7",
+      "prediction_sha256": "5401ee8e1cd377d0f3313666a32227d1420c453a93cd3bb6d98044726cd42c78",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "4683f449c944587b7c7b677e61d47b6700f38bbc70c95c17648fc70fd0bf0ed9",
+      "prediction_sha256": "dbe5f49b867b9124837d2b47cc6f33734dbb3e751e74970838f8088566ada071",
+      "maximum_node_mean_error_standardized_units": 6.661338147750939e-16,
+      "maximum_forecast_reconstruction_error": 5.204170427930421e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "6c1df56e312b96d9c24c69bb3918f0eb08263eb7b279ad6c123cc6a5ac1a9290",
+      "prediction_sha256": "3b1cc670ff6824ee62b080666067b859216054167cc24a4a6f24a86700009397",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "70d651e45cddad086f2f9047b2fd363a356b7dda6e7d3f706863dbef4044e98c",
+      "prediction_sha256": "8661c5129e618c2408292c1e5f5ac058e2cd125fca7a18eedeead1b60d0dad87",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "921a8cf668907d8715ea77d52d3a8afbd8ed7574e0e283643d1c879f371c3e25",
+      "prediction_sha256": "e4831ad3d50bc10d40b2521ea9602f18d112938f5a46bee5fed7e6fba81970f5",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "87e36c9313336691aac0f21e7d90443a985ec3ef031f273a43ffb807ee35314e",
+      "prediction_sha256": "6fbc4e5828e9c8835f7bb2c94f8da0176267be60c1f4c91378ef9f59eff3aee3",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "87dcf56c4214be6b6ab40203fdeb8b040cc408f43f67a196509bfa1277c7a835",
+      "prediction_sha256": "bcd9e210f95c728c5cf256fa03fa54c21992b7dbfaa3e71094d38708effd4245",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "6af1f3c8eef420c1aca9775e4e90b64f046d8554215f45c482bfc3d31877582a",
+      "prediction_sha256": "53dcb9e1ec791c297534d8e9a709b814a773a035486c3ea415fea15e8c9548a0",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2004Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "ff87d8d3811a9890cf670f5cba945c4fca74f09375d1479a7f934c98b1f3c91b",
+      "prediction_sha256": "aab141f0feb273919c2528bb214646e31c2d8f9ec20d4b6c967faaa1f29541c5",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "296d28272d8b16878c850f6a87cd19dd56e39c42c4b0412d4e3cc4e6045c5ad3",
+      "prediction_sha256": "6b97d9d8846ab2fd5f3754711f81eb226c58291c9599a268dd2939437d750b47",
+      "maximum_node_mean_error_standardized_units": 1.3322676295501878e-15,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "a9bfdff41d68c476684676b438793c13d23cc4c2215a05ad0ad19dc0a3276c16",
+      "prediction_sha256": "d8ffa12fa028a51af633463eac8f417e1ed2fc1f24d0612c07ac83a9aa6c52b6",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "faa56b9fa1afe5086885be9a6d6b09155687714c54801b8bf1c0ae639137a983",
+      "prediction_sha256": "17471990fd0c8ddda01ec63364a4d39468e17cbfba2f5caa76ce1f5c113bce55",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "cde6c2c2692791c5533507be197e0aecae61c0bfcb2839221621f6a573a32a15",
+      "prediction_sha256": "4450e4e67dc1d88fb723fc7e8651217b999da33e9819c4761ea57a45d62b1583",
+      "maximum_node_mean_error_standardized_units": 6.661338147750939e-16,
+      "maximum_forecast_reconstruction_error": 8.673617379884035e-19,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "ec722e11db063862ca8c0405124519ea0ea2f6a98fe00619d7f4a6df510a81e4",
+      "prediction_sha256": "eb9bea414c531ddfc8b2dfa1a65c460019f0d9c2c1d8e91cd570118061720a21",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 5.204170427930421e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2006Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "dc4bbbcc8ee665207e1c7c4704cdac05fdb4475cbabbc1b2e63dbcc9deb08e6f",
+      "prediction_sha256": "e1cfa141a9f1c2137ebb98f82684a4c795b2b26341247b847270b50faa44d228",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 0.0,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "0d9d9a7fd72e79e2faf6112bfd3952436dbb1a8127ee7c03d1fc50f7839b53d0",
+      "prediction_sha256": "757436cd9225ca548d7f30a4c0e2ea276d95f54eac354e1fa13b3cb649e5138b",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "63027a49a47e40fc5f201a8823d38f1c041060ca51cd4cf79d6f0a81950d499f",
+      "prediction_sha256": "e5b92fbbb3cbd5f2819f4b4ffcba1fb10d8429051edfdd949d78c3e912bc3178",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.3877787807814457e-17,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "d8e113d72f6ad016a37bd70b2de623eb50afee31672488132ee77ee75b8ea1c2",
+      "prediction_sha256": "2556608e1fc5f35b3a7e7488be6becaa5752977aa9a4e33967f4b7c06c4d6f87",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 2.0816681711721685e-17,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "b532f1fd74caf42b70d69aa99f135303b4b74f598ae48d963c490d150d4d54d2",
+      "prediction_sha256": "dbfb58d45f68b9a850e764f1c45e7f96d2d3447f177ea7dbe3bfca9562209e86",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "11851ecfcff5424bcaeee39b5f4543f9d21eea90fec8c7f8041af1df935610f5",
+      "prediction_sha256": "36006291cdc7aaafcc77a5e2c32f7f17c526dd2221fb77bf90dbc502afd5e825",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.3877787807814457e-17,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2008Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "ef7f9ce78d70e875912b240ff35ac9662bc41ff4869df0d667725cd37823e6b6",
+      "prediction_sha256": "54c332539a573fb2fd730716161409c32d62ee667522541de3810865dd9c92e8",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "642b3c812e37d720fcf9a860038f5c759a9bd4c9c7200151ab1933ff76a519cd",
+      "prediction_sha256": "3b24f30cd10a2b1ba54a8025eef3f7297d0333189f31d23a66248bc62f60e8eb",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 2.6020852139652106e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "e32bf37819b215448f07bb1e887bc7a8b4c75fc16848f965b3e066d13292ff18",
+      "prediction_sha256": "8f5316d63e5f788f92eed881774ac80cb9eab010fddcbd6d6dfe75020583d4b8",
+      "maximum_node_mean_error_standardized_units": 4.440892098500626e-16,
+      "maximum_forecast_reconstruction_error": 2.6020852139652106e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "a0d98634785d90e0b20817a3a509eabcbe592de7d3a9fd80744597be036ccf5c",
+      "prediction_sha256": "20f3edf21903bee45ae533893e49ee04f8ce199ca44749e65bad405068e7a5ab",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "954f617c93c052a3053189e99963d1e37ca9593861642ccdf1bea7b37282efcf",
+      "prediction_sha256": "0b12ff234f66b62acb3e3ee9676284955dda60c7df02d012ec389e9f090dcb9a",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "947359fc54f5ee9089c83a909a53bc2b947901bb556fc78fcdd6b51cd4774cf5",
+      "prediction_sha256": "9ded4375201928ff8138b19a982cfddda62c81b6a9f150fdd679214453baeb93",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 1.734723475976807e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2010Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "a00b9b59737f62c35f50e2e5b8c5f5065d2b2c5f1d2318b400aee23802e551b6",
+      "prediction_sha256": "fae8c76c5a235d17c9634d4689d9658c937cfff48b9b7d19739b1c894e33f07e",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "6f719cdcff2ee062d53f42f13b534b7ff2f82a7103b8dfee8bd283a3eae6ef91",
+      "prediction_sha256": "9f39530c95f985fc43e67806f259b185e2ec6cea02b0b0dee1151b8b88704bea",
+      "maximum_node_mean_error_standardized_units": 1.1102230246251565e-15,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "d6327c22fac6e883c76408d38e3c522d3bc8ccfc47507096bfbd596a5049161d",
+      "prediction_sha256": "9da2930e23433d8b48ab3a0ba76255dac25d12e7e06421f19fddc2d458018f86",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "RF_MAF",
+      "seed": 202,
+      "tree_sha256": "469d227945f2dcbb6a0f7c4bfbe2a037c1d59338e83c1b4c75f6072ad0729e72",
+      "prediction_sha256": "5965617545b6b0b7c424c860a54bd0401938e7db266026656636b9ed1b4e45b7",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 3.469446951953614e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "AR_plus_RF",
+      "seed": 202,
+      "tree_sha256": "8bac74ce3c5db42434af0cc11925376bf4aa7c563fe5ce6c7da9c7791f6eadaa",
+      "prediction_sha256": "1174fa932b3e71de410767197b2527df1432850e7eb63c997bda776eac5c8c26",
+      "maximum_node_mean_error_standardized_units": 6.661338147750939e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "RF_MAF",
+      "seed": 303,
+      "tree_sha256": "3ed102926318d620272f67c5a5110418ad09b40166cb477e6677686ec4eb4883",
+      "prediction_sha256": "649e9a6362470fe5ebe998afe76cff860c0f6185b1b855c573030ff3dc3271af",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    },
+    {
+      "fit_end": "2012Q4",
+      "model": "AR_plus_RF",
+      "seed": 303,
+      "tree_sha256": "8d2fe80b82f067b797a7bd510d8ad2e99f4b026be8668095cc000c5d73f822b1",
+      "prediction_sha256": "7b8e0a51b2823ed76309b927fa0ad64205bf9bbacf818a51852c433278dd4919",
+      "maximum_node_mean_error_standardized_units": 8.881784197001252e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": false
+    }
+  ],
+  "partial_scores_suppressed": false,
+  "metrics": [
+    {
+      "model": "AR4",
+      "n": 48,
+      "RMSE": 0.03349971024497933,
+      "MAE": 0.025867458243597225,
+      "RMSE_over_AR4": 1.0
+    },
+    {
+      "model": "FA_AR",
+      "n": 48,
+      "RMSE": 0.027221105456282285,
+      "MAE": 0.021625109205750937,
+      "RMSE_over_AR4": 0.8125773404372048
+    },
+    {
+      "model": "FA_ARRF_seed101",
+      "n": 48,
+      "RMSE": 0.02671014142535411,
+      "MAE": 0.020014776863515993,
+      "RMSE_over_AR4": 0.7973245508700247
+    },
+    {
+      "model": "FA_ARRF_seed202",
+      "n": 48,
+      "RMSE": 0.026939947673654645,
+      "MAE": 0.01986353429430028,
+      "RMSE_over_AR4": 0.8041844982134492
+    },
+    {
+      "model": "FA_ARRF_seed303",
+      "n": 48,
+      "RMSE": 0.027012365850822444,
+      "MAE": 0.019876835585883327,
+      "RMSE_over_AR4": 0.8063462535432181
+    },
+    {
+      "model": "FA_ARRF_seed_mean_prediction",
+      "n": 48,
+      "RMSE": 0.026855241571550743,
+      "MAE": 0.019845671793261844,
+      "RMSE_over_AR4": 0.8016559359815834
+    },
+    {
+      "model": "RF_MAF_seed101",
+      "n": 48,
+      "RMSE": 0.027817546667253182,
+      "MAE": 0.02087329746453999,
+      "RMSE_over_AR4": 0.8303817096872429
+    },
+    {
+      "model": "AR_plus_RF_seed101",
+      "n": 48,
+      "RMSE": 0.028516136121758573,
+      "MAE": 0.02325216405764242,
+      "RMSE_over_AR4": 0.8512353066108189
+    },
+    {
+      "model": "RF_MAF_seed202",
+      "n": 48,
+      "RMSE": 0.027623829141408034,
+      "MAE": 0.020595435168277675,
+      "RMSE_over_AR4": 0.8245990469588635
+    },
+    {
+      "model": "AR_plus_RF_seed202",
+      "n": 48,
+      "RMSE": 0.027315273162028697,
+      "MAE": 0.022327002333083518,
+      "RMSE_over_AR4": 0.8153883410416212
+    },
+    {
+      "model": "RF_MAF_seed303",
+      "n": 48,
+      "RMSE": 0.029650289796921987,
+      "MAE": 0.022275208785453093,
+      "RMSE_over_AR4": 0.8850909330287636
+    },
+    {
+      "model": "AR_plus_RF_seed303",
+      "n": 48,
+      "RMSE": 0.027715450926586057,
+      "MAE": 0.02287635710238577,
+      "RMSE_over_AR4": 0.827334049277033
+    },
+    {
+      "model": "RF_MAF_seed_mean_prediction",
+      "n": 48,
+      "RMSE": 0.02822838879308968,
+      "MAE": 0.02115738141792838,
+      "RMSE_over_AR4": 0.8426457598187831
+    },
+    {
+      "model": "AR_plus_RF_seed_mean_prediction",
+      "n": 48,
+      "RMSE": 0.02774405113145125,
+      "MAE": 0.02277639139720909,
+      "RMSE_over_AR4": 0.8281877941200793
+    },
+    {
+      "model": "AR2_filter",
+      "n": 48,
+      "RMSE": 0.0336895426894208,
+      "MAE": 0.02677788769456964,
+      "RMSE_over_AR4": 1.0056666891460628
+    }
+  ],
+  "published_ratio_comparisons": [
+    {
+      "model": "RF_MAF_seed101",
+      "reported_ratio": 0.85,
+      "reconstructed_ratio": 0.8303817096872429,
+      "difference": -0.01961829031275708,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "AR_plus_RF_seed101",
+      "reported_ratio": 0.84,
+      "reconstructed_ratio": 0.8512353066108189,
+      "difference": 0.011235306610818951,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "RF_MAF_seed202",
+      "reported_ratio": 0.85,
+      "reconstructed_ratio": 0.8245990469588635,
+      "difference": -0.02540095304113643,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "AR_plus_RF_seed202",
+      "reported_ratio": 0.84,
+      "reconstructed_ratio": 0.8153883410416212,
+      "difference": -0.0246116589583788,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "RF_MAF_seed303",
+      "reported_ratio": 0.85,
+      "reconstructed_ratio": 0.8850909330287636,
+      "difference": 0.03509093302876365,
+      "within_diagnostic_tolerance": false,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "AR_plus_RF_seed303",
+      "reported_ratio": 0.84,
+      "reconstructed_ratio": 0.827334049277033,
+      "difference": -0.012665950722966945,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": false
+    },
+    {
+      "model": "RF_MAF_seed_mean_prediction",
+      "reported_ratio": 0.85,
+      "reconstructed_ratio": 0.8426457598187831,
+      "difference": -0.007354240181216887,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": true
+    },
+    {
+      "model": "AR_plus_RF_seed_mean_prediction",
+      "reported_ratio": 0.84,
+      "reconstructed_ratio": 0.8281877941200793,
+      "difference": -0.011812205879920712,
+      "within_diagnostic_tolerance": true,
+      "ensemble_excluded_from_seed_rule": true
+    }
+  ],
+  "all_individual_control_seeds_within_tolerance": false,
+  "FA_ARRF_replication_established": false,
+  "exact_author_pipeline_verified": false,
+  "primary_result_replaced": false
+}

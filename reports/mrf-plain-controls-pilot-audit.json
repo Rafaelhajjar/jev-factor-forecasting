@@ -1,0 +1,65 @@
+{
+  "status": "partial_plain_control_integrity_only",
+  "primary_artifact_audit_repeated": true,
+  "manifest_sha256": "1e1c84a472351f0b40157de770abd6839b310b25060a6bcbf6584a27fcd098eb",
+  "runner_source_sha256": "0854959814eb776158749f9e63dabf82af876f67e272ce1bcdfecd883021a11f",
+  "dependencies_sha256": {
+    "plain_forest.py": "e2f12b7eae40a60d51135fe5e4e65b55686f8ba4060e7a66a4bbf7863bf87911",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "arrf_audit.py": "86aaab5fbc7efda5af3df8af14da8e69ec46a5e92555d17c1cfdb6e0f8e6e821",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a",
+    "reference_control_ar2.R": "eadea6f5463abbb885e18a3580596c286ad7cef9dfc4162988f973614b46398f"
+  },
+  "backend": {
+    "sklearn": "1.9.1",
+    "numpy": "2.4.6",
+    "python": "3.11.15"
+  },
+  "jobs_verified": 2,
+  "pending_jobs": [],
+  "output_checks": [
+    {
+      "fit_end": "2002Q4",
+      "model": "RF_MAF",
+      "seed": 101,
+      "tree_sha256": "662e9ecb5a4748d86657112b12822ec1f34b216ffb7609079d9db43d12894037",
+      "prediction_sha256": "f04a24a9d41a8a4989a2efe024c8b2a826d6a51279324646ba202d0bf67de2c3",
+      "maximum_node_mean_error_standardized_units": 1.3322676295501878e-15,
+      "maximum_forecast_reconstruction_error": 2.6020852139652106e-18,
+      "deterministic_refit_verified": true
+    },
+    {
+      "fit_end": "2002Q4",
+      "model": "AR_plus_RF",
+      "seed": 101,
+      "tree_sha256": "e84ce44b1cc5badfea96c7338593a032ecb8f2d6117c73dc133a2229fe19f240",
+      "prediction_sha256": "6e556a47a1d977b7738a38f39f09fedfe6f17ea82d61c1f070b6ca7d786041e8",
+      "maximum_node_mean_error_standardized_units": 3.3306690738754696e-16,
+      "maximum_forecast_reconstruction_error": 6.938893903907228e-18,
+      "deterministic_refit_verified": true
+    }
+  ],
+  "linear_checks": [
+    {
+      "fit_end": "2002Q4",
+      "all_primary_matrix_entries_preserved": true,
+      "state_columns": 1041,
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "maximum_absolute_differences": {
+        "AR2_coefficients": 2.220446049250313e-16,
+        "AR2_all_row_predictions": 2.498001805406602e-16,
+        "AR2_training_residuals": 3.608224830031759e-16
+      }
+    }
+  ],
+  "partial_scores_suppressed": true,
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "all_individual_control_seeds_within_tolerance": null,
+  "FA_ARRF_replication_established": false,
+  "exact_author_pipeline_verified": false,
+  "primary_result_replaced": false
+}

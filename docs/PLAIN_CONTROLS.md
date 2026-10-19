@@ -50,3 +50,9 @@ uv run python scripts/plain_controls.py audit \
 ```
 
 `--prepare-only` writes the declaration/input record and independent AR(2) checks without fitting forests or scoring. Continue that exact run with `--resume`; changed inputs, code, configuration or backend versions are rejected. Full output directories include tree checkpoints, component forecasts, metrics, predictions, result and manifest records. These controls make no hosted Jev or LLM calls. The unemployment replication goal remains open until its actual requirements are satisfied.
+
+## Completed outcome, recorded after the declaration
+
+The declaration and runner were published in commit **2e72a9fcb80a95767d72d1a987f06bd4c17d1172** before these controls' actual-data pilot or full outcomes. The two-fit/eight-date pilot passed its separate integrity audit with scores suppressed. The full 36-fit comparison then completed, and the final auditor deterministically refitted every forest, repeated all input/filter checks and verified all 48 dates.
+
+AR+RF ratios are 0.851235/0.815388/0.827334 versus 0.84: all pass. RF-MAF ratios are 0.830382/0.824599/0.885091 versus 0.85: seed 303 fails, so the combined control criterion is false. The original FA-ARRF joint criterion and larger nonlinear-gain milestone remain unmet. No configuration, seed or factor construction was changed to rescue a miss. See the [completed report and retained artifacts](../reports/MRF_PLAIN_CONTROLS.md).
