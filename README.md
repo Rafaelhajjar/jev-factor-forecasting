@@ -23,6 +23,8 @@ A [training-only FRED-recipe audit](docs/FRED_RECIPE_AUDIT.md) reconstructs the 
 
 The separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md), declared before its outcomes, is now [fully completed and audited](reports/MRF_FRED125_SENSITIVITY.md): all 18 jobs and all 48 dates verify. It changes only the factor block, keeps the entire original indicator/MAF state and fits its own matching linear comparator. The forest's incremental RMSE reduction is 4.42%–6.92%, still below the roughly 13.3% implied by the printed source cells. This is a composite preparation check, not a pure rank change or recovery of the missing author runner. All earlier results remain frozen.
 
+Work on the remaining Table 4 controls has begun with a [source-checked plain-forest building block](docs/RF_MAF_CONTROL.md). RF-MAF uses the full rich state, and AR+RF additionally requires an AR(2) residual stage; neither is an existing MRF with a new label. The separate CART/block-sampling primitive and its synthetic/base-R contracts pass. Its quarterly runner and full comparison are not yet implemented, so there is no new RF-MAF or AR+RF macro score.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -135,7 +137,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 233 ordinary tests plus 12 optional real-R checks, including independent completion/linear/PCA calculations, actual native-initialization capture and the engine's sign sensitivity. All 245 passed locally, including FRED125 preparation-only/recipe/joint-gate guards, FRED-recipe stopping/timing contracts, PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 264 ordinary tests plus 16 optional real-R checks, including independent completion/linear/PCA calculations, actual native-initialization capture and the engine's sign sensitivity. All 280 passed locally, including the new plain-forest sampling/leaf/timing contracts and native empty-equation rejection, FRED125 preparation-only/recipe/joint-gate guards, FRED-recipe stopping/timing contracts, PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \

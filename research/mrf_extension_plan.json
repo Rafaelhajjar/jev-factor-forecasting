@@ -1,8 +1,8 @@
 {
-  "schema_version": 16,
+  "schema_version": 17,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "full_FRED125_preparation_sensitivity_audited_joint_replication_still_fails_two_forest_seeds",
+  "implementation_status": "joint_replication_still_fails_plain_RF_control_core_and_source_boundaries_implemented_no_new_macro_score",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -329,6 +329,25 @@
     "final_manifest_sha256": "9729f5318571c3023a39ef67d2b03feb9de8648eccd2c1b06a49c13a1a1301b9",
     "primary_result_replaced": false,
     "original_author_preprocessing_recovered": false
+  },
+  "plain_forest_control_building_block": {
+    "module": "src/jev_factor/plain_forest.py",
+    "source_note": "docs/RF_MAF_CONTROL.md",
+    "RF_MAF_uses_full_S_not_only_MAF_columns": true,
+    "AR_plus_RF_requires_training_only_AR2_residual_stage": true,
+    "native_MRF_empty_linear_equation_rejected_in_real_R": true,
+    "plain_CART_sampled_leaf_means_and_uniform_prediction_average_implemented": true,
+    "random_group_quantile_sampling_distribution_port": true,
+    "base_R_dimensions_and_identical_weight_cutoff_verified": true,
+    "historical_R_rng_or_RF_backend_recovered": false,
+    "scikit_learn_observed_version": "1.9.1",
+    "primitive_fits_scaler_internally": false,
+    "synthetic_contracts_are_not_macro_performance_evidence": true,
+    "new_macro_forecast_losses_calculated": false,
+    "full_quarterly_RF_MAF_runner_implemented": false,
+    "full_AR_plus_RF_runner_implemented": false,
+    "remaining_exact_source_settings_verified": false,
+    "primary_result_replaced": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,

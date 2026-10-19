@@ -14,6 +14,7 @@ from jev_factor.fred_recipe import FredRecipeRepresentation
 from jev_factor.fred_recipe_audit import r_recipe_check
 from jev_factor.invocation_audit import audit_invocation
 from jev_factor.pca_basis_audit import compare_rotations, r_rotations
+from jev_factor.plain_forest import block_subsample
 from jev_factor.replication import LINEAR_X, linear_prediction
 from jev_factor.replication_audit import _r_linear
 
@@ -202,3 +203,51 @@ def test_independent_r_fred_recipe_matches_rank_path_completion_and_stopping(
     assert check["rank_path_and_stopping_reason_match"]
     assert check["maximum_standardized_matrix_difference"] < 1e-8
     assert check["final_PCA"]["same_up_to_component_signs"]
+
+
+@pytest.mark.parametrize("rows", [160, 173, 211])
+def test_plain_control_sampling_dimensions_and_quantile_match_base_r(tmp_path, rows):
+    # This checks the distribution port's dimensions and cutoff algebra, not R
+    # RNG equivalence. Both languages consume exactly the same supplied weights.
+    sample = block_subsample(rows, np.random.default_rng(849))
+    source = tmp_path / "row_weights.csv"
+    output = tmp_path / "selected.csv"
+    pd.DataFrame({"weight": sample.group_weights[sample.groups]}).to_csv(
+        source, index=False, float_format="%.17g"
+    )
+    code = (
+        "args <- commandArgs(TRUE); x <- read.csv(args[1])$weight; n <- length(x); "
+        'cat(length(1:(n/8)), length(rexp(n=n/8)), "\\n"); '
+        "write.csv(data.frame(row=which(x > quantile(x, .25, type=7))-1L), "
+        "args[2], row.names=FALSE)"
+    )
+    result = subprocess.run(
+        [shutil.which("Rscript"), "--vanilla", "-e", code, str(source), str(output)],
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert [int(value) for value in result.stdout.split()] == [rows // 8, rows // 8]
+    np.testing.assert_array_equal(pd.read_csv(output)["row"], sample.rows)
+
+
+def test_native_engine_rejects_an_empty_linear_equation_not_plain_rf_maf(tmp_path):
+    path = tmp_path / "input.csv"
+    _matrix().to_csv(path, index=False)
+    code = (
+        "args <- commandArgs(TRUE); env <- new.env(); source(args[1], local=env); "
+        "answer <- tryCatch({env$MRF(read.csv(args[2]), x.pos=integer(0), "
+        'oos.pos=71:78, printb=FALSE); "unexpected_success"}, '
+        "error=function(e) conditionMessage(e)); cat(answer)"
+    )
+    result = subprocess.run(
+        [shutil.which("Rscript"), "--vanilla", "-e", code, str(Path(ENGINE).resolve()), str(path)],
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "at least one X" in result.stdout
