@@ -1,8 +1,8 @@
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "FA_ARRF_source_ratio_still_missed_ARRF_numerically_matches_and_artifacts_verified_PCA_portability_audited",
+  "implementation_status": "FA_ARRF_source_ratio_still_missed_ARRF_matches_coordinate_only_R_sign_sensitivity_implemented_and_pilot_verified",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -158,6 +158,19 @@
     "primary_basis_changed": false,
     "original_author_basis_recovered": false,
     "forecast_gap_attributed_to_orientation": false
+  },
+  "next_replication_sensitivity": {
+    "name": "recorded_R_PCA_and_MAF_signs_only",
+    "configuration": "configs/mrf_r_basis_sensitivity.json",
+    "protocol": "docs/R_BASIS_SENSITIVITY.md",
+    "all_other_input_information_and_settings_preserved": true,
+    "native_R_sign_maps_recomputed_before_fitting": true,
+    "original_primary_and_ARRF_results_preserved": true,
+    "basis_selected_using_forecast_loss": false,
+    "actual_R_bounded_pilot_verified": true,
+    "pilot_audit": "reports/mrf-r-basis-pilot-audit.json",
+    "full_performance_comparison_completed": false,
+    "original_author_basis_recovered": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,

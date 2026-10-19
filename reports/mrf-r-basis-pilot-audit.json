@@ -1,0 +1,38 @@
+{
+  "status": "partial_orientation_integrity_only",
+  "source_primary_integrity_verified": true,
+  "native_R_sign_maps_recomputed_and_verified": true,
+  "sensitivity_source_sha256": "9580d2492a0713e003524a4af22cbb3234b3537c92ca07466db8efa038398251",
+  "manifest_sha256": "f7975c9442774e9ddaccfbd61af25f928c9f12f6e3252c68300b81accaf2c970",
+  "basis_report_sha256": "c1e088e58f458295277c95eb5ca86d34e5550d361baed56a79dc252707f40be0",
+  "jobs_verified": 1,
+  "pending_jobs": [],
+  "output_checks": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101,
+      "sha256": "e62d625f2a9e1abfaab991c4fbb9fa33d73b74c56b0a1ba5d8647bccaa497df8"
+    }
+  ],
+  "maximum_coefficient_reconstruction_error": 1.1662220668340328e-15,
+  "linear_invariance_checks": [
+    {
+      "fit_end": "2002Q4",
+      "maximum_absolute_differences": {
+        "AR4": 9.020562075079397e-17,
+        "FA_AR": 8.326672684688674e-17,
+        "AR4_R_QR": 1.0061396160665481e-16,
+        "FA_AR_R_QR": 1.0061396160665481e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "paired_orientation_effects": [],
+  "FA_AR_and_all_individual_R_basis_seeds_within_tolerance": null,
+  "partial_forest_scores_suppressed": true,
+  "exact_author_pipeline_verified": false,
+  "original_author_basis_recovered": false,
+  "primary_result_replaced": false
+}

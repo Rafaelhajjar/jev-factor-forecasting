@@ -1,0 +1,21 @@
+{
+  "study": "quarterly_unemployment_recorded_R_basis_sensitivity",
+  "declaration_date": "2026-10-19",
+  "purpose": "Quantify the pinned engine's response to the independently observed R/Python PCA sign difference, without selecting signs on test loss",
+  "model_prefix": "FA_ARRF_R_basis",
+  "linear_terms": ["y_lag1", "y_lag2", "F1_lag1", "F2_lag1"],
+  "trees": 100,
+  "seeds": [101, 202, 303],
+  "basis_rule": "Use all cross-sectional and MAF signs in the verified training-only R prcomp audit; apply the same sign to all lags of a component",
+  "reported_FA_AR_ratio": 0.83,
+  "reported_FA_ARRF_ratio": 0.72,
+  "absolute_ratio_diagnostic_tolerance": 0.03,
+  "known_primary_FA_ARRF_ratios_before_this_test": [0.7973245508700247, 0.8041844982134492, 0.8063462535432181],
+  "known_ARRF_ratios_before_this_test": [0.8925989473802962, 0.8944262654772002, 0.9018775525458128],
+  "all_other_effective_settings_inherited_from_primary": true,
+  "cleaning_completion_loadings_and_information_set_unchanged": true,
+  "constant_linear_forecasts_must_remain_equal": true,
+  "basis_selected_using_forecast_loss": false,
+  "keep_original_primary_result_and_all_sensitivity_seeds": true,
+  "interpretation": "Post-primary diagnostic, not a blind confirmatory test or proof of the original author's R build or basis"
+}
