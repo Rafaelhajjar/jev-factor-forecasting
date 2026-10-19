@@ -15,6 +15,14 @@ jobs:
       - run: uv run --frozen --extra api ruff format --check .
       - run: uv run --frozen --extra api pytest
       - run: uv run --frozen --extra api jev-factor run --config configs/synthetic.json --output runs/ci --seeds 7 --max-origins 3
+  neural-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen --extra nn
+      - name: Actual CPU Torch math, training, checkpoint and synthetic-boundary integration
+        run: uv run --frozen --extra nn pytest -q tests/test_neural.py tests/test_nn_experiment.py
   reference-r-contracts:
     runs-on: ubuntu-latest
     steps:

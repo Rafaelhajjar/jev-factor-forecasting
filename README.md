@@ -25,7 +25,9 @@ The separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md), declare
 
 The separately declared [RF-MAF/AR+RF comparison is complete and fully audited](reports/MRF_PLAIN_CONTROLS.md): all 36 fits, 3,600 trees and 48 dates. AR+RF ratios 0.851235/0.815388/0.827334 all pass against 0.84. RF-MAF ratios 0.830382/0.824599/0.885091 include one failure against 0.85, so the combined six-cell control criterion fails. The [runner declaration](docs/PLAIN_CONTROLS.md) predates outcomes; every saved forest passes direct traversal, sampled-node reconstruction and deterministic refitting. Both controls retain all seeds, the unchanged original rich state and explicit backend assumptions. This neither replaces nor establishes the still-failed FA-ARRF replication.
 
-The [native TV-FAAR comparison is complete and fully audited](reports/MRF_TVP_FAAR.md): six refits and 48 dates, ratio **0.942195 versus 1.19**, outside tolerance. **All six native GARCH fits report non-convergence code 1.** Independent covariance/CV calculations and identical full native reruns verify the arithmetic, not optimizer convergence or source fidelity. Both actual tuning stages are retained; the final two refits use a different lambda from the public first-stage return. The [declaration](docs/TVP_FAAR_CONTROL.md) predates outcomes, keeps the original nine-coefficient equation/two-year forecast cadence and qualifies the 2007Q2 interpretation context. NN remains unimplemented; the main FA-ARRF replication remains unresolved.
+The [native TV-FAAR comparison is complete and fully audited](reports/MRF_TVP_FAAR.md): six refits and 48 dates, ratio **0.942195 versus 1.19**, outside tolerance. **All six native GARCH fits report non-convergence code 1.** Independent covariance/CV calculations and identical full native reruns verify the arithmetic, not optimizer convergence or source fidelity. Both actual tuning stages are retained; the final two refits use a different lambda from the public first-stage return. The [declaration](docs/TVP_FAAR_CONTROL.md) predates outcomes, keeps the original nine-coefficient equation/two-year forecast cadence and qualifies the 2007Q2 interpretation context. The main FA-ARRF replication remains unresolved.
+
+The [appendix NN control is now declared and implemented](docs/NN_CONTROL.md), before its macro outcomes: the unchanged 1,041-column state, five 100-unit ReLU layers, 10-member ensembles, 85% fitting subsamples and a 100-epoch cap. All three fixed seeds are retained. Missing early-stopping/preprocessing details are explicit reconstruction assumptions, not recovered original settings. The verifier checks numeric checkpoints with NumPy and repeats every training; the CPU-only Torch dependency is optional. No actual-data NN pilot or full scores have run at declaration.
 
 ## The idea we are building on
 
@@ -139,7 +141,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 345 ordinary tests plus 25 optional real-R checks. All 370 passed locally, including the native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts, quarterly plain-control tree/refit/provenance/gate contracts, plain-forest sampling/leaf/timing contracts and native empty-equation rejection, FRED125 preparation-only/recipe/joint-gate guards, FRED-recipe stopping/timing contracts, PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable all R contracts after the original engine has been fetched:
+The suite has 345 ordinary tests, 53 optional neural-network checks and 25 optional real-R checks. All 423 passed locally, including actual neural training/checkpoint restoration, independent derivatives/Adam calculations, deterministic refits and altered-model rejection; native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts; quarterly plain-control tree/refit/provenance/gate contracts; and the earlier preparation, timing, action-algebra and artifact guards. To enable all checks after the original engines have been fetched:
 
 ```bash
 Rscript scripts/setup_tvp_r.R runs/r-library
@@ -147,10 +149,10 @@ uv run python -c "from pathlib import Path; from jev_factor.tvp_ridge import ens
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
 JEV_TVP_REFERENCE_ENGINE=data/raw/MV2SRR_v210407.R \
 JEV_MRF_R_LIBRARY=runs/r-library \
-uv run pytest -q
+uv run --frozen --extra api --extra nn pytest -q
 ```
 
-CI includes both native R estimators, a synthetic-boundary TVP integration/refit and a bounded two-tree/eight-quarter MRF smoke with artifact verification, not the full expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
+CI includes actual NN training/refits against a synthetic source boundary, both native R estimators, a synthetic-boundary TVP integration/refit and a bounded two-tree/eight-quarter MRF smoke with artifact verification, not the full expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
 
 Model credentials are needed when the new integration reaches its API pilot; they are not needed for this reconstruction. No hosted forecasting calls have been made.
 
