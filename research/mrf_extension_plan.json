@@ -1,8 +1,8 @@
 {
-  "schema_version": 19,
+  "schema_version": 20,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "plain_controls_fully_audited_AR_plus_RF_all_seeds_agree_RF_MAF_one_seed_misses_FAARRF_still_unreproduced",
+  "implementation_status": "native_TV_FAAR_declared_and_implemented_before_macro_outcomes_FAARRF_still_unreproduced",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -389,6 +389,32 @@
     "final_manifest_sha256": "8cd5a4a42b870dd69ce11e3587e4eb5c6f9de09a2ef971bfd9bea887d80d4255",
     "control_match_cannot_establish_FA_ARRF_replication": true,
     "original_author_plain_RF_backend_or_exact_settings_recovered": false,
+    "primary_result_replaced": false
+  },
+  "declared_native_TV_FAAR_control": {
+    "configuration": "configs/mrf_tvp_faar.json",
+    "protocol": "docs/TVP_FAAR_CONTROL.md",
+    "runner": "scripts/tvp_faar.py",
+    "external_engine_commit": "d2d52bb9e0126fb580fb8301f305035d3047b4b2",
+    "external_engine_sha256": "1cc6cce8fb7f3524469b37328519097908f56c56631b09bc6feb512402142a45",
+    "external_GPL_not_vendored": true,
+    "equation_coefficients_including_intercept": 9,
+    "unchanged_original_all248_primary_equation_rows": true,
+    "forecast_refits": 6,
+    "endpoint_beta_frozen_within_two_year_block": true,
+    "native_random_CV_seed": 1071,
+    "native_default_settings_preserved": true,
+    "outer_seed_ensemble_not_applicable": true,
+    "both_actual_CV_tuning_stages_captured": true,
+    "independent_covariance_CV_weights_GARCH_recursion_and_forecast_verifier": true,
+    "final_audit_repeats_every_native_fit": true,
+    "GARCH_optimizer_codes_retained_without_retry": true,
+    "macro_pilot_verified": false,
+    "full_comparison_completed": false,
+    "reported_RMSE_over_AR4": 1.19,
+    "absolute_ratio_diagnostic_tolerance": 0.03,
+    "original_table_invocation_or_2007Q2_schedule_ambiguity_resolved": false,
+    "FA_ARRF_replication_established": false,
     "primary_result_replaced": false
   },
   "published_forest_settings": {

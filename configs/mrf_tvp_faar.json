@@ -1,0 +1,22 @@
+{
+  "study": "quarterly_unemployment_native_TV_FAAR_control",
+  "declaration_date": "2026-10-19",
+  "model": "TV_FAAR",
+  "equation": ["y_lag1", "y_lag2", "y_lag3", "y_lag4", "F1_lag1", "F1_lag2", "F2_lag1", "F2_lag2"],
+  "intercept_added_by_native_engine": true,
+  "factor_rule": "unchanged_original_all248_primary",
+  "forecast_schedule": "six_original_two_year_refits_endpoint_beta_frozen_within_block",
+  "not_single_2007Q2_or_full_sample_estimation": true,
+  "native_default_settings": true,
+  "native_CV_seed": 1071,
+  "native_CV_is_random_not_chronological": true,
+  "outer_seed_ensemble_not_applicable": true,
+  "GARCH_optimizer_codes_retained_without_retry_or_fallback": true,
+  "reported_RMSE_over_AR4": 1.19,
+  "absolute_ratio_diagnostic_tolerance": 0.03,
+  "prior_primary_and_sensitivity_losses_already_public": true,
+  "chosen_using_new_TV_FAAR_losses": false,
+  "original_primary_preserved": true,
+  "exact_author_table_invocation_recovered": false,
+  "control_match_cannot_establish_FA_ARRF_replication": true
+}

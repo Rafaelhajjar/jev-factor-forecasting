@@ -26,8 +26,12 @@ jobs:
           use-public-rspm: false
       - run: uv sync --frozen
       - run: Rscript scripts/setup_mrf_r.R runs/r-library
+      - name: Prepare pinned native TVP direct dependencies in the same local library
+        run: Rscript scripts/setup_tvp_r.R runs/r-library
       - name: Fetch checksum-pinned external GPL engine
         run: uv run python -c "from pathlib import Path; from jev_factor.replication import ensure_engine; print(ensure_engine(Path('data/raw/MRF_v210403.R')))"
+      - name: Fetch checksum-pinned external GPL TVP engine
+        run: uv run python -c "from pathlib import Path; from jev_factor.tvp_ridge import ensure_tvp_engine; print(ensure_tvp_engine(Path('data/raw/MV2SRR_v210407.R')))"
       - name: Fetch journal archive with bounded network retries and checksum validation
         run: |
           curl --fail --location --retry 4 --retry-all-errors --retry-delay 3 --max-time 90 \
@@ -37,8 +41,9 @@ jobs:
       - name: Exercise actual R engine, not a mock
         env:
           JEV_MRF_REFERENCE_ENGINE: data/raw/MRF_v210403.R
+          JEV_TVP_REFERENCE_ENGINE: data/raw/MV2SRR_v210407.R
           JEV_MRF_R_LIBRARY: runs/r-library
-        run: uv run pytest -q tests/test_reference_r_contract.py
+        run: uv run pytest -q tests/test_reference_r_contract.py tests/test_reference_tvp_contract.py tests/test_tvp_experiment.py
       - name: Bounded quarterly integration smoke, not the 48-quarter benchmark
         run: uv run jev-factor replicate-mrf --output runs/ci-quarterly --trees 2 --seeds 101 --max-refits 1
       - name: Check quarterly smoke artifacts and explicitly retain partial status

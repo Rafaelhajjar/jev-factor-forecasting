@@ -25,6 +25,8 @@ The separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md), declare
 
 The separately declared [RF-MAF/AR+RF comparison is complete and fully audited](reports/MRF_PLAIN_CONTROLS.md): all 36 fits, 3,600 trees and 48 dates. AR+RF ratios 0.851235/0.815388/0.827334 all pass against 0.84. RF-MAF ratios 0.830382/0.824599/0.885091 include one failure against 0.85, so the combined six-cell control criterion fails. The [runner declaration](docs/PLAIN_CONTROLS.md) predates outcomes; every saved forest passes direct traversal, sampled-node reconstruction and deterministic refitting. Both controls retain all seeds, the unchanged original rich state and explicit backend assumptions. This neither replaces nor establishes the still-failed FA-ARRF replication. TV-FAAR and NN remain pending.
 
+The [native TV-FAAR control is now declared and implemented](docs/TVP_FAAR_CONTROL.md), before its macro outcomes. It runs the author's checksum-pinned two-step ridge/GARCH estimator on the original nine-coefficient equation and six refits. Independent covariance/CV calculations and full native reruns audit it; both tuning stages and optimizer warnings are retained. Its random internal CV is labeled explicitly. The two-year forecast schedule and unresolved 2007Q2 interpretation footnote are not silently mixed.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -137,15 +139,18 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 303 ordinary tests plus 17 optional real-R checks, including independent AR(2)/completion/linear/PCA calculations, actual native-initialization capture and the engine's sign sensitivity. All 320 passed locally, including the quarterly plain-control tree/refit/provenance/gate contracts, plain-forest sampling/leaf/timing contracts and native empty-equation rejection, FRED125 preparation-only/recipe/joint-gate guards, FRED-recipe stopping/timing contracts, PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 345 ordinary tests plus 25 optional real-R checks. All 370 passed locally, including the native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts, quarterly plain-control tree/refit/provenance/gate contracts, plain-forest sampling/leaf/timing contracts and native empty-equation rejection, FRED125 preparation-only/recipe/joint-gate guards, FRED-recipe stopping/timing contracts, PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable all R contracts after the original engine has been fetched:
 
 ```bash
+Rscript scripts/setup_tvp_r.R runs/r-library
+uv run python -c "from pathlib import Path; from jev_factor.tvp_ridge import ensure_tvp_engine; ensure_tvp_engine(Path('data/raw/MV2SRR_v210407.R'))"
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
+JEV_TVP_REFERENCE_ENGINE=data/raw/MV2SRR_v210407.R \
 JEV_MRF_R_LIBRARY=runs/r-library \
 uv run pytest -q
 ```
 
-CI includes real-R contracts and a bounded two-tree/eight-quarter integration smoke with artifact verification, not the full expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
+CI includes both native R estimators, a synthetic-boundary TVP integration/refit and a bounded two-tree/eight-quarter MRF smoke with artifact verification, not the full expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
 
 Model credentials are needed when the new integration reaches its API pilot; they are not needed for this reconstruction. No hosted forecasting calls have been made.
 
