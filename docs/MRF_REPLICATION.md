@@ -1,6 +1,6 @@
 # MRF replication checklist and verified inputs
 
-Inspected October 18, 2026, including the final article and its appendix. This is the first milestone of the [active research protocol](RESEARCH_PROTOCOL.md). Final-source reading and locating the archive are complete; reconciling every code setting and reproducing the paper are not. See the [appendix evidence and discrepancy register](APPENDIX_FINDINGS.md).
+Inspected October 18, 2026, including the final article, appendix and pinned author engine. This is the first milestone of the [active research protocol](RESEARCH_PROTOCOL.md). The quarterly reconstruction is implemented and running, but reconciling every original setting and reproducing the paper are not complete. See the [code audit](AUTHOR_CODE_AUDIT.md) and [appendix discrepancy register](APPENDIX_FINDINGS.md).
 
 ## Source versions
 
@@ -10,7 +10,7 @@ Inspected October 18, 2026, including the final article and its appendix. This i
 | Published supporting appendix | [Publisher PDF](https://onlinelibrary.wiley.com/doi/suppl/10.1002/jae.3030/supinfo/jae3030-sup-0001-Appendix.pdf) | All 32 PDF pages read; settings/algorithm and Tables 4–5 visually checked |
 | Earlier manuscript | [arXiv 2006.12724](https://arxiv.org/pdf/2006.12724), displayed March 2021 draft | Historical context, no longer the specification authority |
 | Journal replication data | [Data DOI](https://doi.org/10.15456/jae.2023321.0115060814) | Downloaded and inspected in local scratch space |
-| Author's R implementation | [philgoucou/macrorf](https://github.com/philgoucou/macrorf), commit `bdb2ed435affb741aafdf78bab12c470ec6d55d0` | Candidate reference; algorithm and settings audit pending |
+| Author's R implementation | [philgoucou/macrorf](https://github.com/philgoucou/macrorf), commit `bdb2ed435affb741aafdf78bab12c470ec6d55d0` | Engine audited and called externally; no paper runner in the repository |
 | Python implementation | [RyanLucas3/MacroRandomForest](https://github.com/RyanLucas3/MacroRandomForest), commit `8069107d6e1f92e8ef9fade782dfda97f8bd66d8` | Candidate cross-check; not assumed numerically identical |
 
 The journal archive redirected to [ZBW Journal Data](https://journaldata.zbw.eu/dataset/the-macroeconomy-as-a-random-forest-replication-data). Its README says that observations are in levels and need the appropriate transformations. The ZIP contains CSVs and a README, not a complete experiment runner. Do not confuse an implementation package with a full replication package.
@@ -30,9 +30,9 @@ FREDMD_2018-01.csv SHA-256
 9ed47f32eb54b9539662bb940cea352ac2fac8bc558de017317c753f794a9f00
 ```
 
-The quarterly file has separate `factors` and `transform` metadata rows. An initial CSV inspection found 255 fields per row, including the date field, but 248 observation columns with any nonempty values. The S&P names are split across header tokens near the tail, where six columns have no observation values. Record a verified name/metadata repair map rather than silently accepting ambiguous duplicate names or dropping a financial series.
+The quarterly file has separate `factors` and `transform` metadata rows: 255 fields per row, including date, but 248 populated observation columns. The S&P names are split across header tokens near the tail, where six columns have no observations or metadata. The dedicated loader now repairs the exact verified signature, preserves all 248 series and rejects populated padding. It validates dates, transformations and archive/member checksums.
 
-The `factors` row's inclusion/exclusion semantics need to be checked against the reference algorithm. Treating every series as eligible for PCA could change the intended factor construction. The monthly file has a different metadata layout; the existing monthly loader is not a validated quarterly loader.
+The `factors` row identifies the historical Stock-Watson subset: 125 included and 123 excluded series. It does not determine whether the MRF author used all series for PCA. The first reconstruction explicitly uses all 248, with training-only fixed-rank-five completion/PCA; original factor eligibility and preprocessing remain unresolved. The monthly loader remains a separate path. See the [data audit](AUTHOR_CODE_AUDIT.md#4-quarterly-archive-and-factor-construction).
 
 Raw archive files remain outside Git. The [planning manifest](../research/mrf_extension_plan.json) stores provenance without relicensing or redistributing the observations.
 
@@ -50,7 +50,9 @@ The appendix download has SHA-256 `665fac2b6a21b8f2b28442dfe60aec30aee542c3dac28
 
 ## Source/code issues still open
 
-The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolve) records the extra HOUST target row, AR(12)-versus-AR(4) monthly denominator, A.2 sample lengths, TV-FAAR estimation schedule and exact parameter invocations. Archive parsing, factor eligibility, missing/outlier processing, PCA fit window and factor orientation are still required. Final-source access is no longer a blocker; exact numerical replication is not yet established.
+The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolve) records the extra HOUST target row, AR(12)-versus-AR(4) monthly denominator, A.2 sample lengths and TV-FAAR schedule. The generic engine does not resolve those discrepancies. It does establish actual defaults, an effective parent-size floor and all-row standardization. Our adapter's training-only normalization, OLS prior variances and factor processing are explicit reconstruction choices, not recovered paper settings.
+
+`configs/mrf_unemployment.json` freezes 100 trees, seeds 101/202/303 and an absolute ratio tolerance of 0.03 before full forest results. That diagnostic tolerance is ours, not a statistical test. The full 48-quarter fixed FA-AR/AR(4) ratio is 0.812577, compared with the source's rounded 0.83. The full forest evaluation is running. A near numerical score alone will not establish exact source fidelity.
 
 ## Required before adding Jev
 
@@ -59,13 +61,14 @@ The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolv
 - [x] Resolve and inspect the journal's exact archive.
 - [x] Record archive/member hashes and candidate reference-code revisions.
 - [x] Name the first reported comparison cells and distinguish forecast-table timing from interpretation experiments.
-- [ ] Resolve or explicitly qualify the source inconsistencies against pinned reference code.
-- [ ] Lock target transformations, factor-eligible series, missing-value/outlier rules, PCA details and factor orientation.
-- [ ] Lock forecast origin versus target dates, sample endpoints, target aggregation and estimation/tuning cadence.
-- [ ] Lock reference hyperparameters, random seeds and implementation/library versions.
-- [ ] Audit factors, state predictors and target lags for information timing at every origin.
+- [x] Resolve or explicitly qualify the source inconsistencies against pinned reference code.
+- [x] Lock a documented reconstruction's target, factor panel, completion, outlier and PCA conventions without claiming they are the missing original runner.
+- [x] Lock reconstruction origin/target dates, endpoints and two-year refit cadence.
+- [x] Declare reconstruction settings/seeds/tolerance and record actual R/package versions per job.
+- [x] Add past-only factor/state/target handling and real-engine future-perturbation contracts.
+- [ ] Recover exact original processing and per-table invocation, or retain a qualified-reconstruction boundary.
 - [ ] Run the linear benchmark and reference MRF without Jev; retain forecasts and coefficient decompositions.
 - [ ] Compare reproduced cells using a tolerance fixed before inspecting differences; explain unresolved discrepancies.
 - [ ] Build genuinely prequential development cases for the new policy, then freeze its prompt and candidate construction.
 
-The protocol's main dates, lag structure and unemployment target are now supported by the final article, not provisional working-paper anchors. Exact data processing and effective code settings remain distinct unresolved tasks. Reading source results does not check any numerical-reproduction box.
+The protocol's dates, lag structure and target are supported by the final article. The adapter and tests go beyond source reading, but the forest result and source-fidelity check are still required. An eight-quarter, two-tree smoke test checks execution only, not the published score.

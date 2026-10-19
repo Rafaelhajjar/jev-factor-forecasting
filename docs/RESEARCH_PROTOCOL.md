@@ -1,6 +1,6 @@
 # Research protocol: extending Macroeconomic Random Forests with Jev
 
-Updated October 18, 2026 after reading the published article and its 32-page appendix. This supersedes the [initial generic factor-gating protocol](LEGACY_PROTOCOL.md). It is a research plan, not an implemented MRF benchmark or an external preregistration. The [appendix evidence note](APPENDIX_FINDINGS.md) separates source facts, our design choices and unresolved discrepancies.
+Updated October 19, 2026 after reading the published article, its 32-page appendix and the public author engine. This supersedes the [initial generic factor-gating protocol](LEGACY_PROTOCOL.md). The first quarterly reconstruction is implemented and running; the new Jev study remains a plan, not an external preregistration. The [appendix note](APPENDIX_FINDINGS.md) and [code audit](AUTHOR_CODE_AUDIT.md) separate source facts, reconstruction choices and unresolved discrepancies.
 
 ## 1. Research claim
 
@@ -20,9 +20,11 @@ FA-ARRF has an intercept, two target-history terms and one design-row value for 
 
 The first target remains unemployment at horizon 1 quarter. The article explicitly applies a log before first differencing unemployment: the primary target is delta log unemployment, not its level or percentage-point change. Appendix Table 4 reports FA-ARRF/AR(4) RMSE = 0.72, fixed FA-AR = 0.83 and NN = 0.80. Reproduce these cells and the additional controls recorded in the evidence note. They are rounded source results, not results of our implementation. Predeclare seeds and numerical tolerances before reproducing them; do not choose a seed or tune a forest until it matches 0.72.
 
-Appendix A.6 says the main RFs were untuned. Preserve that reference and its published block scheme: 75% subsampling, blocks of 8 quarters (24 months), minimum parent size 10 quarterly (15 monthly), and ridge prior means based on OLS. Exact RWR, ridge penalty, MLF, trend push, effective mtry and tree count still require a pinned-code check; recommendations of about 100 trees for means or 200–300 for bands are not exact per-table settings. The separately tuned 1998–2002 exercise is not the main reference.
+Appendix A.6 says the main RFs were untuned. Preserve that reference and its published block scheme: 75% subsampling, block parameter 8 quarters (24 months), nominal minimum parent size 10 quarterly (15 monthly), and ridge prior means based on OLS. The pinned engine defaults to RWR 0.75, ridge 0.1, MLF 1, trend push 1, mtry 1/3, 50 trees and block parameter 12. Its FA-ARRF parent-size floor raises 10 to 12. The first run explicitly overrides blocks to 8, supplies an OLS prior, and declares 100 trees with seeds 101/202/303. Recommendations of 100 trees for means or 200–300 for bands do not establish exact per-table invocations. The separately tuned 1998–2002 exercise is not the main reference.
 
-The author's R package is an implementation, not a complete reproduction pipeline. Factor eligibility, header repair, transformations of predictors, missing/outlier handling, PCA timing and method-specific settings still need audit. Resolve the appendix's target-count, monthly denominator, synthetic sample-length and TV-FAAR schedule discrepancies explicitly. If reproduction fails, report that limitation rather than attribute it to Jev.
+The author's R package is an implementation, not a complete reproduction pipeline. The [audit](AUTHOR_CODE_AUDIT.md) verifies the archive's header repair and historical Stock-Watson metadata semantics, while qualifying unknown original factor eligibility, missing/outlier handling, PCA orientation and method-specific invocations. The first reconstruction uses all 248 series and training-only fixed-rank-five EM/PCA. Its normalization override deliberately removes the native interface's dependency on future forecast-row covariates. These choices are explicit, not recovered source facts.
+
+The reconstruction's absolute RMSE-ratio tolerance of 0.03 was fixed before inspecting full forest scores; it is our diagnostic threshold, not an author standard or a statistical test. Retain all seeds and label a seed-mean forecast separately. The fixed FA-AR/AR(4) ratio is 0.812577 on all 48 quarters versus the paper's rounded 0.83; the full forest result is pending. Score agreement alone cannot resolve missing source settings. Target-count, monthly denominator, synthetic sample-length and TV-FAAR discrepancies remain open because the generic engine contains no corresponding runner. Report limits rather than attribute them to Jev.
 
 The original retrospective sample is a replication/development benchmark. Its outcomes are public and it cannot be described as a new blind test for a pretrained model.
 
@@ -171,12 +173,12 @@ After the primary hybrid experiment, a **forest-replacement** study can use Jev 
 
 ## 10. Implementation milestones
 
-1. Use the completed final-source reading to finish the remaining reference-code/settings audit; freeze seeds and tolerances.
-2. Add a dedicated quarterly archive loader, factor eligibility handling and exact target definitions.
-3. Implement the reference MRF adapter and factor/intercept/AR decomposition; reproduce selected paper cells.
+1. Done for the available engine: document actual behavior/defaults, qualify missing per-table settings, and freeze reconstruction seeds and tolerance. Recovering the original runner remains open.
+2. Implemented and tested: dedicated quarterly archive loader, verified metadata/header handling, separate log-difference target and past-only factor/state construction. Exact source preprocessing remains unverified.
+3. Adapter and coefficient decomposition implemented; full unemployment forest reconstruction running. Compare its 48-quarter results with selected paper cells before advancing. Other Table 4 comparators remain to be implemented.
 4. Generalize the current hard-coded three-label gate interface to joint candidate records without breaking legacy runs.
 5. Build appendix-inspired controlled DGPs, past-only state cards and a prequential action-loss dataset; implement constant, learned and neural/interaction controls and identity/timing tests.
 6. Freeze prompts and run bounded Jev/LLM contract pilots once credentials are available.
 7. Run the declared retrospective comparison, then robustness and stronger-vintage/prospective validation.
 
-This update documents the final sources and refines the design only. No experiment or numerical reproduction is represented as completed merely because a legacy helper exists or a paper table has been read. See [current project status](../reports/STATUS.md) and the [planning manifest](../research/mrf_extension_plan.json).
+The new quarterly execution path is distinct from the legacy scaffold. Its tests and linear result are recorded, but exact numerical reproduction and any Jev benefit remain unestablished. See [current status](../reports/STATUS.md), the executable reconstruction config and the separate [planning manifest](../research/mrf_extension_plan.json).

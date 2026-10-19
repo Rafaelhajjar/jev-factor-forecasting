@@ -6,7 +6,23 @@ On October 18, 2026, the user selected Goulet Coulombe's *The Macroeconomy as a 
 
 The final 21-page article and 32-page publisher appendix have now been read. The [appendix evidence note](../docs/APPENDIX_FINDINGS.md) records the first Table 4 comparison cells, untuned forest/block settings, six data-rich simulation mechanisms, neural comparators, monthly average-growth targets and source inconsistencies. The primary target remains log-differenced quarterly unemployment h=1; the source FA-ARRF/AR(4) ratio of 0.72 is not our result. Constant recalibration and prespecified strong-comparator secondary tasks have been added to the plan.
 
-The journal's archive was downloaded and inspected; filenames, hashes and parsing findings are in the [replication checklist](../docs/MRF_REPLICATION.md). Remaining source/code discrepancies, effective settings, quarterly data loading, numerical MRF reproduction, new policy implementation and hosted evaluation are still pending. This update changes documentation and the non-executable planning manifest only.
+The journal archive and author engine are now audited; see the [replication checklist](../docs/MRF_REPLICATION.md) and [code findings](../docs/AUTHOR_CODE_AUDIT.md). The dedicated quarterly loader and external-R adapter are implemented. The original benchmark runner is absent from the inspected public repositories, so the first run is explicitly a reconstruction.
+
+### Quarterly reconstruction: first implementation
+
+Fixed archived vintage, delta log UNRATE, 48 evaluation target dates from 2003Q1 through 2014Q4, expanding estimates from 1961Q3 and six two-year refits. All preprocessing uses the fitting sample; future target values are masked before the R engine is called.
+
+| Model | Forecasts | RMSE | RMSE / AR(4) | Published ratio |
+| --- | ---: | ---: | ---: | ---: |
+| AR(4) | 48 | 0.0334997102 | 1.000000 | 1.00 |
+| Fixed FA-AR | 48 | 0.0272211055 | 0.812577 | 0.83 |
+| FA-ARRF | Running | Pending | Pending | 0.72 |
+
+The fixed factor regression is close to the printed ratio, not identical. This does not validate unknown factor processing or establish reproduction of the nonlinear gain. The full 100-tree forest run has seeds 101/202/303; all seeds and their separately labeled mean-prediction ensemble will be retained. The 0.03 absolute-ratio diagnostic tolerance was declared before full forest outcomes. No test-period tuning is authorized by this tolerance.
+
+An eight-forecast, two-tree end-to-end pilot completed and passed coefficient reconstruction. It is not a full benchmark result. All 49 local tests passed, including three actual-R contracts for target masking, coefficient reconstruction and future-row predictor dependence, and eight workflow-guard tests. Without the optional R environment, 46 tests run and three skip. The new CI job exercises those real-R contracts, not the full forest benchmark. Local runtime: R 4.6.1 and pracma 2.4.6; each job records its runtime separately.
+
+Still pending: full forest metrics and source-fidelity assessment; the other Table 4 comparators; controlled mechanisms; the new 25-choice policy; and hosted Jev/LLM evaluation. A completed program run is not automatically an exact replication.
 
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
 

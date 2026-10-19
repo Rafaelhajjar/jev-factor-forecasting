@@ -13,6 +13,21 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     download = sub.add_parser("download-fred", help="Fetch and verify the pinned official vintage")
     download.add_argument("--output", type=Path, default=Path("data/raw/fred_md_2026-09.csv"))
+    replication = sub.add_parser(
+        "replicate-mrf", help="Reconstruct quarterly unemployment with author R"
+    )
+    replication.add_argument("--config", type=Path, default=Path("configs/mrf_unemployment.json"))
+    replication.add_argument("--archive", type=Path, default=Path("data/raw/mrf-replication.zip"))
+    replication.add_argument("--engine", type=Path, default=Path("data/raw/MRF_v210403.R"))
+    replication.add_argument("--output", type=Path, required=True)
+    replication.add_argument("--rscript", default="Rscript")
+    replication.add_argument("--r-library", type=Path, default=Path("runs/r-library"))
+    replication.add_argument("--workers", type=int, default=2)
+    replication.add_argument("--trees", type=int)
+    replication.add_argument("--seeds", nargs="+", type=int)
+    replication.add_argument("--max-refits", type=int)
+    replication.add_argument("--prepare-only", action="store_true")
+    replication.add_argument("--resume", action="store_true")
     experiment = sub.add_parser("run", help="Run a bounded walk-forward experiment")
     experiment.add_argument("--config", type=Path, required=True)
     experiment.add_argument("--output", type=Path, required=True)
@@ -28,6 +43,28 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "download-fred":
         result = download_fred(args.output)
+    elif args.command == "replicate-mrf":
+        from jev_factor.replication import run_reconstruction
+
+        config = json.loads(args.config.read_text())
+        if args.trees is not None:
+            if args.trees < 1:
+                parser.error("--trees must be positive")
+            config["trees"] = args.trees
+        if args.seeds:
+            config["seeds"] = args.seeds
+        result = run_reconstruction(
+            config,
+            args.archive,
+            args.engine,
+            args.output,
+            rscript=args.rscript,
+            r_library=args.r_library,
+            workers=args.workers,
+            max_refits=args.max_refits,
+            prepare_only=args.prepare_only,
+            resume=args.resume,
+        )
     else:
         if args.max_origins is not None and args.max_origins < 1:
             parser.error("--max-origins must be positive")

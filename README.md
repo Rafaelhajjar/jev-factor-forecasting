@@ -4,7 +4,7 @@ Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its
 
 This project now extends **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. The first task is replication. The main experiment then adds Jev to the replicated model and tests whether it improves forecasts beyond the forest itself.
 
-**Status:** the final 2024 article and its 32-page appendix have been read, and the plan now uses their settings, comparison cells and mechanism tests. The executable code still runs the original experimental scaffold. MRF replication and the new Jev extension are not implemented or evaluated yet. Existing results are preserved as preliminary work, not evidence for the new study.
+**Status:** the final article, its 32-page appendix and the public author engine have been audited. A quarterly loader and an adapter calling the pinned R engine are implemented. The full 48-quarter, three-seed reconstruction is running; exact numerical replication is not yet established. The linear FA-AR/AR(4) RMSE ratio is 0.813 versus the paper's rounded 0.83. Missing original benchmark scripts prevent us from claiming that every processing choice matches the paper. No Jev or LLM forecast evaluation has run. [Audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
 ## The idea we are building on
 
@@ -84,17 +84,36 @@ The [research protocol](docs/RESEARCH_PROTOCOL.md) specifies the interventions, 
 
 ## What runs today
 
-The existing Python code, `configs/synthetic.json`, and `configs/fred_md.json` remain the original smoke-test and baseline harness. Their three-action gate, monthly target, and four-factor setup do not implement the new study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [initial results](reports/STATUS.md).
+The new quarterly path uses `configs/mrf_unemployment.json`. It downloads the checksum-pinned journal archive and external GPL R engine on first use. Install R separately, then install the pinned `pracma` dependency into a project-local library:
 
 ```bash
 uv sync --frozen --extra api
 uv run --frozen --extra api pytest
+Rscript scripts/setup_mrf_r.R
 
-# Original scaffold only:
-uv run jev-factor run --config configs/synthetic.json --output runs/legacy-smoke \
-  --seeds 7 --max-origins 3
+# Bounded end-to-end pilot: 8 forecast dates, not a replication result.
+uv run jev-factor replicate-mrf --output runs/mrf-pilot \
+  --trees 2 --seeds 101 --max-refits 1
+
+# Full reconstruction: 48 dates, 6 refits, 100 trees and all 3 declared seeds.
+uv run jev-factor replicate-mrf --output runs/mrf-unemployment --workers 4
+
+# Resume the exact same run after interruption; changed inputs are rejected.
+uv run jev-factor replicate-mrf --output runs/mrf-unemployment --workers 4 --resume
 ```
 
-The earlier code passed 32 tests and GitHub CI. No Jev or LLM forecasting calls have been made. Model credentials are needed when the new integration reaches its API pilot; they are not needed for replication work.
+The R engine is computationally expensive. `--prepare-only` writes inputs and linear benchmarks without fitting forests. Outputs include configuration/source hashes, forecasts, coefficients, per-seed metrics and R runtime information. Keep all seeds; a seed-mean forecast is separately labeled and is not the paper's reported forest.
+
+The test suite has 46 ordinary tests plus 3 optional tests using the actual R engine. All 49 passed locally, including changed-input and checkpoint guards. To enable the R contracts:
+
+```bash
+JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \
+JEV_MRF_R_LIBRARY=runs/r-library \
+uv run pytest -q
+```
+
+CI includes a separate actual-R contract job; it does not run the expensive macro benchmark. The existing `configs/synthetic.json` and `configs/fred_md.json` still run the original smoke-test harness. Their three-action gate and four-factor monthly setup do not implement the new Jev study. See the [archived scaffold guide](docs/LEGACY_SCAFFOLD.md) and [results record](reports/STATUS.md).
+
+Model credentials are needed when the new integration reaches its API pilot; they are not needed for this reconstruction. No hosted forecasting calls have been made.
 
 Our code is MIT licensed. Author implementations and data retain their own licenses and attribution requirements. This independent project is not endorsed by Goulet Coulombe, TypeSafe or the Federal Reserve. [Sources and evidence boundaries](docs/SOURCES.md).

@@ -1,8 +1,8 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "document_type": "research_plan_not_executable_config",
-  "updated_local_date": "2026-10-18",
-  "implementation_status": "planned_not_implemented",
+  "updated_local_date": "2026-10-19",
+  "implementation_status": "quarterly_reconstruction_implemented_full_forest_run_in_progress_Jev_extension_planned",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -41,15 +41,20 @@
     },
     "raw_files_committed": false,
     "evaluation_type": "fixed_vintage_retrospective_replication",
-    "quarterly_loader_validated": false,
-    "factor_eligibility_semantics_verified": false,
-    "quarterly_header_mapping_verified": false
+    "quarterly_loader_validated": true,
+    "factor_eligibility_semantics_verified": true,
+    "factor_metadata_meaning": "historical_Stock_Watson_subset_not_universal_MRF_eligibility",
+    "author_original_PCA_eligibility_verified": false,
+    "quarterly_header_mapping_verified": true
   },
   "reference_implementation_candidates": {
     "R": {
       "repository": "https://github.com/philgoucou/macrorf",
       "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
-      "audit_complete": false
+      "engine_behavior_audited": true,
+      "paper_runner_available": false,
+      "paper_per_table_settings_verified": false,
+      "audit_document": "docs/AUTHOR_CODE_AUDIT.md"
     },
     "Python": {
       "repository": "https://github.com/RyanLucas3/MacroRandomForest",
@@ -67,11 +72,23 @@
     "sample_start": "1961Q3",
     "evaluation_start": "2003Q1",
     "evaluation_end": "2014Q4",
-    "evaluation_dates_refer_to": "target_dates_origin_indexing_requires_code_audit",
+    "evaluation_dates_refer_to": "target_dates_with_origin_one_quarter_before_target_in_reconstruction",
     "estimation_window": "expanding",
     "main_reestimation_interval_years": 2,
     "forecast_method": "direct",
-    "sample_status": "published_design_documented_exact_pipeline_not_reproduced",
+    "sample_status": "48_quarter_reconstruction_running_exact_original_pipeline_not_recovered",
+    "executable_reconstruction_config": "configs/mrf_unemployment.json",
+    "reconstruction_seeds": [101, 202, 303],
+    "reconstruction_trees_per_seed": 100,
+    "absolute_ratio_tolerance_declared_before_full_forest_results": 0.03,
+    "tolerance_is_project_diagnostic_not_author_standard": true,
+    "completed_project_linear_result": {
+      "n": 48,
+      "AR4_RMSE": 0.03349971024497935,
+      "FA_AR_RMSE": 0.027221105456282292,
+      "FA_AR_RMSE_over_AR4": 0.8125773404372044,
+      "original_preprocessing_exactly_verified": false
+    },
     "reported_source_ratios_not_project_results": {
       "source": "appendix_Table_4_PDF_page_31_printed_page_70",
       "denominator": "AR4_RMSE",
