@@ -30,13 +30,21 @@ Before fitting, repeat the original artifact and subset-PCA audits. Reconstruct 
 
 A closer ratio would quantify this eligibility choice conditional on our original completion and engine; it would not recover the author's missing pipeline. A worse ratio is equally reportable. These are development investigations on an already-public test period, not independent evidence for selecting a production model or a Jev policy. Do not extend this into a search over arbitrary panels, ranks, signs or hyperparameters. Jev and LLM evaluation remain unrun.
 
+For a newly created primary run, first generate its matching eligibility audit. The report binds the exact primary manifest, source and native-R checks; the committed report from our local run is not a portable replacement. Pass the fresh report to both commands below.
+
 ```bash
+uv run python scripts/audit_pca_eligibility.py \
+  --source-run runs/mrf-unemployment \
+  --output reports/my-pca-eligibility.json
+
 uv run python scripts/pca125_sensitivity.py run \
   --source-run runs/mrf-unemployment \
+  --eligibility-report reports/my-pca-eligibility.json \
   --output runs/mrf-pca125 --workers 4
 
 uv run python scripts/pca125_sensitivity.py audit \
   --run runs/mrf-pca125 \
+  --eligibility-report reports/my-pca-eligibility.json \
   --output reports/my-pca125-audit.json
 ```
 
