@@ -1,0 +1,15 @@
+{
+  "dataset": "synthetic",
+  "seeds": [7, 42, 123],
+  "n_samples": 480,
+  "test_start": 300,
+  "step": 3,
+  "horizon": 1,
+  "data_lag": 0,
+  "window": 180,
+  "recent_window": 48,
+  "representation": "observed",
+  "n_factors": 4,
+  "ridge_alpha": 10.0,
+  "methods": ["zero", "persistence", "ar", "ridge", "factor_static", "factor_rolling", "factor_rls", "factor_kalman", "tree", "gate_rule", "gate_learned"]
+}
