@@ -27,13 +27,13 @@ R reverses 22 of 30 cross-sectional components and 1,468 of 2,976 MAF components
 
 Calling the unmodified engine's `DV.fun` on ten equal candidate losses, at the splitter's actual exponent 0.15, gives multipliers ranging from 1.0000 to 1.2286. Reversing this vector changes it by up to 0.2286. This is a diagnostic of the penalty, not a measurement of its contribution to the macro forecast error.
 
-A real-R contract on a small explicitly synthetic problem confirms that consistently reversing a factor in both the equation and state can change the pinned engine's forecasts by more than 1e-5, with OLS priors refitted and identical seeds. It documents current behavior, not a desirable invariant or macro performance result. The broader suite passes 103 tests, including seven actual-R checks. Tests distinguish simple sign changes from arbitrary rotations in a degenerate eigenspace.
+A real-R contract on a small explicitly synthetic problem confirms that consistently reversing a factor in both the equation and state can change the pinned engine's forecasts by more than 1e-5, with OLS priors refitted and identical seeds. It documents current behavior, not a desirable invariant or macro performance result. At this audit milestone the suite passed 103 tests, including seven actual-R checks. Tests distinguish simple sign changes from arbitrary rotations in a degenerate eigenspace.
 
 ## What we can conclude
 
 PCA orientation is an observed implementation difference worth recording, not an innocuous unspecified detail in this engine. Today's R `prcomp` signs are not proof of the signs used by the author years earlier, and the monthly tutorial does not establish the quarterly pipeline.
 
-We therefore do **not** attribute the 0.80-versus-0.72 gap to this finding, replace the primary basis, change the upstream penalty, or claim that adopting today's R basis would recover the original result. Any later orientation sensitivity must be declared as such and retain all results; its basis cannot be chosen by test-period RMSE. The live ARRF comparator continues on the original, unchanged state matrices. Exact FA-ARRF reproduction remains open.
+We therefore do **not** attribute the 0.80-versus-0.72 gap to this finding, replace the primary basis, change the upstream penalty, or claim that adopting today's R basis would recover the original result. Any later orientation sensitivity must be declared as such and retain all results; its basis cannot be chosen by test-period RMSE. The [completed ARRF comparator](../reports/MRF_ARRF_DIAGNOSTIC.md) uses the original, unchanged state matrices. Exact FA-ARRF reproduction remains open.
 
 ```bash
 uv run python scripts/audit_pca_basis.py \

@@ -2,6 +2,8 @@
 
 Declared October 19, 2026, after observing the first FA-ARRF result and before the full ARRF run. This is a named comparator from the published paper, not a search for hyperparameters that reproduce 0.72. The original reconstruction, failed criterion and tolerance remain unchanged.
 
+**Completed:** all 18 fits and their artifact audit pass. ARRF ratios are 0.892599, 0.894426 and 0.901878 against the source's 0.90. See the [completed results](../reports/MRF_ARRF_DIAGNOSTIC.md). The declaration below is retained; this match does not establish FA-ARRF replication.
+
 ## Why this comparison
 
 The final article's Table 2 specifies ARRF with an intercept and two target lags, using the same rich state as FA-ARRF. PCA factor lags stay in the forest's state; they are removed only from its explicit linear equation. Appendix Table 4 reports an unemployment h=1 ARRF/AR(4) RMSE ratio of 0.90, distinct from FA-ARRF's 0.72.
@@ -34,6 +36,11 @@ uv run python scripts/run_arrf_diagnostic.py \
 uv run python scripts/run_arrf_diagnostic.py \
   --source-run runs/mrf-unemployment \
   --output runs/mrf-arrf-diagnostic --workers 4 --resume
+
+# Separate read-only verification, requiring the complete declared run.
+uv run python scripts/audit_arrf_diagnostic.py \
+  --run runs/mrf-arrf-diagnostic \
+  --output reports/my-arrf-audit.json
 ```
 
 Archive, engine, R executable and project-library locations can be supplied explicitly. Bounded `--trees`, `--seeds` or `--max-refits` pilots cannot establish the full declared comparison and suppress performance scores. Full outputs include predictions, all model/seed metrics, runtime information, per-output hashes and comparison to the ARRF source cell. The primary FA-ARRF files are never overwritten.

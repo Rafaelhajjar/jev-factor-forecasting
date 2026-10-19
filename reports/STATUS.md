@@ -20,10 +20,14 @@ Fixed archived vintage, delta log UNRATE, 48 evaluation target dates from 2003Q1
 | FA-ARRF, seed 202 | 48 | 0.0269399477 | 0.804184 | 0.72 |
 | FA-ARRF, seed 303 | 48 | 0.0270123659 | 0.806346 | 0.72 |
 | Mean forest prediction | 48 | 0.0268552416 | 0.801656 | Not a source ensemble |
+| ARRF, seed 101 | 48 | 0.0299018061 | 0.892599 | 0.90 |
+| ARRF, seed 202 | 48 | 0.0299630207 | 0.894426 | 0.90 |
+| ARRF, seed 303 | 48 | 0.0302126367 | 0.901878 | 0.90 |
+| Mean ARRF prediction | 48 | 0.0299932625 | 0.895329 | Not a source ensemble |
 
 The fixed factor regression is close to the printed ratio, not identical. Every forest seed misses the prespecified 0.03 absolute-ratio tolerance, so the full numerical-agreement criterion fails. Forest RMSE is only 0.77%–1.88% below fixed FA-AR; the separately labeled mean-prediction ensemble improves by 1.34%. This does not reproduce the paper's larger nonlinear gain. All 18 jobs and all seeds are retained, with no test-period retuning. See the [completed result](MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [metrics](mrf-unemployment-metrics.csv), [predictions](mrf-unemployment-predictions.csv) and [full audit](mrf-unemployment-audit.json).
 
-An eight-forecast, two-tree end-to-end pilot completed and passed coefficient reconstruction. It is not a full benchmark result. All 103 local tests passed: 96 ordinary tests and seven real-R checks, including independent base-R QR/PCA, the two-term ARRF equation and the engine's sign sensitivity. CI additionally runs a bounded quarterly smoke and artifact audit, not the full forest benchmark. Local runtime: R 4.6.1 and pracma 2.4.6; each job records its runtime separately.
+An eight-forecast, two-tree end-to-end pilot completed and passed coefficient reconstruction. It is not a full benchmark result. All 110 local tests passed: 103 ordinary tests and seven real-R checks, including independent base-R QR/PCA, the two-term ARRF equation and the engine's sign sensitivity. CI additionally runs a bounded quarterly smoke and artifact audit, not the full forest benchmark. Local runtime: R 4.6.1 and pracma 2.4.6; each job records its runtime separately.
 
 The October 19 final audit independently checked all 48 linear forecasts in R (maximum difference 1.5e-15), recomputed all six complete state matrices (maximum difference 3.6e-15), checked all eight target lags against archived levels, and verified coefficient decompositions for all 18 forest jobs (maximum difference 2.5e-15). It verified aggregate forecasts and metrics and confirmed the failed numerical-agreement criterion. Unknown original preprocessing remains a separate limitation regardless of score agreement.
 
@@ -33,7 +37,7 @@ The shared 25-action algebra is now implemented and tested independently of the 
 
 Still pending: exact source-fidelity reconciliation; the other Table 4 comparators; controlled mechanisms; prequential evidence and the joint-action selector adapters; and hosted Jev/LLM evaluation. Independent tooling proceeds against the preserved qualified baseline, without claiming the original 0.72 result has been reproduced. A completed program run is not automatically an exact replication.
 
-The next source-comparison diagnostic is ARRF with the same frozen rich state and two target-history equation terms. Its [declaration](../docs/ARRF_DIAGNOSTIC.md) predates the full comparator run. An actual-R two-tree/eight-date pilot completed with coefficient discrepancy 1.4e-16 and no published performance score. Its source cell is 0.90, not FA-ARRF's 0.72. The primary run and its three integration source files remain unchanged; a successful ARRF comparison alone cannot close the original replication goal.
+The [ARRF diagnostic is complete](MRF_ARRF_DIAGNOSTIC.md): 0.892599, 0.894426 and 0.901878 against 0.90, all within the declared tolerance. Its [declaration](../docs/ARRF_DIAGNOSTIC.md) predates full outcomes. All 18 jobs and saved aggregates pass the [separate audit](mrf-arrf-diagnostic-audit.json), with coefficient discrepancy at most 6.3e-16. The same rich-state matrices, engine and R adapter were retained. This is a useful comparator match, not evidence that FA-ARRF's 0.72 result or the missing author pipeline has been recovered.
 
 The [PCA basis audit](../docs/PCA_BASIS_AUDIT.md) independently compares Python and base R on identical completed training inputs. All retained components match up to signs, but 22/30 cross-sectional and 1,468/2,976 MAF components have opposite signs on this R build. Native split penalties and a synthetic real-engine contract establish sign sensitivity. This narrows one portability issue, not the cause of the macro gap; no basis or forecast has been replaced.
 
