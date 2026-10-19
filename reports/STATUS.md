@@ -24,6 +24,8 @@ An eight-forecast, two-tree end-to-end pilot completed and passed coefficient re
 
 The October 19 whole-run progress audit independently checked all 48 linear forecasts in R (maximum difference 1.5e-15), recomputed all six complete state matrices (maximum difference 3.6e-15), checked all eight target lags against archived levels, and verified coefficient decompositions for the first four completed jobs. Partial forest scores are withheld. Full numerical agreement requires FA-AR and every individual declared seed within the preset 0.03 ratio tolerance; the seed-mean ensemble is reported separately, not used to pass that rule. Unknown original preprocessing remains a separate limitation regardless of score agreement.
 
+The saved [preliminary integrity snapshot](mrf-unemployment-preliminary-audit.json) subsequently verified eight of eighteen forest jobs, with maximum coefficient-reconstruction error 1.3e-15. It is an immutable progress snapshot, not a live status indicator or a full performance result; no partial forest RMSE is published in it.
+
 Still pending: full forest metrics and source-fidelity assessment; the other Table 4 comparators; controlled mechanisms; the new 25-choice policy; and hosted Jev/LLM evaluation. A completed program run is not automatically an exact replication.
 
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
