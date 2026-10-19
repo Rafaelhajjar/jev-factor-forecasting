@@ -29,6 +29,8 @@ The [native TV-FAAR comparison is complete and fully audited](reports/MRF_TVP_FA
 
 The [appendix NN comparison is complete and fully audited](reports/MRF_NN.md): all 180 networks and 48 dates. Ratios 0.793326/0.842565/0.801268 against 0.80 include one miss; the separately labeled outer-seed mean, 0.806908, cannot rescue it. The [declaration](docs/NN_CONTROL.md) predates outcomes and retains the unchanged 1,041-column state, five 100-unit ReLU layers and 10-member ensembles. Missing early-stopping/preprocessing details remain explicit assumptions. NumPy independently evaluates every saved network, and all 180 complete trainings reproduce identical parameters and histories. The optional CPU-only Torch backend does not establish equivalence with the missing historical NN runner or repair the primary FA-ARRF result.
 
+A [no-tree native-normalization probe](docs/NATIVE_NORMALIZATION_BOUNDARY.md) now isolates another source boundary across all six refits. Native all-row scaling interacts with the pinned source's prior conversion: the intercept differs from correctly transformed OLS, while our training-only path agrees to numerical precision. All twelve actual initializations and independent calculations verify. This changes no result and establishes no forecast effect; native future-block covariates are not silently adopted as a causal baseline.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -141,7 +143,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 345 ordinary tests, 53 optional neural-network checks and 25 optional real-R checks. All 423 passed locally, including actual neural training/checkpoint restoration, independent derivatives/Adam calculations, deterministic refits and altered-model rejection; native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts; quarterly plain-control tree/refit/provenance/gate contracts; and the earlier preparation, timing, action-algebra and artifact guards. To enable all checks after the original engines have been fetched:
+The suite has 345 ordinary tests, 53 optional neural-network checks and 28 optional real-R checks. All 426 passed locally, including actual neural training/checkpoint restoration, independent derivatives/Adam calculations, deterministic refits and altered-model rejection; native normalization/prior-boundary checks; native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts; quarterly plain-control tree/refit/provenance/gate contracts; and the earlier preparation, timing, action-algebra and artifact guards. To enable all checks after the original engines have been fetched:
 
 ```bash
 Rscript scripts/setup_tvp_r.R runs/r-library

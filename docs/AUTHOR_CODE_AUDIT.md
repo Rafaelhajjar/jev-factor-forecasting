@@ -59,6 +59,8 @@ Real-R contract tests verify held-out-target perturbation invariance, coefficien
 
 Pre-standardizing inputs also keeps prior means in training-standardized units before the engine's own prior conversion. No claim of a corrected upstream implementation is needed. Native all-row mode exists only as an explicitly named diagnostic; it is not the primary experiment.
 
+The later [twelve-initialization normalization probe](NATIVE_NORMALIZATION_BOUNDARY.md) verifies an additional interaction at lines 398–399: native prior slopes are rescaled before they enter the intercept transformation. With native all-row moments, captured intercept priors differ from normalized training-equation OLS; the training-only primary agrees to numerical precision. No tree or forecast score was produced. This is neither recovery of the table caller nor proof of the forecast-gap cause, and the pinned source is unchanged.
+
 The public code's threshold-rank penalty is not generally invariant to reversing a predictor's sign. We therefore record PCA orientation rather than assume it is irrelevant: scikit-learn's largest-magnitude loading is positive. The [cross-language basis audit](PCA_BASIS_AUDIT.md) now verifies that Python and R agree up to signs on all 30 cross-sectional and 2,976 MAF components. On the current R build, 22 and 1,468 respectively have opposite signs. A synthetic real-engine contract confirms forecast sensitivity, but this does not establish the author's original basis or attribute our macro score gap to orientation. The primary state remains unchanged.
 
 ## 4. Quarterly archive and factor construction

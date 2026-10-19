@@ -188,6 +188,76 @@ def test_actual_native_initialization_receives_expected_roles_and_effective_guar
     assert report["forecast_scores_computed"] is False
 
 
+@pytest.mark.parametrize("mode", ["train_only", "native_all_supplied_rows"])
+def test_native_normalization_probe_preserves_inputs_and_exposes_prior_conversion(tmp_path, mode):
+    matrix = _matrix()
+    matrix.loc[70:, "F1_lag1"] += 3
+    matrix.loc[70:, "target"] = 1e12
+    directory = _prepare(tmp_path, "input", matrix, "train_only")
+    settings = directory / "settings.dcf"
+    original = settings.read_bytes()
+    root = Path(__file__).resolve().parents[1]
+    output = tmp_path / "probe"
+    command = [
+        shutil.which("Rscript"),
+        "--vanilla",
+        str(root / "scripts" / "inspect_native_normalization.R"),
+        str(Path(ENGINE).resolve()),
+        str(directory / "input.csv"),
+        str(settings),
+        str(Path(R_LIBRARY).resolve()),
+        str(root),
+        str(output),
+        mode,
+    ]
+    result = subprocess.run(command, capture_output=True, text=True, timeout=120)
+    assert result.returncode == 0, result.stderr
+    assert settings.read_bytes() == original
+    assert not (output / "must_not_be_a_forecast.csv").exists()
+    summary = pd.read_csv(output / "normalization_summary.csv").iloc[0]
+    assert summary.forests_fitted == 0
+    assert not summary.forecast_scores_computed
+    assert summary.masked_target_maximum < 1e-12
+    prior = pd.read_csv(output / "prior_comparison.csv")
+    np.testing.assert_allclose(prior.captured_prior, prior.literal_source_formula, atol=1e-12)
+    np.testing.assert_allclose(
+        prior.QR_OLS_prior, prior.mathematically_transformed_prior, atol=1e-12
+    )
+    if mode == "train_only":
+        assert summary.maximum_source_prior_QR_difference < 1e-12
+    else:
+        assert abs(summary.source_prior_intercept_minus_QR) > 1e-6
+        assert summary.maximum_source_prior_slope_QR_difference < 1e-12
+    before = (output / "normalization_summary.csv").read_bytes()
+    repeated = subprocess.run(command, capture_output=True, text=True, timeout=120)
+    assert repeated.returncode != 0 and "fresh" in repeated.stderr
+    assert (output / "normalization_summary.csv").read_bytes() == before
+
+
+def test_native_normalization_probe_rejects_unsupported_mode_before_output(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    output = tmp_path / "must_not_exist"
+    result = subprocess.run(
+        [
+            shutil.which("Rscript"),
+            "--vanilla",
+            str(root / "scripts" / "inspect_native_normalization.R"),
+            "not-read",
+            "not-read",
+            "not-read",
+            "not-read",
+            str(root),
+            str(output),
+            "wrong",
+        ],
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    assert result.returncode != 0 and "Unknown probe mode" in result.stderr
+    assert not output.exists()
+
+
 @pytest.mark.parametrize("rows,columns,signal", [(70, 12, True), (16, 30, True), (400, 30, False)])
 def test_independent_r_fred_recipe_matches_rank_path_completion_and_stopping(
     tmp_path, rows, columns, signal
