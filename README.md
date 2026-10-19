@@ -31,6 +31,8 @@ The [appendix NN comparison is complete and fully audited](reports/MRF_NN.md): a
 
 A [no-tree native-normalization probe](docs/NATIVE_NORMALIZATION_BOUNDARY.md) now isolates another source boundary across all six refits. Native all-row scaling interacts with the pinned source's prior conversion: the intercept differs from correctly transformed OLS, while our training-only path agrees to numerical precision. All twelve actual initializations and independent calculations verify. This changes no result and establishes no forecast effect; native future-block covariates are not silently adopted as a causal baseline.
 
+A separate [native-helper forecast diagnostic](docs/NATIVE_ALLROWS_DIAGNOSTIC.md) is now declared and implemented **before its macro outcomes**. It changes only that helper selection behind the same target-masking/outer-scaling adapter; every prepared matrix byte, representation, linear forecast and other setting must remain paired with the original. It retains all 18 cases, seeds and source-cell criteria, without repairing the native prior formula. Later block covariates make it explicitly non-causal, not a new primary or proof of the missing original caller. No macro pilot or full forecast for this diagnostic has run at declaration.
+
 ## The idea we are building on
 
 A Macroeconomic Random Forest (MRF) keeps a linear forecasting equation and learns how its coefficients change with the economic state:
@@ -143,7 +145,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 345 ordinary tests, 53 optional neural-network checks and 28 optional real-R checks. All 426 passed locally, including actual neural training/checkpoint restoration, independent derivatives/Adam calculations, deterministic refits and altered-model rejection; native normalization/prior-boundary checks; native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts; quarterly plain-control tree/refit/provenance/gate contracts; and the earlier preparation, timing, action-algebra and artifact guards. To enable all checks after the original engines have been fetched:
+The suite has 370 ordinary tests, 53 optional neural-network checks and 28 optional real-R checks. All 451 passed locally, including paired native-helper input/provenance/runtime/score-suppression guards; actual neural training/checkpoint restoration, independent derivatives/Adam calculations, deterministic refits and altered-model rejection; native normalization/prior-boundary checks; native two-step TVP covariance/CV/GARCH/forecast and quarterly integration/refit contracts; quarterly plain-control tree/refit/provenance/gate contracts; and the earlier preparation, timing, action-algebra and artifact guards. To enable all checks after the original engines have been fetched:
 
 ```bash
 Rscript scripts/setup_tvp_r.R runs/r-library
