@@ -10,7 +10,7 @@ The full ARRF diagnostic has also completed: **0.893, 0.894 and 0.902** versus t
 
 A [training-only PCA audit](docs/PCA_BASIS_AUDIT.md) also identifies actual R/Python sign differences while confirming matching components up to signs. The pinned forest is sign-sensitive, but this finding does not identify the cause of the score gap or justify changing the benchmark after seeing its results.
 
-The next [declared sensitivity](docs/R_BASIS_SENSITIVITY.md) changes only those recorded signs, preserving all information and the original results. Its actual-R pilot and independent linear-invariance checks pass. No full orientation performance result is available yet; this is not a search for favorable signs.
+The [completed sign sensitivity](reports/MRF_R_BASIS_SENSITIVITY.md) changes only those recorded signs, preserving all information and the original results. Its three ratios are **0.787, 0.783 and 0.800**: a modest improvement, but every seed still misses 0.72 by more than the declared tolerance. All 18 jobs pass the independent audit; linear forecasts remain unchanged within 1.5e-15. This is not a search for favorable signs or recovery of the author's historical basis. [Declaration](docs/R_BASIS_SENSITIVITY.md).
 
 ## The idea we are building on
 

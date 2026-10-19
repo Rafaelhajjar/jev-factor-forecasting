@@ -35,6 +35,8 @@ PCA orientation is an observed implementation difference worth recording, not an
 
 We therefore do **not** attribute the 0.80-versus-0.72 gap to this finding, replace the primary basis, change the upstream penalty, or claim that adopting today's R basis would recover the original result. Any later orientation sensitivity must be declared as such and retain all results; its basis cannot be chosen by test-period RMSE. The [completed ARRF comparator](../reports/MRF_ARRF_DIAGNOSTIC.md) uses the original, unchanged state matrices. Exact FA-ARRF reproduction remains open.
 
+The subsequently declared [coordinate-only sensitivity is now complete](../reports/MRF_R_BASIS_SENSITIVITY.md): all three R-signed seeds improve modestly to 0.783–0.800, but none meets the tolerance around 0.72. It preserves the primary result and does not recover the author's historical basis.
+
 ```bash
 uv run python scripts/audit_pca_basis.py \
   --source-run runs/mrf-unemployment \

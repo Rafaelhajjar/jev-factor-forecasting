@@ -1,8 +1,8 @@
 {
-  "schema_version": 8,
+  "schema_version": 9,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "FA_ARRF_source_ratio_still_missed_ARRF_matches_coordinate_only_R_sign_sensitivity_implemented_and_pilot_verified",
+  "implementation_status": "FA_ARRF_source_ratio_still_missed_ARRF_matches_R_sign_sensitivity_completed_and_audited_but_still_misses_source",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -159,7 +159,7 @@
     "original_author_basis_recovered": false,
     "forecast_gap_attributed_to_orientation": false
   },
-  "next_replication_sensitivity": {
+  "completed_R_sign_sensitivity": {
     "name": "recorded_R_PCA_and_MAF_signs_only",
     "configuration": "configs/mrf_r_basis_sensitivity.json",
     "protocol": "docs/R_BASIS_SENSITIVITY.md",
@@ -169,7 +169,24 @@
     "basis_selected_using_forecast_loss": false,
     "actual_R_bounded_pilot_verified": true,
     "pilot_audit": "reports/mrf-r-basis-pilot-audit.json",
-    "full_performance_comparison_completed": false,
+    "full_performance_comparison_completed": true,
+    "jobs_verified": 18,
+    "RMSE_over_AR4_by_seed": {
+      "101": 0.7865032919815147,
+      "202": 0.783245866416533,
+      "303": 0.7996359803847118
+    },
+    "separate_seed_mean_prediction_RMSE_over_AR4": 0.7886473842338709,
+    "all_individual_seeds_within_declared_tolerance": false,
+    "full_artifact_audit_verified": true,
+    "report": "reports/MRF_R_BASIS_SENSITIVITY.md",
+    "audit": "reports/mrf-r-basis-sensitivity-audit.json",
+    "result": "reports/mrf-r-basis-sensitivity-result.json",
+    "metrics": "reports/mrf-r-basis-sensitivity-metrics.csv",
+    "predictions": "reports/mrf-r-basis-sensitivity-predictions.csv",
+    "maximum_coefficient_reconstruction_error": 2.609024107869118e-15,
+    "maximum_linear_forecast_difference": 1.4988010832439613e-15,
+    "primary_result_replaced": false,
     "original_author_basis_recovered": false
   },
   "published_forest_settings": {

@@ -2,6 +2,8 @@
 
 Declared October 19, 2026, after observing the primary FA-ARRF miss and the successful ARRF diagnostic, but before the full orientation experiment. The [configuration](../configs/mrf_r_basis_sensitivity.json) records those already-known outcomes. This is a post-primary investigation, not a blind confirmatory test.
 
+**Completed:** all 18 jobs passed the independent audit. Ratios are 0.786503, 0.783246 and 0.799636 versus 0.72, so every individual seed still fails the declared diagnostic tolerance. Linear forecasts remain unchanged within 1.5e-15. The declaration below is retained; see the separate [completed result](../reports/MRF_R_BASIS_SENSITIVITY.md).
+
 ## Hypothesis
 
 Python and R recover the same PCA components up to signs on our completed training data. The pinned MRF engine is not sign-invariant. So changing only the coordinate convention could alter its forecast, even though it receives exactly the same information.
