@@ -55,3 +55,9 @@ uv run python scripts/tvp_faar.py audit \
 The runner fetches/checks the pinned external TVP source. Use --prepare-only to save the input declaration without fitting/scoring, and --resume for an unchanged prepared run or verified checkpoints. An incomplete native fit is preserved and rejected rather than overwritten. No Jev, LLM or hosted forecasting calls occur.
 
 The inspected article and appendix hashes remain a1ea26466f55425bafc1f76eed2c28d0cb77d9203b2b4eebf105b972fbaaa1ee and 665fac2b6a21b8f2b28442dfe60aec30aee542c3dac2876b322f4e249718fb1b. Relevant complete pages and the main specification-table visual were checked. Licensed PDFs and private correspondence are not redistributed.
+
+## Completed outcome, recorded after the declaration
+
+The declaration and full runner were published in commit **4ac7d315c3f63a17c9bd30ebe03d7f6ca14fc3db** before actual-data outcomes. The pilot passed its one-fit/eight-date integrity audit with scores suppressed. The full six-refit comparison then completed, and its final audit independently reproduced all native artifacts and checked all 48 dates.
+
+The ratio is 0.942195 versus the printed 1.19, outside the unchanged 0.03 tolerance. Every GARCH fit returns non-convergence code 1, which remains a separate quality limitation despite passing arithmetic/refit checks. For 2010Q4 and 2012Q4, actual second-stage tuning differs from the public first-stage lambda return. No settings were changed or fits retried to repair either issue. See the [completed report and retained artifacts](../reports/MRF_TVP_FAAR.md). This does not establish the main FA-ARRF replication or its larger nonlinear gain.

@@ -1,6 +1,6 @@
 # Sources for the MRF + Jev extension
 
-Reviewed October 18, 2026, after reading the final article and its publisher-supplied appendix. The [active protocol](RESEARCH_PROTOCOL.md) separates the source paper's method from our proposed extension. The [appendix evidence note](APPENDIX_FINDINGS.md) records exact source locations and remaining discrepancies. The [legacy source notes](LEGACY_SOURCES.md) preserve the initial scaffold's references.
+Reviewed October 18–19, 2026, after reading the final article and its publisher-supplied appendix. The [active protocol](RESEARCH_PROTOCOL.md) separates the source paper's method from our proposed extension. The [appendix evidence note](APPENDIX_FINDINGS.md) records exact source locations and remaining discrepancies. The [legacy source notes](LEGACY_SOURCES.md) preserve the initial scaffold's references.
 
 ## Research foundation
 
@@ -11,6 +11,7 @@ Reviewed October 18, 2026, after reading the final article and its publisher-sup
 | [Earlier working paper](https://arxiv.org/pdf/2006.12724) | Historical context only | No longer the authority for the current specification |
 | [Journal data archive](https://doi.org/10.15456/jae.2023321.0115060814) | Exact deposited data and provenance | Archive contains data, not the entire experiment pipeline or historical release vintages |
 | [Author's pinned R package](https://github.com/philgoucou/macrorf/tree/bdb2ed435affb741aafdf78bab12c470ec6d55d0) | Audited external engine; actual-R adapter and contracts | No original benchmark runner; engine defaults are not proof of each paper invocation |
+| [Author's pinned TVP package](https://github.com/philgoucou/tvpridge/tree/d2d52bb9e0126fb580fb8301f305035d3047b4b2), linked from the [code page](https://philippegouletcoulombe.com/code) | Entire two-step ridge source/help inspected; external native adapter, both actual tuning stages and independent numerical/refit checks | Estimator only, not the 2024 caller; current GARCH optimizer warnings and the failed source-cell comparison remain explicit |
 | [Author's documentation fork](https://github.com/philgoucou/MacroRF-1/tree/8157619249bbdda3d0e4c8ea694d7c9168f5949f) | Cross-check of usage and package parameters | Monthly PAYEMS tutorial differs from the quarterly paper benchmark |
 | [Official FRED databases](https://www.stlouisfed.org/research/economists/mccracken/fred-databases) and [FRED-QD paper](https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/publications/review/pdfs/2021/01/14/fred-qd-a-quarterly-database-for-macroeconomic-research.pdf) | Metadata semantics, header identities and preparation conventions | Does not establish which completion rank or eligible panel the MRF runner used |
 | [Python implementation documentation](https://mrf-web.readthedocs.io/en/latest/) | Portability comparison and implementation guidance | Do not assume identical predictions to the R reference |
@@ -32,6 +33,8 @@ The final PDFs were supplied through the user's downloads. The appendix SHA-256 
 RLCD and other vendor training descriptions remain context, not evidence that the method works here. The five-level adjustment grid, joint action distribution, uniform-recovery control and all claimed benefits of adding Jev are our research proposals.
 
 ## Attribution and data handling
+
+The external TVP source has SHA-256 1cc6cce8fb7f3524469b37328519097908f56c56631b09bc6feb512402142a45 and declares GPL-3. It is downloaded separately, never copied into our MIT package. The [TV-FAAR declaration](TVP_FAAR_CONTROL.md) identifies reconstruction choices; the [completed result](../reports/MRF_TVP_FAAR.md) distinguishes arithmetic integrity, optimizer convergence and published-cell agreement.
 
 Our code license does not replace upstream licenses. Keep external implementations distinct and honor their terms. In particular, the inspected author R package declares GPL-3; it must not be copied into this repository and relabeled MIT. Data reuse and distribution retain the archive's attribution and applicable series terms.
 

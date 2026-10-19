@@ -1,0 +1,132 @@
+{
+  "status": "partial_TV_FAAR_integrity_only",
+  "fits_verified": 1,
+  "pending_jobs": [],
+  "targets_per_model": 8,
+  "native_checks": [
+    {
+      "fit_end": "2002Q4",
+      "status": "native_TVP_algebra_verified_not_quarterly_benchmark",
+      "training_rows": 166,
+      "forecast_rows": 8,
+      "coefficients": 9,
+      "lambda_step1": 171.20422512253052,
+      "lambda_step2": 171.20422512253052,
+      "public_lambda_return_is_first_step_only": true,
+      "CV_folds": 5,
+      "native_CV_seed": 1071,
+      "native_random_CV_is_not_chronological": true,
+      "GARCH_optimizer_convergence_code": 1,
+      "GARCH_optimizer_converged": false,
+      "maximum_absolute_differences": {
+        "first_step_coefficients_standardized": 1.101063684671999e-13,
+        "first_step_fitted_standardized": 3.760325384405405e-13,
+        "increment_weights": 7.194245199571014e-14,
+        "GARCH_input": 3.769762280114719e-13,
+        "noise_weights": 5.329070518200751e-15,
+        "GARCH_variance_recursion": 3.4583447217073626e-14,
+        "second_step_coefficients_standardized": 1.2467804566540508e-13,
+        "second_step_fitted_standardized": 5.695444116327053e-13,
+        "first_CV_fold_scores": 4.0689673852511987e-13,
+        "second_CV_fold_scores": 3.066991105526995e-13,
+        "forecast_standardized": 2.3531177006930193e-13,
+        "native_first_forecast_standardized": 1.0152989560197057e-13
+      },
+      "runtime": {
+        "R_version": "R version 4.6.1 (2026-06-24)",
+        "version_pracma": "2.4.6",
+        "version_fGarch": "4052.93",
+        "version_matrixcalc": "1.0.6",
+        "lambda_step1": "171.20422512253052",
+        "lambda_step2": "171.20422512253052",
+        "lambda_step1_index": "7",
+        "lambda_step2_index": "7",
+        "lambda_returned": "171.20422512253052",
+        "public_first_forecast": "0.023145767428908167",
+        "garch_convergence": "1",
+        "namespace_base": "4.6.1",
+        "namespace_compiler": "4.6.1",
+        "namespace_cvar": "0.6.1",
+        "namespace_datasets": "4.6.1",
+        "namespace_fBasics": "4052.98",
+        "namespace_fGarch": "4052.93",
+        "namespace_gbutils": "0.5.1",
+        "namespace_graphics": "4.6.1",
+        "namespace_grDevices": "4.6.1",
+        "namespace_grid": "4.6.1",
+        "namespace_lattice": "0.22.9",
+        "namespace_Matrix": "1.7.5",
+        "namespace_matrixcalc": "1.0.6",
+        "namespace_methods": "4.6.1",
+        "namespace_pracma": "2.4.6",
+        "namespace_rbibutils": "2.4.1",
+        "namespace_Rdpack": "2.6.6",
+        "namespace_spatial": "7.3.18",
+        "namespace_stats": "4.6.1",
+        "namespace_timeDate": "4052.112",
+        "namespace_timeSeries": "4052.112",
+        "namespace_tools": "4.6.1",
+        "namespace_utils": "4.6.1"
+      },
+      "input_sha256": {
+        "train.csv": "c2a333c86c84a51ba6a1b2fbdff233d9638281f65489883ec686150eb6b6a0fd",
+        "forecast_x.csv": "dc37321925ac207e2c1fda274e5c19be4bc7659c2ffdf9332f1fe6ecfbef1d33",
+        "settings.dcf": "1a2113ee2baf3afbdd2b190f93b37514ae2994b7b4ec604196f0459518aef8c3"
+      },
+      "code_sha256": {
+        "reference_tvp.R": "3fe6d7a321fffaddbcf75bc9a8ce398c4367736d7fadc79051e5463511708216",
+        "tvp_ridge.py": "d2d8f78d0e42327fb1d260781a34d74d2959fd2ad22c566dc92f53997fb82781"
+      },
+      "external_source": {
+        "commit": "d2d52bb9e0126fb580fb8301f305035d3047b4b2",
+        "sha256": "1cc6cce8fb7f3524469b37328519097908f56c56631b09bc6feb512402142a45",
+        "url": "https://raw.githubusercontent.com/philgoucou/tvpridge/d2d52bb9e0126fb580fb8301f305035d3047b4b2/R/MV2SRR_v210407.R",
+        "license": "GPL-3 external dependency; not redistributed as MIT"
+      },
+      "settings": {
+        "lambda_candidates": [
+          0.0024787521766663585,
+          0.015877422572448646,
+          0.10170139230422684,
+          0.6514390575310555,
+          4.172733883598097,
+          26.728068975964966,
+          171.20422512253052,
+          1096.6331584284585,
+          7024.384376636005,
+          44994.05794134296,
+          288205.36312940903,
+          1846073.3513931935,
+          11824855.657505034,
+          75743041.96271756,
+          485165195.4097903
+        ],
+        "lambda2": 0.1,
+        "kfold": 5,
+        "sig_u": 0.75,
+        "sig_eps": 0.75,
+        "ols_prior": 0,
+        "CV_2SRR": true
+      },
+      "wrapper_sha256": "3fe6d7a321fffaddbcf75bc9a8ce398c4367736d7fadc79051e5463511708216",
+      "verifier_sha256": "d2d8f78d0e42327fb1d260781a34d74d2959fd2ad22c566dc92f53997fb82781",
+      "quarterly_benchmark_completed": false,
+      "exact_author_table_pipeline_recovered": false
+    }
+  ],
+  "partial_scores_suppressed": true,
+  "metrics": [],
+  "TV_FAAR_within_ratio_tolerance": null,
+  "FA_ARRF_replication_established": false,
+  "exact_author_table_pipeline_verified": false,
+  "primary_result_replaced": false,
+  "primary_artifact_audit_repeated": true,
+  "manifest_sha256": "9978ec1a4b1936a7b985205271fcf646d25ab8baf5df73c4a6070efcf0a3a6ce",
+  "runner_sha256": "9680279798697951391e73a8dc11d3f1cf708bde413c28d366c6d0cd8e1ffc8a",
+  "deterministic_native_refits": [
+    {
+      "fit_end": "2002Q4",
+      "all_native_artifacts_reproduced": true
+    }
+  ]
+}
