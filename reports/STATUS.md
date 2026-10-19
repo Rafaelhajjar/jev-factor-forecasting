@@ -1,4 +1,14 @@
-# Initial experiment status
+# Project status and initial experiment record
+
+## Active direction: MRF + Jev
+
+On October 18, 2026, the user selected Goulet Coulombe's *The Macroeconomy as a Random Forest* as the research foundation. The [current protocol](../docs/RESEARCH_PROTOCOL.md) now starts with replication, followed by a joint 25-action adjustment of two MRF factor contributions. Jev can weaken or strengthen those contributions; the forest's other terms remain the reference.
+
+The journal's archive was downloaded and inspected; filenames, hashes and parsing findings are in the [replication checklist](../docs/MRF_REPLICATION.md). Published-version reconciliation, quarterly data loading, MRF reproduction, new policy implementation and hosted evaluation are pending. This is a plan refactor, not a completed MRF implementation.
+
+The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
+
+## Original scaffold results
 
 Verified October 18, 2026. This is an untuned development run, not a confirmatory result. Both supplied configurations completed with zero hosted-model API calls. The source revision is recorded in the run manifests. All 32 tests passed, including future-data perturbation checks and real SDK serialization/parsing using local fake transports.
 
@@ -42,7 +52,7 @@ Pinned September 2026 vintage; transformed INDPRO target; one-month point horizo
 
 The zero-growth baseline is best in this configuration. This pilot **does not establish a factor forecasting advantage on this target/horizon**. FRED-MD remains a literature-motivated research candidate rather than a validated favorable benchmark for our exact setup.
 
-The next dataset decision should follow the literature's longer-horizon aggregate-growth specifications, chronological validation, and historical vintages. Any such change after seeing these results is exploratory and must be reported as such. Do not silently replace this run with a better-looking one. The large Kalman error also warrants development-period tuning of Q/R and regularization, with no access to the final evaluation losses during selection.
+At the time of this run, a longer-horizon specification was proposed as a next step. That direction is superseded by the user's selection of the MRF paper. This table remains part of the record. The large Kalman error also warrants development-period tuning before using that implementation in any broader comparison.
 
 ## Hosted models
 

@@ -1,36 +1,33 @@
-# Sources and evidence boundaries
+# Sources for the MRF + Jev extension
 
-Reviewed October 18, 2026. Links below are primary vendor documentation, the dataset publisher, or original research. Public source material is cited, not copied wholesale.
+Reviewed October 18, 2026. The [active protocol](RESEARCH_PROTOCOL.md) separates the source paper's method from our proposed extension. The [legacy source notes](LEGACY_SOURCES.md) preserve the initial scaffold's references.
 
-| Source | What it supports | What it does not establish |
+## Research foundation
+
+| Primary source | Use in this project | Evidence boundary |
 | --- | --- | --- |
-| [TypeSafe launch post](https://typesafe.ai/blog/introducing-system-one-models-and-jev) | Vendor description of architecture, parallel outputs, RLCD and workflow evaluations | Independent forecasting performance, full architecture, or reproducible training |
-| [Introduction](https://docs.typesafe.ai/introduction) | State plus typed independent questions; Choice/Score/Noul | Hidden factor inference or numerical correlation estimation |
-| [AI primer](https://docs.typesafe.ai/introduction/machine-learning-primer) | Vendor's intended calibration objective | A public mathematical specification of the full loss or training recipe |
-| [Models](https://docs.typesafe.ai/models) | Versioned IDs, model configuration and request-level customization | Task-specific fine-tuning or stable behavior of moving aliases |
-| [1.13 limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13) | Numerical/semantic limitations and order sensitivity | That every limitation has disappeared in later versions |
-| [Choice](https://docs.typesafe.ai/primitives/choice), [API](https://docs.typesafe.ai/api), [confidence](https://docs.typesafe.ai/confidence) | Request/response contract and confidence derived from probabilities | Calibration on our financial/economic outcomes or a coefficient posterior |
-| [Autoresearch cookbook](https://docs.typesafe.ai/cookbooks/autoresearch_feature_discovery) | A related design: use TypeSafe outputs as inputs to a conventional supervised model | Evidence for this time-series gating hypothesis |
-| [Official LLM adapter](https://github.com/typesafe-ai/system-one-adapter-python) | A common typed-task interface for comparisons with LLM providers | Equal latency, equal reasoning budgets, or equal accuracy |
-| [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs) | An LLM can be constrained by JSON Schema | Probability calibration or forecast accuracy |
-| [FRED-MD publisher](https://www.stlouisfed.org/research/economists/mccracken/fred-databases) | Official monthly macroeconomic panel and archived vintages | That a fixed revised vintage is a historical real-time information set |
-| [McCracken and Ng, FRED-MD](https://doi.org/10.20955/wp.2015.012) | Dataset motivation and relationship to factor forecasting research | Universal superiority for every target, period, or transformation |
-| [Stock and Watson, 2002](https://www.princeton.edu/~mwatson/papers/Stock_Watson_JBES_2002.pdf) | Historical evidence motivating large-panel factor forecasting | A result for this newer panel, sample, horizon, or Jev |
-| [Raftery, Karny and Ettler, 2010](https://sites.stat.washington.edu/raftery/Research/PDF/Karny2010.pdf) | Dynamic model averaging as an established adaptive forecast framework | That typed decision models improve its predictions |
-| [Koop and Korobilis, 2012](https://eprints.gla.ac.uk/59746/) | An original macroeconomic forecasting application of dynamic model averaging | That our proposed gate or first INDPRO setup reproduces their results |
+| [Goulet Coulombe (2024), JAE](https://doi.org/10.1002/jae.3030) | Main research foundation: forest-driven changing coefficients | Its results do not establish a Jev advantage |
+| [Accessible working paper](https://arxiv.org/pdf/2006.12724) | Provisional model, factor and timing details for the replication audit | It is an earlier draft; reconcile the published version before claiming reproduction |
+| [Journal data archive](https://doi.org/10.15456/jae.2023321.0115060814) | Exact deposited data and provenance | Archive contains data, not the entire experiment pipeline or historical release vintages |
+| [Author's R package](https://github.com/philgoucou/macrorf) | Candidate reference MRF implementation | Exact paper settings and result reproduction remain to be checked |
+| [Python implementation documentation](https://mrf-web.readthedocs.io/en/latest/) | Portability comparison and implementation guidance | Do not assume identical predictions to the R reference |
 
-## Interpretation
+The archive's [README](https://journaldata.zbw.eu/dataset/c48432e1-5a25-49f1-95b1-6c681f21e252/resource/57da9dba-6157-4e56-838a-f57358854ca7/download/readme.gc.txt) and the downloaded ZIP were inspected directly. File identities, checksums and parsing findings are recorded in [MRF_REPLICATION.md](MRF_REPLICATION.md). These are verified inputs; model replication remains pending.
 
-The new contribution under investigation is using a general typed decision model as a factor gate with observable action labels. Factor models, changing coefficients, probabilistic forecast combinations, and language-based model selection are established ideas. Novelty is not assumed; a broader literature review is required before claiming a first result.
+## Jev interface and comparison
 
-Jev's published workflow evaluations do not replace a forecasting backtest against realized outcomes. Vendor cost/speed claims are not copied into our results table. All hypotheses about transfer to time-series prediction are ours, not established properties of Jev.
+| Primary source | Use | Evidence boundary |
+| --- | --- | --- |
+| [Choice documentation](https://docs.typesafe.ai/primitives/choice) | Bounded options with probabilities; the documented option limit accommodates our 25 candidates | A valid output does not mean numerical judgment or calibration transfers to macroeconomic forecasts |
+| [Jev 1.13 limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13) | Keep arithmetic in code and test order sensitivity | We must evaluate the proposed joint task rather than assuming it is easy for Jev |
+| [Confidence documentation](https://docs.typesafe.ai/confidence) | Confidence is derived from an answer distribution | Do not treat it as independent correctness evidence or forecast-interval coverage |
+| [Models](https://docs.typesafe.ai/models) | Pin a version and retain the responding model ID | No fine-tuning, hosted access or forecasting capability is implied by this plan |
+| [Official LLM adapter](https://github.com/typesafe-ai/system-one-adapter-python) | Matched typed-task LLM control | Model settings, representations, latency and costs still need measurement |
 
-## Data provenance
+RLCD and other vendor training descriptions remain context, not evidence that the method works here. The five-level adjustment grid, joint action distribution, uniform-recovery control and all claimed benefits of adding Jev are our research proposals.
 
-Pinned file: [September 2026 FRED-MD](https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/monthly/2026-09-md.csv).
+## Attribution and data handling
 
-```text
-SHA-256 d6e239038afbdbf4667c2a63c13c942817bc196fedab4355cd7e0d353ecdd65d
-```
+Our code license does not replace upstream licenses. Keep external implementations distinct and honor their terms. In particular, the inspected author R package declares GPL-3; it must not be copied into this repository and relabeled MIT. Data reuse and distribution retain the archive's attribution and applicable series terms.
 
-Download verifies this digest and the transform row. Raw observations are not committed. The repository's MIT license applies to its code, not upstream data or hosted-model access. Review upstream series terms before redistributing data.
+The earlier September 2026 FRED-MD snapshot and its checksum belong to the old monthly pilot. They are not substitutes for the paper's deposited data.

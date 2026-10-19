@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "document_type": "research_plan_not_executable_config",
+  "updated_local_date": "2026-10-18",
+  "implementation_status": "planned_not_implemented",
+  "foundation": {
+    "title": "The Macroeconomy as a Random Forest",
+    "author": "Philippe Goulet Coulombe",
+    "publication_year": 2024,
+    "doi": "10.1002/jae.3030",
+    "published_version_reconciled": false,
+    "replication_completed": false,
+    "accessible_earlier_manuscript": "https://arxiv.org/pdf/2006.12724"
+  },
+  "data": {
+    "archive_doi": "10.15456/jae.2023321.0115060814",
+    "archive_url": "https://journaldata.zbw.eu/dataset/c48432e1-5a25-49f1-95b1-6c681f21e252/resource/9c8c1313-bb06-4bd1-83ac-be22b0cc12ed/download/the-macroeconomy-as-a-random-forest-replication-data.zip",
+    "archive_sha256": "5b31cd2ad184ffc8d1710433fbc34a5ac110f8b4bfa69f3c1400fdd828a9de8c",
+    "verified_members": {
+      "FREDQD_2019-03.csv": "69226fbe297c09fdbf011c7c09e9c3abf04db1b1dfbba203b51291b825a00335",
+      "FREDMD_2018-01.csv": "9ed47f32eb54b9539662bb940cea352ac2fac8bc558de017317c753f794a9f00"
+    },
+    "raw_files_committed": false,
+    "evaluation_type": "fixed_vintage_retrospective_replication",
+    "quarterly_loader_validated": false,
+    "factor_eligibility_semantics_verified": false,
+    "quarterly_header_mapping_verified": false
+  },
+  "reference_implementation_candidates": {
+    "R": {
+      "repository": "https://github.com/philgoucou/macrorf",
+      "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+      "audit_complete": false
+    },
+    "Python": {
+      "repository": "https://github.com/RyanLucas3/MacroRandomForest",
+      "commit": "8069107d6e1f92e8ef9fade782dfda97f8bd66d8",
+      "audit_complete": false
+    }
+  },
+  "first_experiment": {
+    "target": "quarterly_unemployment",
+    "horizon_quarters": 1,
+    "target_transform": "pending_published_version_reconciliation",
+    "model": "factor_augmented_MRF",
+    "number_of_factors": 2,
+    "sample_start": null,
+    "evaluation_start": null,
+    "evaluation_end": null,
+    "sample_status": "pending_reference_version_lock"
+  },
+  "primary_extension": {
+    "name": "MRF_plus_Jev",
+    "changes": "multipliers_on_two_MRF_factor_contributions",
+    "unchanged_terms": ["MRF_intercept", "MRF_autoregressive_contributions"],
+    "multipliers": [0.0, 0.5, 1.0, 1.5, 2.0],
+    "decision_space": "joint_cartesian_product",
+    "number_of_choices": 25,
+    "baseline_choice": [1.0, 1.0],
+    "forecast_policy": "probability_weighted_candidate_forecasts",
+    "uniform_distribution_recovers_baseline": true,
+    "sign_reversal_allowed": false,
+    "api_failure_policy": "fail_or_record_missing_never_count_fallback_as_model_success",
+    "prompt_frozen": false,
+    "model_id": "jev-1.13.0",
+    "hosted_evaluation_run": false
+  },
+  "required_controls": [
+    "paper_AR_and_linear_factor_benchmarks",
+    "replicated_factor_augmented_MRF",
+    "MRF_plus_uniform_identity",
+    "MRF_plus_rule",
+    "MRF_plus_learned_multinomial_gate",
+    "MRF_plus_loss_trained_gate",
+    "MRF_plus_LLM"
+  ],
+  "evaluation": {
+    "primary_metric": "RMSE_against_unchanged_MRF",
+    "secondary_metrics": ["MAE", "multiclass_Brier", "log_loss", "latency", "billed_cost", "failure_rate"],
+    "decision_label": "joint_candidate_with_lowest_realized_squared_error",
+    "uncertainty_method": "paired_moving_block_bootstrap_to_be_frozen_on_development_data",
+    "historical_pretraining_contamination_unresolved": true,
+    "prospective_validation_completed": false
+  }
+}
