@@ -1,8 +1,8 @@
 {
-  "schema_version": 14,
+  "schema_version": 15,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "joint_replication_still_incomplete_FRED_adaptive_completion_recipe_implemented_and_training_only_audited",
+  "implementation_status": "joint_replication_still_incomplete_FRED125_factor_block_forecast_sensitivity_declared_and_implemented",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -279,6 +279,27 @@
     "new_forecast_losses_calculated": false,
     "full_forecast_comparison_requires_separate_declaration": true,
     "original_MRF_author_preprocessing_recovered": false
+  },
+  "declared_FRED125_preparation_sensitivity": {
+    "configuration": "configs/mrf_fred125_sensitivity.json",
+    "protocol": "docs/FRED125_SENSITIVITY.md",
+    "runner": "scripts/fred125_sensitivity.py",
+    "declared_after_prior_results_before_own_forecast_outcomes": true,
+    "composite_preparation_contrast_not_pure_rank_toggle": true,
+    "independently_completed_training_series": 125,
+    "only_40_cross_sectional_factor_lag_columns_change": true,
+    "full_248_indicator_and_MAF_state_exactly_preserved": true,
+    "five_state_PCs_two_explicit_factors": true,
+    "R_sign_sensitivity_stacked": false,
+    "future_row_completion_is_our_causal_extension": true,
+    "own_matching_fixed_FA_AR_required": true,
+    "same_48_dates_6_refits_100_trees_3_seeds": true,
+    "same_0_03_joint_diagnostic_gate": true,
+    "prepare_only_and_partial_runs_suppress_scores": true,
+    "bounded_actual_R_pilot_verified": false,
+    "full_forecast_comparison_completed": false,
+    "primary_result_replaced": false,
+    "original_author_preprocessing_recovered": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,
