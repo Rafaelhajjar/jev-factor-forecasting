@@ -1,6 +1,6 @@
-# FRED125 preparation and pilot: verified, full forecasts pending
+# FRED125 preparation and pilot: historical integrity record
 
-October 19, 2026. This is an integrity/progress record, not a forecast result. The joint unemployment replication remains incomplete.
+October 19, 2026. This preserves the pre-fit integrity/progress record, not a forecast result or live status. The [full comparison is now complete](MRF_FRED125_SENSITIVITY.md) and still fails the joint criterion. Its final audit is separate from these prepared-manifest snapshots.
 
 The [declaration and runner](../docs/FRED125_SENSITIVITY.md) were committed and pushed in `dbd43380e6401c8810b2b9294b9508fc4330416d` before this construction's actual-R pilot or full outcomes. Prior primary, ARRF, R-sign and conditional PCA125 results were already known and are recorded in its [configuration](../configs/mrf_fred125_sensitivity.json).
 
@@ -16,9 +16,9 @@ A subsequent [native-initialization audit](mrf-fred125-native-initialization-aud
 
 All 245 local tests pass, including 12 real-R contracts. The declaration commit's [GitHub checks also passed](https://github.com/Rafaelhajjar/jev-factor-forecasting/actions/runs/39231403760). The new synthetic contracts exercise exact non-factor preservation, timing, convergence/cap rejection, recipe/provenance guards, preparation-only behavior and the joint criterion. Synthetic contract scores are never research evidence. CI tests and the bounded smoke are not substitutes for the expensive full macro comparison.
 
-## What is running and what remains
+## At the time of this pre-fit record
 
-The separately prepared 100-tree run has been launched with all three original seeds, all six refits and all 48 evaluation dates. The runner's source and dependencies are frozen. Partial runs publish integrity checks only; full scores and source comparisons remain pending until every job completes and the final independent audit passes.
+The separately prepared 100-tree run had been launched with all three original seeds, all six refits and all 48 evaluation dates. Its runner and dependencies were frozen. Partial runs published integrity checks only; this historical record did not contain full scores or source comparisons. See the separate completed report for those results.
 
 The final report must compare the new forest to its **own** fixed-factor comparator, retaining every seed and a separately labeled mean-prediction ensemble. The matching fixed-factor ratio must be within 0.03 of 0.83 and every individual forest ratio within 0.03 of 0.72. Do not combine an earlier linear score with a new forest or choose the best seed.
 

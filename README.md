@@ -4,23 +4,24 @@ Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its
 
 This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. We start by reconstructing its benchmark. The main experiment then adds Jev to the reference forest and tests whether it improves forecasts beyond the forest itself; any unresolved replication boundary stays explicit.
 
-**Status:** the joint unemployment replication criterion still fails. The completed PCA125 sensitivity now puts every forest seed within our declared tolerance around 0.72, but its matching fixed FA-AR is 0.787 versus 0.83 and fails. We retain every run and the original primary result. No Jev or LLM forecast evaluation has run. [Latest completed result](reports/MRF_PCA125_SENSITIVITY.md), [source audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
+**Status:** the joint unemployment replication criterion still fails. The completed FRED125 preparation sensitivity has a matching fixed FA-AR ratio of 0.801723 versus 0.83, within tolerance. But its forest ratios are 0.746268/0.766320/0.757391 versus 0.72; two seeds fail. We retain every run and the original primary result. No Jev or LLM forecast evaluation has run. [Latest completed result](reports/MRF_FRED125_SENSITIVITY.md), [source audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
-All three constructions cover 48 quarters and pass complete artifact audits. The diagnostic requires the fixed FA-AR and **every** individual forest seed to be within 0.03 of 0.83 and 0.72, respectively. This is our diagnostic, not an author standard or statistical test.
+All four constructions cover 48 quarters and pass complete artifact audits. The diagnostic requires the matching fixed FA-AR and **every** individual forest seed to be within 0.03 of 0.83 and 0.72, respectively. This is our diagnostic, not an author standard or statistical test.
 
 | Construction | Fixed FA-AR / AR(4) | FA-ARRF / AR(4), all three seeds | Joint criterion |
 | --- | ---: | ---: | --- |
 | [Original all-248 PCA](reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md) | 0.812577 | 0.797325–0.806346 | Fails: forests |
 | [Recorded R signs only](reports/MRF_R_BASIS_SENSITIVITY.md) | 0.812577 | 0.783246–0.799636 | Fails: forests |
 | [PCA125, full indicator/MAF state retained](reports/MRF_PCA125_SENSITIVITY.md) | 0.787136 | 0.744101–0.748815 | Fails: fixed FA-AR |
+| [FRED125 adaptive preparation, full indicator/MAF state retained](reports/MRF_FRED125_SENSITIVITY.md) | 0.801723 | 0.746268–0.766320 | Fails: two forest seeds |
 
 Do not combine the original linear score with the PCA125 forest to claim a pass: they use different factor constructions. The PCA125 forest improves on its own fixed-factor comparator by 4.87%–5.47%, still short of the roughly 13.3% implied by the source ratios. These post-primary sensitivities do not recover the missing original pipeline or replace the primary result.
 
 The separate [ARRF diagnostic](reports/MRF_ARRF_DIAGNOSTIC.md) scores 0.892599/0.894426/0.901878 against 0.90, all within tolerance. That comparator match cannot establish the factor-augmented result. The [basis audit](docs/PCA_BASIS_AUDIT.md), [eligibility audit](reports/MRF_PCA_ELIGIBILITY_AUDIT.md) and [PCA125 declaration](docs/PCA125_SENSITIVITY.md) distinguish training evidence, fixed controls and forecast outcomes.
 
-A [training-only FRED-recipe audit](docs/FRED_RECIPE_AUDIT.md) now reconstructs the public preparation code's adaptive completion instead of fixing rank at five. Applied independently to the 125-series panel, it selects ranks 2/3/3/4/4/4 and converges within 50 iterations in all six windows; independent R calculations agree. No new forecast score is available, and this is not proof of the MRF author's original preprocessing.
+A [training-only FRED-recipe audit](docs/FRED_RECIPE_AUDIT.md) reconstructs the public preparation code's adaptive completion instead of fixing rank at five. Applied independently to the 125-series panel, it selects ranks 2/3/3/4/4/4 and converges within 50 iterations in all six windows; independent R calculations agree. That training stage calculated no forecast loss and is not proof of the MRF author's original preprocessing.
 
-A separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md) was declared and implemented before its outcomes. Its [actual-R pilot and all-six-window preparation pass](reports/MRF_FRED125_PROGRESS.md); the 18-job/100-tree full comparison has been launched, with scores pending. It changes only the factor block, keeps the entire original indicator/MAF state, and fits its own matching linear comparator. This is a composite preparation check, not a pure rank change or recovery of the missing author runner. All earlier results remain frozen.
+The separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md), declared before its outcomes, is now [fully completed and audited](reports/MRF_FRED125_SENSITIVITY.md): all 18 jobs and all 48 dates verify. It changes only the factor block, keeps the entire original indicator/MAF state and fits its own matching linear comparator. The forest's incremental RMSE reduction is 4.42%–6.92%, still below the roughly 13.3% implied by the printed source cells. This is a composite preparation check, not a pure rank change or recovery of the missing author runner. All earlier results remain frozen.
 
 ## The idea we are building on
 
