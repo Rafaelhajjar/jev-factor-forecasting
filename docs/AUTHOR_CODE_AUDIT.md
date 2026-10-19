@@ -98,7 +98,7 @@ Every run saves data and source hashes, configuration, masked inputs, training r
 
 The extra HOUST target row, monthly AR(12)/AR(4) denominator, A.2's 600/750 OOS discrepancy, exact neural settings and TV-FAAR table schedule cannot be inferred from a generic MRF engine. They remain open in the [appendix register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolve). HOUST itself exists in the data with transformation code 5; that does not establish the intended table target or timing.
 
-Do not tune the unemployment test period to hit 0.72. If reconstruction differs, preserve it and investigate the gap transparently. Exact replication needs the missing benchmark/generator scripts or authoritative clarification. Jev evaluation remains behind this gate.
+Do not tune the unemployment test period to hit 0.72. If reconstruction differs, preserve it and investigate the gap transparently. Exact replication needs the missing benchmark/generator scripts or authoritative clarification. Independent extension tooling can proceed without waiting, but a later evaluation against this baseline must be labeled an independent-reconstruction extension, not an extension of an exactly replicated 0.72 model. Prequential development and prompt-freezing remain prerequisites for hosted evaluation.
 
 ## 7. Whole-run verification
 
@@ -106,4 +106,4 @@ The separate `audit-mrf` command checks the data/engine/source hashes, every dec
 
 The checker rejects incomplete runs unless explicitly asked for a progress audit. Such an audit withholds forest scores and a numerical pass. The full diagnostic requires fixed FA-AR and every individual declared forest seed to fall within the previously declared 0.03 absolute-ratio tolerance; the seed-mean ensemble is excluded from that pass rule. This rule was recorded before full forest results were inspected. Exact source fidelity is always a separate unresolved item, even if every score matches.
 
-October 19 checks: all 48 linear forecasts agree between R and Python within 1.5e-15. All six 1,041-column state matrices match recomputation within 3.6e-15, and their EM fits converge. At the first progress audit, four of eighteen forest jobs were complete and their maximum coefficient-reconstruction discrepancy was 5.6e-16. These are numerical integrity checks, not full forest performance results.
+October 19 final checks: all 48 linear forecasts agree between R and Python within 1.5e-15. All six 1,041-column state matrices match recomputation within 3.6e-15, and their EM fits converge. All 18 forest jobs pass coefficient reconstruction within 2.5e-15. Forest/AR(4) ratios are 0.797325, 0.804184 and 0.806346; the declared numerical-agreement criterion fails. The [completed report](../reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md) preserves this result and separates integrity checks from source fidelity.

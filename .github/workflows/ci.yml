@@ -37,3 +37,5 @@ jobs:
         run: uv run jev-factor replicate-mrf --output runs/ci-quarterly --trees 2 --seeds 101 --max-refits 1
       - name: Check quarterly smoke artifacts and explicitly retain partial status
         run: uv run jev-factor audit-mrf --run runs/ci-quarterly --output runs/ci-quarterly-audit.json --allow-partial
+      - name: Check identity and uniform 25-action policies on actual coefficients
+        run: uv run python scripts/check_mrf_action_identity.py --run runs/ci-quarterly

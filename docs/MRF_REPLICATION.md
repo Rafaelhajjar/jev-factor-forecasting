@@ -1,6 +1,6 @@
 # MRF replication checklist and verified inputs
 
-Inspected October 18, 2026, including the final article, appendix and pinned author engine. This is the first milestone of the [active research protocol](RESEARCH_PROTOCOL.md). The quarterly reconstruction is implemented and running, but reconciling every original setting and reproducing the paper are not complete. See the [code audit](AUTHOR_CODE_AUDIT.md) and [appendix discrepancy register](APPENDIX_FINDINGS.md).
+Inspected October 18–19, 2026, including the final article, appendix and pinned author engine. This is the first milestone of the [active research protocol](RESEARCH_PROTOCOL.md). The full quarterly reconstruction has completed and passed its artifact audit, but it misses the published forest ratio and is not an exact replication. See the [completed result](../reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [code audit](AUTHOR_CODE_AUDIT.md) and [appendix discrepancy register](APPENDIX_FINDINGS.md).
 
 ## Source versions
 
@@ -52,7 +52,7 @@ The appendix download has SHA-256 `665fac2b6a21b8f2b28442dfe60aec30aee542c3dac28
 
 The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolve) records the extra HOUST target row, AR(12)-versus-AR(4) monthly denominator, A.2 sample lengths and TV-FAAR schedule. The generic engine does not resolve those discrepancies. It does establish actual defaults, an effective parent-size floor and all-row standardization. Our adapter's training-only normalization, OLS prior variances and factor processing are explicit reconstruction choices, not recovered paper settings.
 
-`configs/mrf_unemployment.json` freezes 100 trees, seeds 101/202/303 and an absolute ratio tolerance of 0.03 before full forest results. That diagnostic tolerance is ours, not a statistical test. The full 48-quarter fixed FA-AR/AR(4) ratio is 0.812577, compared with the source's rounded 0.83. The full forest evaluation is running. A near numerical score alone will not establish exact source fidelity.
+`configs/mrf_unemployment.json` freezes 100 trees, seeds 101/202/303 and an absolute ratio tolerance of 0.03 before full forest results. That diagnostic tolerance is ours, not a statistical test. The full 48-quarter fixed FA-AR/AR(4) ratio is 0.812577, compared with the source's rounded 0.83. Forest ratios are 0.797325, 0.804184 and 0.806346, all outside tolerance from 0.72. The full numerical criterion fails. Artifact integrity passes for all 18 jobs; unknown source settings remain unresolved rather than inferred from these scores.
 
 ## Required before adding Jev
 
@@ -66,9 +66,10 @@ The [evidence register](APPENDIX_FINDINGS.md#7-remaining-discrepancies-to-resolv
 - [x] Lock reconstruction origin/target dates, endpoints and two-year refit cadence.
 - [x] Declare reconstruction settings/seeds/tolerance and record actual R/package versions per job.
 - [x] Add past-only factor/state/target handling and real-engine future-perturbation contracts.
-- [ ] Recover exact original processing and per-table invocation, or retain a qualified-reconstruction boundary.
-- [ ] Run the linear benchmark and reference MRF without Jev; retain forecasts and coefficient decompositions.
-- [ ] Compare reproduced cells using a tolerance fixed before inspecting differences; explain unresolved discrepancies.
+- [x] Retain a qualified-reconstruction boundary; exact original processing and per-table invocation remain unknown.
+- [x] Run the linear benchmark and reference MRF without Jev; retain forecasts and coefficient decompositions.
+- [x] Compare cells using the predeclared tolerance and report its failure without attributing an unverified cause.
+- [ ] Reproduce the published nonlinear gain; current independent reconstruction does not meet this milestone.
 - [ ] Build genuinely prequential development cases for the new policy, then freeze its prompt and candidate construction.
 
-The protocol's dates, lag structure and target are supported by the final article. The adapter and tests go beyond source reading, but the forest result and source-fidelity check are still required. An eight-quarter, two-tree smoke test checks execution only, not the published score.
+The protocol's dates, lag structure and target are supported by the final article. The full result now establishes a working independent baseline, not recovery of the original pipeline. Independent extension tooling may proceed under that label, while exact replication and strong-comparator work remain explicit open milestones. An eight-quarter, two-tree smoke test still checks execution only, not the published score.

@@ -8,7 +8,7 @@ The final 21-page article and 32-page publisher appendix have now been read. The
 
 The journal archive and author engine are now audited; see the [replication checklist](../docs/MRF_REPLICATION.md) and [code findings](../docs/AUTHOR_CODE_AUDIT.md). The dedicated quarterly loader and external-R adapter are implemented. The original benchmark runner is absent from the inspected public repositories, so the first run is explicitly a reconstruction.
 
-### Quarterly reconstruction: first implementation
+### Quarterly reconstruction: completed first run
 
 Fixed archived vintage, delta log UNRATE, 48 evaluation target dates from 2003Q1 through 2014Q4, expanding estimates from 1961Q3 and six two-year refits. All preprocessing uses the fitting sample; future target values are masked before the R engine is called.
 
@@ -16,17 +16,22 @@ Fixed archived vintage, delta log UNRATE, 48 evaluation target dates from 2003Q1
 | --- | ---: | ---: | ---: | ---: |
 | AR(4) | 48 | 0.0334997102 | 1.000000 | 1.00 |
 | Fixed FA-AR | 48 | 0.0272211055 | 0.812577 | 0.83 |
-| FA-ARRF | Running | Pending | Pending | 0.72 |
+| FA-ARRF, seed 101 | 48 | 0.0267101414 | 0.797325 | 0.72 |
+| FA-ARRF, seed 202 | 48 | 0.0269399477 | 0.804184 | 0.72 |
+| FA-ARRF, seed 303 | 48 | 0.0270123659 | 0.806346 | 0.72 |
+| Mean forest prediction | 48 | 0.0268552416 | 0.801656 | Not a source ensemble |
 
-The fixed factor regression is close to the printed ratio, not identical. This does not validate unknown factor processing or establish reproduction of the nonlinear gain. The full 100-tree forest run has seeds 101/202/303; all seeds and their separately labeled mean-prediction ensemble will be retained. The 0.03 absolute-ratio diagnostic tolerance was declared before full forest outcomes. No test-period tuning is authorized by this tolerance.
+The fixed factor regression is close to the printed ratio, not identical. Every forest seed misses the prespecified 0.03 absolute-ratio tolerance, so the full numerical-agreement criterion fails. Forest RMSE is only 0.77%–1.88% below fixed FA-AR; the separately labeled mean-prediction ensemble improves by 1.34%. This does not reproduce the paper's larger nonlinear gain. All 18 jobs and all seeds are retained, with no test-period retuning. See the [completed result](MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [metrics](mrf-unemployment-metrics.csv), [predictions](mrf-unemployment-predictions.csv) and [full audit](mrf-unemployment-audit.json).
 
-An eight-forecast, two-tree end-to-end pilot completed and passed coefficient reconstruction. It is not a full benchmark result. All 63 local tests passed: 59 ordinary tests and four real-R contracts, including independent base-R QR versus Python SVD regression. CI additionally runs a bounded quarterly smoke and artifact audit, not the full forest benchmark. Local runtime: R 4.6.1 and pracma 2.4.6; each job records its runtime separately.
+An eight-forecast, two-tree end-to-end pilot completed and passed coefficient reconstruction. It is not a full benchmark result. All 82 local tests passed: 78 ordinary tests and four real-R contracts, including independent base-R QR versus Python SVD regression. CI additionally runs a bounded quarterly smoke and artifact audit, not the full forest benchmark. Local runtime: R 4.6.1 and pracma 2.4.6; each job records its runtime separately.
 
-The October 19 whole-run progress audit independently checked all 48 linear forecasts in R (maximum difference 1.5e-15), recomputed all six complete state matrices (maximum difference 3.6e-15), checked all eight target lags against archived levels, and verified coefficient decompositions for the first four completed jobs. Partial forest scores are withheld. Full numerical agreement requires FA-AR and every individual declared seed within the preset 0.03 ratio tolerance; the seed-mean ensemble is reported separately, not used to pass that rule. Unknown original preprocessing remains a separate limitation regardless of score agreement.
+The October 19 final audit independently checked all 48 linear forecasts in R (maximum difference 1.5e-15), recomputed all six complete state matrices (maximum difference 3.6e-15), checked all eight target lags against archived levels, and verified coefficient decompositions for all 18 forest jobs (maximum difference 2.5e-15). It verified aggregate forecasts and metrics and confirmed the failed numerical-agreement criterion. Unknown original preprocessing remains a separate limitation regardless of score agreement.
 
-The saved [preliminary integrity snapshot](mrf-unemployment-preliminary-audit.json) subsequently verified eight of eighteen forest jobs, with maximum coefficient-reconstruction error 1.3e-15. It is an immutable progress snapshot, not a live status indicator or a full performance result; no partial forest RMSE is published in it.
+The earlier [preliminary integrity snapshot](mrf-unemployment-preliminary-audit.json) verified eight of eighteen forest jobs, with maximum coefficient-reconstruction error 1.3e-15. It is an immutable progress snapshot, not a live status indicator or a full performance result; no partial forest RMSE is published in it.
 
-Still pending: full forest metrics and source-fidelity assessment; the other Table 4 comparators; controlled mechanisms; the new 25-choice policy; and hosted Jev/LLM evaluation. A completed program run is not automatically an exact replication.
+The shared 25-action algebra is now implemented and tested independently of the legacy gate. Identity and uniform probabilities recover all 144 saved individual-seed forest forecasts within 2.5e-15, with no selector or API calls. The algebra accepts only the four equation terms, not actual outcomes; it does not by itself enforce historical availability of caller-supplied evidence.
+
+Still pending: exact source-fidelity reconciliation; the other Table 4 comparators; controlled mechanisms; prequential evidence and the joint-action selector adapters; and hosted Jev/LLM evaluation. Independent tooling proceeds against the preserved qualified baseline, without claiming the original 0.72 result has been reproduced. A completed program run is not automatically an exact replication.
 
 The original code and results below are retained as a historical scaffold. The 32 existing tests validate that scaffold, not the new MRF study. No numerical result below is relabeled as MRF or Jev evidence.
 

@@ -2,9 +2,9 @@
 
 Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its factor contributions should be stronger or weaker?
 
-This project now extends **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. The first task is replication. The main experiment then adds Jev to the replicated model and tests whether it improves forecasts beyond the forest itself.
+This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. We start by reconstructing its benchmark. The main experiment then adds Jev to the reference forest and tests whether it improves forecasts beyond the forest itself; any unresolved replication boundary stays explicit.
 
-**Status:** the final article, its 32-page appendix and the public author engine have been audited. A quarterly loader and an adapter calling the pinned R engine are implemented. The full 48-quarter, three-seed reconstruction is running; exact numerical replication is not yet established. The linear FA-AR/AR(4) RMSE ratio is 0.813 versus the paper's rounded 0.83. Missing original benchmark scripts prevent us from claiming that every processing choice matches the paper. No Jev or LLM forecast evaluation has run. [Audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
+**Status:** the full 48-quarter, three-seed reconstruction has completed and passed artifact-integrity checks. Forest/AR(4) RMSE ratios are **0.797, 0.804 and 0.806**, versus the paper's 0.72; fixed FA-AR is 0.813 versus 0.83. The prespecified numerical-agreement criterion fails, so this is a qualified independent reconstruction, not an exact replication. We retain the result and continue implementation without waiting for missing original scripts. No Jev or LLM forecast evaluation has run. [Completed results and next steps](reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
 ## The idea we are building on
 
@@ -108,9 +108,17 @@ uv run jev-factor audit-mrf --run runs/mrf-unemployment \
 
 The R engine is computationally expensive. `--prepare-only` writes inputs and linear benchmarks without fitting forests. Outputs include configuration/source hashes, forecasts, coefficients, per-seed metrics and R runtime information. Keep all seeds; a seed-mean forecast is separately labeled and is not the paper's reported forest.
 
+The shared 25-action algebra is implemented in `jev_factor.mrf_actions`: stable action IDs, original-unit coefficient contributions, strict probability validation and weighted forecasts. It accepts no actual-outcome field. Identity and uniform policies reproduce all 144 saved individual-seed forest forecasts within 2.5e-15. This is a mathematical integration check, not a Jev result. Recheck it without fitting forests or calling any hosted model:
+
+```bash
+uv run python scripts/check_mrf_action_identity.py --run runs/mrf-unemployment
+```
+
+Prequential evidence cards, joint-action selector adapters and the controlled-mechanism study still need implementation. The legacy hosted adapter is not yet a 25-choice MRF policy.
+
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 59 ordinary tests plus 4 optional real-R tests (three engine contracts and an independent linear check). All 63 passed locally, including changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 78 ordinary tests plus 4 optional real-R tests (three engine contracts and an independent linear check). All 82 passed locally, including action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \

@@ -1,6 +1,6 @@
 # Research protocol: extending Macroeconomic Random Forests with Jev
 
-Updated October 19, 2026 after reading the published article, its 32-page appendix and the public author engine. This supersedes the [initial generic factor-gating protocol](LEGACY_PROTOCOL.md). The first quarterly reconstruction is implemented and running; the new Jev study remains a plan, not an external preregistration. The [appendix note](APPENDIX_FINDINGS.md) and [code audit](AUTHOR_CODE_AUDIT.md) separate source facts, reconstruction choices and unresolved discrepancies.
+Updated October 19, 2026 after reading the published article, its 32-page appendix and the public author engine. This supersedes the [initial generic factor-gating protocol](LEGACY_PROTOCOL.md). The first quarterly reconstruction is complete but misses the source forest ratio; the new Jev study remains a plan, not an external preregistration. The [completed result](../reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md), [appendix note](APPENDIX_FINDINGS.md) and [code audit](AUTHOR_CODE_AUDIT.md) separate results, source facts, reconstruction choices and unresolved discrepancies.
 
 ## 1. Research claim
 
@@ -24,7 +24,7 @@ Appendix A.6 says the main RFs were untuned. Preserve that reference and its pub
 
 The author's R package is an implementation, not a complete reproduction pipeline. The [audit](AUTHOR_CODE_AUDIT.md) verifies the archive's header repair and historical Stock-Watson metadata semantics, while qualifying unknown original factor eligibility, missing/outlier handling, PCA orientation and method-specific invocations. The first reconstruction uses all 248 series and training-only fixed-rank-five EM/PCA. Its normalization override deliberately removes the native interface's dependency on future forecast-row covariates. These choices are explicit, not recovered source facts.
 
-The reconstruction's absolute RMSE-ratio tolerance of 0.03 was fixed before inspecting full forest scores; it is our diagnostic threshold, not an author standard or a statistical test. Retain all seeds and label a seed-mean forecast separately. The fixed FA-AR/AR(4) ratio is 0.812577 on all 48 quarters versus the paper's rounded 0.83; the full forest result is pending. Score agreement alone cannot resolve missing source settings. Target-count, monthly denominator, synthetic sample-length and TV-FAAR discrepancies remain open because the generic engine contains no corresponding runner. Report limits rather than attribute them to Jev.
+The reconstruction's absolute RMSE-ratio tolerance of 0.03 was fixed before inspecting full forest scores; it is our diagnostic threshold, not an author standard or a statistical test. All seeds are retained and the mean-prediction ensemble is labeled separately. The fixed FA-AR/AR(4) ratio is 0.812577 on all 48 quarters versus the paper's rounded 0.83. Forest ratios are 0.797325, 0.804184 and 0.806346 versus 0.72: the full criterion fails. Artifact integrity passes, but neither the score nor missing source settings are reconciled. Target-count, monthly denominator, synthetic sample-length and TV-FAAR discrepancies also remain open. Independent tooling can proceed against this qualified baseline without waiting; a later Jev comparison must not be described as extending an exactly replicated paper result. Report limits rather than attribute them to Jev.
 
 The original retrospective sample is a replication/development benchmark. Its outcomes are public and it cannot be described as a new blind test for a pretrained model.
 
@@ -175,10 +175,10 @@ After the primary hybrid experiment, a **forest-replacement** study can use Jev 
 
 1. Done for the available engine: document actual behavior/defaults, qualify missing per-table settings, and freeze reconstruction seeds and tolerance. Recovering the original runner remains open.
 2. Implemented and tested: dedicated quarterly archive loader, verified metadata/header handling, separate log-difference target and past-only factor/state construction. Exact source preprocessing remains unverified.
-3. Adapter and coefficient decomposition implemented; full unemployment forest reconstruction running. Compare its 48-quarter results with selected paper cells before advancing. Other Table 4 comparators remain to be implemented.
-4. Generalize the current hard-coded three-label gate interface to joint candidate records without breaking legacy runs.
+3. Adapter and coefficient decomposition implemented; full 48-quarter reconstruction and artifact audit completed. Numerical agreement fails and the first result is preserved. Exact replication and the other Table 4 comparators remain open; independent extension tooling proceeds under a qualified-reconstruction label.
+4. Shared 25-action algebra implemented and tested, including identity checks on all 144 saved individual-seed forecasts. Joint-action evidence cards and selector routing remain to be built; the legacy three-label hosted adapter is unchanged.
 5. Build appendix-inspired controlled DGPs, past-only state cards and a prequential action-loss dataset; implement constant, learned and neural/interaction controls and identity/timing tests.
 6. Freeze prompts and run bounded Jev/LLM contract pilots once credentials are available.
 7. Run the declared retrospective comparison, then robustness and stronger-vintage/prospective validation.
 
-The new quarterly execution path is distinct from the legacy scaffold. Its tests and linear result are recorded, but exact numerical reproduction and any Jev benefit remain unestablished. See [current status](../reports/STATUS.md), the executable reconstruction config and the separate [planning manifest](../research/mrf_extension_plan.json).
+The new quarterly execution path is distinct from the legacy scaffold. Its tests and full forest result are recorded, but exact numerical reproduction and any Jev benefit remain unestablished. See [current status](../reports/STATUS.md), the executable reconstruction config and the separate [planning manifest](../research/mrf_extension_plan.json).

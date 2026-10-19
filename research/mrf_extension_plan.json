@@ -1,8 +1,8 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "quarterly_reconstruction_implemented_full_forest_run_in_progress_Jev_extension_planned",
+  "implementation_status": "full_quarterly_reconstruction_audited_numerical_agreement_failed_25_action_algebra_implemented",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -76,7 +76,7 @@
     "estimation_window": "expanding",
     "main_reestimation_interval_years": 2,
     "forecast_method": "direct",
-    "sample_status": "48_quarter_reconstruction_running_exact_original_pipeline_not_recovered",
+    "sample_status": "48_quarter_reconstruction_completed_and_audited_exact_original_pipeline_not_recovered",
     "executable_reconstruction_config": "configs/mrf_unemployment.json",
     "reconstruction_seeds": [101, 202, 303],
     "reconstruction_trees_per_seed": 100,
@@ -90,6 +90,23 @@
       "FA_AR_RMSE": 0.027221105456282292,
       "FA_AR_RMSE_over_AR4": 0.8125773404372044,
       "original_preprocessing_exactly_verified": false
+    },
+    "completed_project_forest_result": {
+      "n_per_model": 48,
+      "jobs_verified": 18,
+      "RMSE_over_AR4_by_seed": {
+        "101": 0.7973245508700247,
+        "202": 0.8041844982134492,
+        "303": 0.8063462535432181
+      },
+      "separate_seed_mean_prediction_RMSE_over_AR4": 0.8016559359815834,
+      "full_artifact_integrity_verified": true,
+      "predeclared_numerical_agreement_criterion_met": false,
+      "exact_author_pipeline_verified": false,
+      "report": "reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md",
+      "audit": "reports/mrf-unemployment-audit.json",
+      "metrics": "reports/mrf-unemployment-metrics.csv",
+      "predictions": "reports/mrf-unemployment-predictions.csv"
     },
     "reported_source_ratios_not_project_results": {
       "source": "appendix_Table_4_PDF_page_31_printed_page_70",
@@ -160,6 +177,11 @@
     "multipliers": [0.0, 0.5, 1.0, 1.5, 2.0],
     "decision_space": "joint_cartesian_product",
     "number_of_choices": 25,
+    "shared_action_algebra_implemented": true,
+    "shared_action_unit_test_cases": 19,
+    "identity_and_uniform_checked_on_individual_seed_forecasts": 144,
+    "prequential_evidence_cards_implemented": false,
+    "joint_action_hosted_adapters_implemented": false,
     "baseline_choice": [1.0, 1.0],
     "forecast_policy": "probability_weighted_candidate_forecasts",
     "uniform_distribution_recovers_baseline": true,

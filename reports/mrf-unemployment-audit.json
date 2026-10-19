@@ -1,0 +1,478 @@
+{
+  "status": "full_artifacts_verified_qualified_reconstruction",
+  "full_48_quarter_artifacts_verified": true,
+  "matches_declared_config": true,
+  "numerical_agreement_FA_AR_and_all_individual_seeds": false,
+  "seed_mean_ensemble_excluded_from_numerical_agreement_rule": true,
+  "exact_author_pipeline_verified": false,
+  "author_pipeline_boundary": "Original preprocessing and per-table runner not obtained; matching scores alone do not resolve this.",
+  "evaluation_targets_checked": 48,
+  "jobs_expected": 18,
+  "jobs_verified": 18,
+  "pending_jobs": [],
+  "data": {
+    "archive_sha256": "5b31cd2ad184ffc8d1710433fbc34a5ac110f8b4bfa69f3c1400fdd828a9de8c",
+    "member_sha256": "69226fbe297c09fdbf011c7c09e9c3abf04db1b1dfbba203b51291b825a00335",
+    "member": "The macroeconomy as a random forest (replication data)/FREDQD_2019-03.csv",
+    "header_repairs": {
+      "245": "S&P 500",
+      "246": "S&P: indust",
+      "247": "S&P div yield",
+      "248": "S&P PE ratio"
+    },
+    "series_count": 248,
+    "SW_membership_semantics": "historical_Stock_Watson_factor_subset_not_MRF_eligibility",
+    "target_transform": "delta_log_UNRATE",
+    "panel_UNRATE_tcode": 2,
+    "evaluation": "fixed_vintage_retrospective_not_historical_release_vintages"
+  },
+  "config": {
+    "study": "quarterly_unemployment_MRF_reconstruction",
+    "status": "declared_reconstruction_pending_exact_author_runner",
+    "target": "delta_log_UNRATE",
+    "horizon": 1,
+    "panel_start": "1959Q3",
+    "regression_start": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "refit_every_quarters": 8,
+    "factor_panel": "all",
+    "pca_rank": 5,
+    "outlier_iqr": 10,
+    "em_rank": 5,
+    "standardization": "train_only",
+    "prior": "OLS",
+    "trees": 100,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "block": 8,
+    "RWR": 0.75,
+    "ridge_lambda": 0.1,
+    "MLF": 1,
+    "mtry": 0.3333333333333333,
+    "minsize": 10,
+    "trend_push": 1,
+    "reported_AR4_ratio": 1.0,
+    "reported_FA_AR_ratio": 0.83,
+    "reported_FA_ARRF_ratio": 0.72,
+    "predeclared_absolute_ratio_tolerance": 0.03,
+    "tolerance_is_project_reconstruction_criterion_not_author_standard": true,
+    "assumptions_not_verified_paper_settings": [
+      "all_248_series_for_PCA_rather_than_SW_subset",
+      "fixed_rank_5_EM_and_training_only_preprocessing",
+      "100_trees_and_seeds_101_202_303",
+      "OLS_prior_variance_100_for_intercept_and_1_for_slopes",
+      "RWR_lambda_MLF_trend_push_are_package_defaults_not_verified_table_invocation",
+      "PCA_orientation_sklearn_largest_loading_positive",
+      "train_only_standardization_overrides_author_all_supplied_rows_scaling"
+    ]
+  },
+  "external_engine": {
+    "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+    "sha256": "e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631",
+    "url": "https://raw.githubusercontent.com/philgoucou/macrorf/bdb2ed435affb741aafdf78bab12c470ec6d55d0/R/MRF_v210403.R",
+    "license": "GPL-3 external dependency; not redistributed as MIT"
+  },
+  "integration_source_sha256": {
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a"
+  },
+  "linear_checker_sha256": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+  "verifier_sha256": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+  "linear_R_QR_vs_Python_SVD": [
+    {
+      "fit_end": "2002Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 1.0061396160665481e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2004Q4",
+      "maximum_absolute_difference": {
+        "AR4": 5.0133508455729725e-16,
+        "FA_AR": 2.0122792321330962e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2006Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 4.996003610813204e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2008Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.4988010832439613e-15,
+        "FA_AR": 4.163336342344337e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2010Q4",
+      "maximum_absolute_difference": {
+        "AR4": 0.0,
+        "FA_AR": 1.9949319973733282e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2012Q4",
+      "maximum_absolute_difference": {
+        "AR4": 1.0061396160665481e-16,
+        "FA_AR": 1.9949319973733282e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "recomputed_state_input_checks": [
+    {
+      "fit_end": "2002Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2004Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2006Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2008Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2010Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 3.552713678800501e-15,
+      "em_converged": true
+    },
+    {
+      "fit_end": "2012Q4",
+      "columns_including_target": 1042,
+      "maximum_absolute_difference": 1.7763568394002505e-15,
+      "em_converged": true
+    }
+  ],
+  "maximum_forecast_coefficient_reconstruction_error": 2.4980018054066022e-15,
+  "completed_output_checksums": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101,
+      "sha256": "8eeb1acd5f7b323647b75827be7181c1a8c589a3094c365142c8807907584e16"
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 202,
+      "sha256": "a835042e6da2b8ee053f8b4c012bdff8b6ffd15e5396fa850cec2f6f3f549a8f"
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 303,
+      "sha256": "80866178bd2fb8fd320d3bee93b4ddaa6b6dfdd22134818399e7d1fdf8d7b08a"
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 101,
+      "sha256": "f3945e15ce6b1ef60cc6ae9947d7e116416636f54ae8def9598d58db03192065"
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 202,
+      "sha256": "7b8b7d2f7c2d8fbb512fb7e6921de57fd74750a9c01f517f9819cae23d088e9c"
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 303,
+      "sha256": "be29e6d7b04198c176857c385ec30bb3a22e05278e8170bd3c1040941c14cd36"
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 101,
+      "sha256": "89bbe38dea4bd633d1ab20bec4afdf910b9d28300e4ea6a8e743657cdec17782"
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 202,
+      "sha256": "542b84fa05f62b3286d433a3f7364b091ba4c524841f978b9cbd9266bf4b277f"
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 303,
+      "sha256": "2cd253e488c8515780646f96d80a6d307332c8a488717cfa2f2235acd36df048"
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 101,
+      "sha256": "dae50ccef5aada794fd642e47ba6f0a6c583b6241a8bb8fb689d927ef28e8e37"
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 202,
+      "sha256": "d1a8d7cd1b44ef9e4875207c0d4deff71814716cb78a158bb41db3af3a4ec2bd"
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 303,
+      "sha256": "bef32a39fa3a14d53a9eb3910ef08cc362b67bda345753ad87fd00ea7839c9db"
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 101,
+      "sha256": "1ad31432e93828825dc72c8e387dec13fcea51b7a7beb07096125a02613b8dad"
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 202,
+      "sha256": "515c62b6d90740a77158cbfaf314ebb0457e06ce1bc7da86010e1fc112ef444f"
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 303,
+      "sha256": "3510665b8333c8bdc7d4bed2bb567d7071c3a2f8a1d74da8ac3a62b3fe6f06a9"
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 101,
+      "sha256": "b37d9abf15dc19ea3cf2d3b471111acf7b413772a7b653f478db91ed5cac7156"
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 202,
+      "sha256": "f18730fa7878820f89f57fd35b8e0b2397af8be53318b798858ade17de6f1ceb"
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 303,
+      "sha256": "bfc09eb5d566cb6e6b2a3cb6ffba98f53f7a32743a20dc51c4d6e4c78b022097"
+    }
+  ],
+  "runtime_records": [
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "756.435",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "759.406",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "747.918",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "810.446",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "763.959",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "775.519",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "840.304",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "837.706",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "758.545",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "814.186",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "838.706",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "849.249",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1031.463",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1032.058",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1037.93",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1059.614",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1564.569",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "1565.998",
+      "standardization": "train_only",
+      "prior": "OLS"
+    }
+  ],
+  "metrics": [
+    {
+      "model": "AR4",
+      "n": 48,
+      "RMSE": 0.03349971024497933,
+      "MAE": 0.025867458243597225,
+      "RMSE_over_AR4": 1.0
+    },
+    {
+      "model": "FA_AR",
+      "n": 48,
+      "RMSE": 0.027221105456282285,
+      "MAE": 0.021625109205750937,
+      "RMSE_over_AR4": 0.8125773404372048
+    },
+    {
+      "model": "FA_ARRF_seed101",
+      "n": 48,
+      "RMSE": 0.02671014142535411,
+      "MAE": 0.020014776863515993,
+      "RMSE_over_AR4": 0.7973245508700247
+    },
+    {
+      "model": "FA_ARRF_seed202",
+      "n": 48,
+      "RMSE": 0.026939947673654645,
+      "MAE": 0.01986353429430028,
+      "RMSE_over_AR4": 0.8041844982134492
+    },
+    {
+      "model": "FA_ARRF_seed303",
+      "n": 48,
+      "RMSE": 0.027012365850822444,
+      "MAE": 0.019876835585883327,
+      "RMSE_over_AR4": 0.8063462535432181
+    },
+    {
+      "model": "FA_ARRF_seed_mean_prediction",
+      "n": 48,
+      "RMSE": 0.026855241571550743,
+      "MAE": 0.019845671793261844,
+      "RMSE_over_AR4": 0.8016559359815834
+    }
+  ],
+  "published_ratio_comparisons": [
+    {
+      "model": "FA_AR",
+      "reported_ratio": 0.83,
+      "reconstructed_ratio": 0.8125773404372048,
+      "difference": -0.017422659562795206,
+      "within_project_tolerance": true
+    },
+    {
+      "model": "FA_ARRF_seed101",
+      "reported_ratio": 0.72,
+      "reconstructed_ratio": 0.7973245508700247,
+      "difference": 0.07732455087002477,
+      "within_project_tolerance": false
+    },
+    {
+      "model": "FA_ARRF_seed202",
+      "reported_ratio": 0.72,
+      "reconstructed_ratio": 0.8041844982134492,
+      "difference": 0.0841844982134492,
+      "within_project_tolerance": false
+    },
+    {
+      "model": "FA_ARRF_seed303",
+      "reported_ratio": 0.72,
+      "reconstructed_ratio": 0.8063462535432181,
+      "difference": 0.08634625354321812,
+      "within_project_tolerance": false
+    },
+    {
+      "model": "FA_ARRF_seed_mean_prediction",
+      "reported_ratio": 0.72,
+      "reconstructed_ratio": 0.8016559359815834,
+      "difference": 0.08165593598158338,
+      "within_project_tolerance": false
+    }
+  ],
+  "partial_forest_scores_suppressed": false,
+  "tolerance_is_project_diagnostic_not_statistical_test": true
+}
