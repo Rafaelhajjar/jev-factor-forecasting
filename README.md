@@ -4,9 +4,9 @@ Can Jev improve a Macroeconomic Random Forest's forecast by identifying when its
 
 This project builds on **Philippe Goulet Coulombe's [The Macroeconomy as a Random Forest](https://doi.org/10.1002/jae.3030), Journal of Applied Econometrics, 2024**. We start by reconstructing its benchmark. The main experiment then adds Jev to the reference forest and tests whether it improves forecasts beyond the forest itself; any unresolved replication boundary stays explicit.
 
-**Status:** all eight named E1 methods now have completed runs, but the unemployment replication criterion still fails. The original FA-ARRF and separate factor sensitivities do not meet the matching-comparator/all-seed requirement. NN also has one seed miss, and native TV-FAAR has unresolved optimizer warnings. We retain every run and the original primary result. No Jev or LLM forecast evaluation has run. [Complete benchmark scorecard](reports/MRF_BENCHMARK_SCORECARD.md), [latest FA-ARRF sensitivity](reports/MRF_FRED125_SENSITIVITY.md), [source audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
+**Status:** all eight named E1 methods have completed runs, but the unemployment replication criterion still fails. The latest native-helper diagnostic is also complete: 0.799509/0.811123/0.808302 versus 0.72, all misses. It does not close the gap or replace the original primary. NN also has one seed miss, and native TV-FAAR has unresolved optimizer warnings. We retain every run. No Jev or LLM forecast evaluation has run. [Complete benchmark scorecard](reports/MRF_BENCHMARK_SCORECARD.md), [native-helper result](reports/MRF_NATIVE_HELPER_DIAGNOSTIC.md), [source audit and assumptions](docs/AUTHOR_CODE_AUDIT.md).
 
-All four constructions cover 48 quarters and pass complete artifact audits. The diagnostic requires the matching fixed FA-AR and **every** individual forest seed to be within 0.03 of 0.83 and 0.72, respectively. This is our diagnostic, not an author standard or statistical test.
+All five FA-ARRF reconstruction checks cover 48 quarters and pass complete artifact audits. The diagnostic requires the matching fixed FA-AR and **every** individual forest seed to be within 0.03 of 0.83 and 0.72, respectively. This is our diagnostic, not an author standard or statistical test. The native-helper path is separately labeled non-causal.
 
 | Construction | Fixed FA-AR / AR(4) | FA-ARRF / AR(4), all three seeds | Joint criterion |
 | --- | ---: | ---: | --- |
@@ -14,6 +14,7 @@ All four constructions cover 48 quarters and pass complete artifact audits. The 
 | [Recorded R signs only](reports/MRF_R_BASIS_SENSITIVITY.md) | 0.812577 | 0.783246–0.799636 | Fails: forests |
 | [PCA125, full indicator/MAF state retained](reports/MRF_PCA125_SENSITIVITY.md) | 0.787136 | 0.744101–0.748815 | Fails: fixed FA-AR |
 | [FRED125 adaptive preparation, full indicator/MAF state retained](reports/MRF_FRED125_SENSITIVITY.md) | 0.801723 | 0.746268–0.766320 | Fails: two forest seeds |
+| [Native inner helper only, non-causal](reports/MRF_NATIVE_HELPER_DIAGNOSTIC.md) | 0.812577 | 0.799509–0.811123 | Fails: forests |
 
 Do not combine the original linear score with the PCA125 forest to claim a pass: they use different factor constructions. The PCA125 forest improves on its own fixed-factor comparator by 4.87%–5.47%, still short of the roughly 13.3% implied by the source ratios. These post-primary sensitivities do not recover the missing original pipeline or replace the primary result.
 
@@ -33,7 +34,7 @@ A [no-tree native-normalization probe](docs/NATIVE_NORMALIZATION_BOUNDARY.md) no
 
 A separate [native-helper forecast diagnostic](docs/NATIVE_ALLROWS_DIAGNOSTIC.md) is now declared and implemented **before its macro outcomes**. It changes only that helper selection behind the same target-masking/outer-scaling adapter; every prepared matrix byte, representation, linear forecast and other setting must remain paired with the original. It retains all 18 cases, seeds and source-cell criteria, without repairing the native prior formula. Later block covariates make it explicitly non-causal, not a new primary or proof of the missing original caller. No macro pilot or full forecast for this diagnostic has run at declaration.
 
-Following that declaration, the [native-helper pilot and full preparation passed](reports/MRF_NATIVE_HELPER_PROGRESS.md), and the full 18-case/100-tree run was launched. The initial audit verifies all six input matrices and all 18 pairings, with no completed full forests or accuracy conclusions at that snapshot. It is an integrity progress record, not a live status page; the original primary and all prior results remain unchanged.
+Following that declaration, the [native-helper full comparison completed and passed its separate artifact audit](reports/MRF_NATIVE_HELPER_DIAGNOSTIC.md): all 18 forests, 1,800 trees and 48 dates. Ratios 0.799509/0.811123/0.808302 all miss 0.72; each seed has slightly higher RMSE than the original. Matching-FA-AR gains are only 0.18%–1.61%. An independent base-R rescore agrees. Exact input/runtime pairing verifies the intended interface change, not a recovered original caller or successful reproduction. The [initial snapshot](reports/MRF_NATIVE_HELPER_PROGRESS.md) remains a historical integrity record; no prior numerical result is replaced.
 
 ## The idea we are building on
 
