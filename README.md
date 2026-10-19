@@ -20,7 +20,7 @@ The separate [ARRF diagnostic](reports/MRF_ARRF_DIAGNOSTIC.md) scores 0.892599/0
 
 A [training-only FRED-recipe audit](docs/FRED_RECIPE_AUDIT.md) now reconstructs the public preparation code's adaptive completion instead of fixing rank at five. Applied independently to the 125-series panel, it selects ranks 2/3/3/4/4/4 and converges within 50 iterations in all six windows; independent R calculations agree. No new forecast score is available, and this is not proof of the MRF author's original preprocessing.
 
-A separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md) is now declared and implemented before its outcomes. It changes only the factor block, keeps the entire original indicator/MAF state, and fits its own matching linear comparator. This is a composite preparation check, not a pure rank change or recovery of the missing author runner. All earlier results remain frozen; no FRED125 forecast result is available at declaration.
+A separate [FRED125 forecast experiment](docs/FRED125_SENSITIVITY.md) was declared and implemented before its outcomes. Its [actual-R pilot and all-six-window preparation pass](reports/MRF_FRED125_PROGRESS.md); the 18-job/100-tree full comparison has been launched, with scores pending. It changes only the factor block, keeps the entire original indicator/MAF state, and fits its own matching linear comparator. This is a composite preparation check, not a pure rank change or recovery of the missing author runner. All earlier results remain frozen.
 
 ## The idea we are building on
 

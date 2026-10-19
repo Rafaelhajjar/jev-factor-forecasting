@@ -2,7 +2,7 @@
   "schema_version": 15,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "joint_replication_still_incomplete_FRED125_factor_block_forecast_sensitivity_declared_and_implemented",
+  "implementation_status": "joint_replication_still_incomplete_FRED125_pilot_and_preparation_audited_full_comparison_launched",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -296,7 +296,13 @@
     "same_48_dates_6_refits_100_trees_3_seeds": true,
     "same_0_03_joint_diagnostic_gate": true,
     "prepare_only_and_partial_runs_suppress_scores": true,
-    "bounded_actual_R_pilot_verified": false,
+    "declaration_commit_before_outcomes": "dbd43380e6401c8810b2b9294b9508fc4330416d",
+    "bounded_actual_R_pilot_verified": true,
+    "pilot_audit": "reports/mrf-fred125-pilot-audit.json",
+    "all_six_matrices_and_linear_forecasts_verified": true,
+    "preparation_audit_snapshot": "reports/mrf-fred125-preparation-audit.json",
+    "progress_record": "reports/MRF_FRED125_PROGRESS.md",
+    "full_comparison_launched": true,
     "full_forecast_comparison_completed": false,
     "primary_result_replaced": false,
     "original_author_preprocessing_recovered": false

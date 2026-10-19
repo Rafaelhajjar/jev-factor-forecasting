@@ -2,6 +2,8 @@
 
 Declared October 19, 2026, after the original, ARRF, R-sign and conditional PCA125 results, but before this construction's forecast outcomes. The [configuration](../configs/mrf_fred125_sensitivity.json) records those known results and the training-only rank paths. This is a source-motivated development check on an already-inspected evaluation period, not a blind confirmation or a search for the best score.
 
+The declaration and runner were published in `dbd4338` before outcomes. The [subsequent progress record](../reports/MRF_FRED125_PROGRESS.md) verifies the actual-R bounded pilot and all-six-window preparation. The 100-tree full comparison has been launched; no full performance result is available. The declaration below is retained unchanged in substance.
+
 ## Hypothesis
 
 Our original completion fixes rank at five. The inspected public FRED functions instead select completion rank at each EM step using the jj=2 criterion, with a maximum of eight and a 50-iteration cap. The [training-only audit](FRED_RECIPE_AUDIT.md) independently completes the 125 flagged series and finds final ranks 2/3/3/4/4/4. Python and an independent base-R implementation agree on the complete rank paths and filled values.

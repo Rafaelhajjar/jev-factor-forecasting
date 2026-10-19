@@ -1,0 +1,170 @@
+{
+  "status": "partial_FRED125_integrity_only",
+  "source_primary_and_FRED_recipe_audits_repeated": true,
+  "sensitivity_source_sha256": "1d1c137a5785d5ba7f566b1aa2a45cdd03c9d01357149b5adf4e54887d66da4c",
+  "dependencies_sha256": {
+    "pca_eligibility.py": "3abc44ca3f6de089e8dd55a0b3033c2cc31eeb1ca05363326ba9a539228df5d5",
+    "fred_recipe.py": "b1d88aaa39ec19bcdcbc8d192e333e8892387628afbec9f042498b27ca1f0b49",
+    "fred_recipe_audit.py": "be7a1175588270bc9499cbe81e0d22958f43950c0fb1e13b8e8d4f12527051d6",
+    "reference_fred_em.R": "b7b9cfd85c69d9ae39215d840295f328f932bb6b8ccf662106ea30fb1fab572d",
+    "pca_basis_audit.py": "9c0a906e501b62076055fd1934dd3392a208dfdf722dd5a2783dd089eafa574c",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "arrf_audit.py": "86aaab5fbc7efda5af3df8af14da8e69ec46a5e92555d17c1cfdb6e0f8e6e821",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "reference_pca.R": "4d0b2ba3a6d01625a588353f5fd2a2d8ca3264a703c54fda1498dafdbde10c82",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a"
+  },
+  "manifest_sha256": "bd11423166be58541d11719f494b693593d0a1f78b6f3b27a477000fcde392af",
+  "recipe_report_sha256": "55dfb26ea67ce825e8f328e16d4f60fa1842c169b1a737838b7b1f65e637bed2",
+  "jobs_verified": 0,
+  "pending_jobs": [
+    {
+      "fit_end": "2002Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2002Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2004Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2006Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2008Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2010Q4",
+      "seed": 303
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 101
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 202
+    },
+    {
+      "fit_end": "2012Q4",
+      "seed": 303
+    }
+  ],
+  "output_checks": [],
+  "linear_checks": [
+    {
+      "fit_end": "2002Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.020562075079397e-17,
+        "AR4_R_QR": 5.594483210025203e-17,
+        "FA_AR_FRED125_R_QR": 2.0816681711721685e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2004Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.020562075079397e-17,
+        "AR4_R_QR": 5.915407053080912e-16,
+        "FA_AR_FRED125_R_QR": 1.231653667943533e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2006Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.020562075079397e-17,
+        "AR4_R_QR": 2.949029909160572e-17,
+        "FA_AR_FRED125_R_QR": 5.828670879282072e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2008Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.367506770274758e-17,
+        "AR4_R_QR": 1.4710455076283324e-15,
+        "FA_AR_FRED125_R_QR": 3.608224830031759e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2010Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 8.370040771588094e-17,
+        "AR4_R_QR": 8.370040771588094e-17,
+        "FA_AR_FRED125_R_QR": 2.5240226575462543e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2012Q4",
+      "maximum_absolute_differences": {
+        "AR4_unchanged": 9.367506770274758e-17,
+        "AR4_R_QR": 8.153200337090993e-17,
+        "FA_AR_FRED125_R_QR": 1.2836953722228372e-16
+      },
+      "all_nonfactor_entries_exactly_preserved": true,
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "maximum_coefficient_reconstruction_error": 0,
+  "partial_forest_scores_suppressed": true,
+  "metrics": [],
+  "published_ratio_comparisons": [],
+  "paired_preparation_effects": [],
+  "forest_gains_over_own_fixed_factor_comparator": [],
+  "subset_FA_AR_and_all_individual_forest_seeds_within_tolerance": null,
+  "exact_author_pipeline_verified": false,
+  "original_author_preprocessing_recovered": false,
+  "primary_result_replaced": false,
+  "recipe_selected_using_forecast_loss": false
+}
