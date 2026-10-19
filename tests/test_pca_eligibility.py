@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from jev_factor import pca_eligibility
 from jev_factor.pca_eligibility import replace_factor_lags, score_geometry, subset_factors
 
 
@@ -128,3 +129,21 @@ def test_score_geometry_distinguishes_signs_from_different_subspaces():
 def test_score_geometry_rejects_invalid_inputs(other):
     with pytest.raises(ValueError):
         score_geometry(np.random.default_rng(4).normal(size=(12, 2)), other)
+
+
+@pytest.mark.parametrize("kind", ["partial", "mismatched_config", "whole_panel_subset", "rank"])
+def test_top_level_audit_rejects_a_different_primary_contract(monkeypatch, tmp_path, kind):
+    # Deliberately synthetic audit metadata: test rejection before any data/R access.
+    contract = {"full_48_quarter_artifacts_verified": True, "matches_declared_config": True}
+    config = {"factor_panel": "all", "pca_rank": 5}
+    if kind == "partial":
+        contract["full_48_quarter_artifacts_verified"] = False
+    elif kind == "mismatched_config":
+        contract["matches_declared_config"] = False
+    elif kind == "whole_panel_subset":
+        config["factor_panel"] = "sw_subset"
+    elif kind == "rank":
+        config["pca_rank"] = 4
+    monkeypatch.setattr(pca_eligibility, "audit_run", lambda *args, **kwargs: contract)
+    with pytest.raises(ValueError):
+        pca_eligibility.audit_eligibility(tmp_path, tmp_path, tmp_path, config)

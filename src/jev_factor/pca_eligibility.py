@@ -127,7 +127,11 @@ def audit_eligibility(
     source_run: Path, archive: Path, engine: Path, config: dict, *, rscript: str = "Rscript"
 ) -> dict:
     primary = audit_run(source_run, archive, config, rscript=rscript)
-    if not primary["full_48_quarter_artifacts_verified"] or config["factor_panel"] != "all":
+    if (
+        not primary["full_48_quarter_artifacts_verified"]
+        or not primary["matches_declared_config"]
+        or config["factor_panel"] != "all"
+    ):
         raise ValueError("Use the completed all-series primary reconstruction")
     if config["pca_rank"] != 5:
         raise ValueError("This declaration retains the primary five-factor representation")
@@ -202,6 +206,10 @@ def audit_eligibility(
         "primary_artifact_integrity_verified": True,
         "primary_integration_source_sha256": primary["integration_source_sha256"],
         "audit_source_sha256": _sha(Path(__file__)),
+        "audit_dependency_sha256": {
+            name: _sha(Path(__file__).with_name(name))
+            for name in ("pca_basis_audit.py", "reference_pca.R", "replication_audit.py")
+        },
         "external_engine": engine_metadata,
         "data": data.metadata,
         "construction": (

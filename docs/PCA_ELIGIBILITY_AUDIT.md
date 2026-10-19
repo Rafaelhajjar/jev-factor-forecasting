@@ -2,7 +2,7 @@
 
 Declared October 19, 2026, after the primary, ARRF and R-sign results. This stage is a training-only representation audit, not another forecast contest.
 
-**Completed:** all six refits pass input-preservation and independent base-R PCA checks. The first two subset factors have absolute training correlations of 0.987–0.990 and 0.921–0.955 with their corresponding original factors. No new forecast loss was calculated. See the [completed representation result](../reports/MRF_PCA_ELIGIBILITY_AUDIT.md) and [machine-readable audit](../reports/mrf-pca-eligibility-audit.json).
+**Completed:** all six refits pass input-preservation and independent base-R PCA checks. The first two subset factors have absolute training correlations of 0.987–0.990 and 0.921–0.955 with their corresponding original factors. No new forecast loss was calculated. See the [completed representation result](../reports/MRF_PCA_ELIGIBILITY_AUDIT.md) and [machine-readable audit](../reports/mrf-pca-eligibility-audit-v2.json).
 
 ## Question
 

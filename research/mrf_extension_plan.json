@@ -192,7 +192,8 @@
   "PCA_eligibility_representation_audit": {
     "declaration": "docs/PCA_ELIGIBILITY_AUDIT.md",
     "report": "reports/MRF_PCA_ELIGIBILITY_AUDIT.md",
-    "audit": "reports/mrf-pca-eligibility-audit.json",
+    "audit": "reports/mrf-pca-eligibility-audit-v2.json",
+    "preserved_first_audit_generation": "reports/mrf-pca-eligibility-audit.json",
     "construction": "125_series_PCA_on_frozen_all_248_completed_panel",
     "refits_verified": 6,
     "cross_sectional_factor_lag_columns_eligible_to_change": 40,
