@@ -1,8 +1,8 @@
 {
-  "schema_version": 10,
+  "schema_version": 11,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "FA_ARRF_source_ratio_still_missed_ARRF_matches_R_sign_sensitivity_misses_source_training_only_PCA_eligibility_audit_complete",
+  "implementation_status": "FA_ARRF_source_ratio_still_missed_PCA125_only_forecast_sensitivity_declared_and_implemented_pilot_pending",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -206,6 +206,21 @@
     "original_author_PCA_eligibility_recovered": false,
     "full_performance_sensitivity_run": false,
     "full_performance_run_requires_separate_declaration": true
+  },
+  "PCA125_forecast_sensitivity": {
+    "configuration": "configs/mrf_pca125_sensitivity.json",
+    "protocol": "docs/PCA125_SENSITIVITY.md",
+    "construction": "125_series_PCA_on_frozen_all_248_completed_panel_with_full_indicator_MAF_state",
+    "stack_R_sign_sensitivity": false,
+    "all_nonfactor_entries_and_forest_settings_preserved": true,
+    "separate_fixed_factor_baseline": "FA_AR_PCA125",
+    "trees_per_fit": 100,
+    "seeds": [101, 202, 303],
+    "all_original_results_retained": true,
+    "eligibility_selected_using_test_losses": false,
+    "bounded_actual_R_pilot_verified": false,
+    "full_performance_comparison_completed": false,
+    "original_author_PCA_eligibility_recovered": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,
