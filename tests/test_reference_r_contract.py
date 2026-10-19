@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from jev_factor.invocation_audit import audit_invocation
 from jev_factor.pca_basis_audit import compare_rotations, r_rotations
 from jev_factor.replication import LINEAR_X, linear_prediction
 from jev_factor.replication_audit import _r_linear
@@ -22,7 +23,7 @@ pytestmark = pytest.mark.skipif(
 )
 
 
-def _run(tmp_path, name, matrix, mode, xnames=LINEAR_X):
+def _prepare(tmp_path, name, matrix, mode, xnames=LINEAR_X):
     directory = tmp_path / name
     directory.mkdir()
     matrix.to_csv(directory / "input.csv", index=False, float_format="%.17g")
@@ -44,6 +45,11 @@ def _run(tmp_path, name, matrix, mode, xnames=LINEAR_X):
     (directory / "settings.dcf").write_text(
         "\n".join(f"{k}: {v}" for k, v in settings.items()) + "\n"
     )
+    return directory
+
+
+def _run(tmp_path, name, matrix, mode, xnames=LINEAR_X):
+    directory = _prepare(tmp_path, name, matrix, mode, xnames)
     result = subprocess.run(
         [
             shutil.which("Rscript"),
@@ -157,3 +163,22 @@ def test_base_r_pca_and_maf_agree_up_to_signs_and_native_penalty_is_asymmetric(t
     assert comparison["same_up_to_component_signs"]
     assert np.max(np.abs(weights - weights[::-1])) > 0.1
     assert version.startswith("R version")
+
+
+@pytest.mark.parametrize("terms,parent_size", [(LINEAR_X, 12), (["y_lag1", "y_lag2"], 10)])
+def test_actual_native_initialization_receives_expected_roles_and_effective_guard(
+    tmp_path, terms, parent_size
+):
+    directory = _prepare(tmp_path, "input", _matrix(), "train_only", terms)
+    report = audit_invocation(
+        directory / "input.csv",
+        directory / "settings.dcf",
+        Path(ENGINE),
+        Path(R_LIBRARY),
+        rscript=shutil.which("Rscript"),
+    )
+    assert report["linear_names"] == terms
+    assert report["state_columns"] == 10
+    assert report["native_settings"]["effective_parent_size"] == parent_size
+    assert report["forests_fitted"] == 0
+    assert report["forecast_scores_computed"] is False

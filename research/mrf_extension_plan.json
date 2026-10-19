@@ -1,5 +1,5 @@
 {
-  "schema_version": 11,
+  "schema_version": 12,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
   "implementation_status": "FA_ARRF_source_ratio_still_missed_PCA125_forecast_sensitivity_actual_R_pilot_verified_full_comparison_pending",
@@ -222,6 +222,21 @@
     "pilot_audit": "reports/mrf-pca125-pilot-audit.json",
     "full_performance_comparison_completed": false,
     "original_author_PCA_eligibility_recovered": false
+  },
+  "native_initialization_boundary_audit": {
+    "primary_report": "reports/mrf-primary-native-initialization-audit.json",
+    "PCA125_precompletion_snapshot": "reports/mrf-pca125-native-initialization-audit.json",
+    "primary_refits_verified": 6,
+    "PCA125_refits_verified": 6,
+    "actual_adapter_and_native_initialization_executed": true,
+    "stops_before_noise_injection_or_tree_fitting": true,
+    "linear_slope_terms": 4,
+    "state_columns": 1041,
+    "candidate_states_per_split": 347,
+    "effective_minimum_parent_size": 12,
+    "on_disk_source_or_running_forests_modified": false,
+    "new_forecast_scores_computed": false,
+    "original_author_invocation_recovered": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,

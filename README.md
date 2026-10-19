@@ -128,7 +128,7 @@ Prequential evidence cards, joint-action selector adapters and the controlled-me
 
 `audit-mrf` rejects incomplete runs by default. `--allow-partial` permits progress checks but withholds partial forest scores and any numerical reproduction pass. It recalculates all inputs and metrics, checks each coefficient decomposition, and independently compares Python least squares with base-R QR regression. Numerical agreement requires FA-AR and every individual declared seed to be within 0.03 of the corresponding published ratio; the separately labeled seed-mean ensemble cannot satisfy this rule. Agreement is not proof that the missing original preprocessing was recovered.
 
-The suite has 169 ordinary tests plus 7 optional real-R checks, including independent linear/PCA calculations and the engine's sign sensitivity. All 176 passed locally, including PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
+The suite has 169 ordinary tests plus 9 optional real-R checks, including independent linear/PCA calculations, actual native-initialization capture and the engine's sign sensitivity. All 178 passed locally, including PCA125 job/setting/score-suppression guards, PCA-only eligibility preservation, orientation/ARRF provenance guards, action algebra, changed-input, checkpoint and artifact-verifier guards. To enable the R contracts:
 
 ```bash
 JEV_MRF_REFERENCE_ENGINE=data/raw/MRF_v210403.R \

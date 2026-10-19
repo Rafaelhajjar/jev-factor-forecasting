@@ -109,3 +109,15 @@ The separate `audit-mrf` command checks the data/engine/source hashes, every dec
 The checker rejects incomplete runs unless explicitly asked for a progress audit. Such an audit withholds forest scores and a numerical pass. The full diagnostic requires fixed FA-AR and every individual declared forest seed to fall within the previously declared 0.03 absolute-ratio tolerance; the seed-mean ensemble is excluded from that pass rule. This rule was recorded before full forest results were inspected. Exact source fidelity is always a separate unresolved item, even if every score matches.
 
 October 19 final checks: all 48 linear forecasts agree between R and Python within 1.5e-15. All six 1,041-column state matrices match recomputation within 3.6e-15, and their EM fits converge. All 18 forest jobs pass coefficient reconstruction within 2.5e-15. Forest/AR(4) ratios are 0.797325, 0.804184 and 0.806346; the declared numerical-agreement criterion fails. The [completed report](../reports/MRF_UNEMPLOYMENT_RECONSTRUCTION.md) preserves this result and separates integrity checks from source fidelity.
+
+### Direct native-initialization check
+
+A separate read-only probe now runs the actual adapter and pinned R engine until immediately after the native function's normalization, prior conversion and minimum-parent guard. It locates an exact parsed assignment in the pinned source rather than guessing a line offset, captures that function frame, and deliberately stops before noise injection or split search. Only that isolated probe process is instrumented; the engine file, adapter and live forest processes are unchanged.
+
+All six [primary refits](../reports/mrf-primary-native-initialization-audit.json) and all six [PCA125 refits](../reports/mrf-pca125-native-initialization-audit.json) pass. The captured native roles contain the four named equation slopes and all 1,041 state variables in their saved order; the trend position, 347-variable candidate count, mask, ridge/RW/subsampling modes and effective parent size 12 match the invocation. Native standardized OLS prior means agree with Python least squares within 1.9e-15, with prior precision 0.01 for the intercept and 1 for each slope. Separate real-R contracts verify parent size 10 for ARRF's smaller equation. These checks establish the actual integration boundary, not that the source paper used this invocation. No new forecast score is computed. The PCA125 report is a pre-completion initialization snapshot, not current completion status.
+
+```bash
+uv run python scripts/audit_mrf_invocation.py \
+  --run runs/mrf-unemployment \
+  --output reports/my-native-initialization-audit.json
+```
