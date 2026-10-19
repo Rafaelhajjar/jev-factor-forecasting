@@ -168,6 +168,17 @@ def test_saved_final_metrics_are_recomputed(synthetic_artifacts):
         _audit(synthetic_artifacts)
 
 
+@pytest.mark.parametrize("filename", ["baseline_metrics.csv", "metrics.csv"])
+def test_undeclared_models_in_metric_tables_are_rejected(synthetic_artifacts, filename):
+    run, _, _ = synthetic_artifacts
+    path = run / filename
+    metrics = pd.read_csv(path)
+    extra = metrics.iloc[:1].assign(model="undeclared_stale_result", RMSE=0)
+    pd.concat([metrics, extra], ignore_index=True).to_csv(path, index=False)
+    with pytest.raises(ValueError, match="metric model grid differs"):
+        _audit(synthetic_artifacts)
+
+
 @pytest.mark.parametrize("change", ["missing_seed", "shifted_origin", "unmasked_target"])
 def test_job_grid_and_future_target_mask_checked(synthetic_artifacts, change):
     run, _, manifest = synthetic_artifacts

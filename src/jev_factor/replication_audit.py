@@ -115,6 +115,10 @@ def audit_run(
             raise ValueError("Baseline origin/target timing differs")
     baseline_metrics = score_table(baseline)
     saved_baseline = pd.read_csv(run / "baseline_metrics.csv").set_index("model")
+    if not saved_baseline.index.is_unique or set(saved_baseline.index) != set(
+        baseline_metrics.model
+    ):
+        raise ValueError("Baseline metric model grid differs")
     numeric = ["n", "RMSE", "MAE", "RMSE_over_AR4"]
     _close(
         baseline_metrics[numeric],
@@ -271,6 +275,8 @@ def audit_run(
         )
         metrics = score_table(forecasts)
         saved_metrics = pd.read_csv(run / "metrics.csv").set_index("model")
+        if not saved_metrics.index.is_unique or set(saved_metrics.index) != set(metrics.model):
+            raise ValueError("Final metric model grid differs")
         _close(
             metrics[numeric], saved_metrics.reindex(metrics.model)[numeric], "saved final metrics"
         )
