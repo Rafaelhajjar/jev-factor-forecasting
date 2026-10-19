@@ -1,8 +1,8 @@
 {
-  "schema_version": 13,
+  "schema_version": 14,
   "document_type": "research_plan_not_executable_config",
   "updated_local_date": "2026-10-19",
-  "implementation_status": "PCA125_forests_meet_declared_source_tolerance_but_own_linear_comparator_fails_joint_replication_still_incomplete",
+  "implementation_status": "joint_replication_still_incomplete_FRED_adaptive_completion_recipe_implemented_and_training_only_audited",
   "foundation": {
     "title": "The Macroeconomy as a Random Forest",
     "author": "Philippe Goulet Coulombe",
@@ -258,6 +258,27 @@
     "on_disk_source_or_running_forests_modified": false,
     "new_forecast_scores_computed": false,
     "original_author_invocation_recovered": false
+  },
+  "FRED_source_recipe_training_audit": {
+    "note": "docs/FRED_RECIPE_AUDIT.md",
+    "audit": "reports/mrf-fred-recipe-training-audit.json",
+    "source_code_archive_sha256": "cbb4b5f1e9549e506bf12979643422c3fb6fda108f1a94fd5f998a0536399036",
+    "source_driver_is_monthly_FRED_MD_not_MRF_runner": true,
+    "quarterly_application_is_our_adaptation": true,
+    "selected_training_series": 125,
+    "DEMEAN": 2,
+    "criterion_code": 2,
+    "maximum_completion_rank": 8,
+    "EM_iteration_cap": 50,
+    "final_completion_ranks": [2, 3, 3, 4, 4, 4],
+    "EM_iterations_by_refit": [48, 43, 36, 47, 25, 25],
+    "all_six_converged_before_cap": true,
+    "independent_R_matches_rank_paths_and_completed_matrices": true,
+    "original_MATLAB_or_Octave_executed": false,
+    "new_forests_fitted": 0,
+    "new_forecast_losses_calculated": false,
+    "full_forecast_comparison_requires_separate_declaration": true,
+    "original_MRF_author_preprocessing_recovered": false
   },
   "published_forest_settings": {
     "main_RF_hyperparameters_tuned": false,

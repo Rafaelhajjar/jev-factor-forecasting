@@ -10,6 +10,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from jev_factor.fred_recipe import FredRecipeRepresentation
+from jev_factor.fred_recipe_audit import r_recipe_check
 from jev_factor.invocation_audit import audit_invocation
 from jev_factor.pca_basis_audit import compare_rotations, r_rotations
 from jev_factor.replication import LINEAR_X, linear_prediction
@@ -182,3 +184,21 @@ def test_actual_native_initialization_receives_expected_roles_and_effective_guar
     assert report["native_settings"]["effective_parent_size"] == parent_size
     assert report["forests_fitted"] == 0
     assert report["forecast_scores_computed"] is False
+
+
+@pytest.mark.parametrize("rows,columns,signal", [(70, 12, True), (16, 30, True), (400, 30, False)])
+def test_independent_r_fred_recipe_matches_rank_path_completion_and_stopping(
+    tmp_path, rows, columns, signal
+):
+    rng = np.random.default_rng(829)
+    values = rng.normal(0, 0.2, (rows, columns))
+    if signal:
+        values += rng.normal(size=(rows, 2)) @ rng.normal(size=(2, columns))
+    values[rng.random(values.shape) < 0.08] = np.nan
+    values[0, 0] = 1e8
+    frame = pd.DataFrame(values, columns=[f"series {k}" for k in range(columns)])
+    fitted = FredRecipeRepresentation().fit(frame)
+    check = r_recipe_check(frame, fitted, shutil.which("Rscript"), tmp_path)
+    assert check["rank_path_and_stopping_reason_match"]
+    assert check["maximum_standardized_matrix_difference"] < 1e-8
+    assert check["final_PCA"]["same_up_to_component_signs"]

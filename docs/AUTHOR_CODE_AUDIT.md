@@ -84,6 +84,8 @@ The official [FRED data preparation code](https://www.stlouisfed.org/research/ec
 
 The official routine can choose the completion rank by an information criterion and uses a different iteration cap. Fixed rank five is our reconstruction choice. Exact preprocessing, completion rank, loadings, sign convention and outlier handling remain unknown without the original runner.
 
+The subsequently implemented [source-recipe training audit](FRED_RECIPE_AUDIT.md) verifies a bounded reconstruction of that public code's jj=2/DEMEAN=2 path. Independent 125-series completion selects ranks 2/3/3/4/4/4 across the six refits and converges within its source cap of 50; an independent R implementation agrees with Python. This does not establish that the MRF author used the monthly FRED-MD driver, and it has not generated new forecast scores. Its future row-completion method is our explicitly separate causal extension, not part of the supplied MATLAB script.
+
 ## 5. Frozen first run and comparison rule
 
 Executable settings: [configs/mrf_unemployment.json](../configs/mrf_unemployment.json). Training target dates begin 1961Q3; evaluation target dates are 2003Q1-2014Q4, with six training refits through 2002Q4, 2004Q4, ..., 2012Q4. Each fit serves the following eight one-step forecasts; new lagged observations enter the state without re-estimating the map.
