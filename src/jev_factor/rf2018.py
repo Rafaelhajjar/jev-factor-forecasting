@@ -15,7 +15,12 @@ from jev_factor.replication import linear_prediction, score_table
 from jev_factor.vintage2018 import download_vintage, load_vintage, prepare_window, sha
 
 CORE = [
-    "vintage2018.py", "rf2018.py", "reference_ranger.R", "quarterly.py", "data.py", "replication.py"
+    "vintage2018.py",
+    "rf2018.py",
+    "reference_ranger.R",
+    "quarterly.py",
+    "data.py",
+    "replication.py",
 ]
 
 

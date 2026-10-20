@@ -20,6 +20,10 @@ Member SHA-256:
 `44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7`.
 It contains 247 series, 1959Q1-2018Q2, not the paper's stated 248.
 Keep the file intact; do not append later-vintage series to force the dimension.
+The [Fed change log](https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/fredqdchanges0324.pdf)
+explains the missing series: S&P: indust was removed from **all vintages** in
+April 2024. Thus a currently downloaded historical vintage is not necessarily
+byte-identical to the historical file researchers originally received.
 This is a fixed-vintage retrospective exercise, not a historical-release backtest.
 The other paper's public GLSS archive contains March 2019 FRED-QD, so that
 archive does not independently corroborate a September 2018 quarterly snapshot.
@@ -104,3 +108,20 @@ invocation questions; do not search for a setting that produces 1.00.
 Sources: [Goulet Coulombe (2024)](https://doi.org/10.1002/jae.3030), main
 Section 3/Tables 1-2 and appendix A.6/Table 4. Licensed PDFs and private
 correspondence are not redistributed.
+
+## Deterministic publication repeat
+
+The full v1 run and audit used declaration commit
+`f7adc69df599f7fd49abbd1b7cea244ec45fa37b`. Its source-cell gate failed:
+primary ratios 0.983534, 0.971506 and 0.965598. The secondary ratios were
+0.914313, 0.892716 and 0.915585; they cannot rescue that criterion.
+
+After v1 completed and its audit was saved, the formatter changed only the
+layout of the orchestrator's source-filename list. Python AST equality was
+checked against f7adc69. No model, preprocessing, setting, seed or R adapter
+changed. Because byte-bound provenance must not be silently rewritten, retain
+v1's original manifest/audit and perform a fresh full v2 repeat with the
+formatted source. Require every prepared matrix and every per-job prediction
+to match v1; this is a deterministic repeat of known results, **not** another
+confirmatory experiment or permission to select different settings. Use the
+corresponding source commit when re-auditing either run.
