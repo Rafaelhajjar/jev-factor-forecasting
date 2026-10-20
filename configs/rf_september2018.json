@@ -1,0 +1,38 @@
+{
+  "study": "September_2018_raw_RF_unemployment_h1",
+  "declaration_date": "2026-10-20",
+  "vintage": "2018-09",
+  "target": "delta_log_UNRATE",
+  "horizon": 1,
+  "panel_start": "1959Q3",
+  "first_training_target": "1961Q3",
+  "evaluation_start": "2003Q1",
+  "evaluation_end": "2014Q4",
+  "refit_every_quarters": 8,
+  "trees": 500,
+  "min_node_size": 3,
+  "seeds": [101, 202, 303],
+  "preprocessing": {
+    "completion_rank": 5,
+    "outlier_iqr": 10,
+    "fit_through": "last_training_origin",
+    "factor_features_in_plain_RF": false
+  },
+  "primary": "ranger_defaults",
+  "variants": {
+    "ranger_defaults": {"mtry": "floor_sqrt_p", "replace": true, "sample_fraction": 1.0},
+    "appendix_style": {"mtry": "floor_p_over_3", "replace": false, "sample_fraction": 0.75}
+  },
+  "reported_plain_RF_ratio": 1.0,
+  "absolute_ratio_tolerance": 0.03,
+  "gate": "all_three_primary_seeds_within_tolerance_secondary_cannot_rescue",
+  "remaining_assumptions": [
+    "original_ranger_version_seed_mtry_and_sampling_not_recovered",
+    "primary_retains_ranger_defaults_for_unspecified_arguments",
+    "appendix_style_is_fixed_secondary_not_confirmed_plain_RF_invocation",
+    "fixed_rank5_train_only_completion_and_10IQR_are_reconstruction_choices",
+    "1961Q3_is_first_training_target_not_first_origin",
+    "fixed_September2018_vintage_is_not_a_historical_release_backtest",
+    "official_archived_vintage_has_247_series_not_the_papers_248"
+  ]
+}
