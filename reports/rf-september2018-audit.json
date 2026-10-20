@@ -1,0 +1,104 @@
+{
+  "status": "completed_and_audited_not_exact_original_caller",
+  "data": {
+    "vintage": "2018-09",
+    "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/historical-vintages-of-fred-qd-2018-05-to-2025-12.zip",
+    "archive_sha256": "56c5ff7ae60c9ed1468a4219bdda2a3f41644a16e1e1a7520cc38779d03df1df",
+    "member": "FRED-QD_2018m09.csv",
+    "member_sha256": "44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7",
+    "series_count": 247,
+    "first_quarter": "1959Q1",
+    "last_quarter": "2018Q2",
+    "not_augmented_with_later_vintage_series": true,
+    "evaluation": "fixed_vintage_retrospective_not_real_time_releases"
+  },
+  "code": {
+    "vintage2018.py": "0038f0b20fff5cb17bf6110d24e30915a27d6c85db9275664743b63f1c557756",
+    "rf2018.py": "55d5ea9c99bd0fa3f16f3d18442e574282833be5ab0128c3cb9b471778f92dae",
+    "reference_ranger.R": "331d9a05c4d8eb17f50f01619f03fd57cac9476b5f253a37187223ba35817066",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "data.py": "b5946ab6c72dcd62aad00f652eef8c921c58ad8da1c251dbb0ae522187dc6038",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165"
+  },
+  "config_sha256": "94ea86661087f2f55cfc52e94627bba0fe6d17a957691b9b529d2ee13bb5ba09",
+  "jobs_verified": 36,
+  "trees_verified": 18000,
+  "dates_per_method": 48,
+  "max_rebuilt_matrix_difference": 0.0,
+  "R_QR_AR4_matches_independent_numpy": true,
+  "all_stored_trees_traversed_and_sampled_leaf_means_checked": true,
+  "primary_seed_checks": [
+    {
+      "seed": 101,
+      "ratio": 0.9835341089926402,
+      "within_tolerance": true
+    },
+    {
+      "seed": 202,
+      "ratio": 0.9715059126345535,
+      "within_tolerance": true
+    },
+    {
+      "seed": 303,
+      "ratio": 0.9655977559279263,
+      "within_tolerance": false
+    }
+  ],
+  "plain_RF_approximate_source_cell_gate": false,
+  "secondary_cannot_rescue_primary": true,
+  "exact_replication_claim": false,
+  "MRF_replication_established": false,
+  "metrics": [
+    {
+      "model": "AR4",
+      "n": 48,
+      "RMSE": 0.03350220292220652,
+      "MAE": 0.025809831205686407,
+      "RMSE_over_AR4": 1.0
+    },
+    {
+      "model": "RF_appendix_style_seed_101",
+      "n": 48,
+      "RMSE": 0.03063151472835327,
+      "MAE": 0.02155533982918098,
+      "RMSE_over_AR4": 0.9143134497597335
+    },
+    {
+      "model": "RF_appendix_style_seed_202",
+      "n": 48,
+      "RMSE": 0.029907947908083748,
+      "MAE": 0.021295069564545816,
+      "RMSE_over_AR4": 0.8927158604325578
+    },
+    {
+      "model": "RF_appendix_style_seed_303",
+      "n": 48,
+      "RMSE": 0.03067412509953038,
+      "MAE": 0.021416035747398948,
+      "RMSE_over_AR4": 0.9155853175015669
+    },
+    {
+      "model": "RF_ranger_defaults_seed_101",
+      "n": 48,
+      "RMSE": 0.032950559300383014,
+      "MAE": 0.023532117959422495,
+      "RMSE_over_AR4": 0.9835341089926402
+    },
+    {
+      "model": "RF_ranger_defaults_seed_202",
+      "n": 48,
+      "RMSE": 0.03254758822520625,
+      "MAE": 0.02332030362981687,
+      "RMSE_over_AR4": 0.9715059126345535
+    },
+    {
+      "model": "RF_ranger_defaults_seed_303",
+      "n": 48,
+      "RMSE": 0.03234965196032463,
+      "MAE": 0.023311448258450097,
+      "RMSE_over_AR4": 0.9655977559279263
+    }
+  ],
+  "prediction_sha256": "e27c526f9a7fbe81da216ec114de702ef3a991e5e766e3fd55d72ff2adbf649e",
+  "metrics_sha256": "8aaaa09fe85cdcd1beb43ac30494520e496bd1baa2b60c44366ba97af27edf03"
+}

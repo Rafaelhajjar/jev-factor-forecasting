@@ -125,3 +125,9 @@ formatted source. Require every prepared matrix and every per-job prediction
 to match v1; this is a deterministic repeat of known results, **not** another
 confirmatory experiment or permission to select different settings. Use the
 corresponding source commit when re-auditing either run.
+
+The repeat is now complete and verified. All 36 forests, settings and forecasts
+match byte-for-byte; [full results and audit links](../reports/RF_SEPTEMBER2018.md).
+Its publication-repeat source commit is
+`0cd536741645ab0c5ede1c82051461877b759c3b`. Both historical manifests retain
+their own original byte hashes; no provenance record was silently rewritten.

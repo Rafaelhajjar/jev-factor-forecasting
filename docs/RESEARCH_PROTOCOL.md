@@ -12,6 +12,15 @@ We are extending [Goulet Coulombe (2024)](https://doi.org/10.1002/jae.3030), not
 
 ## 2. Replication before extension
 
+October 20 update: follow the [separate September 2018 raw-RF protocol](SEPTEMBER2018_RF.md)
+before another MRF run. Its [complete first result](../reports/RF_SEPTEMBER2018.md)
+is close but misses one seed of the declared source-cell criterion. Do not
+confuse this raw-feature RF with RF-MAF or apply its ranger node/tree settings
+to the linear-leaf MRF engine. The currently served vintage lacks S&P: indust
+after a documented all-vintage removal in 2024. Advancing to MRF while that
+first check remains unmet requires an explicit qualified-reconstruction decision;
+it must not be described as successful exact reproduction.
+
 Use the [replication checklist](MRF_REPLICATION.md) as the first implementation milestone. The final 2024 article and its publisher-supplied appendix have now been read. They replace the earlier arXiv draft as the specification source. Do not silently mix source versions, forecast tables and coefficient-anatomy figures.
 
 The archived data are available and hashed. Main Section 3 and Tables 1–2 establish quarterly FRED-QD with 248 series, expanding estimation from 1961Q3, evaluation target dates 2003Q1–2014Q4 and direct horizons 1, 2, 4, 6 and 8 quarters. The main models are re-estimated every two years. Confirm exact forecast-origin indexing and each method's invocation in reference code; do not replace this schedule with an every-origin refit while calling it a reproduction.

@@ -1,5 +1,21 @@
 # Project status and initial experiment record
 
+## October 20: September 2018 plain RF first
+
+The [new raw-indicator RF run](RF_SEPTEMBER2018.md) is complete and audited:
+actual ranger, 500 trees, min.node.size=3, 1,976 raw features, six two-year
+refits and 48 target dates. Primary ratios 0.983534/0.971506/0.965598 against
+1.00 include one miss outside the fixed 0.03 tolerance. The separately declared
+appendix-style diagnostic cannot rescue it. Current-plus-seven and the old
+target-indexed L1:L8 are equivalent at h=1; no extra date shift was warranted.
+The Fed removed S&P: indust from every historical vintage in 2024, explaining
+the available September archive's 247-series count, not proving the cause of
+the score gap. No later-vintage series was grafted on. The formatter-only full
+repeat and second audit are complete: all 36 full forests and predictions
+reproduce byte-for-byte. No September-vintage MRF or Jev/LLM evaluation has run.
+The [declaration](../docs/SEPTEMBER2018_RF.md) keeps the data, caller and first-row
+uncertainties explicit. All older results below remain historical records.
+
 ## Active direction: MRF + Jev
 
 On October 18, 2026, the user selected Goulet Coulombe's *The Macroeconomy as a Random Forest* as the research foundation. The [current protocol](../docs/RESEARCH_PROTOCOL.md) now starts with replication, followed by a joint 25-action adjustment of two MRF factor contributions. Jev can weaken or strengthen those contributions; the forest's other terms remain the reference.

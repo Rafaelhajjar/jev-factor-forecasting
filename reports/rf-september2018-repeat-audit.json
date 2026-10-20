@@ -1,0 +1,17 @@
+{
+  "first_commit": "f7adc69df599f7fd49abbd1b7cea244ec45fa37b",
+  "repeat_commit": "0cd536741645ab0c5ede1c82051461877b759c3b",
+  "first_manifest_sha256": "47f2490824e2c3b4999da91c73d10c0569dc68e35115ecf486a861a2ea16b0a8",
+  "repeat_manifest_sha256": "f55bb3212c0c9a6889363f52ca605462efb738e36227b150c49a1bc5e5a67ca1",
+  "first_audit_sha256": "447390a2af42fa93bb5e3f0ba75c8d8877fc3c83d596938c139f9b8829044ee6",
+  "repeat_audit_sha256": "149f778367b639a2df0d12e256f1ae40897fcab9357d4b35a9b9bfe144ba2b2d",
+  "config_and_data_equal": true,
+  "orchestrator_AST_equal": true,
+  "all_other_code_bytes_equal": true,
+  "window_inputs_byte_equal": 6,
+  "settings_and_predictions_and_complete_forests_byte_equal": 36,
+  "complete_audit_outcomes_equal_except_orchestrator_byte_hash": true,
+  "both_original_provenance_records_preserved": true,
+  "primary_source_cell_gate": false,
+  "new_experiment_or_retuning": false
+}
