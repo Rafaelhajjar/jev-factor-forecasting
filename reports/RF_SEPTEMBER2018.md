@@ -114,6 +114,11 @@ this report's publication. Do not equate pending CI with a successful check.
 
 ## Next decision
 
+Subsequent October 20 decision: the user explicitly authorized proceeding to
+[qualified September-vintage MRF](../docs/SEPTEMBER2018_MRF.md). The RF failure
+and all data/invocation limits above remain unchanged. The text below records
+the decision boundary at completion of the RF run, not a current approval request.
+
 The requested order was plain RF first, then MRF. Under the strict gate, the
 first step remains unresolved. Either recover the missing original snapshot
 and invocation details, or explicitly authorize MRF as a **qualified

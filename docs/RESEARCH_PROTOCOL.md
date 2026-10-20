@@ -19,7 +19,10 @@ confuse this raw-feature RF with RF-MAF or apply its ranger node/tree settings
 to the linear-leaf MRF engine. The currently served vintage lacks S&P: indust
 after a documented all-vintage removal in 2024. Advancing to MRF while that
 first check remains unmet requires an explicit qualified-reconstruction decision;
-it must not be described as successful exact reproduction.
+it must not be described as successful exact reproduction. That qualified
+advance was explicitly authorized on October 20. The [new MRF declaration](SEPTEMBER2018_MRF.md)
+retains the failed RF criterion and binds its vintage/preparation/calendar;
+it does not replace the earlier reconstruction or establish source fidelity.
 
 Use the [replication checklist](MRF_REPLICATION.md) as the first implementation milestone. The final 2024 article and its publisher-supplied appendix have now been read. They replace the earlier arXiv draft as the specification source. Do not silently mix source versions, forecast tables and coefficient-anatomy figures.
 

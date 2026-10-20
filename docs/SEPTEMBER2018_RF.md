@@ -100,8 +100,11 @@ means against training outcomes. RDS model artifacts remain ignored in `runs/`.
 The diagnostic gate is the existing project tolerance of 0.03 absolute ratio:
 **every primary seed** must be within 0.03 of 1.00. It is not an author-supplied
 criterion, an exact rounded-cell reproduction, or a statistical test. The
-secondary cannot rescue it. Only after this primary check passes do we proceed
-to MRF on this vintage. A plain-RF match cannot establish MRF reproduction.
+secondary cannot rescue it. The strict declared sequence advances only after
+this primary check passes. On October 20 the user explicitly authorized
+[MRF as a qualified reconstruction](SEPTEMBER2018_MRF.md) despite that failed
+diagnostic; the failure flag and threshold remain unchanged. A plain-RF match
+cannot establish MRF reproduction.
 If it misses, report the miss and retain the outstanding data/preparation and
 invocation questions; do not search for a setting that produces 1.00.
 

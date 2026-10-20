@@ -1,5 +1,15 @@
 # Project status and initial experiment record
 
+## October 20: qualified September-vintage MRF authorized
+
+After the plain-RF check below, the user explicitly authorized a qualified
+[September-vintage MRF reconstruction](../docs/SEPTEMBER2018_MRF.md). Its
+separate runner is implemented, all six 1,037-column states are prepared and
+paired with the frozen RF raw preparation/calendar, and the complete local
+suite passes 477 tests. A score-suppressed two-tree native preflight and the
+18-fit full run are next. The RF failure, missing original series/caller and
+earlier MRF results remain unchanged; no new-vintage MRF score is claimed.
+
 ## October 20: September 2018 plain RF first
 
 The [new raw-indicator RF run](RF_SEPTEMBER2018.md) is complete and audited:

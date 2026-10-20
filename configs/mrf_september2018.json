@@ -1,0 +1,49 @@
+{
+  "study": "September2018_qualified_FA_ARRF_unemployment_h1",
+  "declaration_date": "2026-10-20",
+  "qualified_advance_authorized": true,
+  "plain_RF_gate_passed": false,
+  "vintage": "2018-09",
+  "target": "delta_log_UNRATE",
+  "horizon": 1,
+  "panel_start": "1959Q3",
+  "first_training_target": "1961Q3",
+  "evaluation_start": "2003Q1",
+  "evaluation_end": "2014Q4",
+  "refit_every_quarters": 8,
+  "trees": 100,
+  "seeds": [101, 202, 303],
+  "preprocessing": {
+    "completion_rank": 5,
+    "outlier_iqr": 10,
+    "fit_through": "last_training_origin",
+    "factor_features_in_plain_RF": false
+  },
+  "forest": {
+    "block": 8,
+    "RWR": 0.75,
+    "ridge_lambda": 0.1,
+    "MLF": 1,
+    "mtry": 0.3333333333333333,
+    "minsize": 10,
+    "trend_push": 1,
+    "prior": "OLS",
+    "standardization": "train_only"
+  },
+  "reported_FA_AR_ratio": 0.83,
+  "reported_FA_ARRF_ratio": 0.72,
+  "absolute_ratio_tolerance": 0.03,
+  "gate": "matching_FA_AR_and_all_three_MRF_seeds_no_ensemble_rescue",
+  "assumptions_not_recovered_original_settings": [
+    "currently_served_September2018_archive_has_247_not_original_248_series",
+    "all_247_series_in_completion_and_cross_sectional_PCA",
+    "fixed_rank5_completion_10IQR_and_train_only_moments",
+    "1961Q3_is_first_training_target_not_first_origin",
+    "sklearn_PCA_sign_orientation_not_recovered_author_basis",
+    "MAFs_fitted_on_all_aligned_training_origin_rows",
+    "100_trees_and_101_202_303_seeds_preserved_from_earlier_MRF_declaration",
+    "MRF_package_defaults_are_not_verified_Table4_invocation",
+    "OLS_prior_variance_100_intercept_1_slopes",
+    "train_only_inner_scaling_overrides_native_all_supplied_rows_helper"
+  ]
+}
