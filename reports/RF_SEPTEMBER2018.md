@@ -5,7 +5,8 @@ October 20, 2026. The complete raw-indicator RF run and artifact audit finished:
 ratios are **0.983534, 0.971506 and 0.965598**, against the printed **1.00**.
 Two seeds pass the declared +/-0.03 diagnostic; seed 303 misses. **The
 all-seed criterion is false.** Do not relabel this as exact reproduction or
-silently relax the threshold. No September-vintage MRF has run yet.
+silently relax the threshold. No September-vintage MRF had run at this RF
+readout; the later authorized qualified launch is recorded below.
 
 ## What changed from the older work?
 

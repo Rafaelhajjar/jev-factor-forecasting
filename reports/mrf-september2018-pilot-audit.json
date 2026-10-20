@@ -1,0 +1,150 @@
+{
+  "status": "partial_integrity_only",
+  "full_declaration_verified": false,
+  "qualified_advance_authorized": true,
+  "plain_RF_gate_passed": false,
+  "exact_author_pipeline_verified": false,
+  "jobs_expected": 1,
+  "jobs_verified": 1,
+  "pending_jobs": [],
+  "actual_trees": 2,
+  "data": {
+    "vintage": "2018-09",
+    "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/historical-vintages-of-fred-qd-2018-05-to-2025-12.zip",
+    "archive_sha256": "56c5ff7ae60c9ed1468a4219bdda2a3f41644a16e1e1a7520cc38779d03df1df",
+    "member": "FRED-QD_2018m09.csv",
+    "member_sha256": "44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7",
+    "series_count": 247,
+    "first_quarter": "1959Q1",
+    "last_quarter": "2018Q2",
+    "not_augmented_with_later_vintage_series": true,
+    "evaluation": "fixed_vintage_retrospective_not_real_time_releases"
+  },
+  "config": {
+    "study": "September2018_qualified_FA_ARRF_unemployment_h1",
+    "declaration_date": "2026-10-20",
+    "qualified_advance_authorized": true,
+    "plain_RF_gate_passed": false,
+    "vintage": "2018-09",
+    "target": "delta_log_UNRATE",
+    "horizon": 1,
+    "panel_start": "1959Q3",
+    "first_training_target": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "refit_every_quarters": 8,
+    "trees": 100,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "preprocessing": {
+      "completion_rank": 5,
+      "outlier_iqr": 10,
+      "fit_through": "last_training_origin",
+      "factor_features_in_plain_RF": false
+    },
+    "forest": {
+      "block": 8,
+      "RWR": 0.75,
+      "ridge_lambda": 0.1,
+      "MLF": 1,
+      "mtry": 0.3333333333333333,
+      "minsize": 10,
+      "trend_push": 1,
+      "prior": "OLS",
+      "standardization": "train_only"
+    },
+    "reported_FA_AR_ratio": 0.83,
+    "reported_FA_ARRF_ratio": 0.72,
+    "absolute_ratio_tolerance": 0.03,
+    "gate": "matching_FA_AR_and_all_three_MRF_seeds_no_ensemble_rescue",
+    "assumptions_not_recovered_original_settings": [
+      "currently_served_September2018_archive_has_247_not_original_248_series",
+      "all_247_series_in_completion_and_cross_sectional_PCA",
+      "fixed_rank5_completion_10IQR_and_train_only_moments",
+      "1961Q3_is_first_training_target_not_first_origin",
+      "sklearn_PCA_sign_orientation_not_recovered_author_basis",
+      "MAFs_fitted_on_all_aligned_training_origin_rows",
+      "100_trees_and_101_202_303_seeds_preserved_from_earlier_MRF_declaration",
+      "MRF_package_defaults_are_not_verified_Table4_invocation",
+      "OLS_prior_variance_100_intercept_1_slopes",
+      "train_only_inner_scaling_overrides_native_all_supplied_rows_helper"
+    ]
+  },
+  "code": {
+    "mrf2018.py": "ad62c0726b6baebb0e28e782fa91a53e56cb42bd532745339d655eb6e7435eec",
+    "vintage2018.py": "0038f0b20fff5cb17bf6110d24e30915a27d6c85db9275664743b63f1c557756",
+    "rf2018.py": "55d5ea9c99bd0fa3f16f3d18442e574282833be5ab0128c3cb9b471778f92dae",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "data.py": "b5946ab6c72dcd62aad00f652eef8c921c58ad8da1c251dbb0ae522187dc6038",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "mrf2018_report.py": "e1c2a85ecea6694db98ed2d23aaa8a91d4ac93e41fb9aecd4fd29186cec42bf2"
+  },
+  "RF_source": {
+    "manifest_sha256": "f55bb3212c0c9a6889363f52ca605462efb738e36227b150c49a1bc5e5a67ca1",
+    "audit_sha256": "149f778367b639a2df0d12e256f1ae40897fcab9357d4b35a9b9bfe144ba2b2d",
+    "predictions_sha256": "e27c526f9a7fbe81da216ec114de702ef3a991e5e766e3fd55d72ff2adbf649e",
+    "data": {
+      "vintage": "2018-09",
+      "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/historical-vintages-of-fred-qd-2018-05-to-2025-12.zip",
+      "archive_sha256": "56c5ff7ae60c9ed1468a4219bdda2a3f41644a16e1e1a7520cc38779d03df1df",
+      "member": "FRED-QD_2018m09.csv",
+      "member_sha256": "44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7",
+      "series_count": 247,
+      "first_quarter": "1959Q1",
+      "last_quarter": "2018Q2",
+      "not_augmented_with_later_vintage_series": true,
+      "evaluation": "fixed_vintage_retrospective_not_real_time_releases"
+    },
+    "plain_RF_gate_passed": false,
+    "qualified_advance_authorized_not_a_claim_of_reproduced_RF": true
+  },
+  "external_engine": {
+    "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+    "sha256": "e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631",
+    "url": "https://raw.githubusercontent.com/philgoucou/macrorf/bdb2ed435affb741aafdf78bab12c470ec6d55d0/R/MRF_v210403.R",
+    "license": "GPL-3 external dependency; not redistributed as MIT"
+  },
+  "input_and_linear_checks": [
+    {
+      "fit_end": "2002Q4",
+      "ntrain": 166,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 5.594483210025203e-17,
+        "FA_AR": 4.891920202254596e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "maximum_coefficient_decomposition_error": 9.020562075079397e-17,
+  "runtime_records": [
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "8.751",
+      "standardization": "train_only",
+      "prior": "OLS"
+    }
+  ],
+  "completed_output_checksums": [
+    {
+      "group": 0,
+      "seed": 101,
+      "prediction_sha256": "6dddc3980b91fc9f26a415a22dc1dff980c3b4e0059e78b97299a2ace953e376"
+    }
+  ],
+  "partial_scores_suppressed": true,
+  "metrics": [],
+  "source_cell_checks": [],
+  "joint_source_cell_diagnostic": null,
+  "original_results_replaced": false,
+  "full_native_tree_refits_claimed": false
+}
