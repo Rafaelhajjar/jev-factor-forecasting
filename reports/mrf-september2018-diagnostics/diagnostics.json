@@ -1,0 +1,364 @@
+{
+  "status": "completed",
+  "diagnostic_type": "posthoc_not_model_selection",
+  "source_manifest_sha256": "ae1e4bdef47759cd4f5c1376cd31ad075c17859ed2a796dcdfcfb02d85a0837f",
+  "source_audit_sha256": "7fb17fb319f87c009c8ca5fce7cf701694ce994014bcdc068ea0b53e6cbde3fb",
+  "source_prediction_sha256": "dc9175948d70d87e5d82b1a36e575a86740f085bcff679d8afae8ae41980afa0",
+  "source_metrics_sha256": "de29293b5c5f9513f2f837af1af409d6b78ffb33a738d3440b62234954ad46e3",
+  "source_config": {
+    "study": "September2018_qualified_FA_ARRF_unemployment_h1",
+    "declaration_date": "2026-10-20",
+    "qualified_advance_authorized": true,
+    "plain_RF_gate_passed": false,
+    "vintage": "2018-09",
+    "target": "delta_log_UNRATE",
+    "horizon": 1,
+    "panel_start": "1959Q3",
+    "first_training_target": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "refit_every_quarters": 8,
+    "trees": 100,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "preprocessing": {
+      "completion_rank": 5,
+      "outlier_iqr": 10,
+      "fit_through": "last_training_origin",
+      "factor_features_in_plain_RF": false
+    },
+    "forest": {
+      "block": 8,
+      "RWR": 0.75,
+      "ridge_lambda": 0.1,
+      "MLF": 1,
+      "mtry": 0.3333333333333333,
+      "minsize": 10,
+      "trend_push": 1,
+      "prior": "OLS",
+      "standardization": "train_only"
+    },
+    "reported_FA_AR_ratio": 0.83,
+    "reported_FA_ARRF_ratio": 0.72,
+    "absolute_ratio_tolerance": 0.03,
+    "gate": "matching_FA_AR_and_all_three_MRF_seeds_no_ensemble_rescue",
+    "assumptions_not_recovered_original_settings": [
+      "currently_served_September2018_archive_has_247_not_original_248_series",
+      "all_247_series_in_completion_and_cross_sectional_PCA",
+      "fixed_rank5_completion_10IQR_and_train_only_moments",
+      "1961Q3_is_first_training_target_not_first_origin",
+      "sklearn_PCA_sign_orientation_not_recovered_author_basis",
+      "MAFs_fitted_on_all_aligned_training_origin_rows",
+      "100_trees_and_101_202_303_seeds_preserved_from_earlier_MRF_declaration",
+      "MRF_package_defaults_are_not_verified_Table4_invocation",
+      "OLS_prior_variance_100_intercept_1_slopes",
+      "train_only_inner_scaling_overrides_native_all_supplied_rows_helper"
+    ]
+  },
+  "engine": {
+    "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+    "sha256": "e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631",
+    "url": "https://raw.githubusercontent.com/philgoucou/macrorf/bdb2ed435affb741aafdf78bab12c470ec6d55d0/R/MRF_v210403.R",
+    "license": "GPL-3 external dependency; not redistributed as MIT"
+  },
+  "original_model_code": {
+    "mrf2018.py": "ad62c0726b6baebb0e28e782fa91a53e56cb42bd532745339d655eb6e7435eec",
+    "vintage2018.py": "0038f0b20fff5cb17bf6110d24e30915a27d6c85db9275664743b63f1c557756",
+    "rf2018.py": "55d5ea9c99bd0fa3f16f3d18442e574282833be5ab0128c3cb9b471778f92dae",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "data.py": "b5946ab6c72dcd62aad00f652eef8c921c58ad8da1c251dbb0ae522187dc6038",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "mrf2018_report.py": "e1c2a85ecea6694db98ed2d23aaa8a91d4ac93e41fb9aecd4fd29186cec42bf2"
+  },
+  "diagnostic_code_sha256": "920d146cf3b34a7d957848d0a5c6c1100448e2f3cf3322e8779ae38bf5c6a72a",
+  "trace_adapter_sha256": "4d1a60b992d8107e174bb556fe55a7c7e68d150ff91248c2899dba5063e308f4",
+  "figure_count": 31,
+  "figures": [
+    {
+      "slug": "01-training-map",
+      "title": "What training actually does",
+      "caption": "The 1,037 state variables choose regimes; the forecast equation has only five coefficients. The forest averages separately grown trees. It does not optimize one neural-network loss over epochs.",
+      "section": "Training"
+    },
+    {
+      "slug": "02-loss-functions",
+      "title": "What the losses mean",
+      "caption": "Top is the actual forecast scoring rule, not a fitted curve. Bottom summarizes the local leaf objective in standardized units. The source's split criterion differs from its terminal-fit objective; there is no single globally minimized training loss.",
+      "section": "Training"
+    },
+    {
+      "slug": "03-training-calendar",
+      "title": "Training versus forecasting calendar",
+      "caption": "Representations stop at the last training origin, one quarter before the training target cutoff. Forecasting is h=1 with observed lag updates, not an eight-step recursive path. The model is refitted every two years.",
+      "section": "Training"
+    },
+    {
+      "slug": "04-state-and-sample-size",
+      "title": "The large state and the small equation",
+      "caption": "The state is large relative to the training history. Trees select splits rather than fitting 1,037 regression slopes. This is a capacity/noise concern, not proof that overfitting caused the forecast gap.",
+      "section": "Training"
+    },
+    {
+      "slug": "05-preparation-diagnostics",
+      "title": "Recorded preprocessing diagnostics",
+      "caption": "These are recorded counts, not per-iteration loss histories. All six state rebuilds agreed exactly with the frozen inputs. The original run did not retain a factor-completion objective trajectory.",
+      "section": "Training"
+    },
+    {
+      "slug": "06-scorecard",
+      "title": "The actual result versus the paper",
+      "caption": "All 48 quarters and all seeds. Fixed FA-AR is 0.833; MRF is 0.824\u20130.852, not 0.72. *Same-equation OLS is a new post-hoc control with the MRF's four slope terms, not the paper's nine-coefficient FA-AR or a replacement primary.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "31-rmse-versus-mae",
+      "title": "A useful nuance: better MAE, little or no RMSE gain",
+      "caption": "All three MRF seeds have lower MAE than fixed FA-AR and the exploratory static control. They do not uniformly improve the primary RMSE metric. Squaring errors makes rare large misses more costly. The dashed line is each metric's fixed FA-AR value; reporting MAE does not change the primary criterion.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "07-forecasts",
+      "title": "Actual versus forecast changes",
+      "caption": "The target is the quarterly change in log unemployment, multiplied by 100 for readability. These are log points, not unemployment-rate percentage-point changes.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "08-crisis-closeup",
+      "title": "Where the large miss happens",
+      "caption": "In 2009Q1 the actual log change is 0.1856, fixed FA-AR predicts 0.1185, and MRF predicts 0.0881/0.1034/0.0969. The forest underreacts more than the fixed-factor comparator at this quarter.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "09-unemployment-levels",
+      "title": "Forecasts in familiar units",
+      "caption": "Each level forecast equals the observed previous-quarter unemployment rate \u00d7 exp(predicted log change). It is a sequence of one-step forecasts with observed lag updates, not a recursive multi-year forecast. Main scoring stays in the original log-change target.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "10-rolling-rmse",
+      "title": "Rolling forecast error",
+      "caption": "Overlapping trailing eight-quarter windows are descriptive and dependent. They were not used to choose settings, seeds or a favorable evaluation interval.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "11-period-comparison",
+      "title": "When the forest helps or hurts",
+      "caption": "Post-hoc calendar windows, not official recession dates. MRF improves 8\u201311% before 2008, but has 4\u201311% higher RMSE in 2008\u201309 and 3\u20134% higher RMSE in 2010\u201314. This is diagnosis, not a newly chosen benchmark.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "12-actual-predicted",
+      "title": "Prediction range and underreaction",
+      "caption": "Dashed line is perfect prediction. Slopes regress forecasts on actuals for description only; they are not probability calibration tests or fitted forecast corrections. Only 48 points per panel.",
+      "section": "Forecasts"
+    },
+    {
+      "slug": "13-residual-timeline",
+      "title": "Residuals through time",
+      "caption": "A residual here is forecast minus actual, so negative errors mean the rise in unemployment was underpredicted. All residual plots use held-out target dates.",
+      "section": "Errors"
+    },
+    {
+      "slug": "14-loss-heatmap",
+      "title": "Where the squared loss comes from",
+      "caption": "Identical color scale for every method. No normalization within rows; this preserves the magnitude of unusually costly quarters.",
+      "section": "Errors"
+    },
+    {
+      "slug": "15-cumulative-excess-loss",
+      "title": "How small wins and large losses accumulate",
+      "caption": "This accumulates each seed's squared error minus fixed FA-AR squared error. It is not a sequential model-selection rule. The 2009Q1 jump offsets many earlier gains.",
+      "section": "Errors"
+    },
+    {
+      "slug": "16-costliest-quarters",
+      "title": "The six most expensive relative misses per seed",
+      "caption": "Quarters are ranked after observing results, solely to locate failures. These are individual contributions to total excess squared loss, not independently selected test tasks.",
+      "section": "Errors"
+    },
+    {
+      "slug": "17-error-versus-forecast",
+      "title": "Do errors depend on the forecast size?",
+      "caption": "Residual-versus-fitted diagnostic, using held-out forecasts. Patterns may reflect rare regimes or misspecification; this small sample cannot identify a unique cause.",
+      "section": "Errors"
+    },
+    {
+      "slug": "18-residual-distribution",
+      "title": "Tails and unusual errors",
+      "caption": "Only 48 held-out quarters. Q\u2013Q lines describe the empirical error distribution, not an assumed Gaussian predictive distribution or a calibrated interval.",
+      "section": "Errors"
+    },
+    {
+      "slug": "19-residual-acf",
+      "title": "Is forecast error serially structured?",
+      "caption": "Descriptive autocorrelations, with denominator equal to the full centered error sum of squares. No iid significance bands or multiple-testing claims are added to this 48-quarter sample.",
+      "section": "Errors"
+    },
+    {
+      "slug": "20-coefficient-paths",
+      "title": "All five changing coefficients",
+      "caption": "Units are the saved original-scale coefficients; the intercept is in \u0394log units. Vertical lines mark refits. PCA factors are refitted and can change sign/rotation: F1/F2 coefficients across boundaries are not an invariant economic quantity or a causal effect.",
+      "section": "Inside the forecast"
+    },
+    {
+      "slug": "21-forecast-contributions",
+      "title": "What actually contributes to each forecast",
+      "caption": "These terms sum to every saved forecast within numerical precision. Contributions are predictive accounting, not causal attribution. The individual F1/F2 decomposition is tied to each refit's PCA basis.",
+      "section": "Inside the forecast"
+    },
+    {
+      "slug": "22-dynamic-adjustments",
+      "title": "What the nonlinear model changes versus its own static equation",
+      "caption": "Post-hoc same-equation OLS isolates the addition of dynamic fitting more closely than the larger paper FA-AR equation. MRF has 0.6\u20134.1% higher RMSE than this control. No model was refitted using test outcomes, and this control does not replace the preregistered benchmark.",
+      "section": "Inside the forecast"
+    },
+    {
+      "slug": "23-factor-loadings",
+      "title": "Which indicators enter the two equation factors?",
+      "caption": "Twelve largest absolute loadings in the first refit (through 2002Q3 origin data). Signs are conventional, and PCA factors are statistical summaries, not identified structural causes or validated economic labels.",
+      "section": "Inside the forecast"
+    },
+    {
+      "slug": "24-seed-stability",
+      "title": "Seed sensitivity versus the common forecasting error",
+      "caption": "The three seeds' forecasts correlate above 0.997 with one another. Narrow seed spread is not calibrated uncertainty: all seeds can make the same large mistake.",
+      "section": "Stability"
+    },
+    {
+      "slug": "25-refit-block-performance",
+      "title": "Performance by refit block",
+      "caption": "Only eight targets per block, so these ratios are noisy. They locate instability; they do not prove a regime mechanism or authorize choosing a different model in each block.",
+      "section": "Stability"
+    },
+    {
+      "slug": "26-training-loss",
+      "title": "Training loss versus number of trees",
+      "caption": "New storage-only replay: first refit, seed 101, all 100 trees. Final forecasts and all coefficients match the original saved fit. The training curve is in-sample and optimistic; the orange curve is the already-observed next eight test quarters. Neither curve is a new validation set or a rule for selecting the tree count. Test and training periods have different difficulty.",
+      "section": "Instrumented replay"
+    },
+    {
+      "slug": "27-tree-prefix-forecasts",
+      "title": "How averaging more trees changes each forecast",
+      "caption": "The eight forecasts from the same first-window replay. Trees are added in their original random order, not trained to correct previous trees' residuals. The fixed 100-tree choice is unchanged.",
+      "section": "Instrumented replay"
+    },
+    {
+      "slug": "28-tree-dispersion",
+      "title": "The distribution of individual tree forecasts",
+      "caption": "These are 100 correlated model components from one fit, not 100 independent future outcomes. Tree dispersion is not a posterior, prediction interval or calibrated confidence band.",
+      "section": "Instrumented replay"
+    },
+    {
+      "slug": "29-tree-structure",
+      "title": "How complex are the fitted trees?",
+      "caption": "Retained trees from the first-window replay only. NOBS counts rows used in the split sample, not every training outcome used by the final leaf regression or its neighboring-row smoother.",
+      "section": "Instrumented replay"
+    },
+    {
+      "slug": "30-split-usage",
+      "title": "What the trees actually split on",
+      "caption": "Usage frequency, not permutation importance or causal attribution. More numerous groups have more opportunities; correlated features can substitute for each other. Ancestor splits shared by leaves are counted once per tree node.",
+      "section": "Instrumented replay"
+    }
+  ],
+  "max_coefficient_reconstruction_error": 2.7478019859472624e-15,
+  "exploratory_control": "OLS_same_equation_exploratory",
+  "original_predictions_replaced": false,
+  "replay": {
+    "first_refit": "2002Q4",
+    "seed": 101,
+    "trees": 100,
+    "maximum_saved_output_difference": 0.0,
+    "training_curve": "in_sample",
+    "forecast_curve": "already_observed_8_quarter_test_block",
+    "strict_oob_validation": false,
+    "tree_dispersion_is_prediction_interval": false,
+    "replay_sha256": "69578af19942eaa47dc5c0adbae5c549f795e47e2ead8c3797fe43c3886e729c",
+    "tree_predictions_sha256": "4dbc86249b4dbefd023983cb57ce6f87e48c8ff087ba08a06a7b1a61fc66878b",
+    "leaves_sha256": "8b37ab6d636819c5be073dcc4aaf9ebbb46bdd24914f7c720427f30babf2fd96"
+  },
+  "artifact_checksums": {
+    "audit.json": "7fb17fb319f87c009c8ca5fce7cf701694ce994014bcdc068ea0b53e6cbde3fb",
+    "coefficients.csv": "d5ed9356d97ba5eb8cf073abf13ae289b9c8498a867a79b3c56734db9424ba3c",
+    "contributions.csv": "48a816aba5c47905bcbca85139b0554c2124278addccf9d9c73044fde96500bc",
+    "diagnostic-metrics.csv": "ab5906c2a9422fd5b6c42113c158d470d267f01ab5ebfd60656d2f95a177d888",
+    "diagnostic-predictions.csv": "afa22d7fcdc27aebc1b1be90dc9b5f5215acee1f61ec2bffee22f466c84df5cb",
+    "figures/01-training-map.png": "04940177a77ab439a41de04e7783e57542948389b7e29bba1a8dc5ac57b92249",
+    "figures/01-training-map.svg": "bf759e381d585744d96bf019c8819b84e8a6b170048db54dd2a074b8d22c5ef4",
+    "figures/02-loss-functions.png": "1c0dfe1da18b11afd3088ca058f7bb9bb40ac55bcd2de167f8f6564613d4dc0c",
+    "figures/02-loss-functions.svg": "bacf96ac61c12bdf60bf1af1b539cfac8950a75fb06efcf4a633d81062107ce7",
+    "figures/03-training-calendar.png": "4ac9b92c2014c001b07449a3e8f221ba5bf8742931787ddc62b8402fdd6e23e6",
+    "figures/03-training-calendar.svg": "09d7b7d08ffcd67154295508ed451f6156d1676cd6fefefabd09a9c2fc2fad48",
+    "figures/04-state-and-sample-size.png": "44a953593d32684517e66ecc0345afdea89ca7789b4a5c5c73b11f192ee4c4be",
+    "figures/04-state-and-sample-size.svg": "db3fc12c932fca13e33f2fee87b61e9b76accfab85fb4466f68b41a8d5830f5b",
+    "figures/05-preparation-diagnostics.png": "effed5d79392076aa8b009093e104c6dad8783fa9553d494a38bdc0454d3adad",
+    "figures/05-preparation-diagnostics.svg": "b80f1466d181f2d9dbb89a10404005233bffc0fe6a99edb43331317cc111e2be",
+    "figures/06-scorecard.png": "037b9467ddba116b8d2f837d3a072f143c54f0b1e01d7c3b24e03783481cc049",
+    "figures/06-scorecard.svg": "5bc4cee5517286bb12ce4bc64508b55e8a0423eed385276650c129cff6a8a2bb",
+    "figures/07-forecasts.png": "2beab742ebe266345b75df444f735bfda66ec89c54a409294ea9cd645a5f0af7",
+    "figures/07-forecasts.svg": "d34ff7370ccb2c102a8b1aa3f8b1f3716b8b5322f52ca528cf3d90d50ef69574",
+    "figures/08-crisis-closeup.png": "50e435e9f6f55194146e9dd918b26cd25d911ae8da10d54a2ecab920097eddd1",
+    "figures/08-crisis-closeup.svg": "f3294203d5bc894b536dd666ab157e17789f92daf5bb79407572ece9a1ace05e",
+    "figures/09-unemployment-levels.png": "4d17e534d8dc4b6bf04f36641a0476d25da9fb2454c065eab7d6ee9c8830d545",
+    "figures/09-unemployment-levels.svg": "b759f181f7762850b1583793ce9ab2cbc300dcee86c25e0b6eeae9e494feef9f",
+    "figures/10-rolling-rmse.png": "337704d1fb7e73129eb91aec4b15592ded428d2bc606cf8120e5599446349822",
+    "figures/10-rolling-rmse.svg": "889fd3746a31cb60da69afbda58602f4f93f66394888e151c724007cdb76d488",
+    "figures/11-period-comparison.png": "afefea23937cbc10908ea2fade56ec6c7e7a87e904d4137ad2a8237f0aaf1a23",
+    "figures/11-period-comparison.svg": "db253871b0b853e653d9dc1e452a80182aaf0da749a52f42154f8b5fb04e33f1",
+    "figures/12-actual-predicted.png": "5d8a22dc42bf0ee14ac23f313dcdc0ba49b037f906329d75de4c792d37dc4fd5",
+    "figures/12-actual-predicted.svg": "4abe5ad164405fe0e089de0672d1054c0d2b035d2cb5810cb3ce86369dbee0aa",
+    "figures/13-residual-timeline.png": "fb40cfd6db1c0957ed61b159ab716c73fcebc473ac5edcdc589f3b93892601b3",
+    "figures/13-residual-timeline.svg": "b5c5881c4e9173b9d2497c348e33ae39f0cd7e2d84224d6438b730fcc0beada2",
+    "figures/14-loss-heatmap.png": "8a069f5bb95e6fb61eb1c63ab3c7ee9d8814cbd56a93812b1c1be1b526f216c9",
+    "figures/14-loss-heatmap.svg": "a4ee63b0d43c83907afdb353750b63dd08aec2a7c48939dbb2474bc19ca01d40",
+    "figures/15-cumulative-excess-loss.png": "6c82cf8651cf28f3ebd49627f0c380829865161215b246e5100cc5e67cbfba53",
+    "figures/15-cumulative-excess-loss.svg": "26e4a5e253c721a20201b5b0f1901069c6418a9fbf417277222156d5085928c1",
+    "figures/16-costliest-quarters.png": "e18e2ae81059a151d8b4f72ac1b8950bda99fabf468b9851606bbc035a8ad2f8",
+    "figures/16-costliest-quarters.svg": "6eb1c46d6aee08dd3c865248170a0daa72d5d6f445adc0d17745646686d75abd",
+    "figures/17-error-versus-forecast.png": "86deed352fabd80418e27d378d2520efb0a1b69498d9a1c7d4b241f1490b7b62",
+    "figures/17-error-versus-forecast.svg": "3d98464e1456943b70c1d6cfa23db18a86da0c69829605401f80a7746dc71c4d",
+    "figures/18-residual-distribution.png": "be45a84477855cd5807b7a1fe0b3034583aca82fc21eba1a3580737e40d3de9c",
+    "figures/18-residual-distribution.svg": "dc83d602b7584c19fe7e089b0ceeb25d925635d20d7f88de26fba0cdd18ef801",
+    "figures/19-residual-acf.png": "3b633bfddb3c90a8171269a1c93cac7ebe00193acf123718788a626faacbfe6a",
+    "figures/19-residual-acf.svg": "8ed9092a6270e94a0951b39fc71567cbd7c791f020c69464e21a691351478422",
+    "figures/20-coefficient-paths.png": "a79ba0deea4b30c15bb271d68ed9ae56108ee91a7bf15f8ea4f9412c6c44c6d8",
+    "figures/20-coefficient-paths.svg": "71f0c13c0feb54446c85ef4d73517d1c83a86bdfad03b9432ea8901f830391a6",
+    "figures/21-forecast-contributions.png": "aaaf17b8d45d594227ece2a48a40e829e68912fdf689e7a15c9ad2d3ef577eae",
+    "figures/21-forecast-contributions.svg": "517c0d6fb57dae294cbf80daa00dae103ecc15d25f6db2a35ef5e4c68258c26b",
+    "figures/22-dynamic-adjustments.png": "b93290fe95d821e1128f50d0185f2e26fc0e33bf009a6ce14313fec68f1ef34a",
+    "figures/22-dynamic-adjustments.svg": "05af61e42af99d08d2e2c9480d91fc1e0e905271ea97ccfa0deec4dc9de59a12",
+    "figures/23-factor-loadings.png": "975e0af64c50468bcfb0840cb8ba2fa261dd17fa4515743a545d0a839f3dc992",
+    "figures/23-factor-loadings.svg": "9263ca5c0aafee1b688fbd6b2b23e09789eb15a183b1751faa9681c4865dd881",
+    "figures/24-seed-stability.png": "a7cc9f0061b81f89f94c3efe90592e4416b77d15d53fca40b27a48839847b439",
+    "figures/24-seed-stability.svg": "9f32ea9d6f0ff2a2b19dd06f17a634f712c627a374008811fe0e4a7496e229a2",
+    "figures/25-refit-block-performance.png": "66c7c0aa180ce3b7977ff04ec2b1fbd61ba653771a62169b66cede72c016f2ac",
+    "figures/25-refit-block-performance.svg": "647bbc03209fb8fa2ea431a1f1fa9a8a01f9e295113e5a2ecf64c33dd813091d",
+    "figures/26-training-loss.png": "adca1acf8b5a5e68c386b81a1b59ac69a0b3454bcb8dbac2dbf02baed2c3bf34",
+    "figures/26-training-loss.svg": "fd4fd030254bf71c80a2cee6bdbc347bb0320c6e6371ab9d3ed9ae13eef2e413",
+    "figures/27-tree-prefix-forecasts.png": "8a94d631dd3698ff1e3f80452abbddbe87f64591d6dccdc62a528a202ab9f93b",
+    "figures/27-tree-prefix-forecasts.svg": "2d6112c74e0bbf10edb3ef56fbf8fa25bafb241591062894e1122f99b128c731",
+    "figures/28-tree-dispersion.png": "4299db0808dd135b2f3bbe38f91ea00192ef23690beb85415ad0b57adbcae33a",
+    "figures/28-tree-dispersion.svg": "a6115330a54c1b0b106775e77d42ef4e8ab2549365518b7cf3a3008538c8ad77",
+    "figures/29-tree-structure.png": "b044041e968bc4773c980f960cb0aa1b0aec938b1e7fdb77f9951ddf81158a05",
+    "figures/29-tree-structure.svg": "d1a9873564383f95393fa50ffac35c3786ccc3d1fc07561ce57faa0047163ac6",
+    "figures/30-split-usage.png": "c31d1bfaab82e70d63140fc49e6eb0484592797ee9505d0e26d5baa3289d18be",
+    "figures/30-split-usage.svg": "33d14c5e1df79c6dd6c6e54d7d6239c25cb652669b52f93b5d451fe651d31469",
+    "figures/31-rmse-versus-mae.png": "a18e01ebffebe280eb0f4e80a0a49b55ee09d02c24c76dc2622da11ce3ee5819",
+    "figures/31-rmse-versus-mae.svg": "b79895ff0b5de06d0a05baff3b0a2799e4e6f47bad1313cd20c714ca91b2d308",
+    "index.html": "42d21859c796b9f7e1eec5ee22f179bc071fa56fd3f687092c0a65f6818ff831",
+    "metrics.csv": "de29293b5c5f9513f2f837af1af409d6b78ffb33a738d3440b62234954ad46e3",
+    "predictions.csv": "dc9175948d70d87e5d82b1a36e575a86740f085bcff679d8afae8ae41980afa0",
+    "result.md": "948c0c2031c70fcdb2790850c0a317fd75063e6c2ae4e949d676ae3ee6a9c2db",
+    "trace-leaves.csv": "40c2b5614ccf5f4e0558d282afea3a86346354dcbec02cf4004f601e69892c85",
+    "trace-split-usage.csv": "a14066de16fcde82c006964a138671a3901600b9fb8cf677363e1c7a9b4fdbad",
+    "trace-tree-predictions.csv": "8ab5365e0f5a443fea5239c308dd4e35229d3a30a4511d2cbd050cf0f82e6006",
+    "training-curves.csv": "b72684d7153f32eb07b7c107384b6cd80a0ac14e4ac9f89a56713ca0f2c4d662"
+  },
+  "local_standalone_sha256": "39686bafc463570a4e24c78d3f4f0a2ff404a03a434b17eac5e0631bd3e4609a"
+}

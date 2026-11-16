@@ -1,5 +1,10 @@
 # Qualified September 2018 MRF: full run launched
 
+**Historical launch snapshot.** The run has since completed and passed its
+artifact audit. See the [completed result and diagnostic report](MRF_SEPTEMBER2018_DIAGNOSTICS.md).
+The source-cell agreement criterion still fails; the original text below is
+retained as the dated pre-completion record.
+
 October 20, 2026 launch snapshot, not a live completion claim. The user explicitly
 authorized this qualified reconstruction after the raw-RF criterion missed.
 The failed RF diagnostic and missing original series/caller remain explicit.

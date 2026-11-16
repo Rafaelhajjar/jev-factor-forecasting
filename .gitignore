@@ -13,3 +13,5 @@ data/raw/*
 runs/
 dist/
 build/
+reports/mrf-september2018-diagnostics/standalone.html
+reports/mrf-september2018-diagnostics/mrf-diagnostics.zip

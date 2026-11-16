@@ -1,0 +1,70 @@
+{
+  "all": {
+    "max_sign_aligned_loading_error": 9.43689570931383e-16,
+    "max_score_error": 7.105427357601002e-14,
+    "opposite_sign_components": 4
+  },
+  "SW125": {
+    "max_sign_aligned_loading_error": 1.429412144204889e-15,
+    "max_score_error": 6.039613253960852e-14,
+    "opposite_sign_components": 2
+  },
+  "MAF_max_sign_aligned_loading_error": 6.622480341889059e-14,
+  "transform_max_error": 4.94765117764473e-10,
+  "transform_max_relative_to_max_one_and_value": 4.777482044694816e-15,
+  "transform_missing_masks_equal": true,
+  "outlier_masks_equal": true,
+  "outlier_threshold_max_error": 4.3655745685100555e-11,
+  "R_runtime": "R version 4.6.1 (2026-06-24)",
+  "official_recipe_source": {
+    "source_page": "https://www.stlouisfed.org/research/economists/mccracken/fred-databases",
+    "archive_sha256": "cbb4b5f1e9549e506bf12979643422c3fb6fda108f1a94fd5f998a0536399036",
+    "members_sha256": {
+      "fredfactors.m": "008fda06665ba803432ec77c8b433923849433070a64d7fb6d41d1a428c9ff31",
+      "factors_em.m": "b2985c589a0941534a49d1be7cd03e2253cfcec2a53be17174ca210c8e37136b",
+      "remove_outliers.m": "ae1f097638938cf970c5dfe220bdddc9ca0f0ef310cad980454da13a15d2f7fa"
+    },
+    "source_driver_is_monthly_FRED_MD_not_the_MRF_runner": true,
+    "original_MATLAB_executed": false
+  },
+  "adaptive_all247": {
+    "status": "independent_R_recipe_agrees_not_execution_of_MATLAB",
+    "R_version": "R version 4.6.1 (2026-06-24)",
+    "maximum_filled_difference_in_final_std_units": 7.534581946250457e-14,
+    "maximum_standardized_matrix_difference": 7.505107646466058e-14,
+    "rank_path_and_stopping_reason_match": true,
+    "final_PCA": {
+      "same_up_to_component_signs": true,
+      "same_retained_subspace": true,
+      "signs_to_align_R_with_Python": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "maximum_loading_difference_after_sign_alignment": 2.914335439641036e-15,
+      "maximum_retained_subspace_projector_difference": 6.574601973952099e-16
+    }
+  },
+  "adaptive_SW125": {
+    "status": "independent_R_recipe_agrees_not_execution_of_MATLAB",
+    "R_version": "R version 4.6.1 (2026-06-24)",
+    "maximum_filled_difference_in_final_std_units": 1.923322621587446e-14,
+    "maximum_standardized_matrix_difference": 1.2212453270876722e-14,
+    "rank_path_and_stopping_reason_match": true,
+    "final_PCA": {
+      "same_up_to_component_signs": true,
+      "same_retained_subspace": true,
+      "signs_to_align_R_with_Python": [
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "maximum_loading_difference_after_sign_alignment": 6.050715484207103e-15,
+      "maximum_retained_subspace_projector_difference": 5.689893001203927e-16
+    }
+  }
+}

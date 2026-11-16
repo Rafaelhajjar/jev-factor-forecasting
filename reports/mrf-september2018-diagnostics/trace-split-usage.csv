@@ -1,0 +1,1470 @@
+tree,feature,depth,group
+1,series_039_lag1,1,Raw indicators
+1,MAF_121_1,2,MAFs
+1,series_026_lag1,2,Raw indicators
+1,MAF_125_2,3,MAFs
+1,series_120_lag2,4,Raw indicators
+1,F2_lag4,4,PCA factors
+1,series_154_lag2,5,Raw indicators
+1,series_063_lag2,5,Raw indicators
+1,MAF_224_2,6,MAFs
+1,series_216_lag2,6,Raw indicators
+1,MAF_081_1,5,MAFs
+1,series_094_lag1,6,Raw indicators
+1,series_007_lag2,6,Raw indicators
+1,series_114_lag1,7,Raw indicators
+1,series_119_lag1,7,Raw indicators
+2,series_073_lag1,1,Raw indicators
+2,series_005_lag2,2,Raw indicators
+2,series_096_lag1,2,Raw indicators
+2,series_063_lag1,3,Raw indicators
+2,MAF_133_1,4,MAFs
+2,series_106_lag2,4,Raw indicators
+2,MAF_110_1,5,MAFs
+2,series_223_lag2,5,Raw indicators
+2,MAF_189_1,6,MAFs
+2,series_186_lag1,6,Raw indicators
+2,series_123_lag1,7,Raw indicators
+2,series_244_lag2,7,Raw indicators
+2,series_127_lag2,8,Raw indicators
+2,series_042_lag2,8,Raw indicators
+3,series_028_lag2,1,Raw indicators
+3,MAF_117_1,2,MAFs
+3,series_164_lag1,2,Raw indicators
+3,series_126_lag2,3,Raw indicators
+3,series_118_lag1,3,Raw indicators
+3,series_148_lag2,4,Raw indicators
+3,MAF_121_1,4,MAFs
+3,series_100_lag2,4,Raw indicators
+3,MAF_242_2,5,MAFs
+3,series_119_lag1,5,Raw indicators
+3,series_167_lag2,6,Raw indicators
+3,series_140_lag2,7,Raw indicators
+3,MAF_128_1,7,MAFs
+3,MAF_106_2,8,MAFs
+3,series_031_lag2,9,Raw indicators
+4,series_073_lag1,1,Raw indicators
+4,MAF_213_1,2,MAFs
+4,MAF_047_2,2,MAFs
+4,MAF_219_2,3,MAFs
+4,MAF_057_1,3,MAFs
+4,series_088_lag1,3,Raw indicators
+4,series_231_lag1,4,Raw indicators
+4,series_223_lag2,4,Raw indicators
+4,F3_lag6,5,PCA factors
+4,series_087_lag1,5,Raw indicators
+4,series_197_lag1,5,Raw indicators
+4,MAF_218_1,6,MAFs
+4,series_140_lag2,6,Raw indicators
+4,series_001_lag2,6,Raw indicators
+4,MAF_182_1,7,MAFs
+4,MAF_137_2,8,MAFs
+5,series_216_lag2,1,Raw indicators
+5,MAF_192_1,2,MAFs
+5,series_171_lag1,3,Raw indicators
+5,series_076_lag1,2,Raw indicators
+5,MAF_200_1,3,MAFs
+5,series_006_lag2,3,Raw indicators
+5,MAF_206_2,4,MAFs
+5,MAF_137_2,3,MAFs
+5,series_179_lag1,4,Raw indicators
+5,series_165_lag2,4,Raw indicators
+5,series_216_lag2,4,Raw indicators
+5,MAF_184_2,5,MAFs
+5,MAF_229_1,5,MAFs
+6,series_022_lag1,1,Raw indicators
+6,MAF_058_1,2,MAFs
+6,MAF_198_2,3,MAFs
+6,MAF_230_2,3,MAFs
+6,MAF_126_1,4,MAFs
+6,series_184_lag2,4,Raw indicators
+6,series_059_lag1,4,Raw indicators
+6,series_145_lag1,5,Raw indicators
+6,MAF_117_1,5,MAFs
+6,MAF_105_1,6,MAFs
+6,series_065_lag1,6,Raw indicators
+6,series_073_lag2,6,Raw indicators
+6,series_063_lag2,7,Raw indicators
+6,series_009_lag2,7,Raw indicators
+6,MAF_094_2,8,MAFs
+6,MAF_005_1,9,MAFs
+7,MAF_156_2,1,MAFs
+7,series_038_lag1,2,Raw indicators
+7,MAF_177_1,3,MAFs
+7,MAF_075_2,3,MAFs
+7,MAF_232_1,4,MAFs
+7,MAF_122_1,4,MAFs
+7,MAF_162_2,4,MAFs
+7,series_106_lag2,5,Raw indicators
+7,series_021_lag1,5,Raw indicators
+7,series_074_lag1,5,Raw indicators
+7,series_031_lag2,6,Raw indicators
+7,series_139_lag2,6,Raw indicators
+7,series_185_lag2,6,Raw indicators
+7,series_149_lag1,7,Raw indicators
+7,MAF_192_2,7,MAFs
+8,MAF_125_2,1,MAFs
+8,series_041_lag1,2,Raw indicators
+8,series_193_lag2,2,Raw indicators
+8,series_142_lag2,3,Raw indicators
+8,MAF_034_1,3,MAFs
+8,MAF_100_1,4,MAFs
+8,MAF_216_1,4,MAFs
+8,F3_lag2,4,PCA factors
+8,series_048_lag2,5,Raw indicators
+8,MAF_069_2,6,MAFs
+8,MAF_203_2,6,MAFs
+8,series_198_lag1,7,Raw indicators
+8,series_076_lag1,7,Raw indicators
+8,series_244_lag1,8,Raw indicators
+9,MAF_242_1,1,MAFs
+9,MAF_220_1,2,MAFs
+9,MAF_208_1,3,MAFs
+9,F5_lag6,2,PCA factors
+9,series_020_lag2,3,Raw indicators
+9,MAF_165_1,3,MAFs
+9,MAF_212_1,3,MAFs
+9,MAF_124_1,4,MAFs
+9,MAF_050_2,4,MAFs
+9,series_004_lag2,5,Raw indicators
+9,MAF_210_2,5,MAFs
+9,series_062_lag2,6,Raw indicators
+9,MAF_232_1,6,MAFs
+9,series_029_lag1,6,Raw indicators
+9,MAF_127_2,7,MAFs
+10,series_022_lag1,1,Raw indicators
+10,series_080_lag2,2,Raw indicators
+10,MAF_198_2,2,MAFs
+10,MAF_172_2,3,MAFs
+10,MAF_207_1,4,MAFs
+10,series_195_lag1,4,Raw indicators
+10,MAF_242_2,5,MAFs
+10,MAF_177_1,6,MAFs
+10,MAF_167_2,6,MAFs
+10,series_206_lag1,7,Raw indicators
+10,series_104_lag1,7,Raw indicators
+10,series_226_lag2,8,Raw indicators
+10,series_217_lag2,8,Raw indicators
+10,MAF_110_2,9,MAFs
+10,MAF_226_2,9,MAFs
+11,MAF_156_2,1,MAFs
+11,MAF_017_1,2,MAFs
+11,series_224_lag2,3,Raw indicators
+11,MAF_115_1,3,MAFs
+11,MAF_122_2,4,MAFs
+11,MAF_100_1,5,MAFs
+11,series_002_lag1,5,Raw indicators
+11,series_064_lag2,6,Raw indicators
+11,F1_lag6,6,PCA factors
+11,series_244_lag1,6,Raw indicators
+11,MAF_137_1,7,MAFs
+11,MAF_224_2,7,MAFs
+11,MAF_055_2,8,MAFs
+11,series_095_lag2,8,Raw indicators
+11,MAF_121_1,9,MAFs
+12,series_073_lag1,1,Raw indicators
+12,series_097_lag2,2,Raw indicators
+12,series_020_lag2,2,Raw indicators
+12,series_120_lag2,3,Raw indicators
+12,series_185_lag2,3,Raw indicators
+12,MAF_142_2,3,MAFs
+12,series_191_lag1,4,Raw indicators
+12,y_lag4,5,Target lags
+12,series_040_lag2,6,Raw indicators
+12,series_008_lag2,7,Raw indicators
+12,series_004_lag1,8,Raw indicators
+12,series_126_lag1,8,Raw indicators
+12,series_089_lag2,9,Raw indicators
+12,MAF_204_2,10,MAFs
+13,series_110_lag2,1,Raw indicators
+13,MAF_117_2,2,MAFs
+13,MAF_199_1,2,MAFs
+13,MAF_118_1,3,MAFs
+13,series_099_lag2,3,Raw indicators
+13,MAF_231_1,4,MAFs
+13,MAF_075_2,4,MAFs
+13,series_066_lag1,5,Raw indicators
+13,MAF_237_1,5,MAFs
+13,F5_lag4,6,PCA factors
+13,F3_lag5,6,PCA factors
+13,MAF_175_1,6,MAFs
+13,series_030_lag1,7,Raw indicators
+13,MAF_016_2,7,MAFs
+13,MAF_229_1,8,MAFs
+14,series_203_lag2,1,Raw indicators
+14,series_245_lag1,2,Raw indicators
+14,series_118_lag1,3,Raw indicators
+14,series_023_lag1,3,Raw indicators
+14,series_183_lag1,4,Raw indicators
+14,MAF_018_2,4,MAFs
+14,MAF_109_1,5,MAFs
+14,MAF_211_1,5,MAFs
+14,F5_lag8,6,PCA factors
+14,F1_lag5,6,PCA factors
+14,series_047_lag2,7,Raw indicators
+14,MAF_117_1,8,MAFs
+14,MAF_096_2,9,MAFs
+14,series_140_lag2,10,Raw indicators
+15,y_lag8,1,Target lags
+15,MAF_100_1,2,MAFs
+15,series_024_lag1,3,Raw indicators
+15,series_028_lag1,3,Raw indicators
+15,MAF_213_2,2,MAFs
+15,MAF_067_2,3,MAFs
+15,MAF_178_1,3,MAFs
+15,MAF_031_2,4,MAFs
+15,series_098_lag1,5,Raw indicators
+15,series_207_lag1,6,Raw indicators
+15,F3_lag8,6,PCA factors
+15,series_065_lag2,7,Raw indicators
+15,series_016_lag2,7,Raw indicators
+15,series_216_lag2,8,Raw indicators
+15,MAF_239_2,8,MAFs
+16,MAF_169_2,1,MAFs
+16,series_210_lag1,2,Raw indicators
+16,MAF_234_2,2,MAFs
+16,series_057_lag1,3,Raw indicators
+16,series_244_lag1,3,Raw indicators
+16,series_200_lag2,3,Raw indicators
+16,MAF_191_2,4,MAFs
+16,MAF_228_2,4,MAFs
+16,MAF_218_1,4,MAFs
+16,y_lag4,5,Target lags
+16,MAF_226_1,5,MAFs
+16,MAF_005_2,6,MAFs
+16,MAF_143_1,7,MAFs
+16,MAF_003_2,8,MAFs
+16,MAF_155_1,8,MAFs
+16,MAF_206_2,9,MAFs
+17,MAF_199_2,1,MAFs
+17,series_173_lag2,2,Raw indicators
+17,series_207_lag1,2,Raw indicators
+17,series_226_lag1,3,Raw indicators
+17,series_090_lag1,4,Raw indicators
+17,series_220_lag2,4,Raw indicators
+17,MAF_236_1,3,MAFs
+17,series_057_lag2,4,Raw indicators
+17,MAF_215_2,4,MAFs
+17,MAF_015_1,5,MAFs
+17,series_075_lag2,6,Raw indicators
+17,MAF_125_1,7,MAFs
+17,MAF_046_2,7,MAFs
+17,MAF_245_2,8,MAFs
+18,series_073_lag1,1,Raw indicators
+18,series_048_lag2,2,Raw indicators
+18,MAF_211_2,2,MAFs
+18,MAF_200_1,3,MAFs
+18,F5_lag5,3,PCA factors
+18,series_118_lag1,4,Raw indicators
+18,series_047_lag2,4,Raw indicators
+18,series_145_lag2,4,Raw indicators
+18,MAF_124_1,5,MAFs
+18,MAF_129_1,5,MAFs
+18,series_064_lag2,6,Raw indicators
+18,MAF_118_1,6,MAFs
+18,MAF_078_1,6,MAFs
+18,MAF_091_1,7,MAFs
+18,MAF_107_2,8,MAFs
+19,MAF_062_2,1,MAFs
+19,MAF_066_2,2,MAFs
+19,MAF_107_1,3,MAFs
+19,MAF_189_2,3,MAFs
+19,series_100_lag2,4,Raw indicators
+19,MAF_109_1,5,MAFs
+19,MAF_170_2,6,MAFs
+19,series_066_lag2,6,Raw indicators
+19,series_009_lag1,5,Raw indicators
+19,series_134_lag2,6,Raw indicators
+19,MAF_115_1,6,MAFs
+19,series_235_lag1,7,Raw indicators
+19,series_224_lag2,8,Raw indicators
+19,series_111_lag1,8,Raw indicators
+19,MAF_186_1,9,MAFs
+20,series_075_lag1,1,Raw indicators
+20,series_029_lag1,2,Raw indicators
+20,MAF_090_1,2,MAFs
+20,series_188_lag2,3,Raw indicators
+20,series_016_lag1,3,Raw indicators
+20,series_244_lag2,3,Raw indicators
+20,series_039_lag1,4,Raw indicators
+20,F3_lag7,4,PCA factors
+20,MAF_198_2,5,MAFs
+20,series_030_lag1,5,Raw indicators
+20,series_048_lag2,5,Raw indicators
+20,series_026_lag2,6,Raw indicators
+20,series_093_lag2,6,Raw indicators
+20,series_174_lag1,7,Raw indicators
+20,MAF_129_2,8,MAFs
+21,series_216_lag2,1,Raw indicators
+21,F5_lag1,2,PCA factors
+21,series_187_lag1,2,Raw indicators
+21,MAF_115_1,3,MAFs
+21,series_230_lag1,3,Raw indicators
+21,series_012_lag2,4,Raw indicators
+21,series_207_lag2,4,Raw indicators
+21,MAF_110_1,3,MAFs
+21,series_125_lag2,4,Raw indicators
+21,MAF_130_1,4,MAFs
+21,MAF_217_2,4,MAFs
+21,series_181_lag1,5,Raw indicators
+21,MAF_240_1,5,MAFs
+21,MAF_010_1,5,MAFs
+21,series_157_lag1,6,Raw indicators
+22,series_073_lag1,1,Raw indicators
+22,series_096_lag1,2,Raw indicators
+22,MAF_140_2,2,MAFs
+22,MAF_064_1,3,MAFs
+22,series_232_lag1,3,Raw indicators
+22,F5_lag6,4,PCA factors
+22,series_170_lag2,3,Raw indicators
+22,series_133_lag1,4,Raw indicators
+22,series_147_lag2,5,Raw indicators
+22,MAF_016_1,4,MAFs
+22,series_109_lag2,5,Raw indicators
+22,y_lag8,5,Target lags
+22,series_129_lag1,5,Raw indicators
+22,MAF_097_2,6,MAFs
+22,MAF_212_2,6,MAFs
+22,series_013_lag2,6,Raw indicators
+23,y_lag8,1,Target lags
+23,MAF_145_2,2,MAFs
+23,series_083_lag1,2,Raw indicators
+23,MAF_208_1,3,MAFs
+23,MAF_171_1,3,MAFs
+23,series_100_lag2,3,Raw indicators
+23,series_121_lag1,4,Raw indicators
+23,MAF_000_2,4,MAFs
+23,series_116_lag2,5,Raw indicators
+23,MAF_236_2,5,MAFs
+23,series_102_lag2,6,Raw indicators
+23,F5_lag8,6,PCA factors
+23,series_214_lag2,7,Raw indicators
+23,series_216_lag2,7,Raw indicators
+23,MAF_207_1,8,MAFs
+24,MAF_150_2,1,MAFs
+24,MAF_212_2,2,MAFs
+24,series_219_lag2,2,Raw indicators
+24,MAF_230_2,3,MAFs
+24,MAF_216_1,3,MAFs
+24,MAF_100_1,4,MAFs
+24,series_131_lag1,5,Raw indicators
+24,MAF_098_1,5,MAFs
+24,series_042_lag2,4,Raw indicators
+24,MAF_118_2,5,MAFs
+24,series_212_lag2,5,Raw indicators
+24,series_190_lag2,6,Raw indicators
+24,F1_lag8,6,PCA factors
+24,MAF_210_2,7,MAFs
+24,series_245_lag2,7,Raw indicators
+24,MAF_124_2,7,MAFs
+25,y_lag8,1,Target lags
+25,MAF_054_2,2,MAFs
+25,series_041_lag1,2,Raw indicators
+25,series_183_lag2,3,Raw indicators
+25,MAF_064_1,3,MAFs
+25,series_141_lag2,3,Raw indicators
+25,MAF_029_2,4,MAFs
+25,MAF_107_1,4,MAFs
+25,MAF_132_2,4,MAFs
+25,MAF_027_2,5,MAFs
+25,series_105_lag1,6,Raw indicators
+25,MAF_226_1,5,MAFs
+25,series_229_lag1,6,Raw indicators
+25,series_061_lag1,6,Raw indicators
+25,series_181_lag1,7,Raw indicators
+25,series_047_lag2,8,Raw indicators
+25,series_108_lag1,8,Raw indicators
+26,MAF_066_2,1,MAFs
+26,series_202_lag2,2,Raw indicators
+26,MAF_098_2,3,MAFs
+26,MAF_214_1,4,MAFs
+26,MAF_127_1,4,MAFs
+26,F5_lag5,5,PCA factors
+26,MAF_141_2,5,MAFs
+26,series_063_lag1,6,Raw indicators
+26,MAF_090_2,7,MAFs
+26,MAF_069_1,8,MAFs
+26,MAF_166_2,8,MAFs
+26,MAF_211_1,7,MAFs
+26,MAF_028_2,8,MAFs
+26,series_029_lag1,8,Raw indicators
+27,series_074_lag1,1,Raw indicators
+27,series_035_lag2,2,Raw indicators
+27,series_075_lag1,2,Raw indicators
+27,series_063_lag2,3,Raw indicators
+27,MAF_238_2,3,MAFs
+27,series_072_lag1,4,Raw indicators
+27,series_091_lag1,4,Raw indicators
+27,series_127_lag2,5,Raw indicators
+27,series_237_lag1,6,Raw indicators
+27,series_184_lag2,6,Raw indicators
+27,series_044_lag2,7,Raw indicators
+27,series_082_lag1,7,Raw indicators
+27,series_020_lag2,7,Raw indicators
+27,MAF_231_1,8,MAFs
+27,MAF_222_1,8,MAFs
+28,MAF_150_2,1,MAFs
+28,MAF_088_2,2,MAFs
+28,MAF_240_2,2,MAFs
+28,MAF_030_1,3,MAFs
+28,MAF_154_2,3,MAFs
+28,series_180_lag2,4,Raw indicators
+28,series_220_lag2,5,Raw indicators
+28,series_196_lag1,6,Raw indicators
+28,series_088_lag1,7,Raw indicators
+28,MAF_223_2,6,MAFs
+28,MAF_134_2,7,MAFs
+28,MAF_214_2,7,MAFs
+28,MAF_033_1,8,MAFs
+28,series_167_lag1,8,Raw indicators
+28,MAF_127_2,9,MAFs
+29,series_073_lag1,1,Raw indicators
+29,series_197_lag2,2,Raw indicators
+29,MAF_172_2,2,MAFs
+29,MAF_243_1,3,MAFs
+29,series_160_lag1,3,Raw indicators
+29,MAF_081_2,4,MAFs
+29,MAF_235_2,4,MAFs
+29,MAF_243_2,5,MAFs
+29,MAF_059_1,5,MAFs
+29,MAF_194_1,6,MAFs
+29,MAF_169_2,6,MAFs
+29,F2_lag5,6,PCA factors
+29,series_030_lag2,7,Raw indicators
+29,F4_lag8,7,PCA factors
+29,F4_lag7,7,PCA factors
+29,series_175_lag1,8,Raw indicators
+30,series_039_lag1,1,Raw indicators
+30,series_097_lag2,2,Raw indicators
+30,MAF_100_1,2,MAFs
+30,series_063_lag1,3,Raw indicators
+30,MAF_147_1,3,MAFs
+30,series_230_lag1,4,Raw indicators
+30,MAF_115_2,5,MAFs
+30,MAF_099_1,5,MAFs
+30,y_lag1,6,Target lags
+30,F2_lag4,7,PCA factors
+30,series_023_lag1,7,Raw indicators
+30,series_147_lag2,8,Raw indicators
+30,series_192_lag2,8,Raw indicators
+30,series_231_lag2,9,Raw indicators
+30,series_047_lag2,9,Raw indicators
+31,MAF_169_2,1,MAFs
+31,series_077_lag2,2,Raw indicators
+31,y_lag8,2,Target lags
+31,series_133_lag2,3,Raw indicators
+31,MAF_145_1,3,MAFs
+31,MAF_030_2,4,MAFs
+31,series_069_lag1,4,Raw indicators
+31,MAF_237_2,5,MAFs
+31,series_026_lag1,5,Raw indicators
+31,series_057_lag1,6,Raw indicators
+31,MAF_175_1,6,MAFs
+31,F3_lag7,7,PCA factors
+31,MAF_064_1,8,MAFs
+31,series_048_lag2,8,Raw indicators
+31,series_117_lag1,9,Raw indicators
+32,series_028_lag2,1,Raw indicators
+32,series_042_lag2,2,Raw indicators
+32,series_035_lag1,2,Raw indicators
+32,series_231_lag2,3,Raw indicators
+32,series_226_lag1,3,Raw indicators
+32,series_162_lag1,4,Raw indicators
+32,MAF_206_1,4,MAFs
+32,series_139_lag1,4,Raw indicators
+32,series_018_lag2,5,Raw indicators
+32,series_048_lag2,5,Raw indicators
+32,series_115_lag2,6,Raw indicators
+32,MAF_156_1,6,MAFs
+32,series_169_lag2,7,Raw indicators
+32,MAF_043_1,7,MAFs
+32,MAF_234_2,7,MAFs
+33,series_022_lag1,1,Raw indicators
+33,MAF_096_1,2,MAFs
+33,series_075_lag1,3,Raw indicators
+33,series_140_lag1,3,Raw indicators
+33,series_065_lag1,4,Raw indicators
+33,series_094_lag2,5,Raw indicators
+33,MAF_022_1,5,MAFs
+33,series_077_lag1,6,Raw indicators
+33,F1_lag8,6,PCA factors
+33,MAF_224_2,7,MAFs
+33,MAF_236_2,7,MAFs
+33,MAF_003_1,8,MAFs
+33,MAF_099_1,8,MAFs
+33,F2_lag4,9,PCA factors
+33,MAF_176_2,10,MAFs
+34,series_039_lag1,1,Raw indicators
+34,series_076_lag1,2,Raw indicators
+34,MAF_184_1,2,MAFs
+34,MAF_214_1,3,MAFs
+34,MAF_100_1,3,MAFs
+34,series_063_lag1,4,Raw indicators
+34,series_169_lag2,4,Raw indicators
+34,MAF_013_1,4,MAFs
+34,MAF_068_2,5,MAFs
+34,series_106_lag1,6,Raw indicators
+34,series_098_lag2,7,Raw indicators
+34,series_242_lag2,7,Raw indicators
+34,MAF_190_1,8,MAFs
+34,series_004_lag1,8,Raw indicators
+34,series_210_lag2,9,Raw indicators
+35,series_030_lag1,1,Raw indicators
+35,series_017_lag1,2,Raw indicators
+35,MAF_140_2,2,MAFs
+35,series_236_lag2,3,Raw indicators
+35,series_097_lag1,4,Raw indicators
+35,series_106_lag2,3,Raw indicators
+35,MAF_224_1,4,MAFs
+35,MAF_203_1,5,MAFs
+35,MAF_148_2,5,MAFs
+35,series_175_lag2,4,Raw indicators
+35,MAF_238_1,5,MAFs
+35,series_051_lag2,5,Raw indicators
+35,MAF_064_2,6,MAFs
+35,MAF_239_2,6,MAFs
+35,series_169_lag1,7,Raw indicators
+36,y_lag8,1,Target lags
+36,series_022_lag2,2,Raw indicators
+36,series_041_lag1,2,Raw indicators
+36,series_072_lag1,3,Raw indicators
+36,MAF_236_2,3,MAFs
+36,MAF_079_1,3,MAFs
+36,MAF_086_2,4,MAFs
+36,MAF_096_2,4,MAFs
+36,series_061_lag2,4,Raw indicators
+36,F5_lag8,5,PCA factors
+36,series_174_lag2,5,Raw indicators
+36,MAF_031_2,6,MAFs
+36,series_088_lag2,7,Raw indicators
+36,MAF_206_2,8,MAFs
+36,MAF_110_1,9,MAFs
+37,series_039_lag1,1,Raw indicators
+37,series_237_lag1,2,Raw indicators
+37,series_045_lag1,2,Raw indicators
+37,series_048_lag2,3,Raw indicators
+37,series_065_lag1,3,Raw indicators
+37,MAF_134_2,4,MAFs
+37,MAF_116_2,4,MAFs
+37,series_090_lag2,5,Raw indicators
+37,MAF_223_2,5,MAFs
+37,MAF_094_1,5,MAFs
+37,MAF_045_2,6,MAFs
+37,series_081_lag2,6,Raw indicators
+37,series_206_lag2,7,Raw indicators
+37,MAF_221_1,7,MAFs
+37,series_211_lag2,8,Raw indicators
+38,series_039_lag1,1,Raw indicators
+38,series_067_lag1,2,Raw indicators
+38,series_213_lag2,2,Raw indicators
+38,MAF_147_1,3,MAFs
+38,series_073_lag2,4,Raw indicators
+38,series_122_lag1,4,Raw indicators
+38,series_003_lag1,3,Raw indicators
+38,MAF_226_2,4,MAFs
+38,MAF_094_2,4,MAFs
+38,series_065_lag2,5,Raw indicators
+38,series_222_lag2,6,Raw indicators
+38,series_102_lag1,6,Raw indicators
+38,series_227_lag1,7,Raw indicators
+38,MAF_220_1,8,MAFs
+39,MAF_125_2,1,MAFs
+39,series_016_lag2,2,Raw indicators
+39,MAF_174_2,2,MAFs
+39,MAF_065_2,3,MAFs
+39,MAF_187_2,3,MAFs
+39,MAF_177_2,4,MAFs
+39,MAF_017_2,4,MAFs
+39,MAF_151_1,5,MAFs
+39,series_166_lag1,5,Raw indicators
+39,series_115_lag1,6,Raw indicators
+39,MAF_097_1,6,MAFs
+39,MAF_132_2,7,MAFs
+40,series_169_lag1,1,Raw indicators
+40,series_227_lag1,2,Raw indicators
+40,series_182_lag1,2,Raw indicators
+40,F5_lag2,3,PCA factors
+40,MAF_140_2,3,MAFs
+40,series_014_lag1,3,Raw indicators
+40,MAF_027_1,4,MAFs
+40,MAF_228_2,4,MAFs
+40,MAF_072_1,4,MAFs
+40,series_216_lag2,5,Raw indicators
+40,MAF_112_1,5,MAFs
+40,MAF_207_1,5,MAFs
+40,series_057_lag2,6,Raw indicators
+41,MAF_110_1,1,MAFs
+41,MAF_158_2,2,MAFs
+41,series_120_lag2,3,Raw indicators
+41,series_193_lag2,2,Raw indicators
+41,series_061_lag2,3,Raw indicators
+41,MAF_234_2,3,MAFs
+41,series_174_lag2,4,Raw indicators
+41,MAF_203_2,4,MAFs
+41,series_047_lag1,5,Raw indicators
+41,MAF_119_2,5,MAFs
+41,F5_lag2,6,PCA factors
+41,series_197_lag2,6,Raw indicators
+41,MAF_137_2,7,MAFs
+41,MAF_122_1,7,MAFs
+42,MAF_041_2,1,MAFs
+42,series_172_lag1,2,Raw indicators
+42,series_216_lag2,3,Raw indicators
+42,series_246_lag2,3,Raw indicators
+42,series_192_lag2,4,Raw indicators
+42,F3_lag7,4,PCA factors
+42,series_012_lag1,5,Raw indicators
+42,series_095_lag1,5,Raw indicators
+42,MAF_140_2,6,MAFs
+42,series_203_lag1,6,Raw indicators
+42,F1_lag4,6,PCA factors
+42,series_223_lag1,7,Raw indicators
+42,MAF_241_2,8,MAFs
+42,series_110_lag1,9,Raw indicators
+42,MAF_098_2,9,MAFs
+43,series_219_lag2,1,Raw indicators
+43,series_222_lag2,2,Raw indicators
+43,series_223_lag1,2,Raw indicators
+43,series_063_lag2,3,Raw indicators
+43,series_024_lag2,3,Raw indicators
+43,series_215_lag2,4,Raw indicators
+43,MAF_101_2,4,MAFs
+43,series_195_lag2,4,Raw indicators
+43,series_130_lag1,5,Raw indicators
+43,F3_lag7,5,PCA factors
+43,series_233_lag1,6,Raw indicators
+43,MAF_187_2,6,MAFs
+43,series_018_lag2,6,Raw indicators
+43,MAF_158_1,7,MAFs
+43,series_123_lag1,7,Raw indicators
+44,y_lag8,1,Target lags
+44,series_215_lag1,2,Raw indicators
+44,series_192_lag1,3,Raw indicators
+44,MAF_213_2,2,MAFs
+44,MAF_127_1,3,MAFs
+44,MAF_127_2,3,MAFs
+44,MAF_014_1,3,MAFs
+44,MAF_000_1,4,MAFs
+44,series_225_lag1,4,Raw indicators
+44,series_138_lag1,4,Raw indicators
+44,MAF_145_1,5,MAFs
+44,MAF_240_1,5,MAFs
+44,MAF_115_2,5,MAFs
+44,series_040_lag1,6,Raw indicators
+44,MAF_212_2,7,MAFs
+45,MAF_207_1,1,MAFs
+45,series_110_lag1,2,Raw indicators
+45,series_016_lag1,2,Raw indicators
+45,series_234_lag2,3,Raw indicators
+45,MAF_008_2,3,MAFs
+45,MAF_211_2,4,MAFs
+45,series_022_lag2,4,Raw indicators
+45,series_201_lag1,3,Raw indicators
+45,series_065_lag2,4,Raw indicators
+45,MAF_182_2,4,MAFs
+45,MAF_224_2,5,MAFs
+45,MAF_198_2,6,MAFs
+45,MAF_011_2,6,MAFs
+45,series_176_lag1,7,Raw indicators
+46,series_009_lag1,1,Raw indicators
+46,F1_lag1,2,PCA factors
+46,series_244_lag2,3,Raw indicators
+46,MAF_181_1,3,MAFs
+46,series_161_lag2,4,Raw indicators
+46,F4_lag5,4,PCA factors
+46,MAF_034_1,5,MAFs
+46,MAF_122_2,5,MAFs
+46,MAF_083_2,6,MAFs
+46,series_165_lag1,6,Raw indicators
+46,series_205_lag2,7,Raw indicators
+46,MAF_001_2,7,MAFs
+46,MAF_110_2,8,MAFs
+46,MAF_154_2,8,MAFs
+46,series_118_lag1,8,Raw indicators
+46,MAF_002_2,9,MAFs
+46,series_040_lag1,10,Raw indicators
+47,series_075_lag1,1,Raw indicators
+47,series_083_lag2,2,Raw indicators
+47,series_061_lag1,2,Raw indicators
+47,series_138_lag1,3,Raw indicators
+47,series_010_lag2,3,Raw indicators
+47,MAF_059_2,3,MAFs
+47,series_163_lag2,4,Raw indicators
+47,series_011_lag2,5,Raw indicators
+47,MAF_210_1,6,MAFs
+47,MAF_145_1,6,MAFs
+47,MAF_161_2,7,MAFs
+47,MAF_083_1,7,MAFs
+47,F1_lag6,7,PCA factors
+47,MAF_115_2,8,MAFs
+48,MAF_169_2,1,MAFs
+48,series_077_lag2,2,Raw indicators
+48,series_183_lag2,2,Raw indicators
+48,series_048_lag2,3,Raw indicators
+48,MAF_194_2,4,MAFs
+48,MAF_237_2,5,MAFs
+48,series_002_lag2,5,Raw indicators
+48,MAF_088_2,6,MAFs
+48,MAF_017_1,6,MAFs
+48,series_059_lag2,7,Raw indicators
+48,series_135_lag2,8,Raw indicators
+48,MAF_063_1,8,MAFs
+48,MAF_016_2,9,MAFs
+49,series_073_lag1,1,Raw indicators
+49,series_048_lag2,2,Raw indicators
+49,series_107_lag2,2,Raw indicators
+49,F5_lag5,3,PCA factors
+49,series_069_lag1,4,Raw indicators
+49,F2_lag4,5,PCA factors
+49,series_213_lag1,6,Raw indicators
+49,MAF_173_1,7,MAFs
+49,series_187_lag2,7,Raw indicators
+49,series_098_lag1,6,Raw indicators
+49,MAF_096_2,7,MAFs
+49,MAF_089_2,7,MAFs
+49,series_199_lag1,8,Raw indicators
+50,y_lag8,1,Target lags
+50,MAF_140_2,2,MAFs
+50,series_019_lag2,2,Raw indicators
+50,MAF_072_2,3,MAFs
+50,series_069_lag2,3,Raw indicators
+50,series_045_lag1,3,Raw indicators
+50,series_233_lag2,4,Raw indicators
+50,series_207_lag2,4,Raw indicators
+50,MAF_031_2,4,MAFs
+50,F4_lag6,5,PCA factors
+50,series_013_lag2,5,Raw indicators
+50,series_218_lag2,6,Raw indicators
+50,MAF_002_2,6,MAFs
+50,MAF_063_2,7,MAFs
+51,MAF_155_1,1,MAFs
+51,series_216_lag2,2,Raw indicators
+51,series_153_lag2,3,Raw indicators
+51,MAF_242_2,3,MAFs
+51,MAF_032_1,4,MAFs
+51,MAF_098_2,4,MAFs
+51,series_109_lag2,5,Raw indicators
+51,series_169_lag2,4,Raw indicators
+51,MAF_020_1,5,MAFs
+51,MAF_093_2,5,MAFs
+51,MAF_007_1,5,MAFs
+51,series_174_lag2,6,Raw indicators
+51,MAF_023_2,6,MAFs
+51,series_146_lag1,6,Raw indicators
+51,y_lag4,7,Target lags
+51,MAF_138_1,7,MAFs
+52,MAF_169_2,1,MAFs
+52,series_083_lag1,2,Raw indicators
+52,series_192_lag2,2,Raw indicators
+52,series_241_lag1,3,Raw indicators
+52,series_089_lag2,3,Raw indicators
+52,MAF_144_1,3,MAFs
+52,MAF_100_1,4,MAFs
+52,MAF_120_1,4,MAFs
+52,MAF_026_1,5,MAFs
+52,MAF_212_1,5,MAFs
+52,series_082_lag2,6,Raw indicators
+52,series_231_lag1,6,Raw indicators
+52,MAF_133_2,7,MAFs
+52,series_244_lag1,7,Raw indicators
+53,series_202_lag2,1,Raw indicators
+53,series_166_lag2,2,Raw indicators
+53,F1_lag4,3,PCA factors
+53,MAF_227_2,3,MAFs
+53,series_230_lag1,4,Raw indicators
+53,F5_lag5,5,PCA factors
+53,MAF_194_2,5,MAFs
+53,MAF_146_2,6,MAFs
+53,series_073_lag1,6,Raw indicators
+53,series_081_lag1,7,Raw indicators
+53,y_lag2,8,Target lags
+53,MAF_150_2,8,MAFs
+53,MAF_014_1,9,MAFs
+53,series_059_lag1,9,Raw indicators
+53,series_110_lag2,10,Raw indicators
+54,y_lag8,1,Target lags
+54,MAF_192_1,2,MAFs
+54,series_233_lag2,2,Raw indicators
+54,series_184_lag2,3,Raw indicators
+54,series_118_lag2,3,Raw indicators
+54,series_192_lag1,3,Raw indicators
+54,series_050_lag2,4,Raw indicators
+54,series_082_lag1,4,Raw indicators
+54,MAF_052_1,4,MAFs
+54,MAF_009_2,5,MAFs
+54,MAF_090_2,5,MAFs
+54,MAF_014_1,5,MAFs
+54,series_214_lag2,6,Raw indicators
+54,MAF_226_1,6,MAFs
+54,series_071_lag2,7,Raw indicators
+55,series_172_lag1,1,Raw indicators
+55,MAF_151_1,2,MAFs
+55,MAF_115_2,2,MAFs
+55,series_045_lag1,3,Raw indicators
+55,series_078_lag2,3,Raw indicators
+55,series_188_lag2,3,Raw indicators
+55,MAF_132_1,4,MAFs
+55,series_133_lag1,4,Raw indicators
+55,MAF_062_2,4,MAFs
+55,MAF_093_2,5,MAFs
+55,MAF_043_1,5,MAFs
+55,MAF_172_2,5,MAFs
+55,series_025_lag1,6,Raw indicators
+55,MAF_008_2,6,MAFs
+55,series_057_lag1,6,Raw indicators
+56,MAF_191_1,1,MAFs
+56,series_169_lag2,2,Raw indicators
+56,series_161_lag1,3,Raw indicators
+56,MAF_184_2,3,MAFs
+56,MAF_212_1,2,MAFs
+56,series_023_lag1,3,Raw indicators
+56,MAF_153_1,4,MAFs
+56,MAF_052_2,4,MAFs
+56,series_109_lag2,3,Raw indicators
+56,MAF_214_2,4,MAFs
+56,series_022_lag1,4,Raw indicators
+56,series_041_lag2,4,Raw indicators
+56,series_064_lag1,5,Raw indicators
+56,series_002_lag2,5,Raw indicators
+56,series_073_lag1,6,Raw indicators
+56,series_130_lag1,6,Raw indicators
+57,MAF_155_1,1,MAFs
+57,series_180_lag1,2,Raw indicators
+57,series_230_lag1,3,Raw indicators
+57,F5_lag5,4,PCA factors
+57,series_003_lag2,4,Raw indicators
+57,MAF_146_1,5,MAFs
+57,MAF_006_2,6,MAFs
+57,series_218_lag2,7,Raw indicators
+57,series_005_lag1,7,Raw indicators
+57,F4_lag8,8,PCA factors
+57,series_127_lag2,8,Raw indicators
+57,MAF_103_1,9,MAFs
+57,MAF_175_2,10,MAFs
+57,series_135_lag1,10,Raw indicators
+57,series_232_lag1,11,Raw indicators
+57,series_054_lag1,11,Raw indicators
+58,MAF_156_2,1,MAFs
+58,MAF_204_1,2,MAFs
+58,F4_lag5,3,PCA factors
+58,series_149_lag2,3,Raw indicators
+58,series_158_lag1,4,Raw indicators
+58,series_116_lag2,5,Raw indicators
+58,series_071_lag1,5,Raw indicators
+58,MAF_240_2,6,MAFs
+58,series_163_lag1,6,Raw indicators
+58,series_068_lag2,7,Raw indicators
+58,MAF_013_1,7,MAFs
+58,series_072_lag2,8,Raw indicators
+58,MAF_077_1,8,MAFs
+58,series_006_lag2,8,Raw indicators
+58,series_155_lag2,9,Raw indicators
+59,y_lag8,1,Target lags
+59,MAF_169_2,2,MAFs
+59,series_000_lag2,2,Raw indicators
+59,series_062_lag1,3,Raw indicators
+59,series_104_lag1,3,Raw indicators
+59,series_236_lag2,3,Raw indicators
+59,MAF_044_1,4,MAFs
+59,MAF_246_2,4,MAFs
+59,MAF_104_1,5,MAFs
+59,series_079_lag2,5,Raw indicators
+59,series_094_lag2,6,Raw indicators
+59,series_198_lag1,6,Raw indicators
+59,series_114_lag2,7,Raw indicators
+59,series_167_lag1,7,Raw indicators
+60,series_119_lag1,1,Raw indicators
+60,series_098_lag2,2,Raw indicators
+60,MAF_109_1,2,MAFs
+60,series_073_lag1,3,Raw indicators
+60,series_184_lag2,4,Raw indicators
+60,series_062_lag2,4,Raw indicators
+60,MAF_069_2,5,MAFs
+60,MAF_171_1,5,MAFs
+60,series_243_lag2,6,Raw indicators
+60,series_056_lag2,6,Raw indicators
+60,MAF_079_1,6,MAFs
+60,MAF_141_2,7,MAFs
+60,series_195_lag2,7,Raw indicators
+60,MAF_013_1,8,MAFs
+60,series_243_lag1,9,Raw indicators
+61,series_038_lag1,1,Raw indicators
+61,series_189_lag1,2,Raw indicators
+61,MAF_095_2,3,MAFs
+61,y_lag2,4,Target lags
+61,series_007_lag2,3,Raw indicators
+61,MAF_233_1,4,MAFs
+61,series_239_lag1,5,Raw indicators
+61,series_106_lag1,5,Raw indicators
+61,series_027_lag2,4,Raw indicators
+61,series_069_lag2,5,Raw indicators
+61,MAF_116_2,5,MAFs
+61,series_074_lag2,6,Raw indicators
+61,MAF_048_2,6,MAFs
+61,F4_lag2,6,PCA factors
+61,series_154_lag2,6,Raw indicators
+61,series_008_lag1,7,Raw indicators
+61,series_005_lag1,7,Raw indicators
+61,series_202_lag2,8,Raw indicators
+62,MAF_143_1,1,MAFs
+62,series_006_lag2,2,Raw indicators
+62,series_096_lag2,2,Raw indicators
+62,series_189_lag2,3,Raw indicators
+62,series_015_lag1,3,Raw indicators
+62,series_213_lag1,4,Raw indicators
+62,series_007_lag2,4,Raw indicators
+62,series_158_lag1,5,Raw indicators
+62,MAF_064_1,5,MAFs
+62,MAF_066_2,6,MAFs
+62,series_149_lag2,6,Raw indicators
+62,series_049_lag1,7,Raw indicators
+62,MAF_239_2,7,MAFs
+63,y_lag8,1,Target lags
+63,F4_lag1,2,PCA factors
+63,series_217_lag2,3,Raw indicators
+63,MAF_224_2,2,MAFs
+63,MAF_174_2,3,MAFs
+63,MAF_086_2,3,MAFs
+63,series_152_lag1,4,Raw indicators
+63,MAF_194_1,3,MAFs
+63,MAF_150_1,4,MAFs
+63,series_150_lag1,4,Raw indicators
+63,MAF_002_2,4,MAFs
+63,series_011_lag2,5,Raw indicators
+63,series_076_lag1,6,Raw indicators
+63,MAF_245_2,7,MAFs
+63,series_154_lag1,7,Raw indicators
+64,y_lag8,1,Target lags
+64,MAF_004_2,2,MAFs
+64,MAF_089_2,3,MAFs
+64,series_228_lag2,3,Raw indicators
+64,MAF_077_1,2,MAFs
+64,series_014_lag2,3,Raw indicators
+64,series_028_lag1,3,Raw indicators
+64,series_230_lag1,4,Raw indicators
+64,MAF_219_2,5,MAFs
+64,MAF_189_2,6,MAFs
+64,MAF_050_2,7,MAFs
+64,series_063_lag1,7,Raw indicators
+64,MAF_216_1,8,MAFs
+64,series_189_lag1,8,Raw indicators
+65,series_166_lag1,1,Raw indicators
+65,MAF_143_1,2,MAFs
+65,series_193_lag1,3,Raw indicators
+65,series_061_lag1,3,Raw indicators
+65,MAF_159_1,4,MAFs
+65,MAF_154_2,4,MAFs
+65,series_077_lag2,5,Raw indicators
+65,series_237_lag2,6,Raw indicators
+65,MAF_143_1,6,MAFs
+65,MAF_101_1,7,MAFs
+65,MAF_094_2,7,MAFs
+65,y_lag1,7,Target lags
+65,MAF_011_1,8,MAFs
+65,series_244_lag2,8,Raw indicators
+65,series_119_lag1,9,Raw indicators
+66,MAF_203_1,1,MAFs
+66,series_199_lag1,2,Raw indicators
+66,series_045_lag1,2,Raw indicators
+66,MAF_170_2,3,MAFs
+66,MAF_052_2,3,MAFs
+66,MAF_013_1,4,MAFs
+66,series_225_lag2,4,Raw indicators
+66,series_074_lag1,4,Raw indicators
+66,MAF_223_2,5,MAFs
+66,series_048_lag2,5,Raw indicators
+66,series_196_lag1,6,Raw indicators
+66,series_128_lag2,6,Raw indicators
+66,series_234_lag1,7,Raw indicators
+66,MAF_043_2,7,MAFs
+66,series_115_lag1,8,Raw indicators
+67,y_lag8,1,Target lags
+67,MAF_235_2,2,MAFs
+67,series_057_lag2,3,Raw indicators
+67,MAF_181_1,3,MAFs
+67,series_035_lag1,2,Raw indicators
+67,MAF_184_2,3,MAFs
+67,series_113_lag1,4,Raw indicators
+67,series_064_lag2,4,Raw indicators
+67,series_238_lag1,3,Raw indicators
+67,MAF_144_1,4,MAFs
+67,series_231_lag1,4,Raw indicators
+67,MAF_212_2,5,MAFs
+67,MAF_055_2,6,MAFs
+67,MAF_176_1,7,MAFs
+68,y_lag8,1,Target lags
+68,MAF_213_2,2,MAFs
+68,MAF_201_2,2,MAFs
+68,series_041_lag1,3,Raw indicators
+68,series_095_lag1,3,Raw indicators
+68,series_125_lag2,3,Raw indicators
+68,MAF_206_2,4,MAFs
+68,MAF_245_1,4,MAFs
+68,series_083_lag2,4,Raw indicators
+68,MAF_062_1,5,MAFs
+68,MAF_218_1,5,MAFs
+68,series_025_lag2,6,Raw indicators
+68,series_087_lag2,6,Raw indicators
+68,MAF_133_2,7,MAFs
+68,MAF_073_2,7,MAFs
+69,series_022_lag1,1,Raw indicators
+69,series_038_lag2,2,Raw indicators
+69,MAF_027_2,3,MAFs
+69,series_063_lag1,3,Raw indicators
+69,MAF_139_1,4,MAFs
+69,MAF_196_2,4,MAFs
+69,MAF_063_1,4,MAFs
+69,MAF_084_1,5,MAFs
+69,MAF_097_2,5,MAFs
+69,series_118_lag2,6,Raw indicators
+69,MAF_094_2,6,MAFs
+69,MAF_002_1,7,MAFs
+69,series_231_lag1,7,Raw indicators
+69,series_169_lag2,7,Raw indicators
+69,series_217_lag1,8,Raw indicators
+69,MAF_089_1,8,MAFs
+70,MAF_028_2,1,MAFs
+70,series_190_lag1,2,Raw indicators
+70,series_019_lag2,2,Raw indicators
+70,series_048_lag1,3,Raw indicators
+70,MAF_089_2,3,MAFs
+70,MAF_014_1,3,MAFs
+70,series_170_lag2,4,Raw indicators
+70,MAF_119_2,4,MAFs
+70,MAF_172_2,4,MAFs
+70,MAF_082_1,5,MAFs
+70,MAF_177_2,5,MAFs
+70,series_099_lag2,5,Raw indicators
+70,MAF_114_1,6,MAFs
+70,series_231_lag2,6,Raw indicators
+70,y_lag2,6,Target lags
+71,MAF_202_1,1,MAFs
+71,MAF_024_1,2,MAFs
+71,MAF_207_2,3,MAFs
+71,MAF_075_2,3,MAFs
+71,series_205_lag2,4,Raw indicators
+71,MAF_068_2,4,MAFs
+71,MAF_098_2,4,MAFs
+71,series_214_lag2,5,Raw indicators
+71,series_022_lag1,5,Raw indicators
+71,MAF_119_2,5,MAFs
+71,series_107_lag1,6,Raw indicators
+71,series_168_lag1,6,Raw indicators
+71,MAF_118_2,6,MAFs
+71,series_053_lag1,7,Raw indicators
+72,series_009_lag1,1,Raw indicators
+72,series_175_lag1,2,Raw indicators
+72,series_184_lag1,3,Raw indicators
+72,MAF_207_2,4,MAFs
+72,series_230_lag1,4,Raw indicators
+72,MAF_114_2,5,MAFs
+72,MAF_137_2,5,MAFs
+72,MAF_079_1,5,MAFs
+72,series_007_lag1,6,Raw indicators
+72,F2_lag4,6,PCA factors
+72,series_179_lag1,7,Raw indicators
+72,series_058_lag2,7,Raw indicators
+72,series_121_lag1,8,Raw indicators
+72,series_235_lag1,8,Raw indicators
+73,series_075_lag1,1,Raw indicators
+73,MAF_107_1,2,MAFs
+73,series_096_lag2,2,Raw indicators
+73,series_057_lag1,3,Raw indicators
+73,series_053_lag1,3,Raw indicators
+73,MAF_186_2,4,MAFs
+73,series_026_lag2,4,Raw indicators
+73,series_075_lag1,5,Raw indicators
+73,series_007_lag1,5,Raw indicators
+73,series_184_lag2,5,Raw indicators
+73,series_123_lag2,6,Raw indicators
+73,series_080_lag1,6,Raw indicators
+73,series_052_lag1,7,Raw indicators
+73,MAF_061_2,7,MAFs
+74,MAF_155_1,1,MAFs
+74,MAF_013_1,2,MAFs
+74,series_158_lag2,3,Raw indicators
+74,MAF_142_1,3,MAFs
+74,series_184_lag1,4,Raw indicators
+74,series_007_lag2,4,Raw indicators
+74,series_124_lag1,5,Raw indicators
+74,series_005_lag2,6,Raw indicators
+74,MAF_130_2,6,MAFs
+74,MAF_073_1,7,MAFs
+74,MAF_199_1,8,MAFs
+74,MAF_100_1,7,MAFs
+74,MAF_114_2,8,MAFs
+74,MAF_225_2,8,MAFs
+74,MAF_231_2,9,MAFs
+74,series_007_lag2,9,Raw indicators
+75,MAF_028_2,1,MAFs
+75,series_029_lag2,2,Raw indicators
+75,F2_lag1,3,PCA factors
+75,series_099_lag2,2,Raw indicators
+75,MAF_243_2,3,MAFs
+75,series_129_lag2,3,Raw indicators
+75,series_074_lag2,3,Raw indicators
+75,MAF_110_1,4,MAFs
+75,MAF_183_1,4,MAFs
+75,series_115_lag2,5,Raw indicators
+75,MAF_029_2,5,MAFs
+75,MAF_132_2,6,MAFs
+75,MAF_145_2,6,MAFs
+75,series_007_lag2,7,Raw indicators
+76,series_073_lag1,1,Raw indicators
+76,series_184_lag2,2,Raw indicators
+76,series_224_lag2,2,Raw indicators
+76,series_012_lag2,3,Raw indicators
+76,series_153_lag1,3,Raw indicators
+76,series_068_lag2,3,Raw indicators
+76,MAF_212_2,4,MAFs
+76,series_027_lag1,4,Raw indicators
+76,MAF_071_1,5,MAFs
+76,series_003_lag2,5,Raw indicators
+76,series_041_lag2,5,Raw indicators
+76,series_243_lag1,6,Raw indicators
+76,MAF_021_1,6,MAFs
+76,MAF_081_1,7,MAFs
+76,MAF_122_1,7,MAFs
+76,MAF_242_1,8,MAFs
+77,series_219_lag2,1,Raw indicators
+77,MAF_165_2,2,MAFs
+77,series_223_lag1,2,Raw indicators
+77,MAF_116_2,3,MAFs
+77,series_186_lag1,4,Raw indicators
+77,series_075_lag2,3,Raw indicators
+77,MAF_106_2,4,MAFs
+77,series_040_lag2,4,Raw indicators
+77,MAF_064_2,4,MAFs
+77,F3_lag2,5,PCA factors
+77,series_059_lag2,5,Raw indicators
+77,y_lag1,6,Target lags
+77,series_187_lag1,7,Raw indicators
+77,MAF_051_1,7,MAFs
+78,MAF_125_2,1,MAFs
+78,series_134_lag1,2,Raw indicators
+78,MAF_136_1,2,MAFs
+78,F5_lag5,3,PCA factors
+78,series_100_lag2,4,Raw indicators
+78,MAF_215_2,4,MAFs
+78,series_144_lag1,5,Raw indicators
+78,MAF_064_2,5,MAFs
+78,MAF_180_2,6,MAFs
+78,y_lag8,6,Target lags
+78,MAF_222_1,7,MAFs
+78,MAF_224_1,7,MAFs
+78,MAF_210_1,8,MAFs
+79,series_026_lag2,1,Raw indicators
+79,series_058_lag2,2,Raw indicators
+79,MAF_012_2,3,MAFs
+79,series_031_lag2,3,Raw indicators
+79,MAF_133_2,4,MAFs
+79,MAF_230_1,4,MAFs
+79,series_129_lag1,4,Raw indicators
+79,series_160_lag2,5,Raw indicators
+79,series_243_lag2,5,Raw indicators
+79,MAF_242_2,5,MAFs
+79,series_099_lag1,6,Raw indicators
+79,series_175_lag2,6,Raw indicators
+79,series_057_lag2,7,Raw indicators
+79,MAF_043_2,8,MAFs
+80,series_075_lag1,1,Raw indicators
+80,series_156_lag1,2,Raw indicators
+80,MAF_025_2,2,MAFs
+80,series_129_lag2,3,Raw indicators
+80,series_068_lag2,3,Raw indicators
+80,MAF_234_2,4,MAFs
+80,series_081_lag2,5,Raw indicators
+80,series_238_lag1,5,Raw indicators
+80,MAF_233_1,4,MAFs
+80,series_003_lag2,5,Raw indicators
+80,MAF_105_1,5,MAFs
+80,MAF_016_1,6,MAFs
+80,series_124_lag2,7,Raw indicators
+80,series_225_lag1,8,Raw indicators
+81,MAF_125_2,1,MAFs
+81,series_035_lag2,2,Raw indicators
+81,series_073_lag1,2,Raw indicators
+81,MAF_236_1,3,MAFs
+81,MAF_047_2,3,MAFs
+81,series_157_lag1,4,Raw indicators
+81,F2_lag4,4,PCA factors
+81,MAF_100_2,5,MAFs
+81,MAF_081_1,6,MAFs
+81,series_078_lag2,6,Raw indicators
+81,MAF_134_1,5,MAFs
+81,series_219_lag2,6,Raw indicators
+81,series_084_lag2,6,Raw indicators
+81,series_237_lag1,7,Raw indicators
+81,series_072_lag2,7,Raw indicators
+82,series_039_lag1,1,Raw indicators
+82,series_067_lag1,2,Raw indicators
+82,series_048_lag2,2,Raw indicators
+82,MAF_005_1,3,MAFs
+82,MAF_145_1,3,MAFs
+82,series_216_lag1,4,Raw indicators
+82,series_078_lag1,4,Raw indicators
+82,series_185_lag2,5,Raw indicators
+82,MAF_212_1,5,MAFs
+82,MAF_044_2,6,MAFs
+82,series_044_lag2,6,Raw indicators
+82,F2_lag6,7,PCA factors
+82,MAF_064_1,7,MAFs
+82,MAF_064_1,7,MAFs
+82,series_135_lag1,8,Raw indicators
+83,MAF_150_2,1,MAFs
+83,MAF_066_2,2,MAFs
+83,MAF_222_1,2,MAFs
+83,MAF_172_2,3,MAFs
+83,MAF_154_2,4,MAFs
+83,F5_lag2,4,PCA factors
+83,MAF_144_1,5,MAFs
+83,series_036_lag2,5,Raw indicators
+83,series_131_lag2,5,Raw indicators
+83,series_006_lag1,6,Raw indicators
+83,F4_lag7,6,PCA factors
+83,MAF_205_2,7,MAFs
+83,series_114_lag1,7,Raw indicators
+83,MAF_125_2,8,MAFs
+83,MAF_086_1,8,MAFs
+83,series_111_lag1,9,Raw indicators
+84,MAF_150_2,1,MAFs
+84,series_189_lag1,2,Raw indicators
+84,series_105_lag1,2,Raw indicators
+84,MAF_030_1,3,MAFs
+84,series_172_lag1,4,Raw indicators
+84,series_214_lag1,4,Raw indicators
+84,series_240_lag1,5,Raw indicators
+84,series_121_lag1,6,Raw indicators
+84,MAF_059_1,5,MAFs
+84,MAF_217_1,6,MAFs
+84,F5_lag7,6,PCA factors
+84,series_150_lag1,7,Raw indicators
+84,series_244_lag1,8,Raw indicators
+85,MAF_028_2,1,MAFs
+85,MAF_066_2,2,MAFs
+85,MAF_086_2,3,MAFs
+85,F3_lag6,3,PCA factors
+85,MAF_213_1,2,MAFs
+85,series_225_lag1,3,Raw indicators
+85,MAF_118_2,3,MAFs
+85,series_228_lag2,4,Raw indicators
+85,series_009_lag2,5,Raw indicators
+85,MAF_068_1,5,MAFs
+85,series_007_lag2,6,Raw indicators
+85,MAF_186_1,6,MAFs
+85,series_120_lag2,7,Raw indicators
+86,y_lag8,1,Target lags
+86,series_209_lag1,2,Raw indicators
+86,MAF_100_1,3,MAFs
+86,y_lag3,2,Target lags
+86,MAF_111_1,3,MAFs
+86,series_073_lag2,3,Raw indicators
+86,MAF_023_2,4,MAFs
+86,MAF_236_1,4,MAFs
+86,F3_lag5,5,PCA factors
+86,series_154_lag2,5,Raw indicators
+86,series_186_lag1,6,Raw indicators
+86,MAF_085_1,7,MAFs
+86,MAF_101_2,7,MAFs
+86,series_146_lag1,8,Raw indicators
+87,series_005_lag1,1,Raw indicators
+87,MAF_204_1,2,MAFs
+87,F4_lag5,2,PCA factors
+87,MAF_232_1,3,MAFs
+87,MAF_131_2,3,MAFs
+87,MAF_222_2,4,MAFs
+87,series_078_lag1,4,Raw indicators
+87,MAF_010_1,5,MAFs
+87,series_073_lag1,5,Raw indicators
+87,F3_lag7,6,PCA factors
+87,MAF_104_2,7,MAFs
+87,MAF_206_2,7,MAFs
+87,series_065_lag2,8,Raw indicators
+87,MAF_183_1,9,MAFs
+87,MAF_204_1,10,MAFs
+88,MAF_169_2,1,MAFs
+88,MAF_132_2,2,MAFs
+88,MAF_166_2,2,MAFs
+88,MAF_191_2,3,MAFs
+88,series_149_lag1,4,Raw indicators
+88,F5_lag4,4,PCA factors
+88,series_190_lag1,3,Raw indicators
+88,MAF_228_2,4,MAFs
+88,MAF_023_1,4,MAFs
+88,series_125_lag1,5,Raw indicators
+88,series_020_lag2,5,Raw indicators
+88,series_042_lag1,5,Raw indicators
+88,MAF_124_1,6,MAFs
+88,MAF_231_2,6,MAFs
+88,MAF_183_1,6,MAFs
+88,series_095_lag2,7,Raw indicators
+89,MAF_150_2,1,MAFs
+89,F3_lag5,2,PCA factors
+89,series_237_lag2,2,Raw indicators
+89,series_006_lag1,3,Raw indicators
+89,y_lag1,3,Target lags
+89,series_099_lag1,4,Raw indicators
+89,series_075_lag2,4,Raw indicators
+89,MAF_027_1,5,MAFs
+89,MAF_068_2,5,MAFs
+89,MAF_125_2,5,MAFs
+89,series_113_lag2,6,Raw indicators
+89,series_120_lag2,6,Raw indicators
+89,series_192_lag2,7,Raw indicators
+89,MAF_070_1,7,MAFs
+90,MAF_028_2,1,MAFs
+90,MAF_068_2,2,MAFs
+90,MAF_237_1,2,MAFs
+90,series_023_lag2,3,Raw indicators
+90,series_081_lag1,3,Raw indicators
+90,MAF_043_1,3,MAFs
+90,MAF_015_2,4,MAFs
+90,series_094_lag2,4,Raw indicators
+90,series_075_lag2,5,Raw indicators
+90,MAF_229_2,5,MAFs
+90,series_175_lag2,6,Raw indicators
+90,series_138_lag2,6,Raw indicators
+90,MAF_226_1,7,MAFs
+90,MAF_107_1,8,MAFs
+90,series_044_lag1,9,Raw indicators
+90,series_113_lag1,10,Raw indicators
+91,series_207_lag2,1,Raw indicators
+91,F4_lag8,2,PCA factors
+91,series_000_lag2,2,Raw indicators
+91,series_016_lag2,3,Raw indicators
+91,MAF_144_2,3,MAFs
+91,MAF_125_2,3,MAFs
+91,series_061_lag1,4,Raw indicators
+91,series_097_lag2,4,Raw indicators
+91,F5_lag5,5,PCA factors
+91,series_002_lag2,5,Raw indicators
+91,series_150_lag1,6,Raw indicators
+91,MAF_092_1,7,MAFs
+91,MAF_199_1,8,MAFs
+91,series_115_lag1,9,Raw indicators
+92,series_075_lag1,1,Raw indicators
+92,MAF_026_2,2,MAFs
+92,MAF_049_2,2,MAFs
+92,MAF_100_1,3,MAFs
+92,series_089_lag2,3,Raw indicators
+92,series_046_lag1,3,Raw indicators
+92,series_106_lag2,4,Raw indicators
+92,MAF_112_2,4,MAFs
+92,MAF_224_2,5,MAFs
+92,F1_lag7,5,PCA factors
+92,MAF_104_1,6,MAFs
+92,series_121_lag2,6,Raw indicators
+92,MAF_017_1,6,MAFs
+92,MAF_138_1,7,MAFs
+92,MAF_128_2,7,MAFs
+92,series_136_lag2,7,Raw indicators
+93,series_039_lag1,1,Raw indicators
+93,series_003_lag1,2,Raw indicators
+93,MAF_055_2,2,MAFs
+93,MAF_236_1,3,MAFs
+93,series_029_lag2,4,Raw indicators
+93,MAF_156_1,4,MAFs
+93,series_162_lag2,5,Raw indicators
+93,MAF_194_2,5,MAFs
+93,MAF_005_2,6,MAFs
+93,MAF_179_2,6,MAFs
+93,MAF_162_1,7,MAFs
+93,series_238_lag1,7,Raw indicators
+93,MAF_140_2,8,MAFs
+93,series_209_lag1,8,Raw indicators
+93,MAF_158_1,9,MAFs
+94,series_216_lag2,1,Raw indicators
+94,MAF_147_2,2,MAFs
+94,series_142_lag2,3,Raw indicators
+94,MAF_244_2,3,MAFs
+94,MAF_125_1,2,MAFs
+94,MAF_038_1,3,MAFs
+94,series_191_lag2,3,Raw indicators
+94,MAF_059_1,4,MAFs
+94,series_007_lag2,4,Raw indicators
+94,series_064_lag2,4,Raw indicators
+94,MAF_194_2,4,MAFs
+94,series_001_lag2,5,Raw indicators
+94,MAF_150_1,6,MAFs
+94,series_092_lag2,7,Raw indicators
+95,series_022_lag1,1,Raw indicators
+95,MAF_018_1,2,MAFs
+95,series_195_lag2,2,Raw indicators
+95,series_098_lag2,3,Raw indicators
+95,MAF_235_2,3,MAFs
+95,F5_lag5,4,PCA factors
+95,MAF_003_2,4,MAFs
+95,MAF_120_1,5,MAFs
+95,MAF_091_1,6,MAFs
+95,MAF_236_2,7,MAFs
+95,series_072_lag1,6,Raw indicators
+95,series_058_lag2,7,Raw indicators
+95,MAF_008_2,7,MAFs
+96,series_075_lag1,1,Raw indicators
+96,series_080_lag2,2,Raw indicators
+96,MAF_138_2,2,MAFs
+96,F5_lag5,3,PCA factors
+96,series_158_lag1,4,Raw indicators
+96,MAF_236_2,4,MAFs
+96,series_205_lag1,5,Raw indicators
+96,series_081_lag1,5,Raw indicators
+96,MAF_175_1,6,MAFs
+96,F3_lag7,6,PCA factors
+96,F3_lag8,7,PCA factors
+96,series_242_lag2,6,Raw indicators
+96,series_196_lag2,7,Raw indicators
+96,MAF_205_2,7,MAFs
+97,y_lag8,1,Target lags
+97,MAF_077_2,2,MAFs
+97,MAF_224_2,2,MAFs
+97,series_246_lag2,3,Raw indicators
+97,MAF_209_2,3,MAFs
+97,MAF_141_2,3,MAFs
+97,F1_lag5,4,PCA factors
+97,F4_lag6,4,PCA factors
+97,MAF_015_2,5,MAFs
+97,MAF_172_2,6,MAFs
+97,series_040_lag2,5,Raw indicators
+97,series_213_lag2,6,Raw indicators
+97,series_052_lag2,6,Raw indicators
+97,series_031_lag2,7,Raw indicators
+98,series_000_lag2,1,Raw indicators
+98,series_116_lag2,2,Raw indicators
+98,MAF_052_1,2,MAFs
+98,MAF_146_1,3,MAFs
+98,series_106_lag1,3,Raw indicators
+98,series_045_lag1,4,Raw indicators
+98,series_045_lag2,4,Raw indicators
+98,series_087_lag1,4,Raw indicators
+98,MAF_233_1,5,MAFs
+98,MAF_145_1,5,MAFs
+98,series_084_lag2,5,Raw indicators
+98,series_120_lag1,6,Raw indicators
+98,series_015_lag2,6,Raw indicators
+98,series_160_lag2,7,Raw indicators
+98,F4_lag2,7,PCA factors
+99,y_lag8,1,Target lags
+99,MAF_088_2,2,MAFs
+99,series_034_lag1,2,Raw indicators
+99,MAF_165_2,3,MAFs
+99,series_184_lag2,4,Raw indicators
+99,MAF_073_2,3,MAFs
+99,MAF_094_2,4,MAFs
+99,MAF_064_2,5,MAFs
+99,MAF_053_2,5,MAFs
+99,MAF_064_2,4,MAFs
+99,MAF_209_1,5,MAFs
+99,series_236_lag2,5,Raw indicators
+99,MAF_132_2,6,MAFs
+100,MAF_150_2,1,MAFs
+100,MAF_245_1,2,MAFs
+100,series_041_lag1,2,Raw indicators
+100,series_200_lag1,3,Raw indicators
+100,series_028_lag2,3,Raw indicators
+100,series_051_lag2,4,Raw indicators
+100,series_219_lag2,5,Raw indicators
+100,F3_lag7,5,PCA factors
+100,MAF_106_2,6,MAFs
+100,MAF_168_1,6,MAFs
+100,series_005_lag1,7,Raw indicators
+100,series_071_lag2,8,Raw indicators

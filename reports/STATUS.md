@@ -1,5 +1,39 @@
 # Project status and initial experiment record
 
+## October 21: factor and preprocessing forensics
+
+The [new investigation](mrf-factor-forensics/index.html) leaves every benchmark
+artifact frozen and fits no alternative forecast forests. At origin 2008Q4,
+F2 is +1.36 training SDs with all-series PCA and -0.80 under sign-aligned
+historical-subset PCA, despite 0.944 training correlation. Keeping future
+extremes gives +2.76, so future screening does not explain that direction
+difference. The explicitly non-causal full-vintage preparation also reverses
+F2 (-0.96), making representation timing another live question.
+
+Independent base R agrees on transformations, outlier masks/thresholds, PCA,
+MAFs and the bounded adaptive-completion calculations. Two all-panel adaptive
+fits reach the source's iteration cap and are marked as such. The storage-only
+2008Q4/seed-101 replay matches every saved forecast and coefficient exactly;
+its crisis-leaf paths, support and contribution accounting verify. These are
+post-hoc mechanism checks, not confirmation that the author used the subset
+or future-informed factors. [Full findings](mrf-factor-forensics/findings.md).
+
+## October 21: September MRF completed; diagnostic report
+
+All 18 qualified September-vintage MRF fits and all 48 forecast targets are
+complete and audited. Fixed FA-AR scores 0.833344 relative to AR(4); the three
+forest seeds score 0.852479/0.828921/0.823770 against the paper's 0.72.
+The joint criterion remains false. Nothing below is silently replaced.
+
+The [31-figure diagnostic report](mrf-september2018-diagnostics/index.html)
+shows training, losses, forecasts, coefficients, contributions, residuals and
+tree/seed diagnostics. A separate first-window instrumented replay must match
+the original saved coefficients and forecasts before plotting its training
+curve. The [interpretation and reproduction note](MRF_SEPTEMBER2018_DIAGNOSTICS.md)
+labels all post-hoc views, the new same-equation OLS control, and why the native
+split-omitted arrays are not clean OOB validation. No test-driven retuning or
+Jev/LLM forecast evaluation has been done.
+
 ## October 20: qualified September-vintage MRF authorized
 
 After the plain-RF check below, the user explicitly authorized a qualified

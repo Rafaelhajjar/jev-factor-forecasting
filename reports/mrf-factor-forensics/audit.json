@@ -1,0 +1,276 @@
+{
+  "status": "preprocessing_and_crisis_routing_audited",
+  "study": {
+    "study": "posthoc_September2018_factor_forensics",
+    "source_run": "runs/mrf-september2018-v1",
+    "target_window": "2007Q1_to_2010Q4",
+    "crisis_origin": "2008Q4",
+    "crisis_target": "2009Q1",
+    "all_six_training_windows_audited": true,
+    "variants": [
+      "baseline_all247_fixed5",
+      "SW125_PCA_only_same_completed_panel",
+      "all247_adaptive_completion_same_five_PCs",
+      "SW125_adaptive_completion_five_PCs",
+      "keep_future_extremes_same_training_representation",
+      "no_outlier_cleaning_refit_all247",
+      "include_last_observed_origin_in_representation_fit",
+      "NONCAUSAL_full_vintage_PCA_on_frozen_training_preparation",
+      "NONCAUSAL_full_vintage_cleaning_completion_and_PCA"
+    ],
+    "alignment_for_comparison": "componentwise_training_sign_and_SD_only_no_test_fitting",
+    "no_variant_forest_fits_or_forecast_loss_selection": true,
+    "noncausal_variants_are_diagnostic_only_not_benchmark_candidates": true,
+    "diagnostic_replay": {
+      "fit_end": "2008Q4",
+      "seed": 101,
+      "trees": 100,
+      "storage_only": true
+    },
+    "original_run_replaced": false,
+    "author_factor_pipeline_recovered": false
+  },
+  "source_hashes": {
+    "manifest.json": "ae1e4bdef47759cd4f5c1376cd31ad075c17859ed2a796dcdfcfb02d85a0837f",
+    "audit.json": "7fb17fb319f87c009c8ca5fce7cf701694ce994014bcdc068ea0b53e6cbde3fb",
+    "predictions.csv": "dc9175948d70d87e5d82b1a36e575a86740f085bcff679d8afae8ae41980afa0",
+    "metrics.csv": "de29293b5c5f9513f2f837af1af409d6b78ffb33a738d3440b62234954ad46e3"
+  },
+  "source_model_code": {
+    "mrf2018.py": "ad62c0726b6baebb0e28e782fa91a53e56cb42bd532745339d655eb6e7435eec",
+    "vintage2018.py": "0038f0b20fff5cb17bf6110d24e30915a27d6c85db9275664743b63f1c557756",
+    "rf2018.py": "55d5ea9c99bd0fa3f16f3d18442e574282833be5ab0128c3cb9b471778f92dae",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "data.py": "b5946ab6c72dcd62aad00f652eef8c921c58ad8da1c251dbb0ae522187dc6038",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "mrf2018_report.py": "e1c2a85ecea6694db98ed2d23aaa8a91d4ac93e41fb9aecd4fd29186cec42bf2"
+  },
+  "diagnostic_code_sha256": "361c244ca9fe3bdf84a400fc38d353aa04767fdefa9f45a3cebcbe9596f765d4",
+  "config_sha256": "c0fb7fd4347ee60532a0d4535c967cf5764396287a4fad824b9a93a3025ed0fc",
+  "official_metadata_archive_sha256": "bf9d33733cef7c473d112fc6db5c96332e17f4e69cc419b6023aa010bbe568a5",
+  "independent_numerical_check": {
+    "all": {
+      "max_sign_aligned_loading_error": 9.43689570931383e-16,
+      "max_score_error": 7.105427357601002e-14,
+      "opposite_sign_components": 4
+    },
+    "SW125": {
+      "max_sign_aligned_loading_error": 1.429412144204889e-15,
+      "max_score_error": 6.039613253960852e-14,
+      "opposite_sign_components": 2
+    },
+    "MAF_max_sign_aligned_loading_error": 6.622480341889059e-14,
+    "transform_max_error": 4.94765117764473e-10,
+    "transform_max_relative_to_max_one_and_value": 4.777482044694816e-15,
+    "transform_missing_masks_equal": true,
+    "outlier_masks_equal": true,
+    "outlier_threshold_max_error": 4.3655745685100555e-11,
+    "R_runtime": "R version 4.6.1 (2026-06-24)",
+    "official_recipe_source": {
+      "source_page": "https://www.stlouisfed.org/research/economists/mccracken/fred-databases",
+      "archive_sha256": "cbb4b5f1e9549e506bf12979643422c3fb6fda108f1a94fd5f998a0536399036",
+      "members_sha256": {
+        "fredfactors.m": "008fda06665ba803432ec77c8b433923849433070a64d7fb6d41d1a428c9ff31",
+        "factors_em.m": "b2985c589a0941534a49d1be7cd03e2253cfcec2a53be17174ca210c8e37136b",
+        "remove_outliers.m": "ae1f097638938cf970c5dfe220bdddc9ca0f0ef310cad980454da13a15d2f7fa"
+      },
+      "source_driver_is_monthly_FRED_MD_not_the_MRF_runner": true,
+      "original_MATLAB_executed": false
+    },
+    "adaptive_all247": {
+      "status": "independent_R_recipe_agrees_not_execution_of_MATLAB",
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "maximum_filled_difference_in_final_std_units": 7.534581946250457e-14,
+      "maximum_standardized_matrix_difference": 7.505107646466058e-14,
+      "rank_path_and_stopping_reason_match": true,
+      "final_PCA": {
+        "same_up_to_component_signs": true,
+        "same_retained_subspace": true,
+        "signs_to_align_R_with_Python": [
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "maximum_loading_difference_after_sign_alignment": 2.914335439641036e-15,
+        "maximum_retained_subspace_projector_difference": 6.574601973952099e-16
+      }
+    },
+    "adaptive_SW125": {
+      "status": "independent_R_recipe_agrees_not_execution_of_MATLAB",
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "maximum_filled_difference_in_final_std_units": 1.923322621587446e-14,
+      "maximum_standardized_matrix_difference": 1.2212453270876722e-14,
+      "rank_path_and_stopping_reason_match": true,
+      "final_PCA": {
+        "same_up_to_component_signs": true,
+        "same_retained_subspace": true,
+        "signs_to_align_R_with_Python": [
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "maximum_loading_difference_after_sign_alignment": 6.050715484207103e-15,
+        "maximum_retained_subspace_projector_difference": 5.689893001203927e-16
+      }
+    }
+  },
+  "crisis_subspace_comparison": {
+    "first_two_degrees": [
+      49.767942784995014,
+      45.25433875572929
+    ],
+    "first_five_degrees": [
+      58.480254288013384,
+      51.79630574493558,
+      48.26605855841073,
+      41.71913131418656,
+      36.42479055939421
+    ]
+  },
+  "new_variant_forest_fits": 0,
+  "new_variant_forecast_losses_computed": false,
+  "original_predictions_replaced": false,
+  "author_pipeline_recovered": false,
+  "crisis_replay": {
+    "seed": 101,
+    "trees": 100,
+    "fit_end": "2008Q4",
+    "target": "2009Q1",
+    "saved_output_max_difference": 0.0,
+    "original_output_sha256": "9676d5d39cb95d15f236fc56a9319a199493cb3d6add69dd1016c921f8ce4746",
+    "replay_output_sha256": "9676d5d39cb95d15f236fc56a9319a199493cb3d6add69dd1016c921f8ce4746",
+    "routed_leaf_mean_coefficient_max_difference": 1.6653345369377348e-16,
+    "within_leaf_coefficient_difference": 0.0,
+    "leaf_count": 100,
+    "median_training_leaf_rows": 11.0,
+    "median_split_sample_rows": 8.0
+  },
+  "findings": {
+    "baseline_F2_training_standard_deviation": 4.934330297674442,
+    "baseline_F2_at_2008Q4": 6.708187718722204,
+    "baseline_F2_training_SD": 1.3594930444530202,
+    "subset_F2_sign_aligned_training_SD": -0.7995650422104446,
+    "training_F2_correlation": 0.944277934295455,
+    "future_extremes_kept_F2_training_SD": 2.7555396577723346,
+    "NONCAUSAL_full_vintage_preparation_F2_training_SD": -0.964075965511598,
+    "NONCAUSAL_full_vintage_preparation_F2_training_correlation": 0.9701378110744426,
+    "NONCAUSAL_PCA_only_F2_training_correlation": 0.22735084702309,
+    "F2_score_SW_member_contribution": -1.006573318338226,
+    "F2_score_nonmember_contribution": 7.714761037060425,
+    "observed_cells_removed_at_crisis_origin": 10,
+    "seed101_F1_contribution_log_points": 6.13180783780954,
+    "same_equation_static_F1_contribution_log_points": 11.41019356287271,
+    "author_factor_pipeline_recovered": false,
+    "original_crisis_predictions_replaced": false
+  },
+  "figures": [
+    {
+      "slug": "01-factor-tail-divergence",
+      "title": "High training correlation hides a crisis-tail difference",
+      "caption": "PCA signs are aligned using training observations only; each factor is scaled by its own training SD. The dashed line is 2008Q4, used to forecast 2009Q1. The 125-series rule changes PCA eligibility, not the fixed benchmark. It is a source-motivated diagnostic, not proof of the author's rule. Individual component comparisons are not rotation-invariant."
+    },
+    {
+      "slug": "02-training-versus-crisis",
+      "title": "Correlation is not a guarantee about rare states",
+      "caption": "The same 2008Q4 row sits away from the training relationship, especially for F2. These are unsupervised factor comparisons: no unemployment outcome was used to align signs, scale scores, or select a component."
+    },
+    {
+      "slug": "03-membership-contributions",
+      "title": "Where the positive F2 score comes from",
+      "caption": "Exact accounting under the original loadings: 125-subset columns contribute -1.007, other columns +7.715, summing to +6.708. This grouping is not the same as refitting subset PCA, and contributions are not causal effects."
+    },
+    {
+      "slug": "04-factor-drivers",
+      "title": "Largest positive and negative F2 contributions at 2008Q4",
+      "caption": "Exact value \u00d7 loading terms, after the benchmark's cleaning and completion. Large positive terms include M1REALx, GFDEBTNx, price indexes and M2REALx. Negative terms include equities, permits and housing. All terms, descriptions and exact-mnemonic metadata coverage are in factor-drivers.csv."
+    },
+    {
+      "slug": "05-cleaning-extremes",
+      "title": "Cleaning removes policy/price extremes, but is a separate mechanism",
+      "caption": "Left compares actual transformed inputs with their imputed replacements. Right holds all training data, moments and PCA loadings fixed, and merely stops screening future observations. This is an input-sensitivity check, not a new forecast model."
+    },
+    {
+      "slug": "06-variant-isolation",
+      "title": "Nine explicitly labeled preparation diagnostics",
+      "caption": "The subset-only variant preserves all original completed raw indicators and MAFs; adaptive variants change completion. The latest-origin variant fits unsupervised representations through the already-observed 2008Q4 covariates rather than 2008Q3. The two NONCAUSAL controls use later predictor data through 2018Q2 and are inadmissible as deployable benchmarks. The all-panel adaptive EM reaches its 50-iteration cap in the crisis refit. None is chosen by forecast loss or substituted into the benchmark."
+    },
+    {
+      "slug": "07-crisis-adjustment-accounting",
+      "title": "The immediate forecast failure is not only the F2 input",
+      "caption": "Every bar is saved forecast accounting with identical factor coordinates and the same four slope terms. The forest boosts its intercept but lowers F1's positive contribution enough to outweigh that boost. A questionable F2 crisis signal and the learned coefficient map are distinct links in the failure chain."
+    },
+    {
+      "slug": "08-routed-leaf-contributions",
+      "title": "The actual crisis trees, not a hypothetical refit",
+      "caption": "Storage-only 2008Q4/seed-101 replay matches all eight forecasts and every coefficient exactly. Each tree is routed with its original native normalization and saved leaf paths; all row partitions and within-leaf coefficient blocks are checked. Histograms show model-component dispersion, not predictive uncertainty."
+    },
+    {
+      "slug": "09-crisis-leaf-support",
+      "title": "Training observations behind the crisis forecast",
+      "caption": "These are full training-leaf memberships, including rows not selected for split construction. They are not independent observations across trees. Neighbor smoothing and the OLS prior contribute additional information outside the listed leaf rows; decades are calendar bins, not official recession labels."
+    },
+    {
+      "slug": "10-eigenspectrum-and-rank",
+      "title": "Separate numerical failure from a different factor definition",
+      "caption": "All six frozen states and all 1,482 per-series MAF constructions are checked. Independent base R verifies crisis-window transformations, masks, thresholds, PCA scores/loadings, all 247 MAF bases, and adaptive completion on both panels. A separated eigenvalue pair weakens a numerical near-tie explanation, not every possible rotation or preprocessing explanation."
+    }
+  ],
+  "figure_count": 10,
+  "artifact_checksums": {
+    "crisis-baseline-loadings.csv": "74db2f18759ef4f5842feb087200abc69a4a00f5596af2b5eeacb638908a342e",
+    "crisis-factor-snapshot.csv": "cadc725e53a6f12da40cb60593b50a28f50568e294c79880a2056d315cf179ca",
+    "crisis-leaf-support.csv": "4e8a7aa4fcbe4237ca74ea1e9b1ac42c72cae22dd3ce81f1dc6732fc5ab86fb0",
+    "crisis-routed-leaves.csv": "9280b03a21c04f0c1e321e36c399586fa7eff70206098fd455fbdfc361222468",
+    "crisis-subset-loadings.csv": "30ca5aeee20f551e83ff028f9b00eebce372b91dd173402b24fdbd90c4e16d36",
+    "crisis-training-and-query-factors.csv": "29d29057a454feecef8dcf04c9af82f4c34d98d047f8509cbe9a0371eac681f0",
+    "factor-drivers.csv": "7e7fe8ace2887c892f59e7c61b9a220943f723765937694e9a5cea7e13870224",
+    "factor-variant-scores.csv": "11d133a9d8f5fa395aa298f4399b7706a1941d2af238ca9cefc66b17e33bd0bd",
+    "figures/01-factor-tail-divergence.png": "bb1e81c6073acae28cc9ef5e2e93857cd6db6f7768276900cc5bb37952e15f1e",
+    "figures/01-factor-tail-divergence.svg": "743b99e2c37c45d7db431e52b9cf8b7b0e38d432782b5a283cd8a5bc7edbf062",
+    "figures/02-training-versus-crisis.png": "4e7e55297d48186d7edca96b793e39a404a753b79aeb9c9f361bb7eb0ab642c0",
+    "figures/02-training-versus-crisis.svg": "f0b8e4589ffb57be91aba907768ef0555dddeea81507f1063b06b3c03b26f4a2",
+    "figures/03-membership-contributions.png": "369c2849d43507cb46fa8bab49075938204cc42f0e5fbc748aec3ff6deb89271",
+    "figures/03-membership-contributions.svg": "8f0cda72029d061ff90a1cf8db58f6ab52cd444b89b3c436d8e3132424b2ea7c",
+    "figures/04-factor-drivers.png": "6be93d2d5ed66ce32456cea2dd7070397b0cfc8e565e5443a2cf72385d62ee8d",
+    "figures/04-factor-drivers.svg": "f7e47d0f1beeb1aef047698296099cf01a30c63ff6d67ae0501587f31218342e",
+    "figures/05-cleaning-extremes.png": "2b015f06db317de3765ad98d55657944fe58086bac5a37e49235539cd9f70ca8",
+    "figures/05-cleaning-extremes.svg": "0bc9b59f5298ebc8643c1a9fcdb55747f6345a11d34b459008392e3af73ea62c",
+    "figures/06-variant-isolation.png": "ab4c5d90ec656f2dba911a98b96b4d5a6886c6bdf36554bf04a94d90eeb38320",
+    "figures/06-variant-isolation.svg": "cbfdcfc883d51dd86809f1b28e19b3572d6a58e9e80dd1a4619f317eed1073ad",
+    "figures/07-crisis-adjustment-accounting.png": "7f8035200af95cddf79b84ad5185d76d55401f9653641b9d38ffb2e4576aa42f",
+    "figures/07-crisis-adjustment-accounting.svg": "9a10e8debfa387506862ec0f1166ee61b26490de56322359a004efe1b1974972",
+    "figures/08-routed-leaf-contributions.png": "5f6b4a0b87837eceafe59b26d1cad37664558ce536ceadfc8600a88a897a60ac",
+    "figures/08-routed-leaf-contributions.svg": "1240ed83fec4839f07d6dcf2843b369c18f3df3e39251b6e3b706a0ae13c8776",
+    "figures/09-crisis-leaf-support.png": "66ba423698a7d580b47201ac680be7fdff802cf847e9c544bce4739e2551a8f6",
+    "figures/09-crisis-leaf-support.svg": "3a6d7b6d8a5967fe1f48ca1d70b3b7d985a21a92e509d38fa7be4913efbb74c7",
+    "figures/10-eigenspectrum-and-rank.png": "9143c041bb28b8ffaaeb035cf7160435aafc9bf3ee092e867b8b8c364a6b6122",
+    "figures/10-eigenspectrum-and-rank.svg": "f96cc6c25d91e963a1dd8bc9e0d283ed4eed734b97ec0c76344b5ca2d0c0ba7f",
+    "findings.md": "3f54d88c1477db814c936e939349665c25c6318f81a55f21f485ec25d3aef3ac",
+    "independent-numerical-check.json": "870d3ff3adfc3e6fad474de2002ea1d2de60de9d03278b9baa4152907fdc3da4",
+    "index.html": "a7a8303384ccaef02ac40f7f5b9869c02fd2ad48f4b144cf868e827429ea2f28",
+    "leaf-verification.csv": "a7e941aec7812f08b27f73569bc5a56f87348c4d32cb17eb827532a44b08de8f",
+    "original-contributions.csv": "48a816aba5c47905bcbca85139b0554c2124278addccf9d9c73044fde96500bc",
+    "original-predictions.csv": "afa22d7fcdc27aebc1b1be90dc9b5f5215acee1f61ec2bffee22f466c84df5cb",
+    "outlier-cells.csv": "c2992aa4772692119cdf0cf282ee3f23f6d95ee2e8f84447bd4bd0d8a8a92781",
+    "preprocessing-checks.csv": "acc71dcc92c2c9dd8c5e5bdeda55e57136d318a2eca74aadf364987e0464e8eb",
+    "training-factor-comparisons.csv": "26de1e4f258012eb5d210970d44ec134e40c70c27d2790b39864d54379541c2d"
+  },
+  "forensic_helper_sha256": {
+    "scripts/reference_factor_forensics.R": "87eeb99e1d9f6bdddd682e1ae3427a57081e547511f684b4f49a9a25cc9f91b6",
+    "scripts/inspect_crisis_forest.R": "d7977e3c285d70d628d36b79e58e05053e50e1bb234eacf80a6ba4eca7f02c81",
+    "scripts/trace_mrf2018.R": "4d1a60b992d8107e174bb556fe55a7c7e68d150ff91248c2899dba5063e308f4",
+    "src/jev_factor/reference_fred_em.R": "b7b9cfd85c69d9ae39215d840295f328f932bb6b8ccf662106ea30fb1fab572d"
+  },
+  "FRED_QD_reference_paper": {
+    "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/publications/review/pdfs/2021/01/14/fred-qd-a-quarterly-database-for-macroeconomic-research.pdf",
+    "sha256": "78043ce4e8e6cec5d28036cb513d472ea76ebf0c9ddbda5d68c1b8a88a979f1e",
+    "evidence": "Section 3 distinguishes 125-series comparisons from all-series/full-observation factors; F2 is described as forward-looking in both."
+  }
+}

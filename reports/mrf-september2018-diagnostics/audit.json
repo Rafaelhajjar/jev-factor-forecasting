@@ -1,0 +1,482 @@
+{
+  "status": "full_qualified_MRF_artifacts_verified",
+  "full_declaration_verified": true,
+  "qualified_advance_authorized": true,
+  "plain_RF_gate_passed": false,
+  "exact_author_pipeline_verified": false,
+  "jobs_expected": 18,
+  "jobs_verified": 18,
+  "pending_jobs": [],
+  "actual_trees": 100,
+  "data": {
+    "vintage": "2018-09",
+    "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/historical-vintages-of-fred-qd-2018-05-to-2025-12.zip",
+    "archive_sha256": "56c5ff7ae60c9ed1468a4219bdda2a3f41644a16e1e1a7520cc38779d03df1df",
+    "member": "FRED-QD_2018m09.csv",
+    "member_sha256": "44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7",
+    "series_count": 247,
+    "first_quarter": "1959Q1",
+    "last_quarter": "2018Q2",
+    "not_augmented_with_later_vintage_series": true,
+    "evaluation": "fixed_vintage_retrospective_not_real_time_releases"
+  },
+  "config": {
+    "study": "September2018_qualified_FA_ARRF_unemployment_h1",
+    "declaration_date": "2026-10-20",
+    "qualified_advance_authorized": true,
+    "plain_RF_gate_passed": false,
+    "vintage": "2018-09",
+    "target": "delta_log_UNRATE",
+    "horizon": 1,
+    "panel_start": "1959Q3",
+    "first_training_target": "1961Q3",
+    "evaluation_start": "2003Q1",
+    "evaluation_end": "2014Q4",
+    "refit_every_quarters": 8,
+    "trees": 100,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "preprocessing": {
+      "completion_rank": 5,
+      "outlier_iqr": 10,
+      "fit_through": "last_training_origin",
+      "factor_features_in_plain_RF": false
+    },
+    "forest": {
+      "block": 8,
+      "RWR": 0.75,
+      "ridge_lambda": 0.1,
+      "MLF": 1,
+      "mtry": 0.3333333333333333,
+      "minsize": 10,
+      "trend_push": 1,
+      "prior": "OLS",
+      "standardization": "train_only"
+    },
+    "reported_FA_AR_ratio": 0.83,
+    "reported_FA_ARRF_ratio": 0.72,
+    "absolute_ratio_tolerance": 0.03,
+    "gate": "matching_FA_AR_and_all_three_MRF_seeds_no_ensemble_rescue",
+    "assumptions_not_recovered_original_settings": [
+      "currently_served_September2018_archive_has_247_not_original_248_series",
+      "all_247_series_in_completion_and_cross_sectional_PCA",
+      "fixed_rank5_completion_10IQR_and_train_only_moments",
+      "1961Q3_is_first_training_target_not_first_origin",
+      "sklearn_PCA_sign_orientation_not_recovered_author_basis",
+      "MAFs_fitted_on_all_aligned_training_origin_rows",
+      "100_trees_and_101_202_303_seeds_preserved_from_earlier_MRF_declaration",
+      "MRF_package_defaults_are_not_verified_Table4_invocation",
+      "OLS_prior_variance_100_intercept_1_slopes",
+      "train_only_inner_scaling_overrides_native_all_supplied_rows_helper"
+    ]
+  },
+  "code": {
+    "mrf2018.py": "ad62c0726b6baebb0e28e782fa91a53e56cb42bd532745339d655eb6e7435eec",
+    "vintage2018.py": "0038f0b20fff5cb17bf6110d24e30915a27d6c85db9275664743b63f1c557756",
+    "rf2018.py": "55d5ea9c99bd0fa3f16f3d18442e574282833be5ab0128c3cb9b471778f92dae",
+    "quarterly.py": "aae61916d4726d8ef2f723d5e343bb676e17b103dea0b470f2025d5235631f37",
+    "data.py": "b5946ab6c72dcd62aad00f652eef8c921c58ad8da1c251dbb0ae522187dc6038",
+    "replication.py": "f7c38bb0849f77af7b6bb16c331ccf4639aa15307db22c40196a05d82404e165",
+    "replication_audit.py": "caf34af364b8ff09259b628b3b01312ec2b6d4d591a8cbb163ef790cd8e79208",
+    "reference_mrf.R": "535a8fc6352aa76dd5f1a6b64511c71d6905cfdccda2b0ea4468d8dd53e6809a",
+    "reference_linear.R": "b71e280a2640941cbc0ae0ef8d8041b42ad21d81fd3ee42aedbe9fdc5dc35747",
+    "mrf2018_report.py": "e1c2a85ecea6694db98ed2d23aaa8a91d4ac93e41fb9aecd4fd29186cec42bf2"
+  },
+  "RF_source": {
+    "manifest_sha256": "f55bb3212c0c9a6889363f52ca605462efb738e36227b150c49a1bc5e5a67ca1",
+    "audit_sha256": "149f778367b639a2df0d12e256f1ae40897fcab9357d4b35a9b9bfe144ba2b2d",
+    "predictions_sha256": "e27c526f9a7fbe81da216ec114de702ef3a991e5e766e3fd55d72ff2adbf649e",
+    "data": {
+      "vintage": "2018-09",
+      "url": "https://www.stlouisfed.org/-/media/project/frbstl/stlouisfed/research/fred-md/historical-vintages-of-fred-qd-2018-05-to-2025-12.zip",
+      "archive_sha256": "56c5ff7ae60c9ed1468a4219bdda2a3f41644a16e1e1a7520cc38779d03df1df",
+      "member": "FRED-QD_2018m09.csv",
+      "member_sha256": "44fdb5914a25a560648fccc71f85d2ae02bbe0bebae199ec6d3dbdbc7ae5a1a7",
+      "series_count": 247,
+      "first_quarter": "1959Q1",
+      "last_quarter": "2018Q2",
+      "not_augmented_with_later_vintage_series": true,
+      "evaluation": "fixed_vintage_retrospective_not_real_time_releases"
+    },
+    "plain_RF_gate_passed": false,
+    "qualified_advance_authorized_not_a_claim_of_reproduced_RF": true
+  },
+  "external_engine": {
+    "commit": "bdb2ed435affb741aafdf78bab12c470ec6d55d0",
+    "sha256": "e052c0f12544a2bfb79974c07174b08116b7c80298de5905bdb3753732a7b631",
+    "url": "https://raw.githubusercontent.com/philgoucou/macrorf/bdb2ed435affb741aafdf78bab12c470ec6d55d0/R/MRF_v210403.R",
+    "license": "GPL-3 external dependency; not redistributed as MIT"
+  },
+  "input_and_linear_checks": [
+    {
+      "fit_end": "2002Q4",
+      "ntrain": 166,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 5.594483210025203e-17,
+        "FA_AR": 4.891920202254596e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2004Q4",
+      "ntrain": 174,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 5.915407053080912e-16,
+        "FA_AR": 1.9255430583342559e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2006Q4",
+      "ntrain": 182,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 2.949029909160572e-17,
+        "FA_AR": 1.3183898417423734e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2008Q4",
+      "ntrain": 190,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 1.4710455076283324e-15,
+        "FA_AR": 3.469446951953614e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2010Q4",
+      "ntrain": 198,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 8.370040771588094e-17,
+        "FA_AR": 2.3592239273284576e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    },
+    {
+      "fit_end": "2012Q4",
+      "ntrain": 206,
+      "state_columns": 1037,
+      "matrix_rebuild_max_error": 0.0,
+      "RF_raw_pairing_max_error": 0.0,
+      "independent_R_QR_errors": {
+        "AR4": 8.153200337090993e-17,
+        "FA_AR": 2.0816681711721685e-16
+      },
+      "R_version": "R version 4.6.1 (2026-06-24)"
+    }
+  ],
+  "maximum_coefficient_decomposition_error": 4.0245584642661925e-16,
+  "runtime_records": [
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "454.055",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "451.242",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "447.998",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "471.163",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "478.324",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "488.326",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "520.071",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "508.37",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "507.328",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "563.841",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "569.44",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "573.65",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "602.939",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "605.916",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "621.109",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "632.585",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "632.937",
+      "standardization": "train_only",
+      "prior": "OLS"
+    },
+    {
+      "R_version": "R version 4.6.1 (2026-06-24)",
+      "pracma_version": "2.4.6",
+      "elapsed_seconds": "635.67",
+      "standardization": "train_only",
+      "prior": "OLS"
+    }
+  ],
+  "completed_output_checksums": [
+    {
+      "group": 0,
+      "seed": 101,
+      "prediction_sha256": "69578af19942eaa47dc5c0adbae5c549f795e47e2ead8c3797fe43c3886e729c"
+    },
+    {
+      "group": 0,
+      "seed": 202,
+      "prediction_sha256": "5d98f55253f07728dc799eb59848b55dba3e58ee86786859c0d9689fa8794af0"
+    },
+    {
+      "group": 0,
+      "seed": 303,
+      "prediction_sha256": "3b97d6ab972522a399c9523ebe8deced725c3a504e303413d7d6bd750aba0438"
+    },
+    {
+      "group": 1,
+      "seed": 101,
+      "prediction_sha256": "b04092d8eb51981528568333837e0f33acef09c44002c75108a4cd265cece69a"
+    },
+    {
+      "group": 1,
+      "seed": 202,
+      "prediction_sha256": "81f76abc750356eaa625ec1837c35ba39fb461702d85a9149401d582ce8e6e7c"
+    },
+    {
+      "group": 1,
+      "seed": 303,
+      "prediction_sha256": "03367e2a6738dd97dd2836fb68a2b8b2ace6be858fa048894c90f612bf8bcbea"
+    },
+    {
+      "group": 2,
+      "seed": 101,
+      "prediction_sha256": "604a027cbca03e558b6be804ab794140d5fd63b3c41198f27703f74c31941a76"
+    },
+    {
+      "group": 2,
+      "seed": 202,
+      "prediction_sha256": "51e13dbde491c83224e0df6b00212bd0eef5c5f7e3dd7c630fe74fef9f8de816"
+    },
+    {
+      "group": 2,
+      "seed": 303,
+      "prediction_sha256": "acddf4b7e1f8e1df645e9ee9aab3d04b45357965f795ccee6999c316669cbf30"
+    },
+    {
+      "group": 3,
+      "seed": 101,
+      "prediction_sha256": "9676d5d39cb95d15f236fc56a9319a199493cb3d6add69dd1016c921f8ce4746"
+    },
+    {
+      "group": 3,
+      "seed": 202,
+      "prediction_sha256": "18fa99a05546f3e8005c5c0c18b46b4f43d7faffc2ba42584f93948595ffb003"
+    },
+    {
+      "group": 3,
+      "seed": 303,
+      "prediction_sha256": "2df37fa2e4e6c1351a30ecca9f4ad89428885b35026f8d18a4ffa75e523e783f"
+    },
+    {
+      "group": 4,
+      "seed": 101,
+      "prediction_sha256": "35ccc204233259b5a1638da188df90428e62369f73a3c178e3df3d882c253412"
+    },
+    {
+      "group": 4,
+      "seed": 202,
+      "prediction_sha256": "134075c41371b74ec2cca1c05afc57cf1f5ae2446378f7052271b956df786f0a"
+    },
+    {
+      "group": 4,
+      "seed": 303,
+      "prediction_sha256": "9a158d28c0b67daad92837f7899ea8a5af31135ab62cef576b32e0d1ec34bf07"
+    },
+    {
+      "group": 5,
+      "seed": 101,
+      "prediction_sha256": "365a6ce562772c98245c80b00bccea48b66c49d18139f0428e8a262400a39bbd"
+    },
+    {
+      "group": 5,
+      "seed": 202,
+      "prediction_sha256": "22a4f872b8a829115966fbe65622f40d20398b991620eaf82ec36319a2139433"
+    },
+    {
+      "group": 5,
+      "seed": 303,
+      "prediction_sha256": "463a606c4b0b7f39f7e4eb8a61fec5a2a0d295571c74a87ca5fb19bacad4006f"
+    }
+  ],
+  "partial_scores_suppressed": false,
+  "metrics": [
+    {
+      "model": "AR4",
+      "n": 48,
+      "RMSE": 0.03350220292220652,
+      "MAE": 0.025809831205686407,
+      "RMSE_over_AR4": 1.0
+    },
+    {
+      "model": "FA_AR",
+      "n": 48,
+      "RMSE": 0.027918861616231198,
+      "MAE": 0.021870848016562427,
+      "RMSE_over_AR4": 0.8333440544509844
+    },
+    {
+      "model": "FA_ARRF_seed101",
+      "n": 48,
+      "RMSE": 0.02855992778727275,
+      "MAE": 0.02071178744642892,
+      "RMSE_over_AR4": 0.8524790997651726
+    },
+    {
+      "model": "FA_ARRF_seed202",
+      "n": 48,
+      "RMSE": 0.027770687721182494,
+      "MAE": 0.020944980728149595,
+      "RMSE_over_AR4": 0.8289212439452761
+    },
+    {
+      "model": "FA_ARRF_seed303",
+      "n": 48,
+      "RMSE": 0.027598095222623388,
+      "MAE": 0.02014152554982934,
+      "RMSE_over_AR4": 0.823769567831324
+    }
+  ],
+  "source_cell_checks": [
+    {
+      "model": "FA_AR",
+      "source_ratio": 0.83,
+      "ratio": 0.8333440544509844,
+      "within_tolerance": true
+    },
+    {
+      "model": "FA_ARRF_seed101",
+      "source_ratio": 0.72,
+      "ratio": 0.8524790997651726,
+      "within_tolerance": false
+    },
+    {
+      "model": "FA_ARRF_seed202",
+      "source_ratio": 0.72,
+      "ratio": 0.8289212439452761,
+      "within_tolerance": false
+    },
+    {
+      "model": "FA_ARRF_seed303",
+      "source_ratio": 0.72,
+      "ratio": 0.823769567831324,
+      "within_tolerance": false
+    }
+  ],
+  "joint_source_cell_diagnostic": false,
+  "original_results_replaced": false,
+  "full_native_tree_refits_claimed": false,
+  "RMSE_reduction_vs_matching_FA_AR": {
+    "101": -0.022961758966162593,
+    "202": 0.005307304326568896,
+    "303": 0.01148923613064956
+  },
+  "prediction_sha256": "dc9175948d70d87e5d82b1a36e575a86740f085bcff679d8afae8ae41980afa0",
+  "metrics_sha256": "de29293b5c5f9513f2f837af1af409d6b78ffb33a738d3440b62234954ad46e3"
+}

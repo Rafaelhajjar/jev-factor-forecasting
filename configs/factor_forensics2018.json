@@ -1,0 +1,25 @@
+{
+  "study": "posthoc_September2018_factor_forensics",
+  "source_run": "runs/mrf-september2018-v1",
+  "target_window": "2007Q1_to_2010Q4",
+  "crisis_origin": "2008Q4",
+  "crisis_target": "2009Q1",
+  "all_six_training_windows_audited": true,
+  "variants": [
+    "baseline_all247_fixed5",
+    "SW125_PCA_only_same_completed_panel",
+    "all247_adaptive_completion_same_five_PCs",
+    "SW125_adaptive_completion_five_PCs",
+    "keep_future_extremes_same_training_representation",
+    "no_outlier_cleaning_refit_all247",
+    "include_last_observed_origin_in_representation_fit",
+    "NONCAUSAL_full_vintage_PCA_on_frozen_training_preparation",
+    "NONCAUSAL_full_vintage_cleaning_completion_and_PCA"
+  ],
+  "alignment_for_comparison": "componentwise_training_sign_and_SD_only_no_test_fitting",
+  "no_variant_forest_fits_or_forecast_loss_selection": true,
+  "noncausal_variants_are_diagnostic_only_not_benchmark_candidates": true,
+  "diagnostic_replay": {"fit_end": "2008Q4", "seed": 101, "trees": 100, "storage_only": true},
+  "original_run_replaced": false,
+  "author_factor_pipeline_recovered": false
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="453.6pt" viewBox="0 0 864 453.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-21T15:45:44.127545</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 453.6 
+L 864 453.6 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182d3d" x="20.16023" y="96.588088" transform="rotate(-0 20.16023 96.588088)">1 · Fit representations</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_2">
+     <path d="M 20.16023 205.994486 
+L 210.83859 205.994486 
+Q 219.23859 205.994486 219.23859 197.594486 
+L 219.23859 144.044486 
+Q 219.23859 135.644486 210.83859 135.644486 
+L 20.16023 135.644486 
+Q 11.76023 135.644486 11.76023 144.044486 
+L 11.76023 197.594486 
+Q 11.76023 205.994486 20.16023 205.994486 
+z
+" style="fill: #eef3f7"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(20.16023 155.866829)">Past data only</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(20.16023 174.734017)">247 indicator series → 5 PCA factors</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(20.16023 191.566829)">2 moving-average factors per series</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182d3d" x="311.880067" y="96.588088" transform="rotate(-0 311.880067 96.588088)">2 · Grow 100 trees</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_3">
+     <path d="M 311.880067 205.994486 
+L 527.828973 205.994486 
+Q 536.228973 205.994486 536.228973 197.594486 
+L 536.228973 144.044486 
+Q 536.228973 135.644486 527.828973 135.644486 
+L 311.880067 135.644486 
+Q 303.480067 135.644486 303.480067 144.044486 
+L 303.480067 197.594486 
+Q 303.480067 205.994486 311.880067 205.994486 
+z
+" style="fill: #eef3f7"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 155.866829)">Block-subsample training rows</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 173.716829)">Try ~⅓ of 1,037 state columns</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 191.566829)">Choose splits using local regression error</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182d3d" x="603.599904" y="96.588088" transform="rotate(-0 603.599904 96.588088)">3 · Fit each leaf</text>
+   </g>
+   <g id="text_6">
+    <g id="patch_4">
+     <path d="M 603.599904 205.994486 
+L 807.975841 205.994486 
+Q 816.375841 205.994486 816.375841 197.594486 
+L 816.375841 144.044486 
+Q 816.375841 135.644486 807.975841 135.644486 
+L 603.599904 135.644486 
+Q 595.199904 135.644486 595.199904 144.044486 
+L 595.199904 197.594486 
+Q 595.199904 205.994486 603.599904 205.994486 
+z
+" style="fill: #eef3f7"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(603.599904 155.866829)">Intercept + 2 target lags + 2 factors</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(603.599904 173.716829)">Ridge toward the training OLS prior</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(603.599904 191.566829)">Smooth with neighboring training rows</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182d3d" x="311.880067" y="286.545571" transform="rotate(-0 311.880067 286.545571)">4 · Average the trees</text>
+   </g>
+   <g id="text_8">
+    <g id="patch_5">
+     <path d="M 311.880067 395.951968 
+L 509.755848 395.951968 
+Q 518.155848 395.951968 518.155848 387.551968 
+L 518.155848 334.001968 
+Q 518.155848 325.601968 509.755848 325.601968 
+L 311.880067 325.601968 
+Q 303.480067 325.601968 303.480067 334.001968 
+L 303.480067 387.551968 
+Q 303.480067 395.951968 311.880067 395.951968 
+z
+" style="fill: #eef3f7"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 345.824312)">Each tree supplies 5 local coefficients</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 363.674312)">Average them → 1 point forecast</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #182d3d" transform="translate(311.880067 381.524312)">Repeat at 6 refits; keep all 3 seeds</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 253.817945 139.760243 
+Q 273.267927 139.760243 290.705448 139.760243 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 286.705448 137.760243 
+L 290.705448 139.760243 
+L 286.705448 141.760243 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 545.537782 139.760243 
+Q 564.987764 139.760243 582.425285 139.760243 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 578.425285 137.760243 
+L 582.425285 139.760243 
+L 578.425285 141.760243 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 696.194883 209.733838 
+Q 625.052161 245.530882 555.707151 280.423366 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 560.179273 280.412031 
+L 555.707151 280.423366 
+L 558.381356 276.838868 
+" style="fill: none; stroke: #6c7c8b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182d3d" x="3.00024" y="12.878209" transform="rotate(-0 3.00024 12.878209)">How this MRF trains — no epochs, no gradient-descent loss curve</text>
+   </g>
+  </g>
+ </g>
+</svg>
